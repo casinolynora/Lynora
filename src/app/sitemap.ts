@@ -28,6 +28,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/de/best-casinos`, lastModified: buildDate, changeFrequency: "weekly" as const, priority: 0.8 },
     { url: `${BASE_URL}/de/guides`, lastModified: buildDate, changeFrequency: "monthly" as const, priority: 0.7 },
     { url: `${BASE_URL}/de/compare`, lastModified: buildDate, changeFrequency: "monthly" as const, priority: 0.7 },
+    // Netherlands pages
+    { url: `${BASE_URL}/nl`, lastModified: buildDate, changeFrequency: "weekly" as const, priority: 0.9 },
+    // Belgium pages
+    { url: `${BASE_URL}/be`, lastModified: buildDate, changeFrequency: "weekly" as const, priority: 0.9 },
+    // France page (regulatory notice)
+    { url: `${BASE_URL}/fr`, lastModified: buildDate, changeFrequency: "monthly" as const, priority: 0.5 },
   ];
 
   const casinoPages = casinos.map((casino) => ({
@@ -53,6 +59,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     }));
 
+  const nlCasinoPages = casinos
+    .filter(c => c.countries.includes("NL"))
+    .map((casino) => ({
+      url: `${BASE_URL}/nl/casino-reviews/${casino.slug}`,
+      lastModified: casino.lastVerifiedAt,
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
+    }));
+
+  const beCasinoPages = casinos
+    .filter(c => c.countries.includes("BE"))
+    .map((casino) => ({
+      url: `${BASE_URL}/be/casino-reviews/${casino.slug}`,
+      lastModified: casino.lastVerifiedAt,
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
+    }));
+
   const deGuidePages = guides.map((guide) => ({
     url: `${BASE_URL}/de/guides/${guide.slug}`,
     lastModified: guide.lastUpdated,
@@ -60,5 +84,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticPages, ...casinoPages, ...guidePages, ...deCasinoPages, ...deGuidePages];
+  return [...staticPages, ...casinoPages, ...guidePages, ...deCasinoPages, ...nlCasinoPages, ...beCasinoPages, ...deGuidePages];
 }

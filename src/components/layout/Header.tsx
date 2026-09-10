@@ -19,9 +19,19 @@ const germanyLinks = [
   { href: "/de/guides", label: "Germany Guides" },
 ];
 
+const netherlandsLinks = [
+  { href: "/nl", label: "Netherlands Home" },
+];
+
+const belgiumLinks = [
+  { href: "/be", label: "Belgium Home" },
+];
+
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [deOpen, setDeOpen] = useState(false);
+  const [nlOpen, setNlOpen] = useState(false);
+  const [beOpen, setBeOpen] = useState(false);
 
   return (
     <>
@@ -91,6 +101,64 @@ export function Header() {
                 </div>
               )}
             </div>
+
+            {/* Netherlands dropdown */}
+            <div className="relative">
+              <button
+                onClick={() => setNlOpen(!nlOpen)}
+                onBlur={() => setTimeout(() => setNlOpen(false), 150)}
+                className="px-3 py-2 text-sm font-medium text-muted hover:text-foreground transition-colors rounded-[var(--radius-md)] hover:bg-surface-hover flex items-center gap-1"
+                aria-expanded={nlOpen}
+                aria-haspopup="true"
+              >
+                🇳🇱 NL
+                <svg className={`w-3.5 h-3.5 transition-transform ${nlOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {nlOpen && (
+                <div className="absolute top-full left-0 mt-1 w-56 rounded-[var(--radius-lg)] border border-border bg-white shadow-lg py-1.5 animate-fade-in">
+                  {netherlandsLinks.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className="block px-4 py-2.5 text-sm text-muted hover:text-foreground hover:bg-surface-hover transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Belgium dropdown */}
+            <div className="relative">
+              <button
+                onClick={() => setBeOpen(!beOpen)}
+                onBlur={() => setTimeout(() => setBeOpen(false), 150)}
+                className="px-3 py-2 text-sm font-medium text-muted hover:text-foreground transition-colors rounded-[var(--radius-md)] hover:bg-surface-hover flex items-center gap-1"
+                aria-expanded={beOpen}
+                aria-haspopup="true"
+              >
+                🇧🇪 BE
+                <svg className={`w-3.5 h-3.5 transition-transform ${beOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {beOpen && (
+                <div className="absolute top-full left-0 mt-1 w-56 rounded-[var(--radius-lg)] border border-border bg-white shadow-lg py-1.5 animate-fade-in">
+                  {belgiumLinks.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className="block px-4 py-2.5 text-sm text-muted hover:text-foreground hover:bg-surface-hover transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
           </nav>
 
           {/* Desktop CTA */}
@@ -143,6 +211,34 @@ export function Header() {
               <div className="border-t border-border my-2 pt-2">
                 <p className="px-4 py-1 text-xs font-semibold text-text-faint uppercase tracking-wider">Germany</p>
                 {germanyLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="block px-4 py-2.5 text-sm text-muted hover:text-foreground hover:bg-surface-hover rounded-[var(--radius-md)] transition-colors"
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+
+              <div className="border-t border-border my-2 pt-2">
+                <p className="px-4 py-1 text-xs font-semibold text-text-faint uppercase tracking-wider">Netherlands</p>
+                {netherlandsLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="block px-4 py-2.5 text-sm text-muted hover:text-foreground hover:bg-surface-hover rounded-[var(--radius-md)] transition-colors"
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+
+              <div className="border-t border-border my-2 pt-2">
+                <p className="px-4 py-1 text-xs font-semibold text-text-faint uppercase tracking-wider">Belgium</p>
+                {belgiumLinks.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
