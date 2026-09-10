@@ -25,7 +25,7 @@ const footerSections = [
     links: [
       { href: "/de", label: "Germany Home" },
       { href: "/de/casinos", label: "Casinos in Germany" },
-      { href: "/de/best-casinos", label: "Best Casinos in Germany" },
+      { href: "/de/best-casinos", label: "Verified Casinos" },
       { href: "/de/guides", label: "Germany Guides" },
     ],
   },
@@ -42,18 +42,20 @@ const footerSections = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-surface-elevated">
+    <footer className="border-t border-border bg-white" role="contentinfo">
       <Container className="py-12 lg:py-16">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12">
           {footerSections.map((section) => (
             <div key={section.title}>
-              <h3 className="text-sm font-semibold text-foreground mb-4">{section.title}</h3>
+              <h3 className="text-sm font-semibold text-foreground mb-4 tracking-tight">
+                {section.title}
+              </h3>
               <ul className="space-y-2.5">
                 {section.links.map((link) => (
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-sm text-muted hover:text-primary transition-colors"
+                      className="text-sm text-muted hover:text-foreground transition-colors"
                     >
                       {link.label}
                     </Link>
@@ -64,32 +66,42 @@ export function Footer() {
           ))}
         </div>
 
+        {/* Bottom */}
         <div className="mt-12 pt-8 border-t border-border">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-            <div className="flex flex-col gap-2">
-              <div className="flex items-center gap-2">
-                <span className="flex h-8 w-8 items-center justify-center rounded-lg gradient-primary text-white text-xs font-black">
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+            <div>
+              <Link href="/" className="flex items-center gap-2 mb-3">
+                <div className="flex h-7 w-7 items-center justify-center rounded-[var(--radius-sm)] gradient-brand text-white text-[10px] font-bold">
                   CL
+                </div>
+                <span className="text-base font-bold tracking-tight text-foreground">
+                  Casino<span className="gradient-brand-text">Lynora</span>
                 </span>
-                <span className="font-bold gradient-primary-text">CasinoLynora</span>
-              </div>
-              <p className="text-xs text-muted max-w-md">
-                AI-powered casino matching for European players. We use structured, verified data to help you find casinos that fit your preferences.
+              </Link>
+              <p className="text-xs text-muted max-w-md leading-relaxed">
+                AI-powered casino discovery platform for European players. Structured, verified data
+                for transparent decision-making.
               </p>
             </div>
-            <div className="text-xs text-muted max-w-sm text-left md:text-right">
-              <p className="mb-2">
-                <strong>Affiliate Disclosure:</strong> CasinoLynora earns commissions through affiliate links.
-                This does not affect our ratings or recommendations.{' '}
-                <Link href="/affiliate-disclosure" className="text-primary hover:underline">Learn more</Link>
+
+            <div className="text-xs text-muted space-y-1.5 max-w-sm">
+              <p>
+                Affiliate Disclosure: CasinoLynora may earn commissions through affiliate links
+                when monetization is enabled. This does not affect our data or recommendations.
               </p>
               <p>
                 Gambling can be addictive. Please play responsibly. Must be 18+ to play.
               </p>
             </div>
           </div>
-          <div className="mt-6 text-xs text-muted text-center">
-            &copy; {new Date().getFullYear()} CasinoLynora. All rights reserved. 18+
+
+          <div className="mt-6 pt-6 border-t border-border-subtle flex flex-col sm:flex-row items-center justify-between gap-3">
+            <p className="text-xs text-text-faint">
+              &copy; {new Date().getFullYear()} CasinoLynora. All rights reserved.
+            </p>
+            <p className="text-xs text-text-faint">
+              18+ | Play Responsibly
+            </p>
           </div>
         </div>
       </Container>

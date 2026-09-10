@@ -1,119 +1,98 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { CookieConsent } from "@/components/layout/CookieConsent";
 import { AnalyticsInit } from "@/components/analytics/AnalyticsInit";
-import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const geist = Geist({
   subsets: ["latin"],
+  variable: "--font-geist-sans",
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
   subsets: ["latin"],
+  variable: "--font-geist-mono",
+  display: "swap",
 });
-
-export const viewport: Viewport = {
-  width: "device-width",
-  initialScale: 1,
-  themeColor: "#4F46E5",
-};
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://casinolynora.com";
 
 export const metadata: Metadata = {
   title: {
     default: "CasinoLynora — AI-Powered Casino Matching",
     template: "%s | CasinoLynora",
   },
-  description:
-    "Find the perfect online casino with CasinoLynora's AI-powered matching. Answer a few questions and get personalized casino recommendations based on your preferences.",
-  metadataBase: new URL(siteUrl),
+  description: "AI-powered casino discovery platform for European players. Structured, verified data for transparent decision-making.",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_CANONICAL_URL || "https://casinolynora.com"),
   openGraph: {
     type: "website",
     locale: "en_GB",
     siteName: "CasinoLynora",
     title: "CasinoLynora — AI-Powered Casino Matching",
-    description:
-      "Find the perfect online casino with AI-powered matching. Personalized recommendations based on your preferences.",
-    url: siteUrl,
-    images: [
-      {
-        url: "/og-image.svg",
-        width: 1200,
-        height: 630,
-        alt: "CasinoLynora — AI-Powered Casino Matching",
-      },
-    ],
+    description: "AI-powered casino discovery platform for European players.",
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
     title: "CasinoLynora — AI-Powered Casino Matching",
-    description:
-      "Find the perfect online casino with AI-powered matching. Personalized recommendations based on your preferences.",
-    images: ["/og-image.svg"],
+    description: "AI-powered casino discovery platform for European players.",
   },
   robots: {
     index: true,
     follow: true,
   },
-  alternates: {
-    canonical: siteUrl,
-  },
   icons: {
-    icon: [
-      { url: "/favicon.svg", type: "image/svg+xml" },
-    ],
-    apple: "/apple-touch-icon.svg",
+    icon: "/favicon.svg",
   },
 };
 
-const organizationSchema = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "CasinoLynora",
-  url: siteUrl,
-  description: "AI-powered casino comparison platform for European players.",
-  sameAs: [],
+export const viewport: Viewport = {
+  themeColor: "#0f2240",
 };
 
-const websiteSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  name: "CasinoLynora",
-  url: siteUrl,
-  potentialAction: {
-    "@type": "SearchAction",
-    target: `${siteUrl}/casinos?q={search_term_string}`,
-    "query-input": "required name=search_term_string",
-  },
-};
-
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="en" className={`${geist.variable} ${geistMono.variable}`}>
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "CasinoLynora",
+              url: "https://casinolynora.com",
+              description: "AI-powered casino discovery platform for European players.",
+            }),
+          }}
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "CasinoLynora",
+              url: "https://casinolynora.com",
+              potentialAction: {
+                "@type": "SearchAction",
+                target: "https://casinolynora.com/casinos?q={search_term_string}",
+                "query-input": "required name=search_term_string",
+              },
+            }),
+          }}
         />
       </head>
       <body className="min-h-screen flex flex-col antialiased">
-        <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:z-[100] focus:p-4 focus:bg-white focus:text-primary">
-          Skip to content
-        </a>
-        <AnalyticsInit />
         <Header />
-        <main id="main-content" className="flex-1">{children}</main>
+        <main className="flex-1">{children}</main>
         <Footer />
         <CookieConsent />
+        <AnalyticsInit />
       </body>
     </html>
   );

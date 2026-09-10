@@ -6,10 +6,16 @@ type DataFreshnessProps = {
 };
 
 export function DataFreshness({ lastVerifiedAt, className }: DataFreshnessProps) {
+  const formatted = formatDate(lastVerifiedAt);
+  const relative = formatRelativeDate(lastVerifiedAt);
+
   return (
-    <div className={`text-sm text-muted ${className ?? ""}`}>
-      Last verified: <time dateTime={lastVerifiedAt}>{formatDate(lastVerifiedAt)}</time>
-      <span className="text-muted/60"> ({formatRelativeDate(lastVerifiedAt)})</span>
-    </div>
+    <time
+      dateTime={lastVerifiedAt}
+      className={`text-xs text-text-faint ${className || ""}`}
+      title={`Last verified: ${formatted}`}
+    >
+      Last verified: {formatted} ({relative})
+    </time>
   );
 }

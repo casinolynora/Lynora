@@ -1,103 +1,83 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import { Container } from "@/components/ui/Container";
 import { Badge } from "@/components/ui/Badge";
-import { getGuideBySlug, getGuideSlugs } from "@/lib/data/guides";
 import { FAQSection } from "@/components/casino/FAQSection";
+import { getGuideBySlug, getAllGuides } from "@/lib/data/guides";
 
-type GermanyGuidePageProps = {
+type Props = {
   params: Promise<{ slug: string }>;
 };
 
 export async function generateStaticParams() {
-  return getGuideSlugs().map((slug) => ({ slug }));
+  const guides = getAllGuides();
+  return guides.map((guide) => ({ slug: guide.slug }));
 }
 
-export async function generateMetadata({ params }: GermanyGuidePageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const guide = getGuideBySlug(slug);
-  if (!guide) return {};
+  if (!guide) return { title: "Guide Not Found" };
 
   return {
-    title: guide.title,
+    title: `${guide.title} — Germany | CasinoLynora`,
     description: guide.description,
-    openGraph: {
-      title: `${guide.title} | CasinoLynora Germany`,
-      description: guide.description,
-    },
-    twitter: {
-      card: "summary",
-      title: `${guide.title} | CasinoLynora Germany`,
-      description: guide.description,
-    },
-    alternates: {
-      canonical: `https://casinolynora.com/de/guides/${guide.slug}`,
-    },
+    alternates: { canonical: `https://casinolynora.com/de/guides/${slug}` },
   };
 }
 
-export default async function GermanyGuidePage({ params }: GermanyGuidePageProps) {
+export default async function GermanyGuidePage({ params }: Props) {
   const { slug } = await params;
   const guide = getGuideBySlug(slug);
   if (!guide) notFound();
 
   return (
-    <Container className="py-12 lg:py-20">
-      <nav className="text-sm text-muted mb-8" aria-label="Breadcrumb">
-        <ol className="flex items-center gap-2">
-          <li><Link href="/de" className="hover:text-primary transition-colors">Germany</Link></li>
-          <li aria-hidden="true">/</li>
-          <li><Link href="/de/guides" className="hover:text-primary transition-colors">Guides</Link></li>
-          <li aria-hidden="true">/</li>
-          <li aria-current="page" className="text-foreground font-medium">{guide.title}</li>
-        </ol>
-      </nav>
+    <main id="main-content">
+      <Container className="py-12 lg:py-16">
+        <div className="max-w-3xl mx-auto">
+          {/* Breadcrumb */}
+          <nav className="text-sm text-muted mb-6" aria-label="Breadcrumb">
+            <Link href="/de" className="hover:text-brand-700 transition-colors">Germany</Link>
+            <span className="mx-2 text-text-faint">/</span>
+            <Link href="/de/guides" className="hover:text-brand-700 transition-colors">Guides</Link>
+            <span className="mx-2 text-text-faint">/</span>
+            <span className="text-foreground font-medium">{guide.title}</span>
+          </nav>
 
-      <article className="max-w-3xl mx-auto">
-        <header className="mb-8">
-          <Badge variant="primary" size="sm" className="mb-3">{guide.category}</Badge>
-          <h1 className="text-3xl sm:text-4xl font-bold mb-3">{guide.title}</h1>
-          <p className="text-lg text-muted mb-4">{guide.description}</p>
-          <p className="text-sm text-muted">Last updated: {guide.lastUpdated}</p>
-        </header>
+          <div className="mb-8">
+            <Badge variant="primary" size="sm" className="mb-3">{guide.category}</Badge>
+            <h1 className="text-3xl sm:text-4xl font-bold mb-4">{guide.title}</h1>
+            <p className="text-lg text-muted leading-relaxed">{guide.description}</p>
+          </div>
 
-        <div className="prose prose-sm max-w-none text-foreground">
-          <p className="text-lg leading-relaxed mb-8">{guide.content.intro}</p>
+          <article className="space-y-8">
+            <p className="text-muted leading-relaxed">{guide.content.intro}</p>
+            {guide.content.sections.map((section, i) => (
+              <section key={i}>
+                <h2 className="text-xl font-bold mb-3">{section.heading}</h2>
+                <p className="text-muted leading-relaxed">{section.body}</p>
+              </section>
+            ))}
+            <p className="text-muted leading-relaxed">{guide.content.conclusion}</p>
+          </article>
 
-          {guide.content.sections.map((section, i) => (
-            <section key={i} className="mb-8">
-              <h2 className="text-xl font-bold mb-3">{section.heading}</h2>
-              <p className="leading-relaxed text-muted">{section.body}</p>
-            </section>
-          ))}
+          {guide.faq && guide.faq.length > 0 && (
+            <div className="mt-12">
+              <FAQSection faqs={guide.faq} />
+            </div>
+          )}
 
-          <section className="mb-8 p-6 bg-surface-elevated rounded-2xl border border-border">
-            <h2 className="text-xl font-bold mb-3">Summary</h2>
-            <p className="leading-relaxed text-muted">{guide.content.conclusion}</p>
-          </section>
+          <div className="mt-12">
+            <Link
+              href="/de"
+              className="text-sm font-semibold text-brand-700 hover:text-brand-600 transition-colors"
+            >
+              ← Back to Germany Home
+            </Link>
+          </div>
         </div>
-
-        {guide.faq.length > 0 && (
-          <section className="mt-12">
-            <h2 className="text-2xl font-bold mb-6">Frequently Asked Questions</h2>
-            <FAQSection
-              faqs={guide.faq.map(f => ({ question: f.question, answer: f.answer }))}
-              title="Frequently Asked Questions"
-            />
-          </section>
-        )}
-
-        <div className="mt-12 p-6 bg-surface rounded-2xl border border-border">
-          <h3 className="font-bold mb-2">Disclaimer</h3>
-          <p className="text-sm text-muted">
-            This guide is for informational purposes only. Gambling laws vary by jurisdiction.
-            Always check the laws in your country before gambling online. Gambling should be treated
-            as entertainment, not a way to make money. If you or someone you know has a gambling
-            problem, please seek help from a responsible gambling organization.
-          </p>
-        </div>
-      </article>
-    </Container>
+      </Container>
+    </main>
   );
 }

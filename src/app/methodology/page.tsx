@@ -2,116 +2,80 @@ import type { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
 
 export const metadata: Metadata = {
-  title: "Our Methodology — How We Rate & Match Casinos",
-  description:
-    "Learn how CasinoLynora rates and matches casinos. Transparent methodology using structured data, not subjective opinions.",
-  openGraph: {
-    title: "Our Methodology — CasinoLynora",
-    description: "Learn how CasinoLynora rates and matches casinos using transparent, data-driven methodology.",
-  },
-  twitter: {
-    card: "summary",
-    title: "Our Methodology — CasinoLynora",
-    description: "Learn how CasinoLynora rates and matches casinos using transparent, data-driven methodology.",
-  },
+  title: "Methodology — CasinoLynora",
+  description: "How CasinoLynora scores and matches casinos using structured data and transparent algorithms.",
   alternates: { canonical: "https://casinolynora.com/methodology" },
 };
 
 export default function MethodologyPage() {
   return (
-    <Container className="py-12 lg:py-20 max-w-3xl">
-      <h1 className="text-3xl sm:text-4xl font-bold mb-6">Our Methodology</h1>
-      <p className="text-muted mb-8 leading-relaxed">
-        Transparency is core to CasinoLynora. Here is exactly how we rate and match casinos.
-      </p>
+    <main id="main-content">
+      <Container className="py-12 lg:py-20">
+        <div className="max-w-3xl mx-auto">
+          <h1 className="text-3xl sm:text-4xl font-bold mb-8">Our Methodology</h1>
 
-      <div className="space-y-8">
-        <section>
-          <h2 className="text-2xl font-bold mb-3">Data-Driven Ratings</h2>
-          <p className="text-muted leading-relaxed">
-            CasinoLynora does not use subjective reviews or personal opinions for our ratings.
-            Every casino score is calculated using a weighted algorithm based on structured,
-            verified data. This means our ratings are:
-          </p>
-          <ul className="list-disc list-inside text-muted space-y-1 mt-2">
-            <li>Objective — based on measurable criteria</li>
-            <li>Consistent — the same methodology for every casino</li>
-            <li>Transparent — you can see exactly what factors affect the score</li>
-            <li>Verifiable — all data points have a &quot;last verified&quot; date</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-bold mb-3">Score Components</h2>
-          <div className="space-y-4">
-            {[
-              { name: "License Quality (25%)", desc: "We evaluate the licensing authority, jurisdiction, and regulatory requirements. MGA and UKGC licenses score highest due to strict regulatory standards." },
-              { name: "Payment Methods (20%)", desc: "Variety, availability, processing speed, and fee structure of payment options including cards, e-wallets, bank transfers, and cryptocurrencies." },
-              { name: "Game Variety (15%)", desc: "Number of game categories, quality and quantity of game providers, and availability of popular titles." },
-              { name: "Minimum Deposit (10%)", desc: "Accessibility for different budget levels. Lower minimum deposits score higher for accessibility." },
-              { name: "Withdrawal Speed (10%)", desc: "How quickly winnings can be withdrawn. Instant or same-day processing scores highest." },
-              { name: "Bonus Value (10%)", desc: "Welcome bonus generosity, wagering requirements, and ongoing promotions. We factor in wagering requirements to assess real value." },
-              { name: "Trust Score (10%)", desc: "Years in operation, ownership track record, player complaint history, and overall reputation in the industry." },
-            ].map(item => (
-              <div key={item.name} className="bg-surface-elevated rounded-xl p-5 border border-border">
-                <h3 className="font-bold mb-1">{item.name}</h3>
-                <p className="text-sm text-muted">{item.desc}</p>
+          <div className="space-y-10">
+            <section>
+              <h2 className="text-2xl font-bold mb-4">Matching Algorithm</h2>
+              <p className="text-muted leading-relaxed mb-4">
+                Our matching engine uses a weighted scoring algorithm that considers multiple
+                factors to determine how well a casino fits your preferences.
+              </p>
+              <div className="card-static p-6">
+                <div className="space-y-3">
+                  {[
+                    { label: "Country Availability", weight: "25%", description: "Is the casino licensed to operate in your region?" },
+                    { label: "Payment Method Compatibility", weight: "20%", description: "Does it support your preferred payment method?" },
+                    { label: "Game Variety Match", weight: "15%", description: "Does it offer the games you enjoy?" },
+                    { label: "Minimum Deposit", weight: "10%", description: "Does the minimum deposit fit your budget?" },
+                    { label: "Bonus Preferences", weight: "10%", description: "Does it offer the type of bonus you want?" },
+                    { label: "Live Casino, Sports, Withdrawal, Crypto", weight: "20%", description: "Additional feature matching." },
+                  ].map((item) => (
+                    <div key={item.label} className="flex items-center justify-between text-sm">
+                      <div>
+                        <span className="font-medium text-foreground">{item.label}</span>
+                        <span className="text-muted ml-2">— {item.description}</span>
+                      </div>
+                      <span className="font-bold text-brand-700 ml-4 flex-shrink-0">{item.weight}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
-            ))}
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-bold mb-4">Data Verification</h2>
+              <p className="text-muted leading-relaxed">
+                Every data point in our system includes provenance information: the source,
+                verification date, and method. We verify against official license registries,
+                casino websites, and regulatory bodies.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-bold mb-4">What We Do NOT Do</h2>
+              <ul className="space-y-2 text-muted">
+                <li className="flex items-start gap-2">
+                  <span className="text-red-500 mt-0.5">−</span>
+                  We do not fabricate ratings, scores, or reviews.
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-red-500 mt-0.5">−</span>
+                  We do not publish fake user testimonials.
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-red-500 mt-0.5">−</span>
+                  We do not invent bonus terms, withdrawal times, or statistics.
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-red-500 mt-0.5">−</span>
+                  We do not rank casinos based on affiliate commission potential.
+                </li>
+              </ul>
+            </section>
           </div>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-bold mb-3">AI Matching Algorithm</h2>
-          <p className="text-muted leading-relaxed">
-            Our AI Casino Matchmaker uses a deterministic scoring system to match player preferences
-            with casino attributes. The matching considers:
-          </p>
-          <ul className="list-disc list-inside text-muted space-y-1 mt-2">
-            <li>Country availability (25%)</li>
-            <li>Payment method compatibility (20%)</li>
-            <li>Minimum deposit suitability (10%)</li>
-            <li>Game preference match (15%)</li>
-            <li>Live casino availability (5%)</li>
-            <li>Sports betting availability (5%)</li>
-            <li>Bonus preference match (10%)</li>
-            <li>Withdrawal speed (5%)</li>
-            <li>Cryptocurrency support (5%)</li>
-          </ul>
-          <p className="text-muted leading-relaxed mt-3">
-            The AI explanation layer adds natural-language context to the scored results, but it
-            never invents information. All explanations reference actual data from our casino database.
-          </p>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-bold mb-3">Data Verification</h2>
-          <p className="text-muted leading-relaxed">
-            We regularly verify casino data. Each casino profile displays a &quot;Last Verified&quot; date.
-            We verify:
-          </p>
-          <ul className="list-disc list-inside text-muted space-y-1 mt-2">
-            <li>License status and validity</li>
-            <li>Available payment methods</li>
-            <li>Minimum and maximum deposits</li>
-            <li>Bonus terms and wagering requirements</li>
-            <li>Game availability</li>
-            <li>Countries of operation</li>
-            <li>Withdrawal processing times</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-bold mb-3">What We Do NOT Do</h2>
-          <ul className="list-disc list-inside text-muted space-y-1">
-            <li>We do not publish fabricated user reviews or testimonials</li>
-            <li>We do not create fake ratings based on affiliate commissions</li>
-            <li>We do not claim casinos are &quot;verified&quot; when they are not</li>
-            <li>We do not use misleading urgency tactics</li>
-            <li>We do not guarantee winnings or claim any casino is &quot;risk-free&quot;</li>
-          </ul>
-        </section>
-      </div>
-    </Container>
+        </div>
+      </Container>
+    </main>
   );
 }

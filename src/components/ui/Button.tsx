@@ -1,50 +1,73 @@
 import { cn } from "@/lib/utils/format";
+import Link from "next/link";
 
-type ButtonBaseProps = {
-  variant?: "primary" | "secondary" | "outline" | "ghost";
+type ButtonProps = {
+  children: React.ReactNode;
+  href?: string;
+  variant?: "primary" | "secondary" | "outline" | "ghost" | "brand";
   size?: "sm" | "md" | "lg";
+  fullWidth?: boolean;
   className?: string;
+  disabled?: boolean;
+  type?: "button" | "submit" | "reset";
+  onClick?: () => void;
+  target?: string;
+  rel?: string;
 };
 
-type ButtonAsButton = ButtonBaseProps & Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, keyof ButtonBaseProps> & { href?: never };
-type ButtonAsLink = ButtonBaseProps & Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, keyof ButtonBaseProps> & { href: string };
-
-type ButtonProps = ButtonAsButton | ButtonAsLink;
-
 const variants = {
-  primary: "gradient-primary text-white shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5",
-  secondary: "bg-surface text-foreground border border-border hover:bg-surface-elevated hover:border-primary/30",
-  outline: "border-2 border-primary text-primary hover:bg-primary hover:text-white",
-  ghost: "text-muted hover:text-foreground hover:bg-surface-elevated",
+  primary: "bg-brand-800 text-white hover:bg-brand-700 shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0",
+  brand: "gradient-brand text-white shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0",
+  secondary: "bg-surface text-foreground border border-border hover:bg-surface-hover hover:border-slate-300 shadow-xs hover:shadow-sm",
+  outline: "border-2 border-brand-800 text-brand-800 hover:bg-brand-800 hover:text-white",
+  ghost: "text-muted hover:text-foreground hover:bg-surface-hover",
 };
 
 const sizes = {
-  sm: "px-4 py-2 text-sm",
-  md: "px-6 py-3 text-base",
-  lg: "px-8 py-4 text-lg",
+  sm: "px-4 py-2 text-sm gap-1.5",
+  md: "px-5 py-2.5 text-sm gap-2",
+  lg: "px-7 py-3.5 text-base gap-2.5",
 };
 
-export function Button({ variant = "primary", size = "md", className, ...props }: ButtonProps) {
+export function Button({
+  children,
+  href,
+  variant = "primary",
+  size = "md",
+  fullWidth,
+  className,
+  disabled,
+  type = "button",
+  onClick,
+  target,
+  rel,
+}: ButtonProps) {
   const classes = cn(
-    "inline-flex items-center justify-center gap-2 rounded-xl font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 disabled:opacity-50 disabled:cursor-not-allowed",
+    "inline-flex items-center justify-center font-semibold rounded-[var(--radius-md)] transition-all duration-200 ease-out whitespace-nowrap",
+    "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-400",
     variants[variant],
     sizes[size],
-    className,
+    fullWidth && "w-full",
+    disabled && "opacity-50 pointer-events-none",
+    className
   );
 
-  if ("href" in props && props.href) {
-    const { href, ...anchorProps } = props;
+  if (href) {
     return (
-      <a href={href} className={classes} {...anchorProps}>
-        {props.children}
-      </a>
+      <Link href={href} className={classes} target={target} rel={rel}>
+        {children}
+      </Link>
     );
   }
 
-  const { ...buttonProps } = props as React.ButtonHTMLAttributes<HTMLButtonElement>;
   return (
-    <button className={classes} {...buttonProps}>
-      {props.children}
+    <button
+      type={type}
+      className={classes}
+      disabled={disabled}
+      onClick={onClick}
+    >
+      {children}
     </button>
   );
 }

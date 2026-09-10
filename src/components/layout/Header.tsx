@@ -2,92 +2,165 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { Button } from "@/components/ui/Button";
 
 const navLinks = [
   { href: "/casinos", label: "Casinos" },
-  { href: "/ai-casino-match", label: "AI Matchmaker" },
+  { href: "/ai-casino-match", label: "AI Matchmaker", highlight: true },
   { href: "/compare", label: "Compare" },
   { href: "/guides", label: "Guides" },
   { href: "/about", label: "About" },
 ];
 
+const germanyLinks = [
+  { href: "/de", label: "Germany Home" },
+  { href: "/de/casinos", label: "Casinos in DE" },
+  { href: "/de/best-casinos", label: "Verified Casinos" },
+  { href: "/de/guides", label: "Germany Guides" },
+];
+
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [deOpen, setDeOpen] = useState(false);
 
   return (
     <>
-      <a href="#main-content" className="skip-link">Skip to content</a>
-      <header className="sticky top-0 z-50 border-b border-border bg-surface/80 backdrop-blur-xl">
+      <a href="#main-content" className="skip-link">
+        Skip to content
+      </a>
+
+      <header className="sticky top-0 z-50 border-b border-border bg-white/80 backdrop-blur-xl">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-          <Link href="/" className="flex items-center gap-2 text-xl font-bold">
-            <span className="flex h-9 w-9 items-center justify-center rounded-xl gradient-primary text-white text-sm font-black" aria-hidden="true">
+          {/* Logo */}
+          <Link href="/" className="flex items-center gap-2.5 group">
+            <div className="flex h-8 w-8 items-center justify-center rounded-[var(--radius-md)] gradient-brand text-white text-xs font-bold tracking-tight shadow-sm">
               CL
+            </div>
+            <span className="text-lg font-bold tracking-tight text-foreground hidden sm:block">
+              Casino<span className="gradient-brand-text">Lynora</span>
             </span>
-            <span className="gradient-primary-text">CasinoLynora</span>
           </Link>
 
-          <nav className="hidden md:flex items-center gap-8" aria-label="Main navigation">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-sm font-medium text-muted hover:text-foreground transition-colors"
+          {/* Desktop Nav */}
+          <nav className="hidden lg:flex items-center gap-1" aria-label="Main navigation">
+            {navLinks.map((link) =>
+              link.highlight ? (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="relative px-3 py-2 text-sm font-semibold text-brand-800 hover:text-brand-600 transition-colors rounded-[var(--radius-md)] hover:bg-brand-50"
+                >
+                  {link.label}
+                </Link>
+              ) : (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="px-3 py-2 text-sm font-medium text-muted hover:text-foreground transition-colors rounded-[var(--radius-md)] hover:bg-surface-hover"
+                >
+                  {link.label}
+                </Link>
+              )
+            )}
+
+            {/* Germany dropdown */}
+            <div className="relative">
+              <button
+                onClick={() => setDeOpen(!deOpen)}
+                onBlur={() => setTimeout(() => setDeOpen(false), 150)}
+                className="px-3 py-2 text-sm font-medium text-muted hover:text-foreground transition-colors rounded-[var(--radius-md)] hover:bg-surface-hover flex items-center gap-1"
+                aria-expanded={deOpen}
+                aria-haspopup="true"
               >
-                {link.label}
-              </Link>
-            ))}
+                🇩🇪 DE
+                <svg className={`w-3.5 h-3.5 transition-transform ${deOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {deOpen && (
+                <div className="absolute top-full left-0 mt-1 w-56 rounded-[var(--radius-lg)] border border-border bg-white shadow-lg py-1.5 animate-fade-in">
+                  {germanyLinks.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className="block px-4 py-2.5 text-sm text-muted hover:text-foreground hover:bg-surface-hover transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
           </nav>
 
-          <div className="hidden md:flex items-center gap-3">
-            <Link
-              href="/ai-casino-match"
-              className="gradient-primary text-white px-5 py-2.5 rounded-xl text-sm font-semibold shadow-lg shadow-primary/25 hover:shadow-xl transition-all hover:-translate-y-0.5"
-            >
+          {/* Desktop CTA */}
+          <div className="hidden lg:flex items-center gap-3">
+            <Button href="/ai-casino-match" variant="primary" size="sm">
               Find My Casino
-            </Link>
+            </Button>
           </div>
 
+          {/* Mobile menu button */}
           <button
-            className="md:hidden p-2 text-muted hover:text-foreground"
+            className="lg:hidden flex items-center justify-center w-10 h-10 rounded-[var(--radius-md)] hover:bg-surface-hover transition-colors"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileOpen}
             aria-controls="mobile-menu"
           >
             {mobileOpen ? (
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
               </svg>
             ) : (
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             )}
           </button>
         </div>
 
+        {/* Mobile menu */}
         {mobileOpen && (
-          <nav id="mobile-menu" className="md:hidden border-t border-border bg-surface" aria-label="Mobile navigation">
-            <div className="flex flex-col p-4 gap-1">
+          <div
+            id="mobile-menu"
+            className="lg:hidden border-t border-border bg-white animate-fade-in"
+            role="navigation"
+            aria-label="Mobile navigation"
+          >
+            <div className="px-4 py-4 space-y-1">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="rounded-lg px-4 py-3 text-sm font-medium text-muted hover:text-foreground hover:bg-surface-elevated transition-colors"
+                  className="block px-4 py-3 text-sm font-medium text-muted hover:text-foreground hover:bg-surface-hover rounded-[var(--radius-md)] transition-colors"
                   onClick={() => setMobileOpen(false)}
                 >
                   {link.label}
                 </Link>
               ))}
-              <Link
-                href="/ai-casino-match"
-                className="gradient-primary text-white px-5 py-3 rounded-xl text-sm font-semibold text-center mt-2 shadow-lg"
-                onClick={() => setMobileOpen(false)}
-              >
-                Find My Casino
-              </Link>
+
+              <div className="border-t border-border my-2 pt-2">
+                <p className="px-4 py-1 text-xs font-semibold text-text-faint uppercase tracking-wider">Germany</p>
+                {germanyLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="block px-4 py-2.5 text-sm text-muted hover:text-foreground hover:bg-surface-hover rounded-[var(--radius-md)] transition-colors"
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+
+              <div className="pt-2">
+                <Button href="/ai-casino-match" variant="primary" size="md" fullWidth>
+                  Find My Casino
+                </Button>
+              </div>
             </div>
-          </nav>
+          </div>
         )}
       </header>
     </>

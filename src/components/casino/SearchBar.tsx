@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useCallback } from "react";
+import { useRef, useCallback } from "react";
 
 type SearchBarProps = {
   onSearch: (query: string) => void;
@@ -8,35 +8,38 @@ type SearchBarProps = {
 };
 
 export function SearchBar({ onSearch, placeholder = "Search casinos..." }: SearchBarProps) {
-  const [value, setValue] = useState("");
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    const v = e.target.value;
-    setValue(v);
-    if (timerRef.current) clearTimeout(timerRef.current);
-    timerRef.current = setTimeout(() => onSearch(v), 200);
-  }, [onSearch]);
+  const handleChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      if (timerRef.current) clearTimeout(timerRef.current);
+      timerRef.current = setTimeout(() => {
+        onSearch(e.target.value);
+      }, 200);
+    },
+    [onSearch]
+  );
 
   return (
-    <div className="relative" role="search">
-      <label htmlFor="casino-search" className="sr-only">Search casinos</label>
+    <div role="search" className="relative">
+      <label htmlFor="casino-search" className="sr-only">
+        Search casinos
+      </label>
       <svg
-        className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-muted"
+        className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-text-faint pointer-events-none"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
-        aria-hidden="true"
+        strokeWidth={2}
       >
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
       </svg>
       <input
         id="casino-search"
         type="search"
-        value={value}
-        onChange={handleChange}
         placeholder={placeholder}
-        className="w-full rounded-xl border border-border bg-surface py-3 pl-10 pr-4 text-sm placeholder:text-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
+        onChange={handleChange}
+        className="w-full rounded-[var(--radius-lg)] border border-border bg-white py-2.5 pl-10 pr-4 text-sm text-foreground placeholder:text-text-faint focus:outline-none focus:ring-2 focus:ring-brand-400 focus:border-brand-400 transition-shadow"
       />
     </div>
   );

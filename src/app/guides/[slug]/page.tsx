@@ -1,103 +1,112 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import { Container } from "@/components/ui/Container";
 import { Badge } from "@/components/ui/Badge";
-import { getGuideBySlug, getGuideSlugs } from "@/lib/data/guides";
 import { FAQSection } from "@/components/casino/FAQSection";
+import { getGuideBySlug, getAllGuides } from "@/lib/data/guides";
 
-type GuidePageProps = {
+type Props = {
   params: Promise<{ slug: string }>;
 };
 
 export async function generateStaticParams() {
-  return getGuideSlugs().map((slug) => ({ slug }));
+  const guides = getAllGuides();
+  return guides.map((guide) => ({ slug: guide.slug }));
 }
 
-export async function generateMetadata({ params }: GuidePageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const guide = getGuideBySlug(slug);
-  if (!guide) return {};
+  if (!guide) return { title: "Guide Not Found" };
 
   return {
-    title: guide.title,
+    title: `${guide.title} — CasinoLynora`,
     description: guide.description,
-    openGraph: {
-      title: `${guide.title} | CasinoLynora`,
-      description: guide.description,
-    },
-    twitter: {
-      card: "summary",
-      title: `${guide.title} | CasinoLynora`,
-      description: guide.description,
-    },
-    alternates: {
-      canonical: `https://casinolynora.com/guides/${guide.slug}`,
-    },
+    alternates: { canonical: `https://casinolynora.com/guides/${slug}` },
   };
 }
 
-export default async function GuidePage({ params }: GuidePageProps) {
+export default async function GuidePage({ params }: Props) {
   const { slug } = await params;
   const guide = getGuideBySlug(slug);
   if (!guide) notFound();
 
   return (
-    <Container className="py-12 lg:py-20">
-      <nav className="text-sm text-muted mb-8" aria-label="Breadcrumb">
-        <ol className="flex items-center gap-2">
-          <li><Link href="/" className="hover:text-primary transition-colors">Home</Link></li>
-          <li aria-hidden="true">/</li>
-          <li><Link href="/guides" className="hover:text-primary transition-colors">Guides</Link></li>
-          <li aria-hidden="true">/</li>
-          <li aria-current="page" className="text-foreground font-medium">{guide.title}</li>
-        </ol>
-      </nav>
+    <main id="main-content">
+      <Container className="py-12 lg:py-16">
+        <div className="max-w-3xl mx-auto">
+          {/* Breadcrumb */}
+          <nav className="text-sm text-muted mb-6" aria-label="Breadcrumb">
+            <Link href="/" className="hover:text-brand-700 transition-colors">Home</Link>
+            <span className="mx-2 text-text-faint">/</span>
+            <Link href="/guides" className="hover:text-brand-700 transition-colors">Guides</Link>
+            <span className="mx-2 text-text-faint">/</span>
+            <span className="text-foreground font-medium">{guide.title}</span>
+          </nav>
 
-      <article className="max-w-3xl mx-auto">
-        <header className="mb-8">
-          <Badge variant="primary" size="sm" className="mb-3">{guide.category}</Badge>
-          <h1 className="text-3xl sm:text-4xl font-bold mb-3">{guide.title}</h1>
-          <p className="text-lg text-muted mb-4">{guide.description}</p>
-          <p className="text-sm text-muted">Last updated: {guide.lastUpdated}</p>
-        </header>
+          {/* Header */}
+          <div className="mb-8">
+            <Badge variant="primary" size="sm" className="mb-3">{guide.category}</Badge>
+            <h1 className="text-3xl sm:text-4xl font-bold mb-4">{guide.title}</h1>
+            <p className="text-lg text-muted leading-relaxed">{guide.description}</p>
+            {guide.lastUpdated && (
+              <p className="text-sm text-text-faint mt-3">
+                Last updated: {new Date(guide.lastUpdated).toLocaleDateString("en-GB", {
+                  year: "numeric", month: "long", day: "numeric",
+                })}
+              </p>
+            )}
+          </div>
 
-        <div className="prose prose-sm max-w-none text-foreground">
-          <p className="text-lg leading-relaxed mb-8">{guide.content.intro}</p>
+          {/* Content */}
+          <article className="prose prose-gray max-w-none">
+            <p className="text-muted leading-relaxed mb-6">{guide.content.intro}</p>
+            {guide.content.sections.map((section, i) => (
+              <section key={i} className="mb-8">
+                <h2 className="text-xl font-bold mb-3">{section.heading}</h2>
+                <p className="text-muted leading-relaxed">{section.body}</p>
+              </section>
+            ))}
+            <p className="text-muted leading-relaxed mt-6">{guide.content.conclusion}</p>
+          </article>
 
-          {guide.content.sections.map((section, i) => (
-            <section key={i} className="mb-8">
-              <h2 className="text-xl font-bold mb-3">{section.heading}</h2>
-              <p className="leading-relaxed text-muted">{section.body}</p>
-            </section>
-          ))}
+          {/* FAQ */}
+          {guide.faq && guide.faq.length > 0 && (
+            <div className="mt-12">
+              <FAQSection faqs={guide.faq} />
+            </div>
+          )}
 
-          <section className="mb-8 p-6 bg-surface-elevated rounded-2xl border border-border">
-            <h2 className="text-xl font-bold mb-3">Summary</h2>
-            <p className="leading-relaxed text-muted">{guide.content.conclusion}</p>
-          </section>
+          {/* Disclaimer */}
+          <div className="mt-12 card-static p-5 text-sm text-muted">
+            <p>
+              This guide is for informational purposes only. Gambling can be addictive.
+              Please play responsibly. Must be 18+ to play.
+            </p>
+          </div>
+
+          {/* Related guides */}
+          <div className="mt-12">
+            <h2 className="text-xl font-bold mb-4">More Guides</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {getAllGuides()
+                .filter((g) => g.slug !== slug)
+                .slice(0, 2)
+                .map((g) => (
+                  <Link
+                    key={g.slug}
+                    href={`/guides/${g.slug}`}
+                    className="card-static p-4 hover:border-brand-200 transition-colors group"
+                  >
+                    <Badge variant="default" size="sm" className="mb-2">{g.category}</Badge>
+                    <h3 className="font-bold text-sm group-hover:text-brand-700 transition-colors">{g.title}</h3>
+                  </Link>
+                ))}
+            </div>
+          </div>
         </div>
-
-        {guide.faq.length > 0 && (
-          <section className="mt-12">
-            <h2 className="text-2xl font-bold mb-6">Frequently Asked Questions</h2>
-            <FAQSection
-              faqs={guide.faq.map(f => ({ question: f.question, answer: f.answer }))}
-              title="Frequently Asked Questions"
-            />
-          </section>
-        )}
-
-        <div className="mt-12 p-6 bg-surface rounded-2xl border border-border">
-          <h3 className="font-bold mb-2">Disclaimer</h3>
-          <p className="text-sm text-muted">
-            This guide is for informational purposes only. Gambling laws vary by jurisdiction.
-            Always check the laws in your country before gambling online. Gambling should be treated
-            as entertainment, not a way to make money. If you or someone you know has a gambling
-            problem, please seek help from a responsible gambling organization.
-          </p>
-        </div>
-      </article>
-    </Container>
+      </Container>
+    </main>
   );
 }
