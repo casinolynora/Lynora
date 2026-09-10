@@ -11,6 +11,7 @@ const envSchema = z.object({
 
   // Public
   NEXT_PUBLIC_SITE_URL: z.string().url().default("https://casinolynora.com"),
+  NEXT_PUBLIC_CANONICAL_URL: z.string().url().optional(),
   NEXT_PUBLIC_GA_ID: z.string().optional(),
 
   // Rate limiting

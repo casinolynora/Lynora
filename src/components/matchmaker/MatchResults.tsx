@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/Button";
 import { AffiliateCTA } from "@/components/casino/AffiliateCTA";
 import { AffiliateDisclosure } from "@/components/casino/AffiliateDisclosure";
 import { DataFreshness } from "@/components/casino/DataFreshness";
+import { cn } from "@/lib/utils/format";
 import type { MatchResult, Casino } from "@/lib/types";
 
 type MatchResultsProps = {
@@ -101,7 +102,13 @@ export function MatchResults({ results, casinos, country = "INT", baseUrl = "" }
             {/* AI Headline */}
             {result.aiExplanation && (
               <div className="mb-5 p-4 rounded-[var(--radius-lg)] border-l-[3px] border-l-accent-500 bg-accent-500/[0.06]">
-                <p className="text-sm font-medium text-white/90 leading-relaxed">{result.aiExplanation}</p>
+                <p className="text-sm font-medium text-white/90 leading-relaxed">
+                  {typeof result.aiExplanation === "string"
+                    ? result.aiExplanation
+                    : (result.aiExplanation as { summary?: string; headline?: string }).summary
+                      || (result.aiExplanation as { headline?: string }).headline
+                      || ""}
+                </p>
               </div>
             )}
 
@@ -205,8 +212,4 @@ export function MatchResults({ results, casinos, country = "INT", baseUrl = "" }
       <AffiliateDisclosure variant="inline" className="mt-4" />
     </div>
   );
-}
-
-function cn(...classes: (string | boolean | undefined | null)[]) {
-  return classes.filter(Boolean).join(" ");
 }

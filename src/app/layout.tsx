@@ -6,6 +6,8 @@ import { Footer } from "@/components/layout/Footer";
 import { CookieConsent } from "@/components/layout/CookieConsent";
 import { AnalyticsInit } from "@/components/analytics/AnalyticsInit";
 
+const BASE_URL = process.env.NEXT_PUBLIC_CANONICAL_URL || process.env.NEXT_PUBLIC_SITE_URL || "https://casinolynora.com";
+
 const geist = Geist({
   subsets: ["latin"],
   variable: "--font-geist-sans",
@@ -65,7 +67,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               name: "CasinoLynora",
-              url: "https://casinolynora.com",
+              url: BASE_URL,
               description: "AI-powered casino discovery platform for European players.",
             }),
           }}
@@ -77,10 +79,10 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "WebSite",
               name: "CasinoLynora",
-              url: "https://casinolynora.com",
+              url: BASE_URL,
               potentialAction: {
                 "@type": "SearchAction",
-                target: "https://casinolynora.com/casinos?q={search_term_string}",
+                target: `${BASE_URL}/casinos?q={search_term_string}`,
                 "query-input": "required name=search_term_string",
               },
             }),

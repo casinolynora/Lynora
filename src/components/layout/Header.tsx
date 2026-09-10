@@ -170,7 +170,7 @@ export function Header() {
 
           {/* Mobile menu button */}
           <button
-            className="lg:hidden flex items-center justify-center w-10 h-10 rounded-[var(--radius-md)] hover:bg-surface-hover transition-colors"
+            className="lg:hidden flex items-center justify-center w-11 h-11 rounded-[var(--radius-md)] hover:bg-surface-hover transition-colors"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileOpen}

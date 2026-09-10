@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect, useRef, useMemo } from "react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Questionnaire } from "./Questionnaire";
@@ -25,6 +25,14 @@ export function MatchmakerFlow() {
   const [analysisStage, setAnalysisStage] = useState(0);
   const [refineInput, setRefineInput] = useState("");
   const [refining, setRefining] = useState(false);
+  const [lastPreferences, setLastPreferences] = useState<UserPreferences | null>(null);
+  const timersRef = useRef<ReturnType<typeof setTimeout>[]>([]);
+
+  useEffect(() => {
+    return () => {
+      timersRef.current.forEach(clearTimeout);
+    };
+  }, []);
 
   const handleStart = () => setState("questionnaire");
 
@@ -32,8 +40,10 @@ export function MatchmakerFlow() {
     setState("loading");
     setCountry(preferences.country);
     setAnalysisStage(0);
+    setLastPreferences(preferences);
 
     const stageTimers: ReturnType<typeof setTimeout>[] = [];
+    timersRef.current = stageTimers;
     ANALYSIS_STAGES.forEach((_, i) => {
       if (i < ANALYSIS_STAGES.length - 1) {
         stageTimers.push(setTimeout(() => setAnalysisStage(i + 1), 600 + i * 700));
@@ -62,26 +72,37 @@ export function MatchmakerFlow() {
   }, []);
 
   const handleRefine = useCallback(async () => {
-    if (!refineInput.trim()) return;
+    if (!refineInput.trim() || !lastPreferences) return;
     setRefining(true);
     try {
       const response = await fetch("/api/ai/refine", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: refineInput, currentPreferences: results }),
+        body: JSON.stringify({ message: refineInput, currentPreferences: lastPreferences }),
       });
 
       if (!response.ok) throw new Error("Refinement failed");
 
       const data = await response.json();
-      if (data.refinedResults) setResults(data.refinedResults);
+      if (data.updatedPreferences) {
+        setLastPreferences(data.updatedPreferences);
+        const matchResponse = await fetch("/api/ai/match", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data.updatedPreferences),
+        });
+        if (matchResponse.ok) {
+          const matchData = await matchResponse.json();
+          setResults(matchData.results || []);
+        }
+      }
       setRefineInput("");
     } catch {
-      /* refinement errors are non-critical */
+      setError("Refinement unavailable. Please try again.");
     } finally {
       setRefining(false);
     }
-  }, [refineInput, results]);
+  }, [refineInput, lastPreferences]);
 
   const handleStartOver = () => {
     setState("entry");
@@ -91,7 +112,7 @@ export function MatchmakerFlow() {
     setRefineInput("");
   };
 
-  const allCasinos = casinoDb.getAllCasinos();
+  const allCasinos = useMemo(() => casinoDb.getAllCasinos(), []);
 
   return (
     <main id="main-content">

@@ -52,10 +52,10 @@ export function ComparisonTable({ casinos }: ComparisonTableProps) {
             {c.name}
             <button
               onClick={() => toggleCasino(c.id)}
-              className="ml-1 w-4 h-4 rounded-full bg-brand-200 hover:bg-brand-300 flex items-center justify-center transition-colors"
+              className="ml-1 w-7 h-7 rounded-full bg-brand-200 hover:bg-brand-300 flex items-center justify-center transition-colors"
               aria-label={`Remove ${c.name}`}
             >
-              <svg className="w-2.5 h-2.5 text-brand-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+              <svg className="w-3.5 h-3.5 text-brand-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
@@ -65,6 +65,7 @@ export function ComparisonTable({ casinos }: ComparisonTableProps) {
           <select
             onChange={(e) => { if (e.target.value) { toggleCasino(e.target.value); e.target.value = ""; } }}
             className="rounded-full border border-border bg-white px-3 py-1 text-sm text-muted focus:outline-none focus:ring-2 focus:ring-brand-400"
+            aria-label="Add casino to comparison"
           >
             <option value="">+ Add casino</option>
             {available.map((c) => (

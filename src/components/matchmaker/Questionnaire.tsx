@@ -90,7 +90,7 @@ const FEATURES = [
 
 const BONUS_TYPES = [
   { value: "any", label: "Any Bonus", description: "Show me all available bonuses" },
-  { value: "welcome", label: "Welcome Bonus", description: "Match on first deposit" },
+  { value: "welcome-bonus", label: "Welcome Bonus", description: "Match on first deposit" },
   { value: "free-spins", label: "Free Spins", description: "Free spins on slots" },
   { value: "cashback", label: "Cashback", description: "Return on losses" },
   { value: "no-deposit", label: "No Deposit", description: "Bonus without depositing" },
@@ -168,7 +168,7 @@ export function Questionnaire({ onComplete, onBack }: QuestionnaireProps) {
               {currentStep.category}
             </span>
           </div>
-          <span className="text-xs text-slate-400">
+          <span className="text-xs text-slate-400" aria-live="polite" aria-atomic="true">
             Step {step + 1} of {STEPS.length}
           </span>
         </div>
@@ -190,7 +190,7 @@ export function Questionnaire({ onComplete, onBack }: QuestionnaireProps) {
         className={cn(
           "mb-8",
           animating
-            ? animDirection === "forward" ? "animate-question-exit" : "animate-question-exit"
+            ? animDirection === "forward" ? "animate-question-exit" : "animate-question-enter"
             : "animate-question-enter"
         )}
         key={step}
