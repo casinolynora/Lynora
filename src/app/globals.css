@@ -314,6 +314,90 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--brand-800);
 }
 
+/* ─── Matchmaker Atmosphere ────────────────────────────────────────────── */
+
+.matchmaker-bg {
+  background: linear-gradient(180deg, var(--brand-900) 0%, #0d1f3c 40%, var(--brand-800) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.matchmaker-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 0%, rgba(5,150,105,0.08) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 40% at 80% 20%, rgba(59,130,246,0.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.matchmaker-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+@keyframes question-enter {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes question-exit {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.99);
+  }
+}
+
+@keyframes score-fill {
+  from { stroke-dashoffset: 283; }
+}
+
+@keyframes check-pop {
+  0% { transform: scale(0); opacity: 0; }
+  60% { transform: scale(1.15); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes analysis-step {
+  from { opacity: 0; transform: translateX(-8px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.animate-question-enter {
+  animation: question-enter 0.4s var(--ease-out) both;
+}
+
+.animate-question-exit {
+  animation: question-exit 0.25s var(--ease-out) both;
+}
+
+.animate-score-fill {
+  animation: score-fill 1s var(--ease-out) 0.3s both;
+}
+
+.animate-check-pop {
+  animation: check-pop 0.4s var(--ease-out) both;
+}
+
+.animate-analysis-step {
+  animation: analysis-step 0.4s var(--ease-out) both;
+}
+
 /* ─── Reduced Motion ────────────────────────────────────────────────────── */
 
 @media (prefers-reduced-motion: reduce) {
