@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "Online Casinos in Germany — CasinoLynora",
   description: "Browse GGL-licensed online casinos available in Germany. Verified data on licenses, payment methods, and responsible gambling features.",
   alternates: {
-    canonical: "https://casinolynora.com/de",
+    canonical: "/de",
   },
   openGraph: {
     title: "Online Casinos in Germany — CasinoLynora",

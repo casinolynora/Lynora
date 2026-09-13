@@ -7,7 +7,7 @@ import { createGermanyProvider } from "@/lib/data/germany-provider";
 export const metadata: Metadata = {
   title: "Casinos in Germany — CasinoLynora",
   description: "Browse verified online casinos available in Germany. Compare payment methods, games, and responsible gambling features.",
-  alternates: { canonical: "https://casinolynora.com/de/casinos" },
+  alternates: { canonical: "/de/casinos" },
 };
 
 export default function GermanyCasinosPage() {

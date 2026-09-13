@@ -1,9 +1,21 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { CasinoCard } from "@/components/casino/CasinoCard";
 import { casinoDb } from "@/lib/data/accessor";
+
+export const metadata: Metadata = {
+  title: "CasinoLynora — AI-Powered Casino Matching",
+  description:
+    "AI-powered casino discovery platform for European players. Structured, verified data on licenses, payment methods, and responsible gambling features for transparent decision-making.",
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: "CasinoLynora — AI-Powered Casino Matching",
+    description: "AI-powered casino discovery platform for European players.",
+  },
+};
 
 export default function HomePage() {
   const featuredCasinos = casinoDb.getFeaturedCasinos();
@@ -225,6 +237,41 @@ export default function HomePage() {
                 <p className="text-sm text-muted leading-relaxed">{item.description}</p>
               </div>
             ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* ─── GEO Hub Links ────────────────────────────────────────── */}
+      <section className="py-16 lg:py-20 bg-white border-t border-border">
+        <Container>
+          <div className="max-w-3xl mx-auto text-center mb-10">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-3">Casinos by Country</h2>
+            <p className="text-muted leading-relaxed">
+              Browse casino information and guides for your country.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 max-w-4xl mx-auto">
+            {[
+              { href: "/de", flag: "🇩🇪", name: "Germany" },
+              { href: "/ie", flag: "🇮🇪", name: "Ireland" },
+              { href: "/nl", flag: "🇳🇱", name: "Netherlands" },
+              { href: "/be", flag: "🇧🇪", name: "Belgium" },
+              { href: "/fr", flag: "🇫🇷", name: "France" },
+            ].map((geo) => (
+              <Link
+                key={geo.href}
+                href={geo.href}
+                className="flex items-center gap-3 p-4 rounded-[var(--radius-lg)] border border-border bg-bg-subtle hover:bg-white hover:border-brand-200 hover:shadow-sm transition-all"
+              >
+                <span className="text-2xl">{geo.flag}</span>
+                <span className="font-medium text-sm">{geo.name}</span>
+              </Link>
+            ))}
+          </div>
+          <div className="text-center mt-6">
+            <Link href="/guides" className="text-sm font-semibold text-brand-700 hover:text-brand-600 transition-colors">
+              Browse all guides →
+            </Link>
           </div>
         </Container>
       </section>

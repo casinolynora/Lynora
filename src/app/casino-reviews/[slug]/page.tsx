@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: casino.review.overview.slice(0, 200),
     },
     alternates: {
-      canonical: `https://casinolynora.com/casino-reviews/${slug}`,
+      canonical: `/casino-reviews/${slug}`,
     },
   };
 }

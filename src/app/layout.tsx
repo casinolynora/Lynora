@@ -5,8 +5,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { CookieConsent } from "@/components/layout/CookieConsent";
 import { AnalyticsInit } from "@/components/analytics/AnalyticsInit";
-
-const BASE_URL = process.env.NEXT_PUBLIC_CANONICAL_URL || process.env.NEXT_PUBLIC_SITE_URL || "https://casinolynora.com";
+import { SITE_URL, SITE_NAME } from "@/lib/config/site";
 
 const geist = Geist({
   subsets: ["latin"],
@@ -26,7 +25,7 @@ export const metadata: Metadata = {
     template: "%s | CasinoLynora",
   },
   description: "AI-powered casino discovery platform for European players. Structured, verified data for transparent decision-making.",
-  metadataBase: new URL(process.env.NEXT_PUBLIC_CANONICAL_URL || "https://casinolynora.com"),
+  metadataBase: new URL(SITE_URL),
   openGraph: {
     type: "website",
     locale: "en_GB",
@@ -66,8 +65,8 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              name: "CasinoLynora",
-              url: BASE_URL,
+              name: SITE_NAME,
+              url: SITE_URL,
               description: "AI-powered casino discovery platform for European players.",
             }),
           }}
@@ -78,11 +77,11 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebSite",
-              name: "CasinoLynora",
-              url: BASE_URL,
+              name: SITE_NAME,
+              url: SITE_URL,
               potentialAction: {
                 "@type": "SearchAction",
-                target: `${BASE_URL}/casinos?q={search_term_string}`,
+                target: `${SITE_URL}/casinos?q={search_term_string}`,
                 "query-input": "required name=search_term_string",
               },
             }),

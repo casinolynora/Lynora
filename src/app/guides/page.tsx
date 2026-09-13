@@ -7,7 +7,7 @@ import { getAllGuides } from "@/lib/data/guides";
 export const metadata: Metadata = {
   title: "Casino Guides — CasinoLynora",
   description: "Expert guides on casino bonuses, payment methods, responsible gambling, and more for European players.",
-  alternates: { canonical: "https://casinolynora.com/guides" },
+  alternates: { canonical: "/guides" },
 };
 
 export default function GuidesPage() {

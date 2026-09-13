@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${casino.name} Review — Germany | CasinoLynora`,
     description: `Detailed review of ${casino.name} for German players. Verified information about games, bonuses, and payment methods.`,
     alternates: {
-      canonical: `https://casinolynora.com/de/casino-reviews/${slug}`,
+      canonical: `/de/casino-reviews/${slug}`,
     },
   };
 }

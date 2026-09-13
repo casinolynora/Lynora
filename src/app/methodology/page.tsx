@@ -4,7 +4,7 @@ import { Container } from "@/components/ui/Container";
 export const metadata: Metadata = {
   title: "Methodology — CasinoLynora",
   description: "How CasinoLynora scores and matches casinos using structured data and transparent algorithms.",
-  alternates: { canonical: "https://casinolynora.com/methodology" },
+  alternates: { canonical: "/methodology" },
 };
 
 export default function MethodologyPage() {

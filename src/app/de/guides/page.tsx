@@ -7,7 +7,7 @@ import { getAllGuides } from "@/lib/data/guides";
 export const metadata: Metadata = {
   title: "Germany Gambling Guides — CasinoLynora",
   description: "Expert guides for online gambling in Germany. Payment methods, bonuses, responsible gambling, and more.",
-  alternates: { canonical: "https://casinolynora.com/de/guides" },
+  alternates: { canonical: "/de/guides" },
 };
 
 export default function GermanyGuidesPage() {

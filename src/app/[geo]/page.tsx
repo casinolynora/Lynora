@@ -5,7 +5,7 @@ import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { casinoDb } from "@/lib/data/accessor";
 
-const SUPPORTED_GEOS = ["de", "fr", "nl", "be", "at", "it", "ch"] as const;
+const SUPPORTED_GEOS = ["de", "fr", "nl", "be", "at", "it", "ch", "ie"] as const;
 type Geo = typeof SUPPORTED_GEOS[number];
 
 const geoConfig: Record<Geo, {
@@ -28,6 +28,7 @@ const geoConfig: Record<Geo, {
   at: { name: "Austria", flag: "🇦🇹", language: "de", hasCasinoData: false },
   it: { name: "Italy", flag: "🇮🇹", language: "it", hasCasinoData: false },
   ch: { name: "Switzerland", flag: "🇨🇭", language: "de", hasCasinoData: false },
+  ie: { name: "Ireland", flag: "🇮🇪", language: "en", hasCasinoData: false },
 };
 
 type Props = {
@@ -47,9 +48,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `Best Online Casinos in ${config.name} — CasinoLynora`,
     description: `Find the best online casinos in ${config.name} with CasinoLynora's AI-powered matching. Personalized recommendations for ${config.name} players.`,
     alternates: {
-      canonical: `https://casinolynora.com/${geo}`,
+      canonical: `/${geo}`,
       languages: {
-        "en": `https://casinolynora.com/${geo}`,
+        "en": `/${geo}`,
       },
     },
     openGraph: {

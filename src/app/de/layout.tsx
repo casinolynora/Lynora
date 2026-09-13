@@ -1,22 +1,5 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
-
-export const metadata: Metadata = {
-  title: "Germany — Best Online Casinos | CasinoLynora",
-  description: "Find the best online casinos in Germany with CasinoLynora's AI-powered matching. Personalized recommendations for German players.",
-  alternates: {
-    canonical: "https://casinolynora.com/de",
-    languages: {
-      "en": "https://casinolynora.com/de",
-      "de": "https://casinolynora.com/de",
-    },
-  },
-  openGraph: {
-    title: "Germany — Best Online Casinos | CasinoLynora",
-    description: "AI-powered casino matching for German players.",
-  },
-};
 
 export default function GermanyLayout({
   children,

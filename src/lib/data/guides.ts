@@ -297,7 +297,7 @@ export function getGuideMetadata(slug: string): Metadata | undefined {
       description: guide.description,
     },
     alternates: {
-      canonical: `https://casinolynora.com/guides/${guide.slug}`,
+      canonical: `/guides/${guide.slug}`,
     },
   };
 }

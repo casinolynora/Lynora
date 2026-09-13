@@ -6,7 +6,7 @@ import { casinoDb } from "@/lib/data/accessor";
 export const metadata: Metadata = {
   title: "Compare Casinos — CasinoLynora",
   description: "Compare online casinos side-by-side. View verified data on licenses, payment methods, games, and features.",
-  alternates: { canonical: "https://casinolynora.com/compare" },
+  alternates: { canonical: "/compare" },
 };
 
 export default function ComparePage() {

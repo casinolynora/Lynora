@@ -1,5 +1,19 @@
 import type { Metadata } from "next";
-import { MatchmakerFlow } from "@/components/matchmaker/MatchmakerFlow";
+import dynamic from "next/dynamic";
+
+const MatchmakerFlow = dynamic(
+  () => import("@/components/matchmaker/MatchmakerFlow").then((mod) => mod.MatchmakerFlow),
+  {
+    loading: () => (
+      <div className="min-h-[60vh] flex items-center justify-center">
+        <div className="text-center">
+          <div className="inline-block w-8 h-8 border-2 border-brand-600 border-t-transparent rounded-full animate-spin mb-4" />
+          <p className="text-muted">Loading matchmaker...</p>
+        </div>
+      </div>
+    ),
+  }
+);
 
 export const metadata: Metadata = {
   title: "AI Casino Matchmaker — Find Your Perfect Casino",
@@ -15,7 +29,7 @@ export const metadata: Metadata = {
     description: "Answer a few questions and find your ideal casino match.",
   },
   alternates: {
-    canonical: "https://casinolynora.com/ai-casino-match",
+    canonical: "/ai-casino-match",
   },
 };
 

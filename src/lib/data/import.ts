@@ -1,6 +1,6 @@
 import { CasinoSchema, Casino, VerificationStatus } from "@/lib/types";
 
-const VALID_GEOS = ["DE", "FR", "NL", "BE", "AT", "IT", "CH", "INT"] as const;
+const VALID_GEOS = ["DE", "FR", "NL", "BE", "AT", "IT", "CH", "IE", "INT"] as const;
 
 // ─── Import Validation ─────────────────────────────────────────────────────
 

@@ -6,7 +6,7 @@ import { casinoDb } from "@/lib/data/accessor";
 export const metadata: Metadata = {
   title: "All Casinos — CasinoLynora",
   description: "Browse all verified online casinos. Search and filter by payment methods, games, and features.",
-  alternates: { canonical: "https://casinolynora.com/casinos" },
+  alternates: { canonical: "/casinos" },
 };
 
 export default function CasinosPage() {

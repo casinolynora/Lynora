@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
+import { CONTACT_EMAILS } from "@/lib/config/site";
 
 export const metadata: Metadata = {
   title: "Affiliate Disclosure — CasinoLynora",
   description: "How CasinoLynora uses affiliate links and how this affects our recommendations.",
-  alternates: { canonical: "https://casinolynora.com/affiliate-disclosure" },
+  alternates: { canonical: "/affiliate-disclosure" },
 };
 
 export default function AffiliateDisclosurePage() {
@@ -33,7 +34,7 @@ export default function AffiliateDisclosurePage() {
             </section>
             <section>
               <h2 className="text-xl font-bold mb-3 text-foreground">Contact</h2>
-              <p>Questions? <a href="mailto:affiliates@casinolynora.com" className="text-brand-700 hover:underline">affiliates@casinolynora.com</a></p>
+              <p>Questions? <a href={`mailto:${CONTACT_EMAILS.affiliates}`} className="text-brand-700 hover:underline">{CONTACT_EMAILS.affiliates}</a></p>
             </section>
           </div>
         </div>

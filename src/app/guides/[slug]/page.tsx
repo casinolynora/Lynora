@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${guide.title} — CasinoLynora`,
     description: guide.description,
-    alternates: { canonical: `https://casinolynora.com/guides/${slug}` },
+    alternates: { canonical: `/guides/${slug}` },
   };
 }
 

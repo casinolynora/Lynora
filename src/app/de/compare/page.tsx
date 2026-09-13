@@ -6,7 +6,7 @@ import { createGermanyProvider } from "@/lib/data/germany-provider";
 export const metadata: Metadata = {
   title: "Compare Casinos in Germany — CasinoLynora",
   description: "Compare verified online casinos in Germany side-by-side.",
-  alternates: { canonical: "https://casinolynora.com/de/compare" },
+  alternates: { canonical: "/de/compare" },
 };
 
 export default function GermanyComparePage() {
