@@ -30,6 +30,15 @@ const footerSections = [
     ],
   },
   {
+    title: "For Operators",
+    links: [
+      { href: "/for-casinos", label: "List Your Casino" },
+      { href: "/for-casinos/pricing", label: "Pricing" },
+      { href: "/for-casinos/list-your-casino", label: "Submit Listing" },
+      { href: "/for-casinos/contact", label: "Operator Contact" },
+    ],
+  },
+  {
     title: "Legal",
     links: [
       { href: "/responsible-gambling", label: "Responsible Gambling" },

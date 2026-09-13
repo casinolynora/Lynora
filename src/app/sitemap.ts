@@ -21,6 +21,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/privacy-policy`, lastModified: buildDate, changeFrequency: "monthly" as const, priority: 0.3 },
     { url: `${SITE_URL}/terms`, lastModified: buildDate, changeFrequency: "monthly" as const, priority: 0.3 },
     { url: `${SITE_URL}/affiliate-disclosure`, lastModified: buildDate, changeFrequency: "monthly" as const, priority: 0.3 },
+    // B2B pages
+    { url: `${SITE_URL}/for-casinos`, lastModified: buildDate, changeFrequency: "monthly" as const, priority: 0.6 },
+    { url: `${SITE_URL}/for-casinos/pricing`, lastModified: buildDate, changeFrequency: "monthly" as const, priority: 0.5 },
+    { url: `${SITE_URL}/for-casinos/list-your-casino`, lastModified: buildDate, changeFrequency: "monthly" as const, priority: 0.5 },
+    { url: `${SITE_URL}/for-casinos/contact`, lastModified: buildDate, changeFrequency: "monthly" as const, priority: 0.3 },
+    // GEO pages
     { url: `${SITE_URL}/ie`, lastModified: buildDate, changeFrequency: "weekly" as const, priority: 0.9 },
     { url: `${SITE_URL}/de`, lastModified: buildDate, changeFrequency: "weekly" as const, priority: 0.9 },
     { url: `${SITE_URL}/de/casinos`, lastModified: buildDate, changeFrequency: "weekly" as const, priority: 0.8 },
