@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Duplicate Slug Casino",
+    "slug": "jackpotjoy",
+    "website": "https://different-website.com",
+    "minDeposit": 10,
+    "licenses": [
+      { "issuer": "MGA", "jurisdiction": "MT" }
+    ],
+    "geo": [],
+    "paymentMethods": [],
+    "source": {
+      "sourceType": "other",
+      "name": "Test Duplicate"
+    }
+  }
+]

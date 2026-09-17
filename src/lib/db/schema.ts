@@ -469,3 +469,224 @@ export const moderationActions = sqliteTable("moderation_actions", {
 
 export type ModerationActionRecord = typeof moderationActions.$inferSelect;
 export type ModerationActionInsert = typeof moderationActions.$inferInsert;
+
+// ─── Sources ──────────────────────────────────────────────────────────────
+//
+// Normalized source catalog. Every piece of factual casino data should
+// eventually trace back to a source. Sources are independent entities —
+// one source can be referenced by many fact_provenance records.
+
+export const sources = sqliteTable("sources", {
+  id: text("id").primaryKey(),
+  sourceType: text("sourceType", {
+    enum: [
+      "official_operator_website",
+      "regulator",
+      "government_registry",
+      "official_terms",
+      "official_payment_page",
+      "official_rg_page",
+      "manual_verified",
+      "trusted_third_party",
+      "other",
+    ],
+  }).notNull(),
+  name: text("name").notNull(),
+  url: text("url"),
+  domain: text("domain"),
+  isActive: integer("isActive", { mode: "boolean" }).notNull().default(true),
+  createdAt: text("createdAt").notNull(),
+  updatedAt: text("updatedAt").notNull(),
+}, (table) => [
+  index("idx_sources_type").on(table.sourceType),
+  index("idx_sources_domain").on(table.domain),
+  index("idx_sources_active").on(table.isActive),
+]);
+
+export type SourceRecord = typeof sources.$inferSelect;
+export type SourceInsert = typeof sources.$inferInsert;
+
+// ─── Fact Provenance ──────────────────────────────────────────────────────
+//
+// Tracks the source and verification state of individual factual fields.
+// Uses entity-level approach: one record per (casino, field, source).
+// This allows multiple sources to claim different values for the same field,
+// which the conflict detection logic can then resolve.
+
+export const factProvenance = sqliteTable("fact_provenance", {
+  id: text("id").primaryKey(),
+  casinoId: text("casinoId").notNull().references(() => casinos.id, { onDelete: "cascade" }),
+  fieldName: text("fieldName").notNull(),
+  sourceId: text("sourceId").notNull().references(() => sources.id, { onDelete: "cascade" }),
+
+  // The value claimed by this source for this field
+  value: text("value"),
+
+  // Verification lifecycle
+  verificationStatus: text("verificationStatus", {
+    enum: ["unverified", "sourced", "manually_verified", "stale", "conflicting"],
+  }).notNull().default("unverified"),
+
+  confidence: text("confidence", {
+    enum: ["low", "medium", "high", "definitive"],
+  }).notNull().default("medium"),
+
+  // Timestamps
+  retrievedAt: text("retrievedAt"),
+  checkedAt: text("checkedAt"),
+  expiresAt: text("expiresAt"),
+
+  // Human review
+  reviewerId: text("reviewerId"),
+  notes: text("notes"),
+
+  createdAt: text("createdAt").notNull(),
+  updatedAt: text("updatedAt").notNull(),
+}, (table) => [
+  index("idx_fp_casino").on(table.casinoId),
+  index("idx_fp_field").on(table.fieldName),
+  index("idx_fp_source").on(table.sourceId),
+  index("idx_fp_status").on(table.verificationStatus),
+  index("idx_fp_casino_field").on(table.casinoId, table.fieldName),
+]);
+
+export type FactProvenanceRecord = typeof factProvenance.$inferSelect;
+export type FactProvenanceInsert = typeof factProvenance.$inferInsert;
+
+// ─── Import Batches ───────────────────────────────────────────────────────
+//
+// Every import run creates a batch record. This makes imports auditable
+// and supports dry-run reporting.
+
+export const importBatches = sqliteTable("import_batches", {
+  id: text("id").primaryKey(),
+  source: text("source").notNull(),
+  sourceType: text("sourceType", {
+    enum: [
+      "official_operator_website",
+      "regulator",
+      "government_registry",
+      "official_terms",
+      "official_payment_page",
+      "official_rg_page",
+      "manual_verified",
+      "trusted_third_party",
+      "other",
+    ],
+  }).notNull(),
+
+  status: text("status", {
+    enum: ["pending", "running", "completed", "completed_with_warnings", "failed"],
+  }).notNull().default("pending"),
+
+  isDryRun: integer("isDryRun", { mode: "boolean" }).notNull().default(false),
+
+  // Counters
+  recordsProcessed: integer("recordsProcessed").notNull().default(0),
+  recordsCreated: integer("recordsCreated").notNull().default(0),
+  recordsUpdated: integer("recordsUpdated").notNull().default(0),
+  recordsUnchanged: integer("recordsUnchanged").notNull().default(0),
+  recordsSkipped: integer("recordsSkipped").notNull().default(0),
+  recordsRejected: integer("recordsRejected").notNull().default(0),
+  conflictsDetected: integer("conflictsDetected").notNull().default(0),
+  validationErrors: integer("validationErrors").notNull().default(0),
+
+  // Timing
+  startedAt: text("startedAt"),
+  completedAt: text("completedAt"),
+  createdAt: text("createdAt").notNull(),
+
+  // Metadata
+  metadata: text("metadata", { mode: "json" })
+    .$type<Record<string, unknown>>()
+    .default({}),
+}, (table) => [
+  index("idx_batch_status").on(table.status),
+  index("idx_batch_source").on(table.source),
+  index("idx_batch_created").on(table.createdAt),
+]);
+
+export type ImportBatchRecord = typeof importBatches.$inferSelect;
+export type ImportBatchInsert = typeof importBatches.$inferInsert;
+
+// ─── Import Records ───────────────────────────────────────────────────────
+//
+// Tracks each individual entity processed within a batch.
+
+export const importRecords = sqliteTable("import_records", {
+  id: text("id").primaryKey(),
+  batchId: text("batchId").notNull().references(() => importBatches.id, { onDelete: "cascade" }),
+
+  // Identity
+  sourceIdentifier: text("sourceIdentifier"),
+  casinoId: text("casinoId").references(() => casinos.id, { onDelete: "set null" }),
+  casinoSlug: text("casinoSlug"),
+
+  // Action taken
+  action: text("action", {
+    enum: ["created", "updated", "unchanged", "skipped", "rejected", "conflict"],
+  }).notNull(),
+
+  status: text("status", {
+    enum: ["success", "warning", "error"],
+  }).notNull().default("success"),
+
+  // Details
+  validationErrors: text("validationErrors", { mode: "json" })
+    .$type<string[]>()
+    .default([]),
+  warnings: text("warnings", { mode: "json" })
+    .$type<string[]>()
+    .default([]),
+
+  // Timestamps
+  createdAt: text("createdAt").notNull(),
+}, (table) => [
+  index("idx_ir_batch").on(table.batchId),
+  index("idx_ir_casino").on(table.casinoId),
+  index("idx_ir_slug").on(table.casinoSlug),
+  index("idx_ir_action").on(table.action),
+]);
+
+export type ImportRecordRecord = typeof importRecords.$inferSelect;
+export type ImportRecordInsert = typeof importRecords.$inferInsert;
+
+// ─── Conflicts ────────────────────────────────────────────────────────────
+//
+// Records value conflicts detected during import. This makes conflicts
+// auditable and resolvable without data loss.
+
+export const conflicts = sqliteTable("conflicts", {
+  id: text("id").primaryKey(),
+  casinoId: text("casinoId").notNull().references(() => casinos.id, { onDelete: "cascade" }),
+  batchId: text("batchId").references(() => importBatches.id, { onDelete: "set null" }),
+
+  fieldName: text("fieldName").notNull(),
+
+  // Existing value in database
+  existingValue: text("existingValue"),
+  existingSourceId: text("existingSourceId").references(() => sources.id, { onDelete: "set null" }),
+
+  // Incoming value from import
+  incomingValue: text("incomingValue"),
+  incomingSourceId: text("incomingSourceId").references(() => sources.id, { onDelete: "set null" }),
+
+  // Resolution
+  resolution: text("resolution", {
+    enum: ["unresolved", "accepted", "rejected", "superseded"],
+  }).notNull().default("unresolved"),
+
+  resolvedBy: text("resolvedBy"),
+  resolvedAt: text("resolvedAt"),
+  resolutionNotes: text("resolutionNotes"),
+
+  createdAt: text("createdAt").notNull(),
+}, (table) => [
+  index("idx_conflict_casino").on(table.casinoId),
+  index("idx_conflict_batch").on(table.batchId),
+  index("idx_conflict_field").on(table.fieldName),
+  index("idx_conflict_resolution").on(table.resolution),
+]);
+
+export type ConflictRecord = typeof conflicts.$inferSelect;
+export type ConflictInsert = typeof conflicts.$inferInsert;

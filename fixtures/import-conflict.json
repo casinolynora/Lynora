@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Test Casino Alpha",
+    "slug": "test-casino-alpha",
+    "website": "https://testcasinoalpha.com",
+    "owner": "Different Owner Inc",
+    "minDeposit": 5,
+    "maxDeposit": 10000,
+    "rating": 95,
+    "hasLiveCasino": true,
+    "hasSportsBetting": true,
+    "kycRequired": false,
+    "languages": ["en"],
+    "currencies": ["EUR"],
+    "licenses": [
+      {
+        "issuer": "UK Gambling Commission",
+        "jurisdiction": "GB",
+        "status": "active"
+      }
+    ],
+    "geo": [
+      { "geo": "GB", "status": "available" }
+    ],
+    "paymentMethods": [
+      { "name": "Visa", "type": "card" }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "Third Party Source",
+      "url": "https://thirdparty.com"
+    }
+  }
+]

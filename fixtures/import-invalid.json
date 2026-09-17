@@ -1,0 +1,27 @@
+[
+  {
+    "name": "",
+    "slug": "invalid casino!",
+    "website": "not-a-url",
+    "minDeposit": -10,
+    "licenses": [],
+    "source": {
+      "sourceType": "invalid_type",
+      "name": ""
+    }
+  },
+  {
+    "name": "Valid Casino But Bad URL",
+    "slug": "valid-casino-bad-url",
+    "website": "javascript:alert(1)",
+    "minDeposit": 20,
+    "licenses": [
+      { "issuer": "MGA", "jurisdiction": "MT" }
+    ],
+    "source": {
+      "sourceType": "other",
+      "name": "Test",
+      "url": "javascript:alert(1)"
+    }
+  }
+]

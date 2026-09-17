@@ -1,0 +1,88 @@
+[
+  {
+    "name": "Test Casino Alpha",
+    "slug": "test-casino-alpha",
+    "website": "https://testcasinoalpha.com",
+    "tagline": "A premium gaming experience",
+    "founded": 2020,
+    "owner": "Alpha Gaming Ltd",
+    "status": "active",
+    "rating": 85,
+    "minDeposit": 20,
+    "maxDeposit": 5000,
+    "minWithdrawal": 20,
+    "hasLiveCasino": true,
+    "hasSportsBetting": false,
+    "hasCrypto": true,
+    "hasMobile": true,
+    "kycRequired": true,
+    "minAge": 18,
+    "languages": ["en", "de"],
+    "currencies": ["EUR", "USD"],
+    "licenses": [
+      {
+        "issuer": "Malta Gaming Authority",
+        "jurisdiction": "MT",
+        "licenseNumber": "MGA/CRP/123/2020",
+        "status": "active"
+      }
+    ],
+    "geo": [
+      { "geo": "DE", "status": "available" },
+      { "geo": "NL", "status": "available" },
+      { "geo": "AT", "status": "available" }
+    ],
+    "paymentMethods": [
+      { "name": "Visa", "type": "card" },
+      { "name": "Mastercard", "type": "card" },
+      { "name": "PayPal", "type": "e-wallet" },
+      { "name": "Skrill", "type": "e-wallet" }
+    ],
+    "source": {
+      "sourceType": "official_operator_website",
+      "name": "Test Casino Alpha Official",
+      "url": "https://testcasinoalpha.com"
+    }
+  },
+  {
+    "name": "Test Casino Beta",
+    "slug": "test-casino-beta",
+    "website": "https://testcasinobeta.com",
+    "tagline": "Your trusted casino partner",
+    "founded": 2019,
+    "owner": "Beta Entertainment AG",
+    "status": "active",
+    "rating": 72,
+    "minDeposit": 10,
+    "maxDeposit": 3000,
+    "minWithdrawal": 10,
+    "hasLiveCasino": false,
+    "hasSportsBetting": true,
+    "hasCrypto": false,
+    "hasMobile": true,
+    "kycRequired": true,
+    "minAge": 18,
+    "languages": ["en", "nl"],
+    "currencies": ["EUR"],
+    "licenses": [
+      {
+        "issuer": "Curaçao eGaming",
+        "jurisdiction": "CW",
+        "status": "active"
+      }
+    ],
+    "geo": [
+      { "geo": "NL", "status": "available" },
+      { "geo": "BE", "status": "available" }
+    ],
+    "paymentMethods": [
+      { "name": "Visa", "type": "card" },
+      { "name": "Neteller", "type": "e-wallet" }
+    ],
+    "source": {
+      "sourceType": "regulator",
+      "name": "Curaçao Gaming Board",
+      "url": "https://casinos.cw"
+    }
+  }
+]
