@@ -1,36 +1,16 @@
 "use client";
 
-import { useState, useMemo } from "react";
-import { Badge } from "@/components/ui/Badge";
+import Link from "next/link";
 import { AffiliateCTA } from "@/components/casino/AffiliateCTA";
-import { RatingDisplay } from "@/components/casino/RatingDisplay";
-import type { Casino } from "@/lib/types";
+import { COMPARISON_CATEGORIES } from "@/lib/compare";
+import type { ComparisonCasino, ComparisonCategory } from "@/lib/compare";
 
 type ComparisonTableProps = {
-  casinos: Casino[];
+  casinos: ComparisonCasino[];
 };
 
 export function ComparisonTable({ casinos }: ComparisonTableProps) {
-  const [selected, setSelected] = useState<string[]>(
-    casinos.slice(0, 3).map((c) => c.id)
-  );
-
-  const selectedCasinos = useMemo(
-    () => selected.map((id) => casinos.find((c) => c.id === id)).filter(Boolean) as Casino[],
-    [selected, casinos]
-  );
-
-  const toggleCasino = (id: string) => {
-    if (selected.includes(id)) {
-      setSelected(selected.filter((s) => s !== id));
-    } else if (selected.length < 4) {
-      setSelected([...selected, id]);
-    }
-  };
-
-  const available = casinos.filter((c) => !selected.includes(c.id));
-
-  if (selectedCasinos.length === 0) {
+  if (casinos.length === 0) {
     return (
       <div className="text-center py-16">
         <div className="flex h-14 w-14 items-center justify-center rounded-full bg-bg-subtle mx-auto mb-4">
@@ -44,126 +24,88 @@ export function ComparisonTable({ casinos }: ComparisonTableProps) {
   }
 
   return (
-    <div>
-      {/* Casino selector */}
-      <div className="flex flex-wrap gap-2 mb-6">
-        {selectedCasinos.map((c) => (
-          <Badge key={c.id} variant="primary" size="md" className="gap-1.5 pr-1.5">
-            {c.name}
-            <button
-              onClick={() => toggleCasino(c.id)}
-              className="ml-1 w-7 h-7 rounded-full bg-brand-200 hover:bg-brand-300 flex items-center justify-center transition-colors"
-              aria-label={`Remove ${c.name}`}
-            >
-              <svg className="w-3.5 h-3.5 text-brand-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </Badge>
-        ))}
-        {available.length > 0 && selected.length < 4 && (
-          <select
-            onChange={(e) => { if (e.target.value) { toggleCasino(e.target.value); e.target.value = ""; } }}
-            className="rounded-full border border-border bg-white px-3 py-1 text-sm text-muted focus:outline-none focus:ring-2 focus:ring-brand-400"
-            aria-label="Add casino to comparison"
-          >
-            <option value="">+ Add casino</option>
-            {available.map((c) => (
-              <option key={c.id} value={c.id}>{c.name}</option>
-            ))}
-          </select>
-        )}
-      </div>
-
-      {/* Comparison table */}
-      <div className="overflow-x-auto">
-        <table className="w-full text-sm">
-          <thead>
-            <tr className="border-b border-border">
-              <th className="text-left py-3 pr-4 text-xs font-bold text-text-faint uppercase tracking-wider w-40">Feature</th>
-              {selectedCasinos.map((c) => (
-                <th key={c.id} className="text-left py-3 px-4 font-bold text-foreground">
+    <div className="overflow-x-auto">
+      <table className="w-full text-sm" role="table" aria-label="Casino comparison">
+        <thead>
+          <tr className="border-b border-border">
+            <th className="text-left py-3 pr-4 text-xs font-bold text-text-faint uppercase tracking-wider w-40">
+              Feature
+            </th>
+            {casinos.map((c) => (
+              <th key={c.id} className="text-left py-3 px-4 font-bold text-foreground min-w-[180px]">
+                <Link
+                  href={`/casino-reviews/${c.slug}`}
+                  className="hover:text-brand-600 transition-colors"
+                >
                   {c.name}
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            <Row label="Rating">
-              {selectedCasinos.map((c) => (
-                <td key={c.id} className="py-3 px-4">
-                  <RatingDisplay rating={c.rating} size="sm" showLabel={false} />
-                </td>
-              ))}
-            </Row>
-            <Row label="License">
-              {selectedCasinos.map((c) => (
-                <td key={c.id} className="py-3 px-4">
-                  {c.licenses?.[0]?.issuer ?? "—"}
-                </td>
-              ))}
-            </Row>
-            <Row label="Min Deposit">
-              {selectedCasinos.map((c) => (
-                <td key={c.id} className="py-3 px-4">
-                  {c.minDeposit != null ? `€${c.minDeposit}` : "—"}
-                </td>
-              ))}
-            </Row>
-            <Row label="Payment Methods">
-              {selectedCasinos.map((c) => (
-                <td key={c.id} className="py-3 px-4">
-                  {c.paymentMethods?.length ?? 0} methods
-                </td>
-              ))}
-            </Row>
-            <Row label="Live Casino">
-              {selectedCasinos.map((c) => (
-                <td key={c.id} className="py-3 px-4">
-                  {c.hasLiveCasino ? "Yes" : "No"}
-                </td>
-              ))}
-            </Row>
-            <Row label="Sports Betting">
-              {selectedCasinos.map((c) => (
-                <td key={c.id} className="py-3 px-4">
-                  {c.hasSportsBetting ? "Yes" : "No"}
-                </td>
-              ))}
-            </Row>
-            <Row label="Mobile">
-              {selectedCasinos.map((c) => (
-                <td key={c.id} className="py-3 px-4">
-                  {c.hasMobile ? "Yes" : "No"}
-                </td>
-              ))}
-            </Row>
-            <Row label="Games">
-              {selectedCasinos.map((c) => (
-                <td key={c.id} className="py-3 px-4">
-                  {c.games?.length ?? 0} categories
-                </td>
-              ))}
-            </Row>
-            <Row label="Visit">
-              {selectedCasinos.map((c) => (
-                <td key={c.id} className="py-3 px-4">
-                  <AffiliateCTA affiliateOffers={c.affiliateOffers} size="sm" />
-                </td>
-              ))}
-            </Row>
-          </tbody>
-        </table>
-      </div>
+                </Link>
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {COMPARISON_CATEGORIES.map((category) => (
+            <CategoryRows
+              key={category.id}
+              category={category}
+              casinos={casinos}
+            />
+          ))}
+          {/* CTA Row */}
+          <tr className="border-t-2 border-border">
+            <td className="py-3 pr-4 text-xs font-bold text-text-faint uppercase tracking-wider">
+              Visit
+            </td>
+            {casinos.map((c) => (
+              <td key={c.id} className="py-3 px-4">
+                <AffiliateCTA affiliateOffers={c.affiliateOffers} size="sm" />
+              </td>
+            ))}
+          </tr>
+        </tbody>
+      </table>
     </div>
   );
 }
 
-function Row({ label, children }: { label: string; children: React.ReactNode }) {
+function CategoryRows({
+  category,
+  casinos,
+}: {
+  category: ComparisonCategory;
+  casinos: ComparisonCasino[];
+}) {
   return (
-    <tr className="border-b border-border-subtle hover:bg-surface-hover transition-colors">
-      <td className="py-3 pr-4 text-xs font-semibold text-text-faint uppercase tracking-wider">{label}</td>
-      {children}
-    </tr>
+    <>
+      {/* Category Header */}
+      <tr className="bg-surface">
+        <td
+          colSpan={casinos.length + 1}
+          className="py-2 px-4 text-xs font-bold text-foreground uppercase tracking-wider"
+        >
+          {category.label}
+        </td>
+      </tr>
+      {/* Fields */}
+      {category.fields.map((field) => (
+        <tr
+          key={field.id}
+          className="border-b border-border-subtle hover:bg-surface-hover transition-colors"
+        >
+          <td className="py-3 pr-4 text-xs font-semibold text-text-faint uppercase tracking-wider">
+            {field.label}
+          </td>
+          {casinos.map((c) => {
+            const value = field.getValue(c);
+            const formatted = field.format ? field.format(value) : String(value ?? "—");
+            return (
+              <td key={c.id} className="py-3 px-4 text-foreground">
+                {formatted}
+              </td>
+            );
+          })}
+        </tr>
+      ))}
+    </>
   );
 }

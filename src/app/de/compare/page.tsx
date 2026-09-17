@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { ComparisonTable } from "@/components/compare/ComparisonTable";
+import { toComparisonCasino } from "@/lib/compare";
 import { createGermanyProvider } from "@/lib/data/germany-provider";
 
 export const metadata: Metadata = {
@@ -22,6 +23,7 @@ export const metadata: Metadata = {
 export default function GermanyComparePage() {
   const provider = createGermanyProvider();
   const casinos = provider.getAllCasinos();
+  const comparisonCasinos = casinos.map((c) => toComparisonCasino(c));
 
   return (
     <main id="main-content">
@@ -35,8 +37,10 @@ export default function GermanyComparePage() {
         </div>
 
         <div className="max-w-5xl">
-          {casinos.length > 0 ? (
-            <ComparisonTable casinos={casinos} />
+          {comparisonCasinos.length > 0 ? (
+            <ComparisonTable
+              casinos={comparisonCasinos}
+            />
           ) : (
             <div className="card-static p-8 text-center">
               <h2 className="text-xl font-bold mb-2">Vergleich wird vorbereitet</h2>
