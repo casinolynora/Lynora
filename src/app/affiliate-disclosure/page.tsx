@@ -6,6 +6,15 @@ export const metadata: Metadata = {
   title: "Affiliate Disclosure — CasinoLynora",
   description: "How CasinoLynora uses affiliate links and how this affects our recommendations.",
   alternates: { canonical: "/affiliate-disclosure" },
+  openGraph: {
+    title: "Affiliate Disclosure — CasinoLynora",
+    description: "How CasinoLynora uses affiliate links.",
+  },
+  twitter: {
+    card: "summary",
+    title: "Affiliate Disclosure — CasinoLynora",
+    description: "How CasinoLynora uses affiliate links.",
+  },
 };
 
 export default function AffiliateDisclosurePage() {

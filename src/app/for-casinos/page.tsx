@@ -9,6 +9,15 @@ export const metadata: Metadata = {
   description:
     "Join CasinoLynora's transparent casino comparison platform. Get your operator listed and discovered by European players across multiple GEOs.",
   alternates: { canonical: "/for-casinos" },
+  openGraph: {
+    title: "List Your Casino on CasinoLynora",
+    description: "Get your operator listed and discovered by European players.",
+  },
+  twitter: {
+    card: "summary",
+    title: "List Your Casino on CasinoLynora",
+    description: "Get your operator listed and discovered by European players.",
+  },
 };
 
 const EU_GEOS = [

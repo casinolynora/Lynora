@@ -7,6 +7,15 @@ export const metadata: Metadata = {
   description:
     "Learn about CasinoLynora's mission, methodology, and commitment to transparent, data-driven casino discovery.",
   alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About — CasinoLynora",
+    description: "CasinoLynora's mission and methodology for transparent casino discovery.",
+  },
+  twitter: {
+    card: "summary",
+    title: "About — CasinoLynora",
+    description: "CasinoLynora's mission and methodology for transparent casino discovery.",
+  },
 };
 
 export default function AboutPage() {

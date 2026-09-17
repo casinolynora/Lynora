@@ -8,6 +8,15 @@ export const metadata: Metadata = {
   title: "Verified Casinos in Germany — CasinoLynora",
   description: "GGL-verified online casinos for German players. Structured data on licensing, payments, and responsible gambling.",
   alternates: { canonical: "/de/best-casinos" },
+  openGraph: {
+    title: "Verified Casinos in Germany — CasinoLynora",
+    description: "GGL-verified online casinos for German players.",
+  },
+  twitter: {
+    card: "summary",
+    title: "Verified Casinos in Germany — CasinoLynora",
+    description: "GGL-verified online casinos for German players.",
+  },
 };
 
 export default function GermanyBestCasinosPage() {

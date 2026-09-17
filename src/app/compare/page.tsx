@@ -7,6 +7,15 @@ export const metadata: Metadata = {
   title: "Compare Casinos — CasinoLynora",
   description: "Compare online casinos side-by-side. View verified data on licenses, payment methods, games, and features.",
   alternates: { canonical: "/compare" },
+  openGraph: {
+    title: "Compare Casinos — CasinoLynora",
+    description: "Compare online casinos side-by-side.",
+  },
+  twitter: {
+    card: "summary",
+    title: "Compare Casinos — CasinoLynora",
+    description: "Compare online casinos side-by-side.",
+  },
 };
 
 export default function ComparePage() {

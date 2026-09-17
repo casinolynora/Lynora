@@ -7,6 +7,15 @@ export const metadata: Metadata = {
   description:
     "Contact CasinoLynora for casino operator inquiries, data corrections, affiliate partnerships, and general business questions.",
   alternates: { canonical: "/for-casinos/contact" },
+  openGraph: {
+    title: "Casino Operator Contact | CasinoLynora",
+    description: "Contact CasinoLynora for operator inquiries and partnerships.",
+  },
+  twitter: {
+    card: "summary",
+    title: "Casino Operator Contact | CasinoLynora",
+    description: "Contact CasinoLynora for operator inquiries and partnerships.",
+  },
 };
 
 export default function ForCasinosContactPage() {

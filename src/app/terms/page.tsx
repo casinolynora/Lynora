@@ -7,6 +7,15 @@ export const metadata: Metadata = {
   title: "Terms of Use — CasinoLynora",
   description: "CasinoLynora terms of use. Rules and responsibilities for using our platform.",
   alternates: { canonical: "/terms" },
+  openGraph: {
+    title: "Terms of Use — CasinoLynora",
+    description: "CasinoLynora terms of use.",
+  },
+  twitter: {
+    card: "summary",
+    title: "Terms of Use — CasinoLynora",
+    description: "CasinoLynora terms of use.",
+  },
 };
 
 export default function TermsPage() {

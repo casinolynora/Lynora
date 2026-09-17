@@ -6,6 +6,15 @@ export const metadata: Metadata = {
   title: "Privacy Policy — CasinoLynora",
   description: "CasinoLynora privacy policy. How we collect, use, and protect your data.",
   alternates: { canonical: "/privacy-policy" },
+  openGraph: {
+    title: "Privacy Policy — CasinoLynora",
+    description: "CasinoLynora privacy policy.",
+  },
+  twitter: {
+    card: "summary",
+    title: "Privacy Policy — CasinoLynora",
+    description: "CasinoLynora privacy policy.",
+  },
 };
 
 export default function PrivacyPolicyPage() {

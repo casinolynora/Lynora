@@ -7,6 +7,15 @@ export const metadata: Metadata = {
   title: "Compare Casinos in Germany — CasinoLynora",
   description: "Compare verified online casinos in Germany side-by-side.",
   alternates: { canonical: "/de/compare" },
+  openGraph: {
+    title: "Compare Casinos in Germany — CasinoLynora",
+    description: "Compare verified online casinos in Germany side-by-side.",
+  },
+  twitter: {
+    card: "summary",
+    title: "Compare Casinos in Germany — CasinoLynora",
+    description: "Compare verified online casinos in Germany side-by-side.",
+  },
 };
 
 export default function GermanyComparePage() {

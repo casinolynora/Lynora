@@ -13,6 +13,15 @@ export const metadata: Metadata = {
   description:
     "Review CasinoLynora's transparent pricing for casino listings, verified profiles, featured placement, and premium B2B packages.",
   alternates: { canonical: "/for-casinos/pricing" },
+  openGraph: {
+    title: "Casino Listing & Featured Placement Pricing",
+    description: "Transparent pricing for casino listings and featured placement.",
+  },
+  twitter: {
+    card: "summary",
+    title: "Casino Listing & Featured Placement Pricing",
+    description: "Transparent pricing for casino listings and featured placement.",
+  },
 };
 
 export default function PricingPage() {

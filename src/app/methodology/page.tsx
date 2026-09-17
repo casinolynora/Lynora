@@ -5,6 +5,15 @@ export const metadata: Metadata = {
   title: "Methodology — CasinoLynora",
   description: "How CasinoLynora scores and matches casinos using structured data and transparent algorithms.",
   alternates: { canonical: "/methodology" },
+  openGraph: {
+    title: "Methodology — CasinoLynora",
+    description: "How CasinoLynora scores and matches casinos using structured data.",
+  },
+  twitter: {
+    card: "summary",
+    title: "Methodology — CasinoLynora",
+    description: "How CasinoLynora scores and matches casinos using structured data.",
+  },
 };
 
 export default function MethodologyPage() {

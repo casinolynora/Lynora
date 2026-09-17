@@ -7,6 +7,15 @@ export const metadata: Metadata = {
   description:
     "Resources and support for responsible gambling. Learn how to stay in control, recognise warning signs, and find professional help.",
   alternates: { canonical: "/responsible-gambling" },
+  openGraph: {
+    title: "Responsible Gambling — CasinoLynora",
+    description: "Resources and support for responsible gambling.",
+  },
+  twitter: {
+    card: "summary",
+    title: "Responsible Gambling — CasinoLynora",
+    description: "Resources and support for responsible gambling.",
+  },
 };
 
 const KEY_PRINCIPLES = [

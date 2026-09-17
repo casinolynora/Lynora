@@ -22,6 +22,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     alternates: {
       canonical: `/de/casino-reviews/${slug}`,
     },
+    openGraph: {
+      title: `${casino.name} Review — Germany | CasinoLynora`,
+      description: `Detailed review of ${casino.name} for German players.`,
+      type: "article",
+    },
+    twitter: {
+      card: "summary",
+      title: `${casino.name} Review — Germany | CasinoLynora`,
+      description: `Detailed review of ${casino.name} for German players.`,
+    },
   };
 }
 

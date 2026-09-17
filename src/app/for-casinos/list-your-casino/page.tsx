@@ -8,6 +8,15 @@ export const metadata: Metadata = {
   description:
     "List your casino on CasinoLynora to reach players across Europe. Submit your brand for review and choose a listing plan that fits your goals.",
   alternates: { canonical: "/for-casinos/list-your-casino" },
+  openGraph: {
+    title: "Submit Your Casino to CasinoLynora",
+    description: "Submit your brand for review and reach players across Europe.",
+  },
+  twitter: {
+    card: "summary",
+    title: "Submit Your Casino to CasinoLynora",
+    description: "Submit your brand for review and reach players across Europe.",
+  },
 };
 
 export default function ListYourCasinoPage() {

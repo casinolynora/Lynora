@@ -24,6 +24,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${guide.title} — Germany | CasinoLynora`,
     description: guide.description,
     alternates: { canonical: `/de/guides/${slug}` },
+    openGraph: {
+      title: `${guide.title} — Germany | CasinoLynora`,
+      description: guide.description,
+    },
+    twitter: {
+      card: "summary",
+      title: `${guide.title} — Germany | CasinoLynora`,
+      description: guide.description,
+    },
   };
 }
 

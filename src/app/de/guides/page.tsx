@@ -8,6 +8,15 @@ export const metadata: Metadata = {
   title: "Germany Gambling Guides — CasinoLynora",
   description: "Expert guides for online gambling in Germany. Payment methods, bonuses, responsible gambling, and more.",
   alternates: { canonical: "/de/guides" },
+  openGraph: {
+    title: "Germany Gambling Guides — CasinoLynora",
+    description: "Expert guides for online gambling in Germany.",
+  },
+  twitter: {
+    card: "summary",
+    title: "Germany Gambling Guides — CasinoLynora",
+    description: "Expert guides for online gambling in Germany.",
+  },
 };
 
 export default function GermanyGuidesPage() {
