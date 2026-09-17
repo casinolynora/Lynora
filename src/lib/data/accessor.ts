@@ -1,6 +1,16 @@
 import type { CasinoDataProvider } from "./provider";
 import { createCompositeProvider } from "./composite-provider";
 
+// ─── Provider Selection (Feature Flag) ────────────────────────────────────
+//
+// DATABASE_PROVIDER env var controls which provider is used:
+//   - "memory" (default): In-memory TypeScript data (for dev/test)
+//   - "sqlite": SQLite database (requires running seed.ts first)
+//
+// IMPORTANT: The SQLite provider is loaded ONLY on the server via a
+// separate server-only module. This file never imports better-sqlite3
+// directly, ensuring client bundles remain clean.
+
 // Composite provider with verified casino data from all GEOs (DE, NL, BE)
 const compositeProvider = createCompositeProvider();
 
@@ -9,6 +19,14 @@ let activeProvider: CasinoDataProvider = compositeProvider;
 
 export function setCasinoDataProvider(provider: CasinoDataProvider) {
   activeProvider = provider;
+}
+
+/**
+ * Get the current active provider.
+ * The provider is set via initializeServerDataProvider() on the server.
+ */
+export function getActiveProvider(): CasinoDataProvider {
+  return activeProvider;
 }
 
 export const casinoDb: CasinoDataProvider = {

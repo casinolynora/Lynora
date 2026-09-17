@@ -20,6 +20,26 @@ export const DataSourceSchema = z.object({
 });
 export type DataSource = z.infer<typeof DataSourceSchema>;
 
+/**
+ * Re-verification cadence for a specific field category.
+ * Tracks when a field was last verified and how often it should be re-verified.
+ */
+export const VerificationCadenceEntrySchema = z.object({
+  lastVerified: z.string().datetime(),
+  intervalDays: z.number().int().positive(),
+});
+export type VerificationCadenceEntry = z.infer<typeof VerificationCadenceEntrySchema>;
+
+/**
+ * Map of field categories to their verification cadence.
+ * Example: { "license": { lastVerified: "2026-09-07T00:00:00Z", intervalDays: 90 } }
+ */
+export const VerificationCadenceSchema = z.record(
+  z.string(),
+  VerificationCadenceEntrySchema,
+);
+export type VerificationCadence = z.infer<typeof VerificationCadenceSchema>;
+
 // ─── Casino Schemas ────────────────────────────────────────────────────────
 
 export const LicenseSchema = z.object({
@@ -170,6 +190,10 @@ export const CasinoSchema = z.object({
 
   features: z.array(z.string()).default([]),
   tags: z.array(z.string()).default([]),
+
+  // Re-verification cadence — tracks when each field category needs re-verification
+  // Optional: only present when cadence data has been calculated
+  verificationCadence: VerificationCadenceSchema.optional(),
 });
 export type Casino = z.infer<typeof CasinoSchema>;
 
