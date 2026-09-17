@@ -1,5 +1,15 @@
 import type { Metadata } from "next";
 
+export type GuideLocale = {
+  title: string;
+  description: string;
+  category: string;
+  intro: string;
+  sections: { heading: string; body: string }[];
+  conclusion: string;
+  faq: { question: string; answer: string }[];
+};
+
 export type Guide = {
   slug: string;
   title: string;
@@ -15,6 +25,7 @@ export type Guide = {
     conclusion: string;
   };
   faq: { question: string; answer: string }[];
+  de?: GuideLocale;
 };
 
 const guides: Guide[] = [
@@ -55,6 +66,40 @@ const guides: Guide[] = [
       { question: "How do I know if a casino is fair?", answer: "Look for licenses from reputable authorities (MGA, UKGC, GRA), independent testing certifications (eCOGRA, iTech Labs), and transparent terms and conditions." },
       { question: "Can I play for free?", answer: "Most online casinos offer demo or free-play modes for their games, allowing you to try them without risking real money. However, live casino games typically require real money bets." },
     ],
+    de: {
+      title: "Grundlagen der Online-Casinos",
+      description: "Alles, was Sie wissen müssen, bevor Sie zum ersten Mal in einem Online-Casino spielen.",
+      category: "Erste Schritte",
+      intro: "Online-Casinos bieten eine bequeme Möglichkeit, Casinospiele von zu Hause oder unterwegs zu spielen. Ein Grundverständnis hilft Ihnen, fundierte Entscheidungen zu treffen.",
+      sections: [
+        {
+          heading: "So funktionieren Online-Casinos",
+          body: "Online-Casinos nutzen Software, die zufällige Ergebnisse für Spiele wie Slots, Blackjack und Roulette erzeugt. Seriöse Casinos setzen auf Zufallsgeneratoren (RNGs), die von unabhängigen Organisationen wie eCOGRA, iTech Labs oder GLI getestet werden. Diese Tests stellen sicher, dass Spielergebnisse tatsächlich zufällig sind.",
+        },
+        {
+          heading: "Ein lizenziertes Casino wählen",
+          body: "Die Casino-Lizenz ist einer der wichtigsten Faktoren bei der Auswahl. Lizenzen von Behörden wie der Malta Gaming Authority (MGA), der UK Gambling Commission (UKGC) oder der Gibraltar Regulatory Authority (GRA) verlangen von Casinos strenge Standards für Spielerschutz, faires Spielen und verantwortungsbewusstes Glücksspiel. Prüfen Sie immer die Fußeile einer Casino-Website auf Lizenzinformationen.",
+        },
+        {
+          heading: "Konto registrieren und verifizieren",
+          body: "Die meisten Online-Casinos erfordern ein Konto. Sie geben in der Regel Name, E-Mail, Geburtsdatum und Adresse an. Casinos sind gesetzlich verpflichtet, Ihre Identität zu überprüfen (KYC — Know Your Customer), bevor sie Auszahlungen verarbeiten. Dies schützt Sie und das Casino vor Betrug.",
+        },
+        {
+          heading: "Einzahlungen und Auszahlungen",
+          body: "Online-Casinos unterstützen verschiedene Zahlungsmethoden: Kredit-/Debitkarten, E-Wallets wie PayPal und Skrill, Banküberweisungen und Prepaid-Karten. Einzahlungen sind meist sofort, Auszahlungszeiten variieren je nach Methode.",
+        },
+        {
+          heading: "Verfügbare Spieltypen",
+          body: "Online-Casinos bieten verschiedene Spielkategorien: Slots (beliebteste Kategorie), Tischspiele wie Blackjack, Roulette und Poker, Live-Casino mit echten Dealern in Echtzeit sowie Sportwetten und Spezialspiele.",
+        },
+      ],
+      conclusion: "Der Beginn mit einem lizenzierten, seriösen Casino, das Ihre bevorzugten Zahlungsmethoden unterstützt, ist die Grundlage für ein sicheres Spielerlebnis. Nehmen Sie sich Zeit, um die Geschäftsbedingungen zu verstehen.",
+      faq: [
+        { question: "Sind Online-Casinos legal?", answer: "Die Legalität variiert je nach Land. In vielen europäischen Ländern ist Online-Glücksspiel legal und reguliert. Prüfen Sie immer die Gesetze in Ihrem Land." },
+        { question: "Wie erkenne ich ein faires Casino?", answer: "Achten Sie auf Lizenzen von seriösen Behörden (MGA, UKGC), unabhängige Testzertifikate (eCOGRA, iTech Labs) und transparente Geschäftsbedingungen." },
+        { question: "Kostenlos spielen?", answer: "Die meisten Online-Casinos bieten Demo- oder Gratispielmodi, mit denen Sie Spiele ohne risiko ausprobieren können." },
+      ],
+    },
   },
   {
     slug: "payment-methods-guide",
@@ -97,6 +142,44 @@ const guides: Guide[] = [
       { question: "Are there fees for casino deposits?", answer: "Most casinos do not charge deposit fees, but your payment provider may. Bank transfers sometimes have small fees. Always check both the casino's and your payment provider's fee structures." },
       { question: "Can I use different methods for deposits and withdrawals?", answer: "Yes, most casinos allow different methods for deposits and withdrawals, though some require you to withdraw to the same method you deposited with. Check the casino's policy before choosing." },
     ],
+    de: {
+      title: "Zahlungsmethoden in europäischen Online-Casinos",
+      description: "Zahlungsmethoden im Vergleich: Karten, E-Wallets, Banküberweisungen und mehr für europäische Spieler.",
+      category: "Zahlungen",
+      intro: "Die Wahl der richtigen Zahlungsmethode beeinflusst Ihre Einzahlungsgeschwindigkeit, Auszahlungszeiten und das gesamte Casino-Erlebnis. Europäische Spieler haben Zugang zu einer Vielzahl von Zahlungsoptionen.",
+      sections: [
+        {
+          heading: "Kredit- und Debitkarten",
+          body: "Visa und Mastercard sind die am weitesten verbreiteten Zahlungsmethoden. Sie bieten sofortige Einzahlungen und bekannte Sicherheitsfunktionen wie 3D Secure. Auszahlungen auf Karten dauern in der Regel 1-3 Werktage. Manche Banken blockieren Glücksspieltransaktionen.",
+        },
+        {
+          heading: "E-Wallets",
+          body: "E-Wallets wie PayPal, Skrill und Neteller sind beliebt, weil sie schnelle Transaktionen und eine zusätzliche Sicherheitsebene bieten — Sie teilen Ihre Bankdaten nicht direkt mit dem Casino. Einzahlungen sind sofort, Auszahlungen in der Regel innerhalb von 24 Stunden.",
+        },
+        {
+          heading: "Banküberweisungen",
+          body: "Direktüberweisungen und Dienste wie Trustly, iDEAL und SOFORT ermöglichen Überweisungen direkt von Ihrem Bankkonto. Diese Methoden sind sicher und gut reguliert, können aber langsamere Auszahlungszeiten haben (2-5 Werktage). Besonders beliebt in den Niederlanden, Deutschland und den nordischen Ländern.",
+        },
+        {
+          heading: "Prepaid-Karten und Gutscheine",
+          body: "Paysafecard ist eine weit verbreitete Prepaid-Option, mit der Sie einzahlen können, ohne finanzielle Daten preiszugeben. Der Nachteil: Auszahlungen können nicht auf Prepaid-Karten erfolgen.",
+        },
+        {
+          heading: "Kryptowährungen",
+          body: "Manche Online-Casinos akzeptieren Bitcoin, Ethereum und andere Kryptowährungen. Krypto-Transaktionen können schnellere Abwicklungen und niedrigere Gebühren bieten, bringen aber zusätzliche Überlegungen wie Preisvolatilität und unterschiedlichen regulatorischen Status mit sich.",
+        },
+        {
+          heading: "Entscheidungskriterien",
+          body: "Wählen Sie nach Verarbeitungsgeschwindigkeit, Gebühren, Verfügbarkeit in Ihrem Land, Auszahlungslimits und Bonus-Eignung. Manche Methoden sind nur für Einzahlungen geeignet.",
+        },
+      ],
+      conclusion: "Die beste Zahlungsmethode hängt von Ihren Prioritäten ab — Geschwindigkeit, Sicherheit, Privatsphäre oder Bonus-Eignung. Viele erfahrene Spieler nutzen zwei oder mehr Methoden.",
+      faq: [
+        { question: "Was ist die schnellste Auszahlungsmethode?", answer: "E-Wallets (PayPal, Skrill, Neteller) bieten in der Regel die schnellsten Auszahlungen, meist innerhalb von 24 Stunden." },
+        { question: "Gibt es Gebühren für Casino-Einzahlungen?", answer: "Die meisten Casinos erheben keine Einzahlungsgebühren, aber Ihr Zahlungsanbieter kann Gebühren erheben." },
+        { question: "Kann ich verschiedene Methoden für Ein- und Auszahlungen verwenden?", answer: "Ja, die meisten Casinos erlauben verschiedene Methoden, manche verlangen aber dieselbe Methode für beide." },
+      ],
+    },
   },
   {
     slug: "casino-bonuses-explained",
@@ -139,6 +222,44 @@ const guides: Guide[] = [
       { question: "Can I withdraw bonus funds immediately?", answer: "No, bonus funds are typically locked until wagering requirements are met. Withdrawing before completing wagering usually forfeits the bonus and any associated winnings." },
       { question: "Do all games count equally toward wagering?", answer: "No. Slots usually contribute 100% toward wagering requirements, while table games like blackjack and roulette may contribute 10-20% or not at all. Check the bonus terms for the specific contribution rates." },
     ],
+    de: {
+      title: "Casino-Boni erklärt",
+      description: "Verschiedene Bonusarten, Umsatzbedingungen und wie Sie den Bonuswert bewerten.",
+      category: "Boni",
+      intro: "Casino-Boni sollen neue Spieler anziehen und bestehende belohnen. Um zu verstehen, was Sie wirklich bekommen, ist es wichtig, die Bedingungen zu kennen.",
+      sections: [
+        {
+          heading: "Willkommensbonus",
+          body: "Willkommensboni werden neuen Spielern bei der ersten Einzahlung angeboten. Das gängigste Format ist ein Einzahlungs-Match — das Casino gleicht Ihre Einzahlung bis zu einem bestimmten Betrag. Ein 100%-Match bis zu 200 € bedeutet: Einzahlen Sie 200 €, erhalten Sie zusätzlich 200 € Bonusguthaben.",
+        },
+        {
+          heading: "Kein-Einzahlungs-Bonus",
+          body: "Kein-Einzahlungs-Bonus geben Ihnen einen kleinen Betrag Bonusguthaben oder Free Spins nur für die Registrierung, ohne Einzahlung. Diese Boni sind typischerweise klein (5-20 € oder 10-50 Free Spins) und haben höhere Umsatzbedingungen.",
+        },
+        {
+          heading: "Free Spins",
+          body: "Free Spins erlauben das Spielen von Spielautomaten ohne eigenes Geld. Gewinne aus Free Spins werden als Bonusguthaben gutgeschrieben und unterliegen Umsatzbedingungen. Manche Casinos bieten umsatzfreie Spins an.",
+        },
+        {
+          heading: "Umsatzbedingungen",
+          body: "Umsatzbedingungen geben an, wie oft Sie Ihr Bonusguthaben einsetzen müssen, bevor Sie Gewinne abheben können. Eine 30-fache Umsatzbedingung bei einem 100 € Bonus bedeutet: 3.000 € müssen Sie einsetzen. Niedrigere Bedingungen machen Boni leichter in echtes Guthaben umwandbar.",
+        },
+        {
+          heading: "Reload-Boni",
+          body: "Reload-Boni sind ähnlich wie Willkommensboni, werden aber bestehenden Spielern bei nachfolgenden Einzahlungen angeboten. Sie sind typischerweise kleiner (z.B. 50% bis 100 €).",
+        },
+        {
+          heading: "Cashback-Angebote",
+          body: "Cashback-Boni erstatten einen Prozentsatz Ihrer Nettoverluste über einen bestimmten Zeitraum. Zum Beispiel 10% Cashback auf wöchentliche Verluste bis zu 100 €. Cashback kann als echtes Guthaben (ohne Umsatz) oder als Bonusguthaben ausgezahlt werden.",
+        },
+      ],
+      conclusion: "Ein Bonus ist nur wertvoll, wenn die Bedingungen fair sind. Lesen Sie immer die vollständigen Geschäftsbedingungen — achten Sie auf Umsatzbedingungen, Zeitlimits, Spielseinschränkungen und Auszahlungslimits.",
+      faq: [
+        { question: "Sind Casino-Boni es wert?", answer: "Boni können Mehrwert bieten, wenn die Umsatzbedingungen angemessen sind und Sie ohnehin spielen möchten. Lesen Sie immer die Bedingungen." },
+        { question: "Kann ich Bonusguthaben sofort abheben?", answer: "Nein, Bonusguthaben ist typischerweise gesperrt, bis die Umsatzbedingungen erfüllt sind." },
+        { question: "Zählen alle Spiele gleich zum Umsatz?", answer: "Nein. Slots tragen in der Regel 100% bei, Tischspiele nur 10-20% oder gar nicht." },
+      ],
+    },
   },
   {
     slug: "responsible-gambling-tips",
@@ -181,6 +302,44 @@ const guides: Guide[] = [
       { question: "What is self-exclusion?", answer: "Self-exclusion allows you to block yourself from accessing gambling sites for a set period (from 6 months to 5 years). In some countries, national self-exclusion schemes like OASIS (Germany) or GAMSTOP (UK) cover all licensed operators." },
       { question: "Is gambling addiction real?", answer: "Yes, problem gambling is a recognized behavioral addiction. It affects a small percentage of the population but can have serious consequences. Professional help is available and effective." },
     ],
+    de: {
+      title: "Tipps für verantwortungsbewusstes Spielen",
+      description: "Praktische Tipps, um die Kontrolle zu behalten und Glücksspiel als Unterhaltung zu genießen.",
+      category: "Verantwortungsbewusstes Spielen",
+      intro: "Glücksspiel sollte als Unterhaltung behandelt werden, nicht als Einkommensquelle. Verantwortungsbewusstes Spielen bedeutet, die Kontrolle zu behalten, Grenzen zu setzen und zu wissen, wann man aufhört.",
+      sections: [
+        {
+          heading: "Budget festlegen",
+          body: "Legen Sie vor dem Spielen fest, wie viel Sie verlieren können, und halten Sie sich daran. Spielen Sie nie mit Geld, das für Rechnungen, Miete oder andere Ausgaben benötigt wird. Nutzen Sie die Einzahlungslimits der Casinos — täglich, wöchentlich oder monatlich.",
+        },
+        {
+          heading: "Zeitlimits setzen",
+          body: "Es ist leicht, die Zeit beim Spielen zu vergessen. Setzen Sie ein Zeitlimit und halten Sie sich daran. Nutzen Sie Wecker oder Erinnerungen. Pausieren Sie regelmäßig und steigen Sie vom Bildschirm ab.",
+        },
+        {
+          heading: "Verluste nie nachjagen",
+          body: "Einer der wichtigsten Regeln: Jagen Sie Verlusten nicht hinterher. Wenn Ihr Budget aufgebraucht ist, akzeptieren Sie den Verlust und hören Sie auf. Verluste nachjagen — mit höheren Einsätzen versuchen, Verluste zurückzugewinnen — führt zu größeren Verlusten.",
+        },
+        {
+          heading: "Casino-Tools nutzen",
+          body: "Lizenzierte Casinos bieten Verantwortungswerkzeuge: Einzahlungslimits, Verlustlimits, Einsatzlimits, Sitzungszeitlimits, Reality-Checks, Selbstsperre und Kontoschließung. Nutzen Sie diese Werkzeuge.",
+        },
+        {
+          heading: "Warnzeichen erkennen",
+          body: "Seien Sie ehrlich zu sich selbst. Warnzeichen: Spielen mehr als man sich leisten kann, Lügen über Glücksspiel, Geld leihen zum Spielen, Arbeits- oder Beziehungsprobleme durch Glücksspiel, Angst oder Depressionen beim Spielen.",
+        },
+        {
+          heading: "Hilfe holen",
+          body: "Wenn Glücksspiel nicht mehr macht, oder wenn Sie Schwierigkeiten haben, die Kontrolle zu behalten — es gibt Organisationen, die helfen. Check-dein-Spiel.de, die BZgA-Hotline und anonyme Beratungsstellen bieten kostenlose Unterstützung.",
+        },
+      ],
+      conclusion: "Verantwortungsbewusstes Spielen bedeutet, das Erlebnis zu genießen und gleichzeitig die Kontrolle zu behalten. Setzen Sie Grenzen, halten Sie sich daran und spielen Sie nie mehr, als Sie verlieren können.",
+      faq: [
+        { question: "Wie setze ich Einzahlungslimits?", answer: "Die meisten lizenzierten Casinos bieten Einzahlungslimits in den Verantwortungseinstellungen. Sie können täglich, wöchentlich und monatlich limits setzen." },
+        { question: "Was ist Selbstsperre?", answer: "Selbstsperre erlaubt es Ihnen, sich für einen bestimmten Zeitraum (6 Monate bis 5 Jahre) von Glücksspiel-Seiten auszuschließen." },
+        { question: "Spielsucht — ist das real?", answer: "Ja, problematisches Glücksspiel ist eine anerkannte Verhaltenssucht. Professionelle Hilfe ist verfügbar und wirksam." },
+      ],
+    },
   },
   {
     slug: "understanding-wagering-requirements",
@@ -223,6 +382,44 @@ const guides: Guide[] = [
       { question: "Can I refuse a bonus?", answer: "Yes, you can choose not to accept a bonus. Some casinos allow you to opt out during registration or deposit. Playing without a bonus means no wagering requirements and the ability to withdraw anytime." },
       { question: "What happens if I exceed the max bet while wagering?", answer: "Most casinos will void your bonus and any associated winnings if you exceed the maximum bet limit while wagering. Always check the bonus terms for the specific limit." },
     ],
+    de: {
+      title: "Umsatzbedingungen verstehen",
+      description: "So berechnen und bewerten Sie Umsatzbedingungen bei Casino-Bonusangeboten.",
+      category: "Boni",
+      intro: "Umsatzbedingungen sind die wichtigste Bedingung bei Casino-Bonusangeboten. Ein Verständnis hilft Ihnen zu beurteilen, ob ein Bonus wirklich Mehrwert bietet.",
+      sections: [
+        {
+          heading: "Was sind Umsatzbedingungen?",
+          body: "Umsatzbedingungen (auch: Umsatzanforderungen) geben an, wie oft Sie Ihr Bonusguthaben einsetzen müssen, bevor Sie Gewinne abheben können. Sie werden als Multiplikator angegeben. 30x bei 100 € Bonus bedeutet: 3.000 € müssen Sie einsetzen.",
+        },
+        {
+          heading: "Berechnung",
+          body: "Die Berechnung ist einfach: Bonusbetrag × Umsatzmultiplikator = Gesamtumsatz. Ein 100%-Match-Bonus von 200 € mit 25x Umsatz erfordert 5.000 € Einsatz. Manche Casinos wenden den Umsatz auf Einzahlung + Bonus an — prüfen Sie die Bedingungen.",
+        },
+        {
+          heading: "Spielbeitragsraten",
+          body: "Nicht alle Spiele zählen gleich. Slots tragen in der Regel 100% bei, Tischspiele nur 10-20%. Manche Spiele sind ausgeschlossen. Prüfen Sie die Bonusbedingungen für die spezifischen Beitragsraten.",
+        },
+        {
+          heading: "Bonuswert bewerten",
+          body: "Bewerten Sie den Bonus zusammen mit anderen Faktoren: Bonusbetrag, Zeitlimits, Spielseinschränkungen und maximale Einsätze während des Umsatzes. Ein 50 € Bonus mit 10x Umsatz (500 €) ist oft wertvoller als ein 200 € Bonus mit 40x Umsatz (8.000 €).",
+        },
+        {
+          heading: "Zeitlimits und Einschränkungen",
+          body: "Die meisten Boni haben ein Zeitlimit (7-30 Tage). Fristüberschreitung = Bonus und Gewinne verfallen. Casinos können maximale Einsätze während des Umsatzes verlangen (meist 5 € pro Spin).",
+        },
+        {
+          heading: "Umsatzfreie Boni",
+          body: "Manche Casinos bieten umsatzfreie Boni — Gewinne werden direkt als Bargeld ausgezahlt. Diese sind seltener, bieten aber echten Wert, da Sie behalten, was Sie gewinnen.",
+        },
+      ],
+      conclusion: "Umsatzbedingungen bestimmen den realen Wert eines Casino-Bonus. Niedrigere Bedingungen, angemessene Zeitlimits und faire Spielbeiträge machen einen Bonus erreichbarer.",
+      faq: [
+        { question: "Was ist eine gute Umsatzbedingung?", answer: "20x oder weniger gilt als fair. 25-35x ist Durchschnitt, über 40x als hoch und schwer zu erfüllen." },
+        { question: "Kann ich einen Bonus ablehnen?", answer: "Ja, Sie können sich gegen einen Bonus entscheiden. Ohne Bonus: keine Umsatzbedingungen, sofortige Auszahlung möglich." },
+        { question: "Was passiert bei Maxbet-Überschreitung?", answer: "Die meisten Casinos annullieren Bonus und Gewinne bei Überschreitung des Maximal Einsatzlimits." },
+      ],
+    },
   },
   {
     slug: "casino-licensing-guide",
@@ -265,6 +462,44 @@ const guides: Guide[] = [
       { question: "What should I do if I have a dispute with a licensed casino?", answer: "First, try to resolve the issue directly with the casino. If unsuccessful, contact the licensing authority — most have formal complaint procedures. Some jurisdictions also have independent alternative dispute resolution (ADR) providers." },
       { question: "Is a Curacao license bad?", answer: "A Curacao license provides a legal framework but may offer less player protection than European licenses like MGA or UKGC. It is not inherently bad, but players should be aware of the differences in regulatory oversight." },
     ],
+    de: {
+      title: "Casino-Lizenzen verstehen",
+      description: "Online-Casino-Lizenzen: MGA, UKGC, Curacao, Gibraltar — und was sie für den Spielerschutz bedeuten.",
+      category: "Vertrauen & Sicherheit",
+      intro: "Eine Casino-Lizenz ist die Grundlage des Vertrauens zwischen Casino und Spielern. Unterschiedliche Lizenzbehörden haben unterschiedliche Standards.",
+      sections: [
+        {
+          heading: "Warum Lizenzen wichtig sind",
+          body: "Eine Casino-Lizenz bedeutet, der Betreiber hat Anforderungen einer Aufsichtsbehörde erfüllt: finanzielle Stabilität, faires Spielen, verantwortungsbewusstes Glücksspiel, Geldwäscheprevention und Spielerkontenschutz. Lizenzierte Casinos unterliegen regelmäßigen Kontrollen.",
+        },
+        {
+          heading: "Malta Gaming Authority (MGA)",
+          body: "Die MGA ist eine der respektiertesten Lizenzbehörden. MGA-lizenzierte Casinos müssen strenge Standards für Spielerschutz erfüllen: getrennte Spielerkonten, Verantwortungswerkzeuge und Zertifizierung fairer Spiele. Die MGA bietet einen Streitbeilegungsprozess.",
+        },
+        {
+          heading: "UK Gambling Commission (UKGC)",
+          body: "Die UKGC reguliert alle Glücksspielaktivitäten in Großbritannien. Sie ist bekannt für strikte Anforderungen: verpflichtende Verantwortungsmaßnahmen, Werbestandards und Spielerverifizierung. UKGC-lizenzierte Casinos müssen an GAMSTOP-Selbstsperre teilnehmen.",
+        },
+        {
+          heading: "Gibraltar Regulatory Authority (GRA)",
+          body: "Die GRA reguliert Online-Glücksspiel seit 2005 und ist für rigorose Standards bekannt. Gibraltar-lizenzierte Casinos müssen strenge finanzielle Anforderungen erfüllen und bieten ein hohes Maß an Spielerschutz.",
+        },
+        {
+          heading: "Curacao eGaming",
+          body: "Curacao ist eines der ältesten Glücksspiellizenzgebiete. Die Anforderungen waren historisch weniger streng als europäische Regulierungen. Curacao-lizenzierte Casinos sind allgemein zugänglicher, der Streitbeilegungsprozess kann weniger robust sein. Neue Stärkungen des Spielerschutzes sind in Umsetzung.",
+        },
+        {
+          heading: "Lizenz überprüfen",
+          body: "Prüfen Sie die Fußeile der Casino-Website auf Lizenzinformationen mit Lizenznummer und Behörde. Die meisten Behörden führen öffentliche Register. Keine Lizenzinformation = rotes Flagge.",
+        },
+      ],
+      conclusion: "Eine Lizenz garantiert kein perfektes Casino, bietet aber eine Grundlage von Vertrauen und regulatorischer Aufsicht. Casinos mit Lizenzen von MGA, UKGC oder GRA bieten in der Regel besseren Spielerschutz.",
+      faq: [
+        { question: "Kann ein Casino mehrere Lizenzen haben?", answer: "Ja, viele Casinos halten Lizenzen mehrerer Behörden — zusätzlicher Spielerschutz und Marktzugang." },
+        { question: "Streit mit lizenziertem Casino?", answer: "Versuchen Sie zunächst eine direkte Lösung. Bei Scheitern: Lizenzbehörde kontaktieren — die meisten haben formelle Beschwerdeverfahren." },
+        { question: "Ist eine Curacao-Lizenz schlecht?", answer: "Sie bietet einen rechtlichen Rahmen, kann aber weniger Spielerschutz bieten als europäische Lizenzen. Nicht inherent schlecht, aber Unterschiede kennen." },
+      ],
+    },
   },
 ];
 
@@ -300,4 +535,10 @@ export function getGuideMetadata(slug: string): Metadata | undefined {
       canonical: `/guides/${guide.slug}`,
     },
   };
+}
+
+export function getGermanGuideBySlug(slug: string): { guide: Guide; de: GuideLocale } | undefined {
+  const guide = getGuideBySlug(slug);
+  if (!guide?.de) return undefined;
+  return { guide, de: guide.de };
 }

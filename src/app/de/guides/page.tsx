@@ -5,17 +5,17 @@ import { Badge } from "@/components/ui/Badge";
 import { getAllGuides } from "@/lib/data/guides";
 
 export const metadata: Metadata = {
-  title: "Germany Gambling Guides — CasinoLynora",
-  description: "Expert guides for online gambling in Germany. Payment methods, bonuses, responsible gambling, and more.",
+  title: "Glücksspiel-Guides für Deutschland — CasinoLynora",
+  description: "Praktische Guides für Online-Glücksspiel in Deutschland: Zahlungsmethoden, Boni, verantwortungsbewusstes Spielen und mehr.",
   alternates: { canonical: "/de/guides" },
   openGraph: {
-    title: "Germany Gambling Guides — CasinoLynora",
-    description: "Expert guides for online gambling in Germany.",
+    title: "Glücksspiel-Guides für Deutschland — CasinoLynora",
+    description: "Praktische Guides für Online-Glücksspiel in Deutschland.",
   },
   twitter: {
     card: "summary",
-    title: "Germany Gambling Guides — CasinoLynora",
-    description: "Expert guides for online gambling in Germany.",
+    title: "Glücksspiel-Guides für Deutschland — CasinoLynora",
+    description: "Praktische Guides für Online-Glücksspiel in Deutschland.",
   },
 };
 
@@ -26,28 +26,53 @@ export default function GermanyGuidesPage() {
     <main id="main-content">
       <Container className="py-12 lg:py-20">
         <div className="max-w-3xl mb-10">
-          <h1 className="text-3xl sm:text-4xl font-bold mb-4">Germany Gambling Guides</h1>
-          <p className="text-lg text-muted">
-            Expert guides for online gambling in Germany.
+          <h1 className="text-3xl sm:text-4xl font-bold mb-4">Glücksspiel-Guides für Deutschland</h1>
+          <p className="text-lg text-muted leading-relaxed">
+            Praktische Informationen für deutsche Spieler: Zahlungsmethoden, Bonusbedingungen,
+            Casino-Lizenzen und Tipps für verantwortungsbewusstes Spielen.
           </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl">
-          {guides.map((guide) => (
-            <Link
-              key={guide.slug}
-              href={`/de/guides/${guide.slug}`}
-              className="card-premium p-6 group"
-            >
-              <Badge variant="primary" size="sm" className="mb-3">{guide.category}</Badge>
-              <h2 className="text-lg font-bold mb-2 group-hover:text-brand-700 transition-colors">
-                {guide.title}
-              </h2>
-              <p className="text-sm text-muted line-clamp-2 leading-relaxed">
-                {guide.description}
-              </p>
+          {guides.map((guide) => {
+            const deTitle = guide.de?.title || guide.title;
+            const deDesc = guide.de?.description || guide.description;
+            const deCategory = guide.de?.category || guide.category;
+            return (
+              <Link
+                key={guide.slug}
+                href={`/de/guides/${guide.slug}`}
+                className="card-premium p-6 group"
+              >
+                <Badge variant="primary" size="sm" className="mb-3">{deCategory}</Badge>
+                <h2 className="text-lg font-bold mb-2 group-hover:text-brand-700 transition-colors">
+                  {deTitle}
+                </h2>
+                <p className="text-sm text-muted line-clamp-2 leading-relaxed">
+                  {deDesc}
+                </p>
+              </Link>
+            );
+          })}
+        </div>
+
+        {/* Internal links */}
+        <div className="mt-12 space-y-4">
+          <h2 className="text-xl font-bold">Mehr zu Online-Glücksspiel in Deutschland</h2>
+          <div className="flex flex-wrap gap-3">
+            <Link href="/de/casinos" className="text-sm font-semibold text-brand-700 hover:text-brand-600 transition-colors">
+              Deutsche Casinos entdecken
             </Link>
-          ))}
+            <Link href="/de/best-casinos" className="text-sm font-semibold text-brand-700 hover:text-brand-600 transition-colors">
+              Bewertungsmethodik
+            </Link>
+            <Link href="/de/compare" className="text-sm font-semibold text-brand-700 hover:text-brand-600 transition-colors">
+              Casinos vergleichen
+            </Link>
+            <Link href="/ai-casino-match" className="text-sm font-semibold text-brand-700 hover:text-brand-600 transition-colors">
+              KI-Matchmaker
+            </Link>
+          </div>
         </div>
 
         <div className="mt-8">
@@ -55,7 +80,7 @@ export default function GermanyGuidesPage() {
             href="/de"
             className="text-sm font-semibold text-brand-700 hover:text-brand-600 transition-colors"
           >
-            ← Back to Germany Home
+            ← Zurück zur Deutschland-Startseite
           </Link>
         </div>
       </Container>

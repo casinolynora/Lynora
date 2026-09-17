@@ -6,19 +6,19 @@ import { CasinoGrid } from "@/components/casino/CasinoGrid";
 import { createGermanyProvider } from "@/lib/data/germany-provider";
 
 export const metadata: Metadata = {
-  title: "Online Casinos in Germany — CasinoLynora",
-  description: "Browse GGL-licensed online casinos available in Germany. Verified data on licenses, payment methods, and responsible gambling features.",
+  title: "Online-Casinos in Deutschland — CasinoLynora",
+  description: "GGL-lizenzierte Online-Casinos für deutsche Spieler. Verifizierte Daten zu Lizenzen, Zahlungsmethoden und verantwortungsbewusstem Spielen.",
   alternates: {
     canonical: "/de",
   },
   openGraph: {
-    title: "Online Casinos in Germany — CasinoLynora",
-    description: "GGL-licensed online casinos with verified data for German players.",
+    title: "Online-Casinos in Deutschland — CasinoLynora",
+    description: "GGL-lizenzierte Online-Casinos mit verifizierten Daten für deutsche Spieler.",
   },
   twitter: {
     card: "summary",
-    title: "Online Casinos in Germany — CasinoLynora",
-    description: "GGL-licensed online casinos with verified data for German players.",
+    title: "Online-Casinos in Deutschland — CasinoLynora",
+    description: "GGL-lizenzierte Online-Casinos mit verifizierten Daten für deutsche Spieler.",
   },
 };
 
@@ -33,11 +33,11 @@ export default function GermanyPage() {
         <div className="max-w-3xl mb-10">
           <div className="flex items-center gap-3 mb-4">
             <span className="text-3xl">🇩🇪</span>
-            <h1 className="text-3xl sm:text-4xl font-bold">Online Casinos in Germany</h1>
+            <h1 className="text-3xl sm:text-4xl font-bold">Online-Casinos in Deutschland</h1>
           </div>
           <p className="text-lg text-muted leading-relaxed">
-            Browse GGL-licensed online casinos available to German players.
-            Every listing includes verified data on licenses, payment methods, and responsible gambling features.
+            Entdecken Sie GGL-lizenzierte Online-Casinos, die für deutsche Spieler verfügbar sind.
+            Jedes Profil enthält verifizierte Daten zu Lizenzen, Zahlungsmethoden und verantwortungsbewusstem Spielen.
           </p>
         </div>
 
@@ -54,49 +54,53 @@ export default function GermanyPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
                 </svg>
               </div>
-              <h2 className="text-xl font-bold mb-2">Casino Listings Coming Soon</h2>
+              <h2 className="text-xl font-bold mb-2">Casino-Profile werden vorbereitet</h2>
               <p className="text-muted mb-6">
-                We are preparing verified casino profiles for the German market.
-                Each listing will include verified information about GGL licenses,
-                payment methods, and responsible gambling features.
+                Wir erstellen verifizierte Casino-Profile für den deutschen Markt.
+                Jedes Profil wird aktuelle Daten zu GGL-Lizenzen, Zahlungsmethoden und verantwortungsbewusstem Spielen enthalten.
               </p>
               <Button href="/ai-casino-match" variant="primary">
-                Try AI Matchmaker Instead
+                KI-Matchmaker stattdessen testen
               </Button>
             </div>
           </div>
         )}
 
-        {/* SEO content */}
+        {/* SEO content with internal links */}
         <div className="max-w-3xl mt-16">
           <div className="space-y-8">
             <section>
-              <h2 className="text-2xl font-bold mb-3">Online Gambling in Germany</h2>
+              <h2 className="text-2xl font-bold mb-3">Online-Glücksspiel in Deutschland</h2>
               <p className="text-muted leading-relaxed">
-                Online gambling in Germany is regulated by the Gemeinsame Glücksspielbehörde (GGL),
-                the joint gambling authority. Casinos must hold a valid GGL license to operate legally.
-                CasinoLynora only lists casinos that are licensed and available to German players.
+                Online-Glücksspiel in Deutschland wird von der Gemeinsamen Glücksspielbehörde der Länder (GGL) reguliert.
+                Casinos benötigen eine gültige GGL-Lizenz, um legal zu operieren.
+                CasinoLynora listet ausschließlich Casinos auf, die über eine relevante Lizenz verfügen.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold mb-3">How We Match Casinos</h2>
+              <h2 className="text-2xl font-bold mb-3">So funktioniert unser Vergleich</h2>
               <p className="text-muted leading-relaxed">
-                Our AI-powered matching system considers GGL licensing, payment methods popular
-                in Germany (PayPal, Klarna, Sofort), Euro currency support, German language
-                support, and your personal preferences.
+                Unser Algorithmus analysiert strukturierte Casino-Daten — GGL-Lizenz, Zahlungsmethoden (PayPal, Klarna, SOFORT),
+                Euro-Unterstützung, deutsche Sprache und Ihre persönlichen Vorlieben.
+                Erfahren Sie mehr über unsere{" "}
+                <Link href="/de/best-casinos" className="text-brand-700 font-medium hover:underline">
+                  Bewertungsmethodik
+                </Link>
+                .
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold mb-3">Responsible Gambling</h2>
+              <h2 className="text-2xl font-bold mb-3">Verantwortungsbewusstes Spielen</h2>
               <p className="text-muted leading-relaxed">
-                Gambling should be entertaining, not a way to make money. Never bet more than you
-                can afford to lose. Visit our{" "}
+                Glücksspiel sollte unterhaltsam bleiben, nicht als Einkommensquelle dienen.
+                Setzen Sie sich feste Limits und hören Sie auf, wenn das Vergnügen aufhört.
+                Besuchen Sie unsere{" "}
                 <Link href="/responsible-gambling" className="text-brand-700 font-medium hover:underline">
-                  responsible gambling page
-                </Link>{" "}
-                for resources and support.
+                  Seite zum verantwortungsbewussten Spielen
+                </Link>
+                {" "}für Ressourcen und Unterstützung.
               </p>
             </section>
           </div>
