@@ -13,6 +13,9 @@ export {
   geoAvailability,
   paymentMethods,
   casinoPaymentMethods,
+  playerReviews,
+  complaints,
+  moderationActions,
   type CasinoRecord,
   type CasinoInsert,
   type OperatorRecord,
@@ -21,5 +24,11 @@ export {
   type GeoAvailabilityRecord,
   type PaymentMethodRecord,
   type CasinoPaymentMethodRecord,
+  type PlayerReviewRecord,
+  type PlayerReviewInsert,
+  type ComplaintRecord,
+  type ComplaintInsert,
+  type ModerationActionRecord,
+  type ModerationActionInsert,
 } from "./schema";
 export { createDbProvider } from "./db-provider";

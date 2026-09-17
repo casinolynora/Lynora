@@ -257,3 +257,215 @@ export const casinos = sqliteTable("casinos", {
 
 export type CasinoRecord = typeof casinos.$inferSelect;
 export type CasinoInsert = typeof casinos.$inferInsert;
+
+// ─── Player Reviews ──────────────────────────────────────────────────────
+//
+// Player-generated reviews. These are INDEPENDENT from the editorial review
+// stored in the casinos.review JSON column.
+//
+// Editorial Score ≠ Player Rating ≠ Player Sentiment
+//
+// Player reviews are moderated before publication. The rating field stores
+// the raw player rating (1-5) and is NEVER automatically merged into the
+// editorial score. Future aggregation may calculate an average player
+// rating, but this remains a separate signal.
+
+export const playerReviews = sqliteTable("player_reviews", {
+  id: text("id").primaryKey(),
+  casinoId: text("casinoId").notNull().references(() => casinos.id, { onDelete: "cascade" }),
+
+  // ─── Reviewer identity ─────────────────────────────────────────────────────
+  // No authentication in Phase 27. reviewerId is a stable anonymous identifier
+  // (e.g., derived from IP + user agent hash). Nullable for anonymous submissions.
+  // Future: may link to authenticated user ID.
+  reviewerId: text("reviewerId"),
+
+  // ─── Content ───────────────────────────────────────────────────────────────
+  title: text("title").notNull(),
+  body: text("body").notNull(),
+
+  // ─── Rating ────────────────────────────────────────────────────────────────
+  // Raw player rating. 1-5 stars. Integer only.
+  // NEVER merged into editorial score automatically.
+  rating: integer("rating", { mode: "number" }).notNull(),
+
+  // ─── Moderation status ─────────────────────────────────────────────────────
+  // Controls public visibility. Only "approved" reviews appear publicly.
+  status: text("status", {
+    enum: ["pending", "approved", "rejected", "hidden", "flagged"],
+  }).notNull().default("pending"),
+
+  // ─── Verification ──────────────────────────────────────────────────────────
+  // "verified" means CasinoLynora completed a defined verification process.
+  // It does NOT mean "this review is guaranteed true."
+  verificationStatus: text("verificationStatus", {
+    enum: ["unverified", "verified"],
+  }).notNull().default("unverified"),
+
+  // ─── Metadata ──────────────────────────────────────────────────────────────
+  // Minimal data for abuse prevention. No passwords, no payment info, no IDs.
+  ipAddress: text("ipAddress"),
+  userAgent: text("userAgent"),
+  locale: text("locale"),
+
+  // ─── Timestamps ────────────────────────────────────────────────────────────
+  createdAt: text("createdAt").notNull(),
+  updatedAt: text("updatedAt").notNull(),
+  publishedAt: text("publishedAt"),
+
+  // ─── Moderation metadata ───────────────────────────────────────────────────
+  moderatedBy: text("moderatedBy"),
+  moderatedAt: text("moderatedAt"),
+  rejectionReason: text("rejectionReason"),
+}, (table) => [
+  index("idx_review_casino").on(table.casinoId),
+  index("idx_review_status").on(table.status),
+  index("idx_review_created").on(table.createdAt),
+  index("idx_review_rating").on(table.rating),
+  index("idx_review_reviewer").on(table.reviewerId),
+]);
+
+export type PlayerReviewRecord = typeof playerReviews.$inferSelect;
+export type PlayerReviewInsert = typeof playerReviews.$inferInsert;
+
+// ─── Complaints ──────────────────────────────────────────────────────────
+//
+// Player-submitted complaints about casinos. Independent from editorial
+// content and from player reviews. Complaints follow a workflow:
+//
+// submitted → under_review → operator_response → resolved → closed
+//
+// Complaints do NOT automatically modify the editorial casino score.
+// Severity represents workflow priority, not a judgment about the casino.
+
+export const complaints = sqliteTable("complaints", {
+  id: text("id").primaryKey(),
+  casinoId: text("casinoId").notNull().references(() => casinos.id, { onDelete: "cascade" }),
+
+  // ─── Optional review reference ─────────────────────────────────────────────
+  // A complaint may optionally reference a player review.
+  reviewId: text("reviewId").references(() => playerReviews.id, { onDelete: "set null" }),
+
+  // ─── Content ───────────────────────────────────────────────────────────────
+  subject: text("subject").notNull(),
+  description: text("description").notNull(),
+
+  // ─── Category (controlled values) ──────────────────────────────────────────
+  category: text("category", {
+    enum: [
+      "withdrawal",
+      "deposit",
+      "account",
+      "verification",
+      "bonus",
+      "customer_support",
+      "technical",
+      "responsible_gambling",
+      "other",
+    ],
+  }).notNull(),
+
+  // ─── Severity (workflow priority) ──────────────────────────────────────────
+  // Represents how urgent the complaint is for resolution workflow.
+  // NOT a judgment about the casino's legitimacy.
+  severity: text("severity", {
+    enum: ["low", "medium", "high"],
+  }).notNull().default("medium"),
+
+  // ─── Status ────────────────────────────────────────────────────────────────
+  status: text("status", {
+    enum: [
+      "submitted",
+      "under_review",
+      "awaiting_information",
+      "operator_response",
+      "resolved",
+      "closed",
+      "rejected",
+    ],
+  }).notNull().default("submitted"),
+
+  // ─── Resolution metadata ───────────────────────────────────────────────────
+  resolutionNote: text("resolutionNote"),
+  resolvedAt: text("resolvedAt"),
+
+  // ─── Reviewer identity (same model as reviews) ─────────────────────────────
+  reviewerId: text("reviewerId"),
+  ipAddress: text("ipAddress"),
+  userAgent: text("userAgent"),
+
+  // ─── Timestamps ────────────────────────────────────────────────────────────
+  createdAt: text("createdAt").notNull(),
+  updatedAt: text("updatedAt").notNull(),
+
+  // ─── Moderation metadata ───────────────────────────────────────────────────
+  moderatedBy: text("moderatedBy"),
+  moderatedAt: text("moderatedAt"),
+}, (table) => [
+  index("idx_complaint_casino").on(table.casinoId),
+  index("idx_complaint_status").on(table.status),
+  index("idx_complaint_created").on(table.createdAt),
+  index("idx_complaint_category").on(table.category),
+  index("idx_complaint_severity").on(table.severity),
+]);
+
+export type ComplaintRecord = typeof complaints.$inferSelect;
+export type ComplaintInsert = typeof complaints.$inferInsert;
+
+// ─── Moderation Actions ──────────────────────────────────────────────────
+//
+// Audit-friendly log of all moderation actions. Records who did what,
+// when, and why. Supports both review and complaint moderation.
+//
+// This table is append-only — actions are never deleted or updated.
+// Provides a complete audit trail for compliance and trust.
+
+export const moderationActions = sqliteTable("moderation_actions", {
+  id: text("id").primaryKey(),
+
+  // ─── Target ────────────────────────────────────────────────────────────────
+  // What type of entity was moderated
+  targetType: text("targetType", {
+    enum: ["review", "complaint"],
+  }).notNull(),
+
+  // The ID of the target entity (review.id or complaint.id)
+  targetId: text("targetId").notNull(),
+
+  // ─── Action ────────────────────────────────────────────────────────────────
+  action: text("action", {
+    enum: [
+      "approve",
+      "reject",
+      "hide",
+      "restore",
+      "flag",
+      "resolve",
+      "request_information",
+      "set_severity",
+    ],
+  }).notNull(),
+
+  // ─── Moderator ─────────────────────────────────────────────────────────────
+  // Reference to the moderator. In Phase 27, this is a string identifier
+  // (e.g., "admin" or "system"). Future: authenticated user ID.
+  moderatorId: text("moderatorId").notNull(),
+
+  // ─── Reason ────────────────────────────────────────────────────────────────
+  // Optional explanation for the action. Required for rejections.
+  reason: text("reason"),
+
+  // ─── Previous state ────────────────────────────────────────────────────────
+  // Snapshot of the target's status before this action
+  previousStatus: text("previousStatus"),
+
+  // ─── Timestamp ─────────────────────────────────────────────────────────────
+  createdAt: text("createdAt").notNull(),
+}, (table) => [
+  index("idx_moderation_target").on(table.targetType, table.targetId),
+  index("idx_moderation_action").on(table.action),
+  index("idx_moderation_created").on(table.createdAt),
+]);
+
+export type ModerationActionRecord = typeof moderationActions.$inferSelect;
+export type ModerationActionInsert = typeof moderationActions.$inferInsert;
