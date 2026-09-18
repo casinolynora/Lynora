@@ -5,6 +5,7 @@ import { Container } from "@/components/ui/Container";
 import { AffiliateDisclosure } from "@/components/casino/AffiliateDisclosure";
 import { AffiliateCTA } from "@/components/casino/AffiliateCTA";
 import { casinoDb } from "@/lib/data/accessor";
+import { SITE_URL } from "@/lib/config/site";
 import {
   CasinoHero,
   CasinoQuickFacts,
@@ -104,19 +105,19 @@ export default async function CasinoProfileV2({ params }: Props) {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://casinolynora.com",
+        item: SITE_URL,
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Casinos",
-        item: "https://casinolynora.com/casinos",
+        item: `${SITE_URL}/casinos`,
       },
       {
         "@type": "ListItem",
         position: 3,
         name: casino.name,
-        item: `https://casinolynora.com/casino-reviews/${slug}`,
+        item: `${SITE_URL}/casino-reviews/${slug}`,
       },
     ],
   };

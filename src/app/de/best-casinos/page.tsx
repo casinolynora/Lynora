@@ -6,16 +6,16 @@ import { CasinoGrid } from "@/components/casino/CasinoGrid";
 import { createGermanyProvider } from "@/lib/data/germany-provider";
 
 export const metadata: Metadata = {
-  title: "So finden Sie das richtige Online Casino in Deutschland | CasinoLynora",
-  description: "Erfahren Sie, wie CasinoLynora Online-Casinos für deutsche Spieler bewertet. Transparente Kriterien, GGL-Lizenz, Zahlungsmethoden und verantwortungsbewusstes Spielen.",
+  title: "So finden Sie das richtige Online Casino in Deutschland | BeInCasinos",
+  description: "Erfahren Sie, wie BeInCasinos Online-Casinos für deutsche Spieler bewertet. Transparente Kriterien, GGL-Lizenz, Zahlungsmethoden und verantwortungsbewusstes Spielen.",
   alternates: { canonical: "/de/best-casinos" },
   openGraph: {
-    title: "So finden Sie das richtige Online Casino in Deutschland | CasinoLynora",
+    title: "So finden Sie das richtige Online Casino in Deutschland | BeInCasinos",
     description: "Transparente Bewertungskriterien für Online-Casinos in Deutschland.",
   },
   twitter: {
     card: "summary",
-    title: "So finden Sie das richtige Online Casino in Deutschland | CasinoLynora",
+    title: "So finden Sie das richtige Online Casino in Deutschland | BeInCasinos",
     description: "Transparente Bewertungskriterien für Online-Casinos in Deutschland.",
   },
 };
@@ -34,7 +34,7 @@ export default function GermanyBestCasinosPage() {
             <h1 className="text-3xl sm:text-4xl font-bold">So finden Sie das richtige Online Casino</h1>
           </div>
           <p className="text-lg text-muted leading-relaxed">
-            CasinoLynora bewertet Online-Casinos anhand definierter Kriterien — nicht nach Meinungen oder Werbeeinflüssen.
+            BeInCasinos bewertet Online-Casinos anhand definierter Kriterien — nicht nach Meinungen oder Werbeeinflüssen.
             Erfahren Sie, wie unser Vergleich funktioniert und worauf Sie achten sollten.
           </p>
         </div>
@@ -45,7 +45,7 @@ export default function GermanyBestCasinosPage() {
             <section>
               <h2 className="text-2xl font-bold mb-3">Unsere Bewertungskriterien</h2>
               <p className="text-muted leading-relaxed mb-4">
-                CasinoLynora nutzt einen deterministischen Algorithmus, der strukturierte Casino-Daten gegen Ihre persönlichen Vorlieben bewertet.
+                BeInCasinos nutzt einen deterministischen Algorithmus, der strukturierte Casino-Daten gegen Ihre persönlichen Vorlieben bewertet.
                 Die Bewertung basiert auf gewichteten Datenpunkten — nicht auf subjektiven Meinungen.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -71,20 +71,20 @@ export default function GermanyBestCasinosPage() {
                 Die Gemeinsame Glücksspielbehörde der Länder (GGL) ist die zentrale Aufsichtsbehörde für Online-Glücksspiel in Deutschland.
                 Casinos mit GGL-Lizenz müssen strenge Anforderungen erfüllen: getrennte Spielerkonten, verifizierbare Zufallsgeneratoren,
                 Pflichtangebote zum verantwortungsbewussten Spielen und regelmäßige Kontrollen.
-                CasinoLynora berücksichtigt die GGL-Lizenz als wichtigstes Kriterium für die Bewertung deutscher Casinos.
+                BeInCasinos berücksichtigt die GGL-Lizenz als wichtigstes Kriterium für die Bewertung deutscher Casinos.
               </p>
             </section>
 
             <section>
               <h2 className="text-2xl font-bold mb-3">Transparente Methodik</h2>
               <p className="text-muted leading-relaxed">
-                Unser Algorithmus ist öffentlich dokumentiert. CasinoLynora verkauft keine Bewertungen und akzeptiert keine Zahlungen,
+                Unser Algorithmus ist öffentlich dokumentiert. BeInCasinos verkauft keine Bewertungen und akzeptiert keine Zahlungen,
                 die die redaktionelle Bewertung beeinflussen. Bezahlte Platzierungen werden klar als solche gekennzeichnet
                 und verändern nicht die Ergebnisse unseres Vergleichsalgorithmus.
               </p>
               <div className="mt-4 p-4 rounded-[var(--radius-lg)] border border-brand-200 bg-brand-50">
                 <p className="text-sm text-brand-800 leading-relaxed">
-                  <strong>Hinweis:</strong> „Beste Casinos" bedeutet nicht, dass CasinoLynora ein objektiv bestes Casino identifiziert hat.
+                  <strong>Hinweis:</strong> „Beste Casinos" bedeutet nicht, dass BeInCasinos ein objektiv bestes Casino identifiziert hat.
                   Die Bewertung hängt von Ihren individuellen Vorlieben ab. Nutzen Sie unseren{" "}
                   <Link href="/ai-casino-match" className="text-brand-700 font-medium hover:underline">
                     KI-Matchmaker

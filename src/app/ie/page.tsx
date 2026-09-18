@@ -4,17 +4,17 @@ import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 
 export const metadata: Metadata = {
-  title: "Online Casinos in Ireland — CasinoLynora",
+  title: "Online Casinos in Ireland — BeInCasinos",
   description:
-    "Discover regulated online casinos in Ireland. CasinoLynora provides transparent, data-driven guidance for Irish players.",
+    "Discover regulated online casinos in Ireland. BeInCasinos provides transparent, data-driven guidance for Irish players.",
   alternates: { canonical: "/ie" },
   openGraph: {
-    title: "Online Casinos in Ireland — CasinoLynora",
+    title: "Online Casinos in Ireland — BeInCasinos",
     description: "Data-driven casino guidance for Irish players.",
   },
   twitter: {
     card: "summary",
-    title: "Online Casinos in Ireland — CasinoLynora",
+    title: "Online Casinos in Ireland — BeInCasinos",
     description: "Data-driven casino guidance for Irish players.",
   },
 };
@@ -30,7 +30,7 @@ export default function IrelandPage() {
             <h1 className="text-3xl sm:text-4xl font-bold">Online Casinos in Ireland</h1>
           </div>
           <p className="text-lg text-muted leading-relaxed">
-            CasinoLynora helps Irish players find regulated online casinos using transparent,
+            BeInCasinos helps Irish players find regulated online casinos using transparent,
             data-driven matching. We verify licensing, payment methods, and responsible gambling
             features so you can make informed decisions.
           </p>
@@ -70,15 +70,15 @@ export default function IrelandPage() {
                 When choosing an online casino, Irish players should consider several factors:
                 valid licensing from recognised regulatory bodies, support for Euro (EUR) transactions,
                 payment methods popular in Ireland (such as Visa, Mastercard, PayPal, and Revolut),
-                responsible gambling tools, and clear terms and conditions. CasinoLynora&apos;s matching
+                responsible gambling tools, and clear terms and conditions. BeInCasinos&apos; matching
                 algorithm evaluates these factors to help you find suitable options.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold mb-3">How CasinoLynora Works</h2>
+              <h2 className="text-2xl font-bold mb-3">How BeInCasinos Works</h2>
               <p className="text-muted leading-relaxed">
-                CasinoLynora does not directly accept bets or facilitate gambling. Instead, we
+                BeInCasinos does not directly accept bets or facilitate gambling. Instead, we
                 aggregate and verify publicly available information about licensed online casinos.
                 Our AI-powered matching engine analyses this structured data against your stated
                 preferences to provide transparent, data-driven recommendations. We earn revenue
@@ -107,7 +107,7 @@ export default function IrelandPage() {
               <h2 className="text-2xl font-bold mb-3">Important Notices</h2>
               <p className="text-muted leading-relaxed">
                 You must be of legal gambling age in your jurisdiction to use this website.
-                CasinoLynora provides information for educational and comparison purposes.
+                BeInCasinos provides information for educational and comparison purposes.
                 We do not guarantee the accuracy of third-party information and encourage
                 players to verify details directly with casino operators. Always read the
                 terms and conditions of any casino before creating an account or depositing

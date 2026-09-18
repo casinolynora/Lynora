@@ -13,23 +13,23 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const casino = provider.getCasinoBySlug(slug);
 
   if (!casino) {
-    return { title: `${slug} Review — Germany | CasinoLynora` };
+    return { title: `${slug} Review — Germany | BeInCasinos` };
   }
 
   return {
-    title: `${casino.name} Review — Germany | CasinoLynora`,
+    title: `${casino.name} Review — Germany | BeInCasinos`,
     description: `Detailed review of ${casino.name} for German players. Verified information about games, bonuses, and payment methods.`,
     alternates: {
       canonical: `/de/casino-reviews/${slug}`,
     },
     openGraph: {
-      title: `${casino.name} Review — Germany | CasinoLynora`,
+      title: `${casino.name} Review — Germany | BeInCasinos`,
       description: `Detailed review of ${casino.name} for German players.`,
       type: "article",
     },
     twitter: {
       card: "summary",
-      title: `${casino.name} Review — Germany | CasinoLynora`,
+      title: `${casino.name} Review — Germany | BeInCasinos`,
       description: `Detailed review of ${casino.name} for German players.`,
     },
   };

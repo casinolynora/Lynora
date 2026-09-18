@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
 import { casinoDb } from "@/lib/data/accessor";
+import { SITE_URL } from "@/lib/config/site";
 import {
   validateComparisonSlugs,
   toComparisonCasino,
@@ -73,13 +74,13 @@ export default async function ComparePage({ searchParams }: Props) {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://casinolynora.com",
+        item: SITE_URL,
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Compare Casinos",
-        item: "https://casinolynora.com/compare",
+        item: `${SITE_URL}/compare`,
       },
     ],
   };

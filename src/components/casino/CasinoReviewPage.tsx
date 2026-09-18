@@ -174,7 +174,7 @@ export function CasinoReviewPage({ casino, geo: _geo = "INT", baseUrl = "" }: Ca
           <h2 className="text-xl font-bold mb-4">Our Methodology</h2>
           <div className="card-static p-6 text-sm text-muted leading-relaxed space-y-3">
             <p>
-              Every CasinoLynora profile is built from structured, verified data. We clearly indicate
+              Every BeInCasinos profile is built from structured, verified data. We clearly indicate
               when information was last verified and distinguish between editorial content and
               affiliate relationships.
             </p>

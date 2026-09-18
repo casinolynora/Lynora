@@ -3,18 +3,18 @@ import { Container } from "@/components/ui/Container";
 import { CONTACT_EMAILS } from "@/lib/config/site";
 
 export const metadata: Metadata = {
-  title: "Casino Operator Contact | CasinoLynora",
+  title: "Casino Operator Contact | BeInCasinos",
   description:
-    "Contact CasinoLynora for casino operator inquiries, data corrections, affiliate partnerships, and general business questions.",
+    "Contact BeInCasinos for casino operator inquiries, data corrections, affiliate partnerships, and general business questions.",
   alternates: { canonical: "/for-casinos/contact" },
   openGraph: {
-    title: "Casino Operator Contact | CasinoLynora",
-    description: "Contact CasinoLynora for operator inquiries and partnerships.",
+    title: "Casino Operator Contact | BeInCasinos",
+    description: "Contact BeInCasinos for operator inquiries and partnerships.",
   },
   twitter: {
     card: "summary",
-    title: "Casino Operator Contact | CasinoLynora",
-    description: "Contact CasinoLynora for operator inquiries and partnerships.",
+    title: "Casino Operator Contact | BeInCasinos",
+    description: "Contact BeInCasinos for operator inquiries and partnerships.",
   },
 };
 
@@ -28,7 +28,7 @@ export default function ForCasinosContactPage() {
           </h1>
           <p className="text-lg text-muted mb-4">
             This page is for casino operators, affiliate managers, and business
-            partners who want to get in touch with CasinoLynora. Whether you
+            partners who want to get in touch with BeInCasinos. Whether you
             need to correct listing data, discuss a partnership, or have a
             general business inquiry, we are here to help.
           </p>
@@ -81,7 +81,7 @@ export default function ForCasinosContactPage() {
               Want Your Casino Listed?
             </h2>
             <p className="text-sm text-muted">
-              If you would like to apply for a listing on CasinoLynora, visit
+              If you would like to apply for a listing on BeInCasinos, visit
               our{" "}
               <a
                 href="/for-casinos/list-your-casino"

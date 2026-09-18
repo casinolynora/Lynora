@@ -11,7 +11,7 @@ export function buildExplainPrompt(
 ): { system: string; user: string } {
   // Limit casinos to prevent token overflow
   const limitedCasinos = casinos.slice(0, MAX_CASINOS_IN_PROMPT);
-  const system = `You are CasinoLynora's AI assistant. Your role is to explain why specific online casinos match a player's preferences.
+  const system = `You are BeInCasinos's AI assistant. Your role is to explain why specific online casinos match a player's preferences.
 
 RULES:
 - You MUST only use the structured casino data provided below.
@@ -75,7 +75,7 @@ export function buildPreferenceExtractionPrompt(
   userMessage: string,
   currentPreferences: Record<string, unknown>,
 ): { system: string; user: string } {
-  const system = `You are CasinoLynora's preference extraction assistant. Your role is to parse a user's natural-language message and extract casino preferences into structured JSON.
+  const system = `You are BeInCasinos's preference extraction assistant. Your role is to parse a user's natural-language message and extract casino preferences into structured JSON.
 
 RULES:
 - Only extract preferences that are clearly stated or strongly implied by the user.

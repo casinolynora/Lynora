@@ -523,12 +523,12 @@ export function getGuideMetadata(slug: string): Metadata | undefined {
     title: guide.title,
     description: guide.description,
     openGraph: {
-      title: `${guide.title} | CasinoLynora`,
+      title: `${guide.title} | BeInCasinos`,
       description: guide.description,
     },
     twitter: {
       card: "summary",
-      title: `${guide.title} | CasinoLynora`,
+      title: `${guide.title} | BeInCasinos`,
       description: guide.description,
     },
     alternates: {

@@ -4,17 +4,17 @@ import { Badge } from "@/components/ui/Badge";
 import { ListingForm } from "./listing-form";
 
 export const metadata: Metadata = {
-  title: "Submit Your Casino to CasinoLynora",
+  title: "Submit Your Casino to BeInCasinos",
   description:
-    "List your casino on CasinoLynora to reach players across Europe. Submit your brand for review and choose a listing plan that fits your goals.",
+    "List your casino on BeInCasinos to reach players across Europe. Submit your brand for review and choose a listing plan that fits your goals.",
   alternates: { canonical: "/for-casinos/list-your-casino" },
   openGraph: {
-    title: "Submit Your Casino to CasinoLynora",
+    title: "Submit Your Casino to BeInCasinos",
     description: "Submit your brand for review and reach players across Europe.",
   },
   twitter: {
     card: "summary",
-    title: "Submit Your Casino to CasinoLynora",
+    title: "Submit Your Casino to BeInCasinos",
     description: "Submit your brand for review and reach players across Europe.",
   },
 };
@@ -32,7 +32,7 @@ export default function ListYourCasinoPage() {
               Submit Your Casino
             </h1>
             <p className="text-lg text-muted">
-              List your casino on CasinoLynora to reach players across Europe.
+              List your casino on BeInCasinos to reach players across Europe.
               Fill out the form below and our team will review your submission.
             </p>
           </div>

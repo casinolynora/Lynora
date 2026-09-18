@@ -11,7 +11,7 @@ import {
 export const metadata: Metadata = {
   title: "Casino Listing & Featured Placement Pricing",
   description:
-    "Review CasinoLynora's transparent pricing for casino listings, verified profiles, featured placement, and premium B2B packages.",
+    "Review BeInCasinos' transparent pricing for casino listings, verified profiles, featured placement, and premium B2B packages.",
   alternates: { canonical: "/for-casinos/pricing" },
   openGraph: {
     title: "Casino Listing & Featured Placement Pricing",

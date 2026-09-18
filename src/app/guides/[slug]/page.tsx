@@ -21,16 +21,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!guide) return { title: "Guide Not Found" };
 
   return {
-    title: `${guide.title} — CasinoLynora`,
+    title: `${guide.title} — BeInCasinos`,
     description: guide.description,
     alternates: { canonical: `/guides/${slug}` },
     openGraph: {
-      title: `${guide.title} — CasinoLynora`,
+      title: `${guide.title} — BeInCasinos`,
       description: guide.description,
     },
     twitter: {
       card: "summary",
-      title: `${guide.title} — CasinoLynora`,
+      title: `${guide.title} — BeInCasinos`,
       description: guide.description,
     },
   };

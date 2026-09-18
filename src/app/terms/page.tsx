@@ -48,14 +48,14 @@ export default function TermsPage() {
             <section>
               <h2 className="text-2xl font-bold mb-4">2. Website Purpose</h2>
               <p className="mb-3">
-                CasinoLynora is an informational casino comparison and matching platform. We provide
+                BeInCasinos is an informational casino comparison and matching platform. We provide
                 structured data about online casinos and use a matching algorithm to help users
                 identify casinos that may suit their preferences based on publicly available
                 information such as country availability, payment methods, game libraries, and
                 deposit limits.
               </p>
               <p className="mb-3">
-                CasinoLynora does not operate any casino, sportsbook, or gambling service. We do
+                BeInCasinos does not operate any casino, sportsbook, or gambling service. We do
                 not accept, facilitate, or process any bets, wagers, or financial transactions
                 between users and casino operators. We are not a gambling operator, payment
                 processor, or financial institution.
@@ -72,7 +72,7 @@ export default function TermsPage() {
             <section>
               <h2 className="text-2xl font-bold mb-4">3. Informational Nature of Content</h2>
               <p className="mb-3">
-                All content on CasinoLynora, including casino data, scores, match results, reviews,
+                All content on BeInCasinos, including casino data, scores, match results, reviews,
                 descriptions, and editorial content, is provided for informational and comparison
                 purposes only. This content does not constitute gambling advice, financial advice,
                 legal advice, or any other form of professional advice.
@@ -85,7 +85,7 @@ export default function TermsPage() {
                 given time.
               </p>
               <p>
-                You should not rely on the information provided by CasinoLynora as the sole basis
+                You should not rely on the information provided by BeInCasinos as the sole basis
                 for any decision. Always verify directly with the casino operator before registering
                 an account, depositing funds, or placing any bets.
               </p>
@@ -95,9 +95,9 @@ export default function TermsPage() {
             <section>
               <h2 className="text-2xl font-bold mb-4">4. Affiliate Disclosure</h2>
               <p className="mb-3">
-                CasinoLynora participates in affiliate marketing programs. Some of the links on the
+                BeInCasinos participates in affiliate marketing programs. Some of the links on the
                 Website are affiliate links, meaning that if you click on such a link and sign up
-                or make a purchase at the linked casino operator, CasinoLynora may earn a
+                or make a purchase at the linked casino operator, BeInCasinos may earn a
                 commission from the operator.
               </p>
               <p className="mb-3">
@@ -119,7 +119,7 @@ export default function TermsPage() {
             <section>
               <h2 className="text-2xl font-bold mb-4">5. Accuracy of Information</h2>
               <p className="mb-3">
-                We make reasonable efforts to ensure the information presented on CasinoLynora is
+                We make reasonable efforts to ensure the information presented on BeInCasinos is
                 accurate and based on publicly available data. However, we do not warrant or
                 guarantee the accuracy, completeness, reliability, or timeliness of any
                 information provided on the Website.
@@ -131,7 +131,7 @@ export default function TermsPage() {
               </p>
               <p>
                 It is your responsibility to verify all information directly with the relevant
-                casino operator before making any decisions. CasinoLynora shall not be held
+                casino operator before making any decisions. BeInCasinos shall not be held
                 responsible for any inaccuracies in the information we present or for any decisions
                 you make based on that information.
               </p>
@@ -144,16 +144,16 @@ export default function TermsPage() {
                 The Website contains links to third-party casino websites and other external
                 resources. These links are provided for your convenience and informational purposes
                 only. The inclusion of any link does not imply endorsement, recommendation, or
-                approval by CasinoLynora of the linked website or its operators.
+                approval by BeInCasinos of the linked website or its operators.
               </p>
               <p className="mb-3">
-                CasinoLynora has no control over, and assumes no responsibility for, the content,
+                BeInCasinos has no control over, and assumes no responsibility for, the content,
                 privacy policies, practices, availability, or legality of any third-party websites.
                 We do not monitor or review the content of third-party websites and are not
                 responsible for any information, materials, or services provided by such websites.
               </p>
               <p>
-                When you follow a link to a third-party website, you leave the CasinoLynora
+                When you follow a link to a third-party website, you leave the BeInCasinos
                 platform and do so entirely at your own risk. You should review the terms of use
                 and privacy policies of any third-party website you visit.
               </p>
@@ -163,7 +163,7 @@ export default function TermsPage() {
             <section>
               <h2 className="text-2xl font-bold mb-4">7. Responsible Gambling</h2>
               <p className="mb-3">
-                Gambling involves financial risk and can be addictive. CasinoLynora strongly
+                Gambling involves financial risk and can be addictive. BeInCasinos strongly
                 encourages all users to gamble responsibly and only with money they can afford to
                 lose. Gambling should be a form of entertainment, not a way to generate income or
                 solve financial problems.
@@ -172,7 +172,7 @@ export default function TermsPage() {
                 It is your responsibility to ensure that online gambling is legal in your
                 jurisdiction before using the Website or engaging with any third-party casino
                 operator. Laws and regulations regarding online gambling vary by country and region.
-                CasinoLynora does not provide legal advice and is not responsible for ensuring your
+                BeInCasinos does not provide legal advice and is not responsible for ensuring your
                 compliance with applicable laws.
               </p>
               <p>
@@ -188,7 +188,7 @@ export default function TermsPage() {
             <section>
               <h2 className="text-2xl font-bold mb-4">8. Prohibited Misuse</h2>
               <p className="mb-3">
-                When using CasinoLynora, you agree not to:
+                When using BeInCasinos, you agree not to:
               </p>
               <ul className="space-y-2 mb-3 pl-4">
                 <li className="flex items-start gap-2">
@@ -217,7 +217,7 @@ export default function TermsPage() {
                 <li className="flex items-start gap-2">
                   <span className="mt-0.5">•</span>
                   <span>
-                    Redistribute, republish, or commercially exploit CasinoLynora content without
+                    Redistribute, republish, or commercially exploit BeInCasinos content without
                     written permission.
                   </span>
                 </li>
@@ -253,9 +253,9 @@ export default function TermsPage() {
             <section>
               <h2 className="text-2xl font-bold mb-4">9. Intellectual Property</h2>
               <p className="mb-3">
-                All content on the CasinoLynora website, including but not limited to text,
+                All content on the BeInCasinos website, including but not limited to text,
                 graphics, logos, icons, images, data compilations, software, code, page layout,
-                design, and the matching algorithm, is the property of CasinoLynora or its content
+                design, and the matching algorithm, is the property of BeInCasinos or its content
                 providers and is protected by applicable intellectual property laws, including
                 copyright and trademark laws.
               </p>
@@ -263,10 +263,10 @@ export default function TermsPage() {
                 You may view and access the Website for personal, non-commercial informational
                 purposes. You may not reproduce, distribute, modify, create derivative works of,
                 publicly display, publicly perform, republish, download, store, or transmit any
-                content from the Website without prior written permission from CasinoLynora.
+                content from the Website without prior written permission from BeInCasinos.
               </p>
               <p>
-                The CasinoLynora name, logo, and all related marks are trademarks of CasinoLynora.
+                The BeInCasinos name, logo, and all related marks are trademarks of BeInCasinos.
                 You may not use these marks without our prior written consent.
               </p>
             </section>
@@ -275,14 +275,14 @@ export default function TermsPage() {
             <section>
               <h2 className="text-2xl font-bold mb-4">10. Limitation of Liability</h2>
               <p className="mb-3">
-                To the maximum extent permitted by applicable law, CasinoLynora, its affiliates,
+                To the maximum extent permitted by applicable law, BeInCasinos, its affiliates,
                 officers, directors, employees, and agents shall not be liable for any indirect,
                 incidental, special, consequential, or punitive damages, including but not limited
                 to losses of money, data, profits, or goodwill, arising out of or in connection
                 with your use of or inability to use the Website.
               </p>
               <p className="mb-3">
-                Without limiting the foregoing, CasinoLynora shall not be liable for any losses
+                Without limiting the foregoing, BeInCasinos shall not be liable for any losses
                 incurred through gambling activities at third-party casino operators, including
                 but not limited to losses from bets, wagers, deposits, withdrawals, or any other
                 financial transactions with such operators.
@@ -294,7 +294,7 @@ export default function TermsPage() {
                 particular purpose, or non-infringement.
               </p>
               <p>
-                CasinoLynora does not warrant that the Website will be uninterrupted, error-free,
+                BeInCasinos does not warrant that the Website will be uninterrupted, error-free,
                 secure, or free of viruses or other harmful components. Your use of the Website is
                 at your own risk.
               </p>
@@ -321,7 +321,7 @@ export default function TermsPage() {
               <h2 className="text-2xl font-bold mb-4">12. Contact</h2>
               <p>
                 If you have any questions, concerns, or feedback regarding these Terms of Use or
-                any aspect of the CasinoLynora platform, please contact us at{" "}
+                any aspect of the BeInCasinos platform, please contact us at{" "}
                 <a
                   href={`mailto:${CONTACT_EMAILS.general}`}
                   className="text-brand-700 hover:underline"

@@ -4,16 +4,16 @@ import { CasinoListSearch } from "./CasinoListSearch";
 import { casinoDb } from "@/lib/data/accessor";
 
 export const metadata: Metadata = {
-  title: "All Casinos — CasinoLynora",
+  title: "All Casinos — BeInCasinos",
   description: "Browse all verified online casinos. Search and filter by payment methods, games, and features.",
   alternates: { canonical: "/casinos" },
   openGraph: {
-    title: "All Casinos — CasinoLynora",
+    title: "All Casinos — BeInCasinos",
     description: "Browse all verified online casinos.",
   },
   twitter: {
     card: "summary",
-    title: "All Casinos — CasinoLynora",
+    title: "All Casinos — BeInCasinos",
     description: "Browse all verified online casinos.",
   },
 };

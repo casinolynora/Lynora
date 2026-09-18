@@ -74,7 +74,7 @@ export function CasinoHero({ casino, playerRating, className }: CasinoHeroProps)
           {/* Editorial Rating */}
           <div className="text-center">
             <div className="text-xs text-text-faint uppercase tracking-wider mb-1">
-              CasinoLynora Rating
+              BeInCasinos Rating
             </div>
             {casino.rating !== null ? (
               <div className="text-4xl font-bold text-foreground">

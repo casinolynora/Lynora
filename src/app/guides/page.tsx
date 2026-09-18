@@ -5,16 +5,16 @@ import { Badge } from "@/components/ui/Badge";
 import { getAllGuides } from "@/lib/data/guides";
 
 export const metadata: Metadata = {
-  title: "Casino Guides — CasinoLynora",
+  title: "Casino Guides — BeInCasinos",
   description: "Expert guides on casino bonuses, payment methods, responsible gambling, and more for European players.",
   alternates: { canonical: "/guides" },
   openGraph: {
-    title: "Casino Guides — CasinoLynora",
+    title: "Casino Guides — BeInCasinos",
     description: "Expert guides on casino bonuses, payment methods, and more.",
   },
   twitter: {
     card: "summary",
-    title: "Casino Guides — CasinoLynora",
+    title: "Casino Guides — BeInCasinos",
     description: "Expert guides on casino bonuses, payment methods, and more.",
   },
 };

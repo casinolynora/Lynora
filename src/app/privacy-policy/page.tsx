@@ -45,7 +45,7 @@ export default function PrivacyPolicyPage() {
             <section>
               <h2 className="text-xl font-bold mb-3 text-foreground">2. Information We Collect</h2>
               <p>
-                We collect very little personal information. CasinoLynora does not require account
+                We collect very little personal information. BeInCasinos does not require account
                 creation, and we do not maintain user accounts or profiles.
               </p>
 
@@ -83,7 +83,7 @@ export default function PrivacyPolicyPage() {
             <section>
               <h2 className="text-xl font-bold mb-3 text-foreground">3. Cookies and Similar Technologies</h2>
               <p>
-                CasinoLynora uses a minimal number of cookies, and none of them are used for tracking
+                BeInCasinos uses a minimal number of cookies, and none of them are used for tracking
                 or advertising purposes.
               </p>
 
@@ -106,7 +106,7 @@ export default function PrivacyPolicyPage() {
             <section>
               <h2 className="text-xl font-bold mb-3 text-foreground">4. Analytics</h2>
               <p>
-                CasinoLynora does not currently use any analytics service. No Google Analytics,
+                BeInCasinos does not currently use any analytics service. No Google Analytics,
                 Plausible, Matomo, or any other analytics platform is connected to this site. We do
                 not use any pixel tags, web beacons, or similar tracking technologies.
               </p>
@@ -120,7 +120,7 @@ export default function PrivacyPolicyPage() {
             <section>
               <h2 className="text-xl font-bold mb-3 text-foreground">5. Affiliate Links</h2>
               <p>
-                CasinoLynora is a free service supported in part through affiliate partnerships.
+                BeInCasinos is a free service supported in part through affiliate partnerships.
                 Some of the links on our site are affiliate links, meaning that if you click on
                 such a link and subsequently sign up or make a deposit at a casino, we may receive
                 a commission from that casino.
@@ -144,7 +144,7 @@ export default function PrivacyPolicyPage() {
 
               <h3 className="text-lg font-semibold mt-5 mb-2 text-foreground">Vercel (hosting)</h3>
               <p>
-                CasinoLynora is hosted on Vercel, which provides our infrastructure and CDN. Vercel
+                BeInCasinos is hosted on Vercel, which provides our infrastructure and CDN. Vercel
                 automatically collects server logs including IP addresses, browser information, and
                 request metadata for security and performance purposes. Vercel processes this data
                 in accordance with their privacy policy.
@@ -223,7 +223,7 @@ export default function PrivacyPolicyPage() {
             <section>
               <h2 className="text-xl font-bold mb-3 text-foreground">9. Children&apos;s Privacy</h2>
               <p>
-                CasinoLynora is not directed at individuals under the age of 18. We do not
+                BeInCasinos is not directed at individuals under the age of 18. We do not
                 knowingly collect personal information from children. If you are a parent or
                 guardian and believe that your child has provided us with personal data, please
                 contact us immediately so we can take steps to delete such information.
@@ -239,7 +239,7 @@ export default function PrivacyPolicyPage() {
                 page. We encourage you to review this policy periodically.
               </p>
               <p className="mt-3">
-                Your continued use of CasinoLynora after any changes to this policy constitutes
+                Your continued use of BeInCasinos after any changes to this policy constitutes
                 your acceptance of the updated terms.
               </p>
             </section>

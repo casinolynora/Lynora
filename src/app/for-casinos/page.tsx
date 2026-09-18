@@ -77,7 +77,7 @@ const FAQ_ITEMS = [
   {
     question: "Does paying for a higher plan improve my casino's rating?",
     answer:
-      "No. CasinoLynora ratings are based entirely on structured data analysis and transparent scoring algorithms. Paid placement may affect visibility or positioning on pages, but it never determines editorial scores or ratings.",
+      "No. BeInCasinos ratings are based entirely on structured data analysis and transparent scoring algorithms. Paid placement may affect visibility or positioning on pages, but it never determines editorial scores or ratings.",
   },
 ];
 

@@ -178,7 +178,7 @@ export default async function GeoPage({ params }: Props) {
             <h2 className="text-2xl font-bold mb-3">Online Gambling in {config.name}</h2>
             <p className="text-muted leading-relaxed">
               Online gambling regulations in {config.name} require casinos to hold valid
-              licenses. CasinoLynora only lists casinos that are licensed and available
+              licenses. BeInCasinos only lists casinos that are licensed and available
               to players in {config.name}.
             </p>
           </section>

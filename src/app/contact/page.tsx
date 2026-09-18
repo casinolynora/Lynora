@@ -3,18 +3,18 @@ import { Container } from "@/components/ui/Container";
 import { CONTACT_EMAILS } from "@/lib/config/site";
 
 export const metadata: Metadata = {
-  title: "Contact — CasinoLynora",
+  title: "Contact — BeInCasinos",
   description:
-    "Get in touch with the CasinoLynora team for general inquiries, partnership opportunities, or data correction reports.",
+    "Get in touch with the BeInCasinos team for general inquiries, partnership opportunities, or data correction reports.",
   alternates: { canonical: "/contact" },
   openGraph: {
-    title: "Contact — CasinoLynora",
-    description: "Get in touch with the CasinoLynora team.",
+    title: "Contact — BeInCasinos",
+    description: "Get in touch with the BeInCasinos team.",
   },
   twitter: {
     card: "summary",
-    title: "Contact — CasinoLynora",
-    description: "Get in touch with the CasinoLynora team.",
+    title: "Contact — BeInCasinos",
+    description: "Get in touch with the BeInCasinos team.",
   },
 };
 
