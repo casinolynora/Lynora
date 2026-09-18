@@ -5,6 +5,7 @@ import { Container } from "@/components/ui/Container";
 import { Badge } from "@/components/ui/Badge";
 import { FAQSection } from "@/components/casino/FAQSection";
 import { getGuideBySlug, getAllGuides } from "@/lib/data/guides";
+import { SITE_URL } from "@/lib/config/site";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -41,18 +42,48 @@ export default async function GuidePage({ params }: Props) {
   const guide = getGuideBySlug(slug);
   if (!guide) notFound();
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: SITE_URL,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Guides",
+        item: `${SITE_URL}/guides`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: guide.title,
+        item: `${SITE_URL}/guides/${slug}`,
+      },
+    ],
+  };
+
   return (
-    <main id="main-content">
-      <Container className="py-12 lg:py-16">
-        <div className="max-w-3xl mx-auto">
-          {/* Breadcrumb */}
-          <nav className="text-sm text-muted mb-6" aria-label="Breadcrumb">
-            <Link href="/" className="hover:text-brand-700 transition-colors">Home</Link>
-            <span className="mx-2 text-text-faint">/</span>
-            <Link href="/guides" className="hover:text-brand-700 transition-colors">Guides</Link>
-            <span className="mx-2 text-text-faint">/</span>
-            <span className="text-foreground font-medium">{guide.title}</span>
-          </nav>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <main id="main-content">
+        <Container className="py-12 lg:py-16">
+          <div className="max-w-3xl mx-auto">
+            {/* Breadcrumb */}
+            <nav className="flex items-center gap-2 text-sm text-muted mb-6" aria-label="Breadcrumb">
+              <Link href="/" className="hover:text-primary transition-colors">Home</Link>
+              <span aria-hidden="true">/</span>
+              <Link href="/guides" className="hover:text-primary transition-colors">Guides</Link>
+              <span aria-hidden="true">/</span>
+              <span className="text-foreground font-medium">{guide.title}</span>
+            </nav>
 
           {/* Header */}
           <div className="mb-8">
@@ -117,5 +148,6 @@ export default async function GuidePage({ params }: Props) {
         </div>
       </Container>
     </main>
+    </>
   );
 }

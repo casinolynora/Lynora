@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { casinoDb } from "@/lib/data/accessor";
+import { SITE_URL } from "@/lib/config/site";
 
 const SUPPORTED_GEOS = ["de", "fr", "nl", "be", "at", "it", "ch", "ie"] as const;
 type Geo = typeof SUPPORTED_GEOS[number];
@@ -70,8 +71,32 @@ export default async function GeoPage({ params }: Props) {
     ? casinoDb.getCasinosByGeo(geo.toUpperCase())
     : [];
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: SITE_URL,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: config.name,
+        item: `${SITE_URL}/${geo}`,
+      },
+    ],
+  };
+
   return (
-    <Container className="py-12 lg:py-20">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <Container className="py-12 lg:py-20">
       <div className="max-w-3xl mx-auto">
         <div className="flex items-center gap-3 mb-6">
           <span className="text-4xl">{config.flag}</span>
@@ -210,5 +235,6 @@ export default async function GeoPage({ params }: Props) {
         </div>
       </div>
     </Container>
+    </>
   );
 }

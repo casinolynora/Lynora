@@ -108,8 +108,10 @@ describe("sitemap", () => {
   });
 
   it("all URLs use centralized SITE_URL", () => {
+    const parsedSiteUrl = new URL(SITE_URL);
     for (const entry of sitemapEntries) {
-      expect(entry.url).toMatch(/^https:\/\/.*beincasinos\.com/);
+      const parsed = new URL(entry.url);
+      expect(parsed.origin).toBe(parsedSiteUrl.origin);
       expect(entry.url).not.toContain("localhost");
       expect(entry.url).not.toContain("vercel.app");
     }

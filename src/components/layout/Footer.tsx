@@ -21,12 +21,16 @@ const footerSections = [
     ],
   },
   {
-    title: "Germany",
+    title: "Casinos by Country",
     links: [
-      { href: "/de", label: "Germany Home" },
-      { href: "/de/casinos", label: "Casinos in Germany" },
-      { href: "/de/best-casinos", label: "Verified Casinos" },
-      { href: "/de/guides", label: "Germany Guides" },
+      { href: "/de", label: "Germany" },
+      { href: "/ie", label: "Ireland" },
+      { href: "/nl", label: "Netherlands" },
+      { href: "/be", label: "Belgium" },
+      { href: "/fr", label: "France" },
+      { href: "/at", label: "Austria" },
+      { href: "/it", label: "Italy" },
+      { href: "/ch", label: "Switzerland" },
     ],
   },
   {

@@ -68,6 +68,12 @@ export default function RootLayout({
               name: SITE_NAME,
               url: SITE_URL,
               description: "Independent casino reviews and comparisons for European players.",
+              logo: `${SITE_URL}/favicon.svg`,
+              contactPoint: {
+                "@type": "ContactPoint",
+                email: "hello@beincasinos.com",
+                contactType: "customer service",
+              },
             }),
           }}
         />
@@ -79,11 +85,6 @@ export default function RootLayout({
               "@type": "WebSite",
               name: SITE_NAME,
               url: SITE_URL,
-              potentialAction: {
-                "@type": "SearchAction",
-                target: `${SITE_URL}/casinos?q={search_term_string}`,
-                "query-input": "required name=search_term_string",
-              },
             }),
           }}
         />

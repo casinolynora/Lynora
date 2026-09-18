@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Container } from "@/components/ui/Container";
+import { SITE_URL } from "@/lib/config/site";
 
 export const metadata: Metadata = {
   title: "Methodology — BeInCasinos",
@@ -17,11 +19,40 @@ export const metadata: Metadata = {
 };
 
 export default function MethodologyPage() {
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: SITE_URL,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Methodology",
+        item: `${SITE_URL}/methodology`,
+      },
+    ],
+  };
+
   return (
-    <main id="main-content">
-      <Container className="py-12 lg:py-20">
-        <div className="max-w-3xl mx-auto">
-          <h1 className="text-3xl sm:text-4xl font-bold mb-8">Our Methodology</h1>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <main id="main-content">
+        <Container className="py-12 lg:py-20">
+          <div className="max-w-3xl mx-auto">
+            <nav className="flex items-center gap-2 text-sm text-muted mb-6" aria-label="Breadcrumb">
+              <Link href="/" className="hover:text-primary transition-colors">Home</Link>
+              <span aria-hidden="true">/</span>
+              <span className="text-foreground font-medium">Methodology</span>
+            </nav>
+            <h1 className="text-3xl sm:text-4xl font-bold mb-8">Our Methodology</h1>
 
           <div className="space-y-10">
             <section>
@@ -86,5 +117,6 @@ export default function MethodologyPage() {
         </div>
       </Container>
     </main>
+    </>
   );
 }

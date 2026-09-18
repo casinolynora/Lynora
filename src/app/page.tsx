@@ -250,13 +250,16 @@ export default function HomePage() {
               Browse casino information and guides for your country.
             </p>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 max-w-4xl mx-auto">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
             {[
               { href: "/de", flag: "🇩🇪", name: "Germany" },
               { href: "/ie", flag: "🇮🇪", name: "Ireland" },
               { href: "/nl", flag: "🇳🇱", name: "Netherlands" },
               { href: "/be", flag: "🇧🇪", name: "Belgium" },
               { href: "/fr", flag: "🇫🇷", name: "France" },
+              { href: "/at", flag: "🇦🇹", name: "Austria" },
+              { href: "/it", flag: "🇮🇹", name: "Italy" },
+              { href: "/ch", flag: "🇨🇭", name: "Switzerland" },
             ].map((geo) => (
               <Link
                 key={geo.href}
@@ -268,9 +271,15 @@ export default function HomePage() {
               </Link>
             ))}
           </div>
-          <div className="text-center mt-6">
+          <div className="text-center mt-6 flex flex-wrap justify-center gap-4">
             <Link href="/guides" className="text-sm font-semibold text-brand-700 hover:text-brand-600 transition-colors">
               Browse all guides →
+            </Link>
+            <Link href="/compare" className="text-sm font-semibold text-brand-700 hover:text-brand-600 transition-colors">
+              Compare casinos →
+            </Link>
+            <Link href="/methodology" className="text-sm font-semibold text-brand-700 hover:text-brand-600 transition-colors">
+              How we review →
             </Link>
           </div>
         </Container>
