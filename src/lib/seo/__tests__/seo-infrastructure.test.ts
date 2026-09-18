@@ -109,7 +109,7 @@ describe("sitemap", () => {
 
   it("all URLs use centralized SITE_URL", () => {
     for (const entry of sitemapEntries) {
-      expect(entry.url).toMatch(/^https:\/\/.*casinolynora\.com/);
+      expect(entry.url).toMatch(/^https:\/\/.*beincasinos\.com/);
       expect(entry.url).not.toContain("localhost");
       expect(entry.url).not.toContain("vercel.app");
     }

@@ -68,7 +68,7 @@ let activeProvider: AnalyticsProvider = consoleProvider;
 export function initAnalytics(): void {
   if (typeof window === "undefined") return;
 
-  const consent = localStorage.getItem("casinolynora_cookie_consent");
+  const consent = localStorage.getItem("beincasinos_cookie_consent");
   if (consent !== "accepted") return;
 
   const gaId = process.env.NEXT_PUBLIC_GA_ID;

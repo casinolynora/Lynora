@@ -27,7 +27,7 @@ describe("SubmitListingRequest Schema", () => {
       supportedLanguages: ["en", "de"],
       paymentMethods: ["visa", "paypal"],
       productCategories: ["slots", "live-casino"],
-      existingProfileUrl: "https://casinolynora.com/casino-reviews/test-casino",
+      existingProfileUrl: "https://beincasinos.com/casino-reviews/test-casino",
     };
     expect(SubmitListingRequestSchema.safeParse(full).success).toBe(true);
   });

@@ -139,7 +139,7 @@ export function MatchmakerFlow() {
               {/* Supporting copy */}
               <p className="text-lg sm:text-xl text-slate-300/80 max-w-2xl mx-auto mb-12 leading-relaxed">
                 Answer a few questions about how you play, what matters to you, and which features you prefer.
-                CasinoLynora uses your preferences and verified casino data to create a personalized match.
+                BeInCasinos uses your preferences and verified casino data to create a personalized match.
               </p>
 
               {/* CTAs */}

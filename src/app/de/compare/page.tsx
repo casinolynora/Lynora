@@ -6,16 +6,16 @@ import { toComparisonCasino } from "@/lib/compare";
 import { createGermanyProvider } from "@/lib/data/germany-provider";
 
 export const metadata: Metadata = {
-  title: "Casinos in Deutschland vergleichen — CasinoLynora",
+  title: "Casinos in Deutschland vergleichen — BeInCasinos",
   description: "Vergleichen Sie Online-Casinos für deutsche Spieler Seite an Seite. Strukturierte Daten zu Lizenzen, Zahlungsmethoden und Spielfunktionen.",
   alternates: { canonical: "/de/compare" },
   openGraph: {
-    title: "Casinos in Deutschland vergleichen — CasinoLynora",
+    title: "Casinos in Deutschland vergleichen — BeInCasinos",
     description: "Online-Casinos für deutsche Spieler vergleichen.",
   },
   twitter: {
     card: "summary",
-    title: "Casinos in Deutschland vergleichen — CasinoLynora",
+    title: "Casinos in Deutschland vergleichen — BeInCasinos",
     description: "Online-Casinos für deutsche Spieler vergleichen.",
   },
 };

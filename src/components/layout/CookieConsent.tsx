@@ -5,19 +5,19 @@ import { Button } from "@/components/ui/Button";
 
 function getInitialVisibility(): boolean {
   if (typeof window === "undefined") return false;
-  return !localStorage.getItem("casinolynora_cookie_consent");
+  return !localStorage.getItem("beincasinos_cookie_consent");
 }
 
 export function CookieConsent() {
   const [visible, setVisible] = useState(getInitialVisibility);
 
   const handleAccept = () => {
-    localStorage.setItem("casinolynora_cookie_consent", "accepted");
+    localStorage.setItem("beincasinos_cookie_consent", "accepted");
     setVisible(false);
   };
 
   const handleDecline = () => {
-    localStorage.setItem("casinolynora_cookie_consent", "declined");
+    localStorage.setItem("beincasinos_cookie_consent", "declined");
     setVisible(false);
   };
 

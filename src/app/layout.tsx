@@ -21,22 +21,22 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "CasinoLynora — AI-Powered Casino Matching",
-    template: "%s | CasinoLynora",
+    default: "BeInCasinos — Independent Casino Reviews & Comparisons",
+    template: "%s | BeInCasinos",
   },
-  description: "AI-powered casino discovery platform for European players. Structured, verified data for transparent decision-making.",
+  description: "Independent casino reviews and comparisons for European players. Structured, verified data for transparent decision-making.",
   metadataBase: new URL(SITE_URL),
   openGraph: {
     type: "website",
     locale: "en_GB",
-    siteName: "CasinoLynora",
-    title: "CasinoLynora — AI-Powered Casino Matching",
-    description: "AI-powered casino discovery platform for European players.",
+    siteName: "BeInCasinos",
+    title: "BeInCasinos — Independent Casino Reviews & Comparisons",
+    description: "Independent casino reviews and comparisons for European players.",
   },
   twitter: {
     card: "summary",
-    title: "CasinoLynora — AI-Powered Casino Matching",
-    description: "AI-powered casino discovery platform for European players.",
+    title: "BeInCasinos — Independent Casino Reviews & Comparisons",
+    description: "Independent casino reviews and comparisons for European players.",
   },
   robots: {
     index: true,
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0f2240",
+  themeColor: "#131d35",
 };
 
 export default function RootLayout({
@@ -67,7 +67,7 @@ export default function RootLayout({
               "@type": "Organization",
               name: SITE_NAME,
               url: SITE_URL,
-              description: "AI-powered casino discovery platform for European players.",
+              description: "Independent casino reviews and comparisons for European players.",
             }),
           }}
         />

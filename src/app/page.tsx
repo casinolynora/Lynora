@@ -7,13 +7,13 @@ import { CasinoCard } from "@/components/casino/CasinoCard";
 import { casinoDb } from "@/lib/data/accessor";
 
 export const metadata: Metadata = {
-  title: "CasinoLynora — AI-Powered Casino Matching",
+  title: "BeInCasinos — Independent Casino Reviews & Comparisons",
   description:
-    "AI-powered casino discovery platform for European players. Structured, verified data on licenses, payment methods, and responsible gambling features for transparent decision-making.",
+    "Independent casino reviews and comparisons for European players. Structured, verified data on licenses, payment methods, and responsible gambling features for transparent decision-making.",
   alternates: { canonical: "/" },
   openGraph: {
-    title: "CasinoLynora — AI-Powered Casino Matching",
-    description: "AI-powered casino discovery platform for European players.",
+    title: "BeInCasinos — Independent Casino Reviews & Comparisons",
+    description: "Independent casino reviews and comparisons for European players.",
   },
 };
 
@@ -34,7 +34,7 @@ export default function HomePage() {
           <div className="max-w-3xl">
             <Badge variant="primary" size="md" className="mb-6 border-brand-600/30 bg-brand-400/10 text-brand-200">
               <span className="mr-1.5 inline-block w-1.5 h-1.5 rounded-full bg-accent-400 animate-pulse-subtle" />
-              AI-Powered Casino Matching
+              Independent Casino Reviews & Comparisons
             </Badge>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-6 text-balance">
@@ -44,7 +44,7 @@ export default function HomePage() {
             </h1>
 
             <p className="text-lg sm:text-xl text-slate-300/90 max-w-2xl mb-10 leading-relaxed">
-              CasinoLynora matches you with licensed European casinos using structured, verified data
+              BeInCasinos matches you with licensed European casinos using structured, verified data
               and a transparent scoring algorithm. No fake reviews. No guesswork.
             </p>
 
@@ -179,11 +179,11 @@ export default function HomePage() {
         </section>
       )}
 
-      {/* ─── Why CasinoLynora ──────────────────────────────────────── */}
+      {/* ─── Why BeInCasinos ──────────────────────────────────────── */}
       <section className="py-16 lg:py-24 bg-white border-y border-border">
         <Container>
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <p className="text-sm font-semibold text-accent-600 uppercase tracking-wider mb-3">Why CasinoLynora</p>
+            <p className="text-sm font-semibold text-accent-600 uppercase tracking-wider mb-3">Why BeInCasinos</p>
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">Built on transparency</h2>
             <p className="text-muted text-lg">
               We are not another review site. We are a data-driven discovery platform.

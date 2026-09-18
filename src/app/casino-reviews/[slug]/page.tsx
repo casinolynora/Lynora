@@ -34,16 +34,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       : "";
 
   return {
-    title: `${casino.name} Review — Is It Worth Playing? | CasinoLynora`,
+    title: `${casino.name} Review — Is It Worth Playing? | BeInCasinos`,
     description: `${casino.review.overview.slice(0, 150)}${ratingText}${licenseText}`.trim(),
     openGraph: {
-      title: `${casino.name} Review — CasinoLynora`,
+      title: `${casino.name} Review — BeInCasinos`,
       description: casino.review.overview.slice(0, 200),
       type: "article",
     },
     twitter: {
       card: "summary",
-      title: `${casino.name} Review — CasinoLynora`,
+      title: `${casino.name} Review — BeInCasinos`,
       description: casino.review.overview.slice(0, 200),
     },
     alternates: {
@@ -76,7 +76,7 @@ export default async function CasinoProfileV2({ params }: Props) {
         bestRating: 100,
       },
     }),
-    author: { "@type": "Organization", name: "CasinoLynora" },
+    author: { "@type": "Organization", name: "BeInCasinos" },
     datePublished: casino.lastVerifiedAt,
   };
 
@@ -176,7 +176,7 @@ export default async function CasinoProfileV2({ params }: Props) {
               <h2 className="text-xl font-bold mb-4">Our Methodology</h2>
               <div className="card-static p-6 text-sm text-muted leading-relaxed space-y-3">
                 <p>
-                  Every CasinoLynora profile is built from structured, verified data. Our scoring
+                  Every BeInCasinos profile is built from structured, verified data. Our scoring
                   system analyzes {casino.review.scoreBreakdown ? Object.keys(casino.review.scoreBreakdown).length : 6} categories
                   including licensing, payment methods, game selection, bonus terms, and withdrawal
                   processing times.

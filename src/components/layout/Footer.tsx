@@ -3,7 +3,7 @@ import { Container } from "@/components/ui/Container";
 
 const footerSections = [
   {
-    title: "CasinoLynora",
+    title: "BeInCasinos",
     links: [
       { href: "/about", label: "About Us" },
       { href: "/methodology", label: "Our Methodology" },
@@ -81,21 +81,21 @@ export function Footer() {
             <div>
               <Link href="/" className="flex items-center gap-2 mb-3">
                 <div className="flex h-7 w-7 items-center justify-center rounded-[var(--radius-sm)] gradient-brand text-white text-[10px] font-bold">
-                  CL
+                  BIC
                 </div>
                 <span className="text-base font-bold tracking-tight text-foreground">
-                  Casino<span className="gradient-brand-text">Lynora</span>
+                  Be<span className="gradient-brand-text">In</span>Casinos
                 </span>
               </Link>
               <p className="text-xs text-muted max-w-md leading-relaxed">
-                AI-powered casino discovery platform for European players. Structured, verified data
+                Independent casino reviews and comparisons for European players. Structured, verified data
                 for transparent decision-making.
               </p>
             </div>
 
             <div className="text-xs text-muted space-y-1.5 max-w-sm">
               <p>
-                Affiliate Disclosure: CasinoLynora may earn commissions through affiliate links
+                Affiliate Disclosure: BeInCasinos may earn commissions through affiliate links
                 when monetization is enabled. This does not affect our data or recommendations.
               </p>
               <p>
@@ -106,7 +106,7 @@ export function Footer() {
 
           <div className="mt-6 pt-6 border-t border-border-subtle flex flex-col sm:flex-row items-center justify-between gap-3">
             <p className="text-xs text-text-faint">
-              &copy; {new Date().getFullYear()} CasinoLynora. All rights reserved.
+              &copy; {new Date().getFullYear()} BeInCasinos. All rights reserved.
             </p>
             <p className="text-xs text-text-faint">
               18+ | Play Responsibly

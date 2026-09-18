@@ -45,8 +45,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!config) return {};
 
   return {
-    title: `Best Online Casinos in ${config.name} — CasinoLynora`,
-    description: `Find the best online casinos in ${config.name} with CasinoLynora's AI-powered matching. Personalized recommendations for ${config.name} players.`,
+    title: `Best Online Casinos in ${config.name} — BeInCasinos`,
+    description: `Find the best online casinos in ${config.name} with BeInCasinos' independent reviews and comparisons. Personalized recommendations for ${config.name} players.`,
     alternates: {
       canonical: `/${geo}`,
       languages: {
@@ -54,8 +54,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       },
     },
     openGraph: {
-      title: `Best Online Casinos in ${config.name} — CasinoLynora`,
-      description: `AI-powered casino matching for ${config.name} players.`,
+      title: `Best Online Casinos in ${config.name} — BeInCasinos`,
+      description: `Independent casino reviews for ${config.name} players.`,
     },
   };
 }
@@ -81,8 +81,8 @@ export default async function GeoPage({ params }: Props) {
         </div>
 
         <p className="text-lg text-muted mb-8">
-          Find the best online casinos available in {config.name} with CasinoLynora&apos;s
-          AI-powered matching system. Answer a few questions and get personalized
+          Find the best online casinos available in {config.name} with BeInCasinos&apos;
+          independent reviews and comparisons. Get personalized
           recommendations based on your preferences.
         </p>
 

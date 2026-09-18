@@ -3,22 +3,27 @@
 /* ─── Design System Tokens ──────────────────────────────────────────────── */
 
 :root {
-  /* Brand palette — deep navy + emerald */
-  --brand-900: #0a1628;
-  --brand-800: #0f2240;
-  --brand-700: #152e54;
-  --brand-600: #1a3a68;
-  --brand-500: #1e4d8c;
-  --brand-400: #3b82f6;
-  --brand-300: #60a5fa;
-  --brand-200: #93c5fd;
+  /* BeInCasinos Brand Palette — deep navy + emerald */
+  --brand-900: #0c1222;
+  --brand-800: #131d35;
+  --brand-700: #1a2a4a;
+  --brand-600: #213760;
+  --brand-500: #2a4678;
+  --brand-400: #3d6098;
+  --brand-300: #5a82b8;
+  --brand-200: #8aadd4;
+  --brand-100: #c5d8ed;
+  --brand-50: #e8f0f8;
 
   /* Accent — refined emerald */
-  --accent-700: #047857;
-  --accent-600: #059669;
-  --accent-500: #10b981;
-  --accent-400: #34d399;
-  --accent-300: #6ee7b7;
+  --accent-700: #0d6e4f;
+  --accent-600: #0f8c63;
+  --accent-500: #12b07a;
+  --accent-400: #3cc995;
+  --accent-300: #6fdeb3;
+  --accent-200: #a3edd3;
+  --accent-100: #d1f5e9;
+  --accent-50: #edfcf5;
 
   /* Neutrals — warm slate */
   --slate-950: #0c0f1a;
@@ -34,10 +39,15 @@
   --slate-50: #f8fafc;
 
   /* Semantic */
-  --success: #059669;
+  --success: #0f8c63;
+  --success-light: #d1f5e9;
   --warning: #d97706;
+  --warning-light: #fef3c7;
   --danger: #dc2626;
+  --danger-light: #fee2e2;
   --info: #2563eb;
+  --trust: #0f8c63;
+  --trust-light: #d1f5e9;
 
   /* Surfaces */
   --bg: #fafbfd;
@@ -60,8 +70,8 @@
   --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.05);
   --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.04);
   --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.08), 0 8px 10px -6px rgba(0,0,0,0.04);
-  --shadow-glow: 0 0 20px rgba(30,77,140,0.12);
-  --shadow-glow-accent: 0 0 20px rgba(5,150,105,0.12);
+  --shadow-glow: 0 0 20px rgba(42,70,120,0.12);
+  --shadow-glow-accent: 0 0 20px rgba(15,140,99,0.12);
 
   /* Radii */
   --radius-sm: 6px;
@@ -80,19 +90,24 @@
 }
 
 @theme inline {
-  --color-brand-900: var(--brand-900);
-  --color-brand-800: var(--brand-800);
-  --color-brand-700: var(--brand-700);
-  --color-brand-600: var(--brand-600);
-  --color-brand-500: var(--brand-500);
-  --color-brand-400: var(--brand-400);
-  --color-brand-300: var(--brand-300);
+  --color-brand-50: var(--brand-50);
+  --color-brand-100: var(--brand-100);
   --color-brand-200: var(--brand-200);
-  --color-accent-700: var(--accent-700);
-  --color-accent-600: var(--accent-600);
-  --color-accent-500: var(--accent-500);
-  --color-accent-400: var(--accent-400);
+  --color-brand-300: var(--brand-300);
+  --color-brand-400: var(--brand-400);
+  --color-brand-500: var(--brand-500);
+  --color-brand-600: var(--brand-600);
+  --color-brand-700: var(--brand-700);
+  --color-brand-800: var(--brand-800);
+  --color-brand-900: var(--brand-900);
+  --color-accent-50: var(--accent-50);
+  --color-accent-100: var(--accent-100);
+  --color-accent-200: var(--accent-200);
   --color-accent-300: var(--accent-300);
+  --color-accent-400: var(--accent-400);
+  --color-accent-500: var(--accent-500);
+  --color-accent-600: var(--accent-600);
+  --color-accent-700: var(--accent-700);
   --color-surface: var(--surface);
   --color-surface-elevated: var(--surface-elevated);
   --color-surface-hover: var(--surface-hover);
@@ -105,12 +120,17 @@
   --color-text-secondary: var(--text-secondary);
   --color-text-faint: var(--text-faint);
   --color-success: var(--success);
+  --color-success-light: var(--success-light);
   --color-warning: var(--warning);
+  --color-warning-light: var(--warning-light);
   --color-danger: var(--danger);
+  --color-danger-light: var(--danger-light);
   --color-info: var(--info);
-  --font-sans: "Geist", "Inter", system-ui, -apple-system, sans-serif;
-  --font-mono: "Geist Mono", "JetBrains Mono", monospace;
-  --font-display: "Geist", "Inter", system-ui, sans-serif;
+  --color-trust: var(--trust);
+  --color-trust-light: var(--trust-light);
+  --font-sans: "Inter", "Geist", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", "Geist Mono", monospace;
+  --font-display: "Inter", "Geist", system-ui, sans-serif;
 }
 
 /* ─── Base ──────────────────────────────────────────────────────────────── */
@@ -183,7 +203,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .gradient-brand-subtle {
-  background: linear-gradient(135deg, rgba(30,77,140,0.06) 0%, rgba(5,150,105,0.04) 100%);
+  background: linear-gradient(135deg, rgba(42,70,120,0.06) 0%, rgba(15,140,99,0.04) 100%);
 }
 
 .gradient-brand-text {
@@ -310,7 +330,7 @@ h1, h2, h3, h4, h5, h6 {
 /* ─── Selection ─────────────────────────────────────────────────────────── */
 
 ::selection {
-  background: rgba(30, 77, 140, 0.15);
+  background: rgba(42, 70, 120, 0.15);
   color: var(--brand-800);
 }
 
@@ -327,8 +347,8 @@ h1, h2, h3, h4, h5, h6 {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 60% 50% at 50% 0%, rgba(5,150,105,0.08) 0%, transparent 70%),
-    radial-gradient(ellipse 40% 40% at 80% 20%, rgba(59,130,246,0.06) 0%, transparent 60%);
+    radial-gradient(ellipse 60% 50% at 50% 0%, rgba(15,140,99,0.08) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 40% at 80% 20%, rgba(61,96,152,0.06) 0%, transparent 60%);
   pointer-events: none;
 }
 

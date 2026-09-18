@@ -22,16 +22,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (germanGuide) {
     const { de } = germanGuide;
     return {
-      title: `${de.title} — Deutschland | CasinoLynora`,
+      title: `${de.title} — Deutschland | BeInCasinos`,
       description: de.description,
       alternates: { canonical: `/de/guides/${slug}` },
       openGraph: {
-        title: `${de.title} — Deutschland | CasinoLynora`,
+        title: `${de.title} — Deutschland | BeInCasinos`,
         description: de.description,
       },
       twitter: {
         card: "summary",
-        title: `${de.title} — Deutschland | CasinoLynora`,
+        title: `${de.title} — Deutschland | BeInCasinos`,
         description: de.description,
       },
     };
@@ -41,16 +41,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!guide) return { title: "Guide Not Found" };
 
   return {
-    title: `${guide.title} — Deutschland | CasinoLynora`,
+    title: `${guide.title} — Deutschland | BeInCasinos`,
     description: guide.description,
     alternates: { canonical: `/de/guides/${slug}` },
     openGraph: {
-      title: `${guide.title} — Deutschland | CasinoLynora`,
+      title: `${guide.title} — Deutschland | BeInCasinos`,
       description: guide.description,
     },
     twitter: {
       card: "summary",
-      title: `${guide.title} — Deutschland | CasinoLynora`,
+      title: `${guide.title} — Deutschland | BeInCasinos`,
       description: guide.description,
     },
   };

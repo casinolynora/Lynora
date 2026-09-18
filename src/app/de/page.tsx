@@ -6,18 +6,18 @@ import { CasinoGrid } from "@/components/casino/CasinoGrid";
 import { createGermanyProvider } from "@/lib/data/germany-provider";
 
 export const metadata: Metadata = {
-  title: "Online-Casinos in Deutschland — CasinoLynora",
+  title: "Online-Casinos in Deutschland — BeInCasinos",
   description: "GGL-lizenzierte Online-Casinos für deutsche Spieler. Verifizierte Daten zu Lizenzen, Zahlungsmethoden und verantwortungsbewusstem Spielen.",
   alternates: {
     canonical: "/de",
   },
   openGraph: {
-    title: "Online-Casinos in Deutschland — CasinoLynora",
+    title: "Online-Casinos in Deutschland — BeInCasinos",
     description: "GGL-lizenzierte Online-Casinos mit verifizierten Daten für deutsche Spieler.",
   },
   twitter: {
     card: "summary",
-    title: "Online-Casinos in Deutschland — CasinoLynora",
+    title: "Online-Casinos in Deutschland — BeInCasinos",
     description: "GGL-lizenzierte Online-Casinos mit verifizierten Daten für deutsche Spieler.",
   },
 };
@@ -74,7 +74,7 @@ export default function GermanyPage() {
               <p className="text-muted leading-relaxed">
                 Online-Glücksspiel in Deutschland wird von der Gemeinsamen Glücksspielbehörde der Länder (GGL) reguliert.
                 Casinos benötigen eine gültige GGL-Lizenz, um legal zu operieren.
-                CasinoLynora listet ausschließlich Casinos auf, die über eine relevante Lizenz verfügen.
+                BeInCasinos listet ausschließlich Casinos auf, die über eine relevante Lizenz verfügen.
               </p>
             </section>
 

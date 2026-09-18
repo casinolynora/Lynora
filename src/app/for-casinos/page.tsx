@@ -5,17 +5,17 @@ import { Badge } from "@/components/ui/Badge";
 import { PLACEMENT_TRANSPARENCY_STATEMENT } from "@/lib/b2b/pricing";
 
 export const metadata: Metadata = {
-  title: "List Your Casino on CasinoLynora",
+  title: "List Your Casino on BeInCasinos",
   description:
-    "Join CasinoLynora's transparent casino comparison platform. Get your operator listed and discovered by European players across multiple GEOs.",
+    "Join BeInCasinos' transparent casino comparison platform. Get your operator listed and discovered by European players across multiple GEOs.",
   alternates: { canonical: "/for-casinos" },
   openGraph: {
-    title: "List Your Casino on CasinoLynora",
+    title: "List Your Casino on BeInCasinos",
     description: "Get your operator listed and discovered by European players.",
   },
   twitter: {
     card: "summary",
-    title: "List Your Casino on CasinoLynora",
+    title: "List Your Casino on BeInCasinos",
     description: "Get your operator listed and discovered by European players.",
   },
 };
@@ -94,7 +94,7 @@ export default function ForCasinosPage() {
             Get your casino discovered by European players
           </h1>
           <p className="text-lg text-muted leading-relaxed mb-8 max-w-2xl mx-auto">
-            CasinoLynora is a transparent comparison platform that helps players
+            BeInCasinos is a transparent comparison platform that helps players
             find casinos matching their preferences — using structured data, not
             editorial opinions. List your casino to reach players across multiple
             European markets.
@@ -112,7 +112,7 @@ export default function ForCasinosPage() {
         <section className="mb-16 lg:mb-24">
           <div className="max-w-3xl mx-auto text-center mb-10">
             <h2 className="text-2xl sm:text-3xl font-bold mb-4">
-              Why List on CasinoLynora?
+              Why List on BeInCasinos?
             </h2>
             <p className="text-muted leading-relaxed">
               Reach players who are actively comparing casinos across multiple

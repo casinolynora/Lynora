@@ -3,17 +3,17 @@ import { Container } from "@/components/ui/Container";
 import { CONTACT_EMAILS } from "@/lib/config/site";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — CasinoLynora",
-  description: "CasinoLynora privacy policy. How we collect, use, and protect your data.",
+  title: "Privacy Policy — BeInCasinos",
+  description: "BeInCasinos privacy policy. How we collect, use, and protect your data.",
   alternates: { canonical: "/privacy-policy" },
   openGraph: {
-    title: "Privacy Policy — CasinoLynora",
-    description: "CasinoLynora privacy policy.",
+    title: "Privacy Policy — BeInCasinos",
+    description: "BeInCasinos privacy policy.",
   },
   twitter: {
     card: "summary",
-    title: "Privacy Policy — CasinoLynora",
-    description: "CasinoLynora privacy policy.",
+    title: "Privacy Policy — BeInCasinos",
+    description: "BeInCasinos privacy policy.",
   },
 };
 
@@ -29,7 +29,7 @@ export default function PrivacyPolicyPage() {
             <section>
               <h2 className="text-xl font-bold mb-3 text-foreground">1. Introduction</h2>
               <p>
-                CasinoLynora is an informational casino comparison and matching platform. We help you
+                BeInCasinos is an informational casino comparison and matching platform. We help you
                 find casinos that match your preferences by processing the answers you provide in our
                 questionnaire and comparing them against our structured casino database. We do not
                 operate, manage, or have any business relationship with the casinos listed on our
@@ -37,7 +37,7 @@ export default function PrivacyPolicyPage() {
               </p>
               <p className="mt-3">
                 This privacy policy explains what information we collect, how we use it, and what
-                rights you have. It applies to all visitors of CasinoLynora. By using our site, you
+                rights you have. It applies to all visitors of BeInCasinos. By using our site, you
                 acknowledge that you have read and understood this policy.
               </p>
             </section>

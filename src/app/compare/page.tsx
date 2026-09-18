@@ -25,7 +25,7 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
       .map((s) => casinoDb.getCasinoBySlug(s)?.name)
       .filter(Boolean);
     return {
-      title: `Compare ${names.join(" vs ")} — CasinoLynora`,
+      title: `Compare ${names.join(" vs ")} — BeInCasinos`,
       description: `Compare ${names.join(", ")} side-by-side. View verified data on licenses, payment methods, games, and features.`,
       robots: { index: false, follow: true },
       alternates: { canonical: "/compare" },
@@ -33,12 +33,12 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   }
 
   return {
-    title: "Compare Casinos — CasinoLynora",
+    title: "Compare Casinos — BeInCasinos",
     description:
       "Compare online casinos side-by-side. View verified data on licenses, payment methods, games, and features.",
     alternates: { canonical: "/compare" },
     openGraph: {
-      title: "Compare Casinos — CasinoLynora",
+      title: "Compare Casinos — BeInCasinos",
       description: "Compare online casinos side-by-side.",
     },
   };

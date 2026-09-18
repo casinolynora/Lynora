@@ -3,17 +3,17 @@ import { Container } from "@/components/ui/Container";
 import { CONTACT_EMAILS } from "@/lib/config/site";
 
 export const metadata: Metadata = {
-  title: "Affiliate Disclosure — CasinoLynora",
-  description: "How CasinoLynora uses affiliate links and how this affects our recommendations.",
+  title: "Affiliate Disclosure — BeInCasinos",
+  description: "How BeInCasinos uses affiliate links and how this affects our recommendations.",
   alternates: { canonical: "/affiliate-disclosure" },
   openGraph: {
-    title: "Affiliate Disclosure — CasinoLynora",
-    description: "How CasinoLynora uses affiliate links.",
+    title: "Affiliate Disclosure — BeInCasinos",
+    description: "How BeInCasinos uses affiliate links.",
   },
   twitter: {
     card: "summary",
-    title: "Affiliate Disclosure — CasinoLynora",
-    description: "How CasinoLynora uses affiliate links.",
+    title: "Affiliate Disclosure — BeInCasinos",
+    description: "How BeInCasinos uses affiliate links.",
   },
 };
 
@@ -27,7 +27,7 @@ export default function AffiliateDisclosurePage() {
           <div className="space-y-8 text-muted leading-relaxed">
             <section>
               <h2 className="text-xl font-bold mb-3 text-foreground">What Are Affiliate Links</h2>
-              <p>When you click a &quot;Visit Casino&quot; link on CasinoLynora and sign up, we may receive a commission from the casino operator.</p>
+              <p>When you click a &quot;Visit Casino&quot; link on BeInCasinos and sign up, we may receive a commission from the casino operator.</p>
             </section>
             <section>
               <h2 className="text-xl font-bold mb-3 text-foreground">How This Affects You</h2>
@@ -35,7 +35,7 @@ export default function AffiliateDisclosurePage() {
             </section>
             <section>
               <h2 className="text-xl font-bold mb-3 text-foreground">Current Status</h2>
-              <p>CasinoLynora may earn commissions through affiliate links when monetization is enabled. If no affiliate links are active, no commissions are earned.</p>
+              <p>BeInCasinos may earn commissions through affiliate links when monetization is enabled. If no affiliate links are active, no commissions are earned.</p>
             </section>
             <section>
               <h2 className="text-xl font-bold mb-3 text-foreground">Matching Methodology</h2>

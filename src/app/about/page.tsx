@@ -3,18 +3,18 @@ import { Container } from "@/components/ui/Container";
 import { CONTACT_EMAILS } from "@/lib/config/site";
 
 export const metadata: Metadata = {
-  title: "About — CasinoLynora",
+  title: "About — BeInCasinos",
   description:
-    "Learn about CasinoLynora's mission, methodology, and commitment to transparent, data-driven casino discovery.",
+    "Learn about BeInCasinos' mission, methodology, and commitment to transparent, data-driven casino discovery.",
   alternates: { canonical: "/about" },
   openGraph: {
-    title: "About — CasinoLynora",
-    description: "CasinoLynora's mission and methodology for transparent casino discovery.",
+    title: "About — BeInCasinos",
+    description: "BeInCasinos' mission and methodology for transparent casino discovery.",
   },
   twitter: {
     card: "summary",
-    title: "About — CasinoLynora",
-    description: "CasinoLynora's mission and methodology for transparent casino discovery.",
+    title: "About — BeInCasinos",
+    description: "BeInCasinos' mission and methodology for transparent casino discovery.",
   },
 };
 
@@ -24,14 +24,14 @@ export default function AboutPage() {
       <Container className="py-12 lg:py-20">
         <div className="max-w-3xl mx-auto">
           <h1 className="text-3xl sm:text-4xl font-bold mb-8">
-            About CasinoLynora
+            About BeInCasinos
           </h1>
 
           <div className="space-y-10">
             <section>
               <h2 className="text-2xl font-bold mb-4">What We Do</h2>
               <p className="text-muted leading-relaxed">
-                CasinoLynora is an independent casino comparison and matching
+                BeInCasinos is an independent casino comparison and matching
                 platform built for European players. Instead of relying on
                 editorial opinions or paid placements, we use AI-powered
                 analysis over structured, verified data to help you find
@@ -44,7 +44,7 @@ export default function AboutPage() {
             <section>
               <h2 className="text-2xl font-bold mb-4">Our Approach</h2>
               <p className="text-muted leading-relaxed mb-4">
-                Every recommendation on CasinoLynora is the output of a
+                Every recommendation on BeInCasinos is the output of a
                 deterministic scoring algorithm applied to structured data.
                 We do not assign ratings by hand, and we do not accept payment
                 to alter a score. Our approach rests on three pillars:
@@ -117,7 +117,7 @@ export default function AboutPage() {
             <section>
               <h2 className="text-2xl font-bold mb-4">Affiliate Relationships</h2>
               <p className="text-muted leading-relaxed">
-                CasinoLynora may earn commissions when you click an affiliate
+                BeInCasinos may earn commissions when you click an affiliate
                 link and sign up at a casino. This is how we fund operations.
                 However, affiliate relationships never influence our scoring,
                 data collection, or editorial decisions. A casino does not

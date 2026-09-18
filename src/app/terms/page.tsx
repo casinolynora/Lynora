@@ -4,17 +4,17 @@ import { Container } from "@/components/ui/Container";
 import { CONTACT_EMAILS } from "@/lib/config/site";
 
 export const metadata: Metadata = {
-  title: "Terms of Use — CasinoLynora",
-  description: "CasinoLynora terms of use. Rules and responsibilities for using our platform.",
+  title: "Terms of Use — BeInCasinos",
+  description: "BeInCasinos terms of use. Rules and responsibilities for using our platform.",
   alternates: { canonical: "/terms" },
   openGraph: {
-    title: "Terms of Use — CasinoLynora",
-    description: "CasinoLynora terms of use.",
+    title: "Terms of Use — BeInCasinos",
+    description: "BeInCasinos terms of use.",
   },
   twitter: {
     card: "summary",
-    title: "Terms of Use — CasinoLynora",
-    description: "CasinoLynora terms of use.",
+    title: "Terms of Use — BeInCasinos",
+    description: "BeInCasinos terms of use.",
   },
 };
 
@@ -31,7 +31,7 @@ export default function TermsPage() {
             <section>
               <h2 className="text-2xl font-bold mb-4">1. Acceptance of Terms</h2>
               <p className="mb-3">
-                By accessing or using CasinoLynora (the &quot;Website&quot;), you agree to be bound by
+                By accessing or using BeInCasinos (the &quot;Website&quot;), you agree to be bound by
                 these Terms of Use. If you do not agree to all of these terms, you must not use the
                 Website. Your continued use of the Website following the posting of any changes to
                 these terms constitutes acceptance of those changes.

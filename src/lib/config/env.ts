@@ -10,7 +10,7 @@ const envSchema = z.object({
   DATABASE_URL: z.string().optional(),
 
   // Public
-  NEXT_PUBLIC_SITE_URL: z.string().url().default("https://casinolynora.com"),
+  NEXT_PUBLIC_SITE_URL: z.string().url().default("https://beincasinos.com"),
   NEXT_PUBLIC_CANONICAL_URL: z.string().url().optional(),
   NEXT_PUBLIC_GA_ID: z.string().optional(),
 
@@ -57,7 +57,7 @@ export function getServerEnv() {
 // Client-only helpers — safe to import in "use client" components
 export function getClientEnv() {
   return {
-    siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "https://casinolynora.com",
+    siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "https://beincasinos.com",
     gaId: process.env.NEXT_PUBLIC_GA_ID ?? null,
   };
 }

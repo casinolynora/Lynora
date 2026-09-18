@@ -44,10 +44,10 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 group">
             <div className="flex h-8 w-8 items-center justify-center rounded-[var(--radius-md)] gradient-brand text-white text-xs font-bold tracking-tight shadow-sm">
-              CL
+              BIC
             </div>
             <span className="text-lg font-bold tracking-tight text-foreground hidden sm:block">
-              Casino<span className="gradient-brand-text">Lynora</span>
+              Be<span className="gradient-brand-text">In</span>Casinos
             </span>
           </Link>
 

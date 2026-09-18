@@ -5,16 +5,16 @@ import { Badge } from "@/components/ui/Badge";
 import { getAllGuides } from "@/lib/data/guides";
 
 export const metadata: Metadata = {
-  title: "Glücksspiel-Guides für Deutschland — CasinoLynora",
+  title: "Glücksspiel-Guides für Deutschland — BeInCasinos",
   description: "Praktische Guides für Online-Glücksspiel in Deutschland: Zahlungsmethoden, Boni, verantwortungsbewusstes Spielen und mehr.",
   alternates: { canonical: "/de/guides" },
   openGraph: {
-    title: "Glücksspiel-Guides für Deutschland — CasinoLynora",
+    title: "Glücksspiel-Guides für Deutschland — BeInCasinos",
     description: "Praktische Guides für Online-Glücksspiel in Deutschland.",
   },
   twitter: {
     card: "summary",
-    title: "Glücksspiel-Guides für Deutschland — CasinoLynora",
+    title: "Glücksspiel-Guides für Deutschland — BeInCasinos",
     description: "Praktische Guides für Online-Glücksspiel in Deutschland.",
   },
 };
