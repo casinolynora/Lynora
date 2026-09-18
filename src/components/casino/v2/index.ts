@@ -11,3 +11,5 @@ export { ResponsibleGambling } from "./ResponsibleGambling";
 export { CasinoFAQ } from "./CasinoFAQ";
 export { RelatedCasinos } from "./RelatedCasinos";
 export { RelatedGuides } from "./RelatedGuides";
+export { CasinoEntityLinks } from "./CasinoEntityLinks";
+export { CasinoCompareCTA } from "./CasinoCompareCTA";

@@ -112,14 +112,21 @@ export function createCompositeProvider(): CasinoDataProvider {
           .map(selectCasinoListItem);
       }
 
+      const casinoPaymentNames = new Set(casino.paymentMethods.map(pm => pm.name));
+
       return casinos
         .filter(c => c.id !== casinoId && isProductionVisible(c))
-        .map(c => ({
-          similarity: c.countries.filter(co => casino.countries.includes(co)).length
-            + (c.hasLiveCasino === casino.hasLiveCasino ? 1 : 0)
-            + (c.games.filter(g => casino.games.some(cg => cg.slug === g.slug)).length),
-          casino: c,
-        }))
+        .map(c => {
+          const countryOverlap = c.countries.filter(co => casino.countries.includes(co)).length;
+          const liveCasinoMatch = c.hasLiveCasino === casino.hasLiveCasino ? 1 : 0;
+          const gameOverlap = c.games.filter(g => casino.games.some(cg => cg.slug === g.slug)).length;
+          const paymentOverlap = c.paymentMethods.filter(pm => casinoPaymentNames.has(pm.name)).length;
+
+          return {
+            similarity: countryOverlap + liveCasinoMatch + gameOverlap + paymentOverlap,
+            casino: c,
+          };
+        })
         .sort((a, b) => b.similarity - a.similarity)
         .slice(0, limit)
         .map(item => selectCasinoListItem(item.casino));

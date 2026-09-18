@@ -6,6 +6,7 @@ import { AffiliateDisclosure } from "@/components/casino/AffiliateDisclosure";
 import { AffiliateCTA } from "@/components/casino/AffiliateCTA";
 import { casinoDb } from "@/lib/data/accessor";
 import { SITE_URL } from "@/lib/config/site";
+import { getRelevantGuides } from "@/lib/seo/guide-relevance";
 import {
   CasinoHero,
   CasinoQuickFacts,
@@ -17,6 +18,9 @@ import {
   ResponsibleGambling,
   CasinoFAQ,
   RelatedCasinos,
+  RelatedGuides,
+  CasinoEntityLinks,
+  CasinoCompareCTA,
 } from "@/components/casino/v2";
 
 type Props = {
@@ -59,6 +63,8 @@ export default async function CasinoProfileV2({ params }: Props) {
   if (!casino) notFound();
 
   const relatedCasinos = casinoDb.getRelatedCasinos(casino.id, 4);
+  const relevantGuides = getRelevantGuides(casino);
+  const paymentMethodNames = casino.paymentMethods.map((pm) => pm.name);
 
   // Schema.org structured data
   const reviewSchema = {
@@ -172,6 +178,24 @@ export default async function CasinoProfileV2({ params }: Props) {
             <ResponsibleGambling responsibleGambling={casino.responsibleGambling} />
             <CasinoFAQ casino={casino} />
 
+            {/* Entity Links: Countries + Payment Methods */}
+            <CasinoEntityLinks
+              countries={casino.countries}
+              paymentMethodNames={paymentMethodNames}
+            />
+
+            {/* Compare CTA */}
+            <CasinoCompareCTA
+              casinoSlug={casino.slug}
+              casinoName={casino.name}
+              relatedSlugs={relatedCasinos.map((rc) => rc.slug)}
+            />
+
+            {/* Related Guides */}
+            {relevantGuides.length > 0 && (
+              <RelatedGuides guides={relevantGuides} />
+            )}
+
             {/* Methodology */}
             <section className="mb-8">
               <h2 className="text-xl font-bold mb-4">Our Methodology</h2>
@@ -192,6 +216,17 @@ export default async function CasinoProfileV2({ params }: Props) {
                   Casino availability, bonuses, and terms may change. Always verify current
                   information on the casino&apos;s official website before playing.
                 </p>
+                <div className="pt-2">
+                  <Link
+                    href="/methodology"
+                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-700 hover:text-brand-600 transition-colors"
+                  >
+                    Read our full methodology
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                    </svg>
+                  </Link>
+                </div>
               </div>
             </section>
           </div>

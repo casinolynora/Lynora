@@ -136,7 +136,7 @@ export default async function GeoPage({ params }: Props) {
               {casinos.map((casino) => (
                 <Link
                   key={casino.id}
-                  href={`/${geo}/${casino.slug}`}
+                  href={`/casino-reviews/${casino.slug}`}
                   className="block bg-surface-elevated rounded-xl border border-border p-5 hover:border-primary/30 hover:shadow-md transition-all"
                 >
                   <div className="flex items-center justify-between">

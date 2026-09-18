@@ -58,6 +58,21 @@ describe("robots.txt", () => {
     expect(robotsConfig.sitemap).not.toContain("localhost");
     expect(robotsConfig.sitemap).not.toContain("vercel.app");
   });
+
+  it("blocks AI training bots", () => {
+    const aiRules = rulesArray.filter(r =>
+      r.userAgent === "GPTBot" ||
+      r.userAgent === "CCBot" ||
+      r.userAgent === "ClaudeBot" ||
+      r.userAgent === "anthropic-ai" ||
+      r.userAgent === "Google-Extended" ||
+      r.userAgent === "ChatGPT-User"
+    );
+    expect(aiRules.length).toBeGreaterThanOrEqual(6);
+    for (const rule of aiRules) {
+      expect(rule.disallow).toBe("/");
+    }
+  });
 });
 
 describe("sitemap", () => {
@@ -135,5 +150,15 @@ describe("sitemap", () => {
   it("homepage has highest priority", () => {
     const home = sitemapEntries.find((e) => e.url === SITE_URL);
     expect(home?.priority).toBe(1.0);
+  });
+
+  it("ai-casino-match is in sitemap (crawlable but noindex)", () => {
+    const match = sitemapEntries.find((e) => e.url === `${SITE_URL}/ai-casino-match`);
+    expect(match).toBeDefined();
+  });
+
+  it("sitemap has no duplicate URLs", () => {
+    const urls = sitemapEntries.map((e) => e.url);
+    expect(new Set(urls).size).toBe(urls.length);
   });
 });

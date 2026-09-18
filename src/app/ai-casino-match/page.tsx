@@ -19,6 +19,7 @@ export const metadata: Metadata = {
   title: "AI Casino Matchmaker — Find Your Perfect Casino",
   description:
     "Answer a few questions about your preferences. BeInCasinos matches you with verified casinos using structured data and a transparent scoring algorithm.",
+  robots: { index: false, follow: true },
   openGraph: {
     title: "AI Casino Matchmaker — BeInCasinos",
     description: "Answer a few questions and find your ideal casino match.",
