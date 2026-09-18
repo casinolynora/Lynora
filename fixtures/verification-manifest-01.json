@@ -1,0 +1,28 @@
+{
+  "batch": "verification-01",
+  "version": 1,
+  "description": "First 20 casinos selected deterministically (every 5th from real-casinos-100.json) for manual verification sprint",
+  "selectionMethod": "every-5th-index",
+  "casinos": [
+    { "slug": "bet365" },
+    { "slug": "betway-casino" },
+    { "slug": "betfair-casino" },
+    { "slug": "rizk" },
+    { "slug": "ladbrokes-casino" },
+    { "slug": "vegashero" },
+    { "slug": "tipico-casino" },
+    { "slug": "guts" },
+    { "slug": "drukteglueck" },
+    { "slug": "lucky-vegas-de" },
+    { "slug": "wildz" },
+    { "slug": "jacks-casino-online" },
+    { "slug": "pokerstars-nl" },
+    { "slug": "kansino" },
+    { "slug": "bob-casino-nl" },
+    { "slug": "bingoal-nl" },
+    { "slug": "bet365-be" },
+    { "slug": "golden-palace-be" },
+    { "slug": "fortuneo-be" },
+    { "slug": "flash-casino-nl" }
+  ]
+}
