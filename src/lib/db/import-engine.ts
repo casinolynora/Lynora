@@ -77,6 +77,8 @@ export interface ImportEngineResult {
   }>;
 }
 
+let _idCounter = 0;
+
 // ─── Import Engine ────────────────────────────────────────────────────────
 
 export async function runImport(
@@ -384,7 +386,7 @@ async function processCasinoImport(
     // Insert licenses
     for (const license of casino.licenses) {
       db.insert(casinoLicenses).values({
-        id: `lic_${casinoId}_${Date.now().toString(36)}`,
+        id: `lic_${casinoId}_${_idCounter++}_${Date.now().toString(36)}`,
         casinoId,
         issuer: license.issuer,
         jurisdiction: license.jurisdiction,
@@ -399,7 +401,7 @@ async function processCasinoImport(
     // Insert GEO availability
     for (const geo of casino.geo) {
       db.insert(geoAvailability).values({
-        id: `geo_${casinoId}_${geo.geo}_${Date.now().toString(36)}`,
+        id: `geo_${casinoId}_${geo.geo}_${_idCounter++}_${Date.now().toString(36)}`,
         casinoId,
         geo: geo.geo,
         status: geo.status ?? "available",
@@ -413,7 +415,7 @@ async function processCasinoImport(
       // Ensure payment method exists in canonical table
       let pmRecord = db.select().from(paymentMethods).where(eq(paymentMethods.name, pm.name)).get();
       if (!pmRecord) {
-        const pmId = `pm_${normalizeSlug(pm.name)}_${Date.now().toString(36)}`;
+        const pmId = `pm_${normalizeSlug(pm.name)}_${_idCounter++}_${Date.now().toString(36)}`;
         db.insert(paymentMethods).values({
           id: pmId,
           name: pm.name,
@@ -425,7 +427,7 @@ async function processCasinoImport(
       }
 
       db.insert(casinoPaymentMethods).values({
-        id: `cpm_${casinoId}_${pmRecord!.id}_${Date.now().toString(36)}`,
+        id: `cpm_${casinoId}_${pmRecord!.id}_${_idCounter++}_${Date.now().toString(36)}`,
         casinoId,
         paymentMethodId: pmRecord!.id,
         minDeposit: pm.minDeposit ?? null,

@@ -234,10 +234,10 @@ async function main(): Promise<void> {
   process.exit(result.status === "failed" ? 1 : 0);
 }
 
+const IMPORT_VERSION = "1.0.0";
+
 // Run
 main().catch((error) => {
   console.error("Fatal error:", error);
   process.exit(1);
 });
-
-const IMPORT_VERSION = "1.0.0";

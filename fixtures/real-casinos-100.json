@@ -1,0 +1,7277 @@
+[
+  {
+    "name": "Bet365",
+    "slug": "bet365",
+    "website": "https://www.bet365.com",
+    "tagline": "One of the world's largest online gambling companies",
+    "founded": 2000,
+    "owner": "Hillside (Media) Limited",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "UKGC",
+        "jurisdiction": "GB",
+        "licenseNumber": "55148",
+        "status": "active"
+      },
+      {
+        "issuer": "MGA",
+        "jurisdiction": "MT",
+        "licenseNumber": "MGA/CRP/531/2018",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "GB",
+        "status": "available"
+      },
+      {
+        "geo": "MT",
+        "status": "available"
+      },
+      {
+        "geo": "IE",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Neteller",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      },
+      {
+        "name": "Bank Transfer",
+        "type": "bank-transfer"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": true,
+    "hasMobile": true,
+    "languages": [
+      "en"
+    ],
+    "currencies": [
+      "EUR",
+      "GBP"
+    ]
+  },
+  {
+    "name": "LeoVegas",
+    "slug": "leovegas",
+    "website": "https://www.leovegas.com",
+    "tagline": "The King of Mobile Casino",
+    "founded": 2012,
+    "owner": "LeoVegas AB",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "MGA",
+        "jurisdiction": "MT",
+        "licenseNumber": "MGA/CRP/237/2013",
+        "status": "active"
+      },
+      {
+        "issuer": "UKGC",
+        "jurisdiction": "GB",
+        "licenseNumber": "39198",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "GB",
+        "status": "available"
+      },
+      {
+        "geo": "SE",
+        "status": "available"
+      },
+      {
+        "geo": "FI",
+        "status": "available"
+      },
+      {
+        "geo": "AT",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Neteller",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": true,
+    "hasMobile": true,
+    "languages": [
+      "en",
+      "de",
+      "sv",
+      "fi"
+    ],
+    "currencies": [
+      "EUR",
+      "SEK",
+      "GBP"
+    ]
+  },
+  {
+    "name": "Unibet",
+    "slug": "unibet",
+    "website": "https://www.unibet.com",
+    "tagline": "Part of Kindred Group, one of Europe's largest operators",
+    "founded": 1997,
+    "owner": "Kindred Group",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "MGA",
+        "jurisdiction": "MT",
+        "licenseNumber": "MGA/CRP/171/2009",
+        "status": "active"
+      },
+      {
+        "issuer": "UKGC",
+        "jurisdiction": "GB",
+        "licenseNumber": "45322",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "GB",
+        "status": "available"
+      },
+      {
+        "geo": "SE",
+        "status": "available"
+      },
+      {
+        "geo": "DK",
+        "status": "available"
+      },
+      {
+        "geo": "FR",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Neteller",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      },
+      {
+        "name": "Bank Transfer",
+        "type": "bank-transfer"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": true,
+    "hasMobile": true,
+    "languages": [
+      "en",
+      "de",
+      "fr",
+      "nl",
+      "sv",
+      "da"
+    ],
+    "currencies": [
+      "EUR",
+      "GBP",
+      "SEK",
+      "DKK"
+    ]
+  },
+  {
+    "name": "888casino",
+    "slug": "888casino",
+    "website": "https://www.888casino.com",
+    "tagline": "Pioneer of online gaming since 1997",
+    "founded": 1997,
+    "owner": "888 Holdings",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "UKGC",
+        "jurisdiction": "GB",
+        "licenseNumber": "39028",
+        "status": "active"
+      },
+      {
+        "issuer": "MGA",
+        "jurisdiction": "MT",
+        "licenseNumber": "MGA/CRP/541/2018",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "GB",
+        "status": "available"
+      },
+      {
+        "geo": "SE",
+        "status": "available"
+      },
+      {
+        "geo": "DK",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Neteller",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      },
+      {
+        "name": "Apple Pay",
+        "type": "mobile"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": true,
+    "hasMobile": true,
+    "languages": [
+      "en",
+      "de",
+      "sv"
+    ],
+    "currencies": [
+      "EUR",
+      "GBP",
+      "USD"
+    ]
+  },
+  {
+    "name": "PokerStars Casino",
+    "slug": "pokerstars-casino",
+    "website": "https://www.pokerstarscasino.com",
+    "tagline": "From the world's largest poker site to a full casino",
+    "founded": 2001,
+    "owner": "Flutter Entertainment",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "MGA",
+        "jurisdiction": "MT",
+        "licenseNumber": "MGA/CRP/171/2009",
+        "status": "active"
+      },
+      {
+        "issuer": "UKGC",
+        "jurisdiction": "GB",
+        "licenseNumber": "39566",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "GB",
+        "status": "available"
+      },
+      {
+        "geo": "SE",
+        "status": "available"
+      },
+      {
+        "geo": "DK",
+        "status": "available"
+      },
+      {
+        "geo": "ES",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Neteller",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": true,
+    "hasMobile": true,
+    "languages": [
+      "en",
+      "de",
+      "fr",
+      "es",
+      "pt"
+    ],
+    "currencies": [
+      "EUR",
+      "GBP",
+      "USD"
+    ]
+  },
+  {
+    "name": "Betway Casino",
+    "slug": "betway-casino",
+    "website": "https://www.betway.com/casino",
+    "tagline": "Global sports betting and casino brand",
+    "founded": 2006,
+    "owner": "Betway Limited",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "UKGC",
+        "jurisdiction": "GB",
+        "licenseNumber": "39372",
+        "status": "active"
+      },
+      {
+        "issuer": "MGA",
+        "jurisdiction": "MT",
+        "licenseNumber": "MGA/CRP/244/2012",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "GB",
+        "status": "available"
+      },
+      {
+        "geo": "MT",
+        "status": "available"
+      },
+      {
+        "geo": "IE",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Neteller",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": true,
+    "hasMobile": true,
+    "languages": [
+      "en",
+      "de",
+      "fr",
+      "es"
+    ],
+    "currencies": [
+      "EUR",
+      "GBP",
+      "USD"
+    ]
+  },
+  {
+    "name": "bwin Casino",
+    "slug": "bwin-casino",
+    "website": "https://casino.bwin.com",
+    "tagline": "Part of Entain, major European gambling brand",
+    "founded": 1999,
+    "owner": "Entain plc",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "MGA",
+        "jurisdiction": "MT",
+        "licenseNumber": "MGA/CRP/188/2010",
+        "status": "active"
+      },
+      {
+        "issuer": "UKGC",
+        "jurisdiction": "GB",
+        "licenseNumber": "39565",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "AT",
+        "status": "available"
+      },
+      {
+        "geo": "ES",
+        "status": "available"
+      },
+      {
+        "geo": "GB",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Neteller",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      },
+      {
+        "name": "Klarna",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Bank Transfer",
+        "type": "bank-transfer"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": true,
+    "hasMobile": true,
+    "languages": [
+      "en",
+      "de",
+      "es",
+      "fr"
+    ],
+    "currencies": [
+      "EUR",
+      "GBP"
+    ]
+  },
+  {
+    "name": "Interwetten",
+    "slug": "interwetten",
+    "website": "https://www.interwetten.com",
+    "tagline": "Austrian betting pioneer since 1990",
+    "founded": 1990,
+    "owner": "Interwetten Gaming Ltd",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "MGA",
+        "jurisdiction": "MT",
+        "licenseNumber": "MGA/CRP/120/2010",
+        "status": "active"
+      },
+      {
+        "issuer": "UKGC",
+        "jurisdiction": "GB",
+        "licenseNumber": "39221",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "AT",
+        "status": "available"
+      },
+      {
+        "geo": "ES",
+        "status": "available"
+      },
+      {
+        "geo": "CH",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Neteller",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      },
+      {
+        "name": "Klarna",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Bank Transfer",
+        "type": "bank-transfer"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": true,
+    "hasMobile": true,
+    "languages": [
+      "en",
+      "de",
+      "es"
+    ],
+    "currencies": [
+      "EUR"
+    ]
+  },
+  {
+    "name": "William Hill Casino",
+    "slug": "william-hill-casino",
+    "website": "https://www.williamhill.com/casino",
+    "tagline": "British bookmaker with decades of heritage",
+    "founded": 1934,
+    "owner": "William Hill plc",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "UKGC",
+        "jurisdiction": "GB",
+        "licenseNumber": "39225",
+        "status": "active"
+      },
+      {
+        "issuer": "MGA",
+        "jurisdiction": "MT",
+        "licenseNumber": "MGA/CRP/121/2006",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "GB",
+        "status": "available"
+      },
+      {
+        "geo": "IE",
+        "status": "available"
+      },
+      {
+        "geo": "ES",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Neteller",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      },
+      {
+        "name": "Apple Pay",
+        "type": "mobile"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": true,
+    "hasMobile": true,
+    "languages": [
+      "en",
+      "es"
+    ],
+    "currencies": [
+      "EUR",
+      "GBP",
+      "USD"
+    ]
+  },
+  {
+    "name": "Paddy Power Casino",
+    "slug": "paddy-power-casino",
+    "website": "https://www.paddypower.com/casino",
+    "tagline": "Irish bookmaker with playful brand identity",
+    "founded": 1988,
+    "owner": "Flutter Entertainment",
+    "minDeposit": 5,
+    "licenses": [
+      {
+        "issuer": "UKGC",
+        "jurisdiction": "GB",
+        "licenseNumber": "39439",
+        "status": "active"
+      },
+      {
+        "issuer": "MGA",
+        "jurisdiction": "MT",
+        "licenseNumber": "MGA/CRP/171/2009",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "GB",
+        "status": "available"
+      },
+      {
+        "geo": "IE",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Neteller",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      },
+      {
+        "name": "Apple Pay",
+        "type": "mobile"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": true,
+    "hasMobile": true,
+    "languages": [
+      "en"
+    ],
+    "currencies": [
+      "EUR",
+      "GBP"
+    ]
+  },
+  {
+    "name": "Betfair Casino",
+    "slug": "betfair-casino",
+    "website": "https://www.betfair.com/casino",
+    "tagline": "Innovator in exchange betting and online casino",
+    "founded": 1999,
+    "owner": "Flutter Entertainment",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "UKGC",
+        "jurisdiction": "GB",
+        "licenseNumber": "39563",
+        "status": "active"
+      },
+      {
+        "issuer": "MGA",
+        "jurisdiction": "MT",
+        "licenseNumber": "MGA/CRP/171/2009",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "GB",
+        "status": "available"
+      },
+      {
+        "geo": "IE",
+        "status": "available"
+      },
+      {
+        "geo": "ES",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Neteller",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      },
+      {
+        "name": "Bank Transfer",
+        "type": "bank-transfer"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": true,
+    "hasMobile": true,
+    "languages": [
+      "en",
+      "es"
+    ],
+    "currencies": [
+      "EUR",
+      "GBP"
+    ]
+  },
+  {
+    "name": "Mr Green",
+    "slug": "mr-green",
+    "website": "https://www.mrgreen.com",
+    "tagline": "Award-winning gentleman of online casinos",
+    "founded": 2007,
+    "owner": "William Hill plc",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "MGA",
+        "jurisdiction": "MT",
+        "licenseNumber": "MGA/CRP/121/2006",
+        "status": "active"
+      },
+      {
+        "issuer": "UKGC",
+        "jurisdiction": "GB",
+        "licenseNumber": "39264",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "SE",
+        "status": "available"
+      },
+      {
+        "geo": "FI",
+        "status": "available"
+      },
+      {
+        "geo": "DE",
+        "status": "available"
+      },
+      {
+        "geo": "GB",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Neteller",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": true,
+    "hasMobile": true,
+    "languages": [
+      "en",
+      "de",
+      "sv",
+      "fi"
+    ],
+    "currencies": [
+      "EUR",
+      "SEK",
+      "GBP"
+    ]
+  },
+  {
+    "name": "Casumo",
+    "slug": "casumo",
+    "website": "https://www.casumo.com",
+    "tagline": "Adventure-themed casino with gamification",
+    "founded": 2012,
+    "owner": "Casumo Services Ltd",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "MGA",
+        "jurisdiction": "MT",
+        "licenseNumber": "MGA/CRP/217/2012",
+        "status": "active"
+      },
+      {
+        "issuer": "UKGC",
+        "jurisdiction": "GB",
+        "licenseNumber": "39265",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "GB",
+        "status": "available"
+      },
+      {
+        "geo": "SE",
+        "status": "available"
+      },
+      {
+        "geo": "FI",
+        "status": "available"
+      },
+      {
+        "geo": "NO",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Neteller",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": false,
+    "hasMobile": true,
+    "languages": [
+      "en",
+      "de",
+      "sv",
+      "fi",
+      "no"
+    ],
+    "currencies": [
+      "EUR",
+      "SEK",
+      "GBP",
+      "NOK"
+    ]
+  },
+  {
+    "name": "Betsson",
+    "slug": "betsson",
+    "website": "https://www.betsson.com",
+    "tagline": "Swedish gambling giant with multiple brands",
+    "founded": 1963,
+    "owner": "Betsson AB",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "MGA",
+        "jurisdiction": "MT",
+        "licenseNumber": "MGA/CRP/171/2009",
+        "status": "active"
+      },
+      {
+        "issuer": "UKGC",
+        "jurisdiction": "GB",
+        "licenseNumber": "39346",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "SE",
+        "status": "available"
+      },
+      {
+        "geo": "FI",
+        "status": "available"
+      },
+      {
+        "geo": "NO",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Neteller",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      },
+      {
+        "name": "Trustly",
+        "type": "bank-transfer"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": true,
+    "hasMobile": true,
+    "languages": [
+      "en",
+      "de",
+      "sv",
+      "fi",
+      "no"
+    ],
+    "currencies": [
+      "EUR",
+      "SEK",
+      "NOK",
+      "DKK"
+    ]
+  },
+  {
+    "name": "ComeOn",
+    "slug": "comeon",
+    "website": "https://www.comeon.com",
+    "tagline": "User-friendly casino and sportsbook",
+    "founded": 2008,
+    "owner": "ComeOn Group",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "MGA",
+        "jurisdiction": "MT",
+        "licenseNumber": "MGA/CRP/178/2009",
+        "status": "active"
+      },
+      {
+        "issuer": "UKGC",
+        "jurisdiction": "GB",
+        "licenseNumber": "39644",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "SE",
+        "status": "available"
+      },
+      {
+        "geo": "NO",
+        "status": "available"
+      },
+      {
+        "geo": "FI",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Neteller",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      },
+      {
+        "name": "Trustly",
+        "type": "bank-transfer"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": true,
+    "hasMobile": true,
+    "languages": [
+      "en",
+      "de",
+      "sv",
+      "no",
+      "fi"
+    ],
+    "currencies": [
+      "EUR",
+      "SEK",
+      "NOK"
+    ]
+  },
+  {
+    "name": "Rizk Casino",
+    "slug": "rizk",
+    "website": "https://www.rizk.com",
+    "tagline": "Superhero-themed casino with Wheel of Rizk",
+    "founded": 2016,
+    "owner": "Zecure Gaming Ltd",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "MGA",
+        "jurisdiction": "MT",
+        "licenseNumber": "MGA/CRP/171/2009",
+        "status": "active"
+      },
+      {
+        "issuer": "UKGC",
+        "jurisdiction": "GB",
+        "licenseNumber": "39482",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "GB",
+        "status": "available"
+      },
+      {
+        "geo": "SE",
+        "status": "available"
+      },
+      {
+        "geo": "NO",
+        "status": "available"
+      },
+      {
+        "geo": "FI",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Neteller",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": false,
+    "hasMobile": true,
+    "languages": [
+      "en",
+      "de",
+      "sv",
+      "no"
+    ],
+    "currencies": [
+      "EUR",
+      "SEK",
+      "NOK",
+      "GBP"
+    ]
+  },
+  {
+    "name": "PlayOJO",
+    "slug": "playojo",
+    "website": "https://www.playojo.com",
+    "tagline": "Fair play casino with no wagering requirements",
+    "founded": 2017,
+    "owner": "SkillOnNet Ltd",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "MGA",
+        "jurisdiction": "MT",
+        "licenseNumber": "MGA/CRP/171/2009",
+        "status": "active"
+      },
+      {
+        "issuer": "UKGC",
+        "jurisdiction": "GB",
+        "licenseNumber": "39326",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "GB",
+        "status": "available"
+      },
+      {
+        "geo": "DE",
+        "status": "available"
+      },
+      {
+        "geo": "SE",
+        "status": "available"
+      },
+      {
+        "geo": "FI",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Neteller",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      },
+      {
+        "name": "Klarna",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Trustly",
+        "type": "bank-transfer"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": false,
+    "hasMobile": true,
+    "languages": [
+      "en",
+      "de",
+      "sv",
+      "fi"
+    ],
+    "currencies": [
+      "EUR",
+      "GBP",
+      "SEK"
+    ]
+  },
+  {
+    "name": "Videoslots",
+    "slug": "videoslots",
+    "website": "https://www.videoslots.com",
+    "tagline": "Home to the world's largest selection of online slots",
+    "founded": 2011,
+    "owner": "Videoslots Ltd",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "MGA",
+        "jurisdiction": "MT",
+        "licenseNumber": "MGA/CRP/259/2012",
+        "status": "active"
+      },
+      {
+        "issuer": "UKGC",
+        "jurisdiction": "GB",
+        "licenseNumber": "39384",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "SE",
+        "status": "available"
+      },
+      {
+        "geo": "FI",
+        "status": "available"
+      },
+      {
+        "geo": "DE",
+        "status": "available"
+      },
+      {
+        "geo": "GB",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Neteller",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      },
+      {
+        "name": "Trustly",
+        "type": "bank-transfer"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": false,
+    "hasMobile": true,
+    "languages": [
+      "en",
+      "de",
+      "sv",
+      "fi"
+    ],
+    "currencies": [
+      "EUR",
+      "SEK",
+      "GBP"
+    ]
+  },
+  {
+    "name": "Novibet",
+    "slug": "novibet",
+    "website": "https://www.novibet.com",
+    "tagline": "Established sportsbook with growing casino offering",
+    "founded": 2010,
+    "owner": "Novigroup Ltd",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "MGA",
+        "jurisdiction": "MT",
+        "licenseNumber": "MGA/CRP/171/2009",
+        "status": "active"
+      },
+      {
+        "issuer": "UKGC",
+        "jurisdiction": "GB",
+        "licenseNumber": "39482",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "GB",
+        "status": "available"
+      },
+      {
+        "geo": "GR",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Neteller",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      },
+      {
+        "name": "Bank Transfer",
+        "type": "bank-transfer"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": true,
+    "hasMobile": true,
+    "languages": [
+      "en",
+      "el"
+    ],
+    "currencies": [
+      "EUR",
+      "GBP"
+    ]
+  },
+  {
+    "name": "Coral Casino",
+    "slug": "coral-casino",
+    "website": "https://www.coral.co.uk/casino",
+    "tagline": "Major UK high-street betting brand",
+    "founded": 1926,
+    "owner": "Entain plc",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "UKGC",
+        "jurisdiction": "GB",
+        "licenseNumber": "39028",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "GB",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Neteller",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      },
+      {
+        "name": "Apple Pay",
+        "type": "mobile"
+      },
+      {
+        "name": "Bank Transfer",
+        "type": "bank-transfer"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": true,
+    "hasMobile": true,
+    "languages": [
+      "en"
+    ],
+    "currencies": [
+      "GBP"
+    ]
+  },
+  {
+    "name": "Ladbrokes Casino",
+    "slug": "ladbrokes-casino",
+    "website": "https://www.ladbrokes.com/casino",
+    "tagline": "Iconic UK betting brand with casino games",
+    "owner": "Entain plc",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "UKGC",
+        "jurisdiction": "GB",
+        "licenseNumber": "39028",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "GB",
+        "status": "available"
+      },
+      {
+        "geo": "IE",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Neteller",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      },
+      {
+        "name": "Apple Pay",
+        "type": "mobile"
+      },
+      {
+        "name": "Bank Transfer",
+        "type": "bank-transfer"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": true,
+    "hasMobile": true,
+    "languages": [
+      "en"
+    ],
+    "currencies": [
+      "GBP",
+      "EUR"
+    ]
+  },
+  {
+    "name": "Sky Bet",
+    "slug": "sky-bet",
+    "website": "https://www.skybet.com",
+    "tagline": "Digital-first UK bookmaker",
+    "founded": 2002,
+    "owner": "Flutter Entertainment",
+    "minDeposit": 5,
+    "licenses": [
+      {
+        "issuer": "UKGC",
+        "jurisdiction": "GB",
+        "licenseNumber": "38718",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "GB",
+        "status": "available"
+      },
+      {
+        "geo": "IE",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Neteller",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      },
+      {
+        "name": "Apple Pay",
+        "type": "mobile"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": true,
+    "hasMobile": true,
+    "languages": [
+      "en"
+    ],
+    "currencies": [
+      "GBP",
+      "EUR"
+    ]
+  },
+  {
+    "name": "PartyCasino",
+    "slug": "partycasino",
+    "website": "https://www.partycasino.com",
+    "tagline": "Well-known online casino brand since 1997",
+    "founded": 1997,
+    "owner": "Entain plc",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "UKGC",
+        "jurisdiction": "GB",
+        "licenseNumber": "39011",
+        "status": "active"
+      },
+      {
+        "issuer": "MGA",
+        "jurisdiction": "MT",
+        "licenseNumber": "MGA/CRP/259/2012",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "GB",
+        "status": "available"
+      },
+      {
+        "geo": "SE",
+        "status": "available"
+      },
+      {
+        "geo": "DE",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Neteller",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      },
+      {
+        "name": "Klarna",
+        "type": "bank-transfer"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": false,
+    "hasMobile": true,
+    "languages": [
+      "en",
+      "de",
+      "sv"
+    ],
+    "currencies": [
+      "EUR",
+      "GBP",
+      "SEK"
+    ]
+  },
+  {
+    "name": "PlayFrank Casino",
+    "slug": "playfrank",
+    "website": "https://www.playfrank.com",
+    "tagline": "Colorful casino with personalization features",
+    "founded": 2014,
+    "owner": "Aspire Global Ltd",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "MGA",
+        "jurisdiction": "MT",
+        "licenseNumber": "MGA/CRP/171/2009",
+        "status": "active"
+      },
+      {
+        "issuer": "UKGC",
+        "jurisdiction": "GB",
+        "licenseNumber": "39483",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "GB",
+        "status": "available"
+      },
+      {
+        "geo": "SE",
+        "status": "available"
+      },
+      {
+        "geo": "FI",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Neteller",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": false,
+    "hasMobile": true,
+    "languages": [
+      "en",
+      "de",
+      "sv",
+      "fi"
+    ],
+    "currencies": [
+      "EUR",
+      "GBP",
+      "SEK"
+    ]
+  },
+  {
+    "name": "Genesis Casino",
+    "slug": "genesis-casino",
+    "website": "https://www.genesiscasino.com",
+    "tagline": "Space-themed casino from Genesis Global",
+    "founded": 2018,
+    "owner": "Genesis Global Ltd",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "MGA",
+        "jurisdiction": "MT",
+        "licenseNumber": "MGA/CRP/314/2015",
+        "status": "active"
+      },
+      {
+        "issuer": "UKGC",
+        "jurisdiction": "GB",
+        "licenseNumber": "45235",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "GB",
+        "status": "available"
+      },
+      {
+        "geo": "SE",
+        "status": "available"
+      },
+      {
+        "geo": "FI",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Neteller",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      },
+      {
+        "name": "Trustly",
+        "type": "bank-transfer"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": false,
+    "hasMobile": true,
+    "languages": [
+      "en",
+      "de",
+      "sv",
+      "fi"
+    ],
+    "currencies": [
+      "EUR",
+      "GBP",
+      "SEK"
+    ]
+  },
+  {
+    "name": "VegasHero Casino",
+    "slug": "vegashero",
+    "website": "https://www.vegashero.com",
+    "tagline": "Superhero-themed casino from Genesis Global",
+    "founded": 2017,
+    "owner": "Genesis Global Ltd",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "MGA",
+        "jurisdiction": "MT",
+        "licenseNumber": "MGA/CRP/314/2015",
+        "status": "active"
+      },
+      {
+        "issuer": "UKGC",
+        "jurisdiction": "GB",
+        "licenseNumber": "45235",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "GB",
+        "status": "available"
+      },
+      {
+        "geo": "SE",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Neteller",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": false,
+    "hasMobile": true,
+    "languages": [
+      "en",
+      "de",
+      "sv"
+    ],
+    "currencies": [
+      "EUR",
+      "GBP",
+      "SEK"
+    ]
+  },
+  {
+    "name": "Spinit Casino",
+    "slug": "spinit",
+    "website": "https://www.spinit.com",
+    "tagline": "Fast-paced casino for slot enthusiasts",
+    "founded": 2016,
+    "owner": "Genesis Global Ltd",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "MGA",
+        "jurisdiction": "MT",
+        "licenseNumber": "MGA/CRP/314/2015",
+        "status": "active"
+      },
+      {
+        "issuer": "UKGC",
+        "jurisdiction": "GB",
+        "licenseNumber": "45235",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "GB",
+        "status": "available"
+      },
+      {
+        "geo": "SE",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Neteller",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": false,
+    "hasMobile": true,
+    "languages": [
+      "en",
+      "de",
+      "sv"
+    ],
+    "currencies": [
+      "EUR",
+      "GBP",
+      "SEK"
+    ]
+  },
+  {
+    "name": "Sloty Casino",
+    "slug": "sloty",
+    "website": "https://www.slotycasino.com",
+    "tagline": "City of Slots floating in the clouds",
+    "founded": 2017,
+    "owner": "Genesis Global Ltd",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "MGA",
+        "jurisdiction": "MT",
+        "licenseNumber": "MGA/CRP/314/2015",
+        "status": "active"
+      },
+      {
+        "issuer": "UKGC",
+        "jurisdiction": "GB",
+        "licenseNumber": "45235",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "GB",
+        "status": "available"
+      },
+      {
+        "geo": "SE",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Neteller",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": false,
+    "hasMobile": true,
+    "languages": [
+      "en",
+      "de",
+      "sv"
+    ],
+    "currencies": [
+      "EUR",
+      "GBP",
+      "SEK"
+    ]
+  },
+  {
+    "name": "Pelaa Casino",
+    "slug": "pelaa",
+    "website": "https://www.pelaa.com",
+    "tagline": "Greek-themed casino from Genesis Global",
+    "founded": 2018,
+    "owner": "Genesis Global Ltd",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "MGA",
+        "jurisdiction": "MT",
+        "licenseNumber": "MGA/CRP/314/2015",
+        "status": "active"
+      },
+      {
+        "issuer": "UKGC",
+        "jurisdiction": "GB",
+        "licenseNumber": "45235",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "GB",
+        "status": "available"
+      },
+      {
+        "geo": "SE",
+        "status": "available"
+      },
+      {
+        "geo": "FI",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Neteller",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      },
+      {
+        "name": "Trustly",
+        "type": "bank-transfer"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": false,
+    "hasMobile": true,
+    "languages": [
+      "en",
+      "de",
+      "sv",
+      "fi"
+    ],
+    "currencies": [
+      "EUR",
+      "GBP",
+      "SEK"
+    ]
+  },
+  {
+    "name": "Kassu Casino",
+    "slug": "kassu",
+    "website": "https://www.kassu.com",
+    "tagline": "Quirky music-themed casino",
+    "founded": 2019,
+    "owner": "Genesis Global Ltd",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "MGA",
+        "jurisdiction": "MT",
+        "licenseNumber": "MGA/CRP/314/2015",
+        "status": "active"
+      },
+      {
+        "issuer": "UKGC",
+        "jurisdiction": "GB",
+        "licenseNumber": "45235",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "GB",
+        "status": "available"
+      },
+      {
+        "geo": "SE",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Neteller",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": false,
+    "hasMobile": true,
+    "languages": [
+      "en",
+      "de",
+      "sv"
+    ],
+    "currencies": [
+      "EUR",
+      "GBP",
+      "SEK"
+    ]
+  },
+  {
+    "name": "Tipico Casino",
+    "slug": "tipico-casino",
+    "website": "https://www.tipico.de/casino",
+    "tagline": "Leading German sports betting and casino brand",
+    "founded": 2004,
+    "owner": "Tipico Co. Ltd",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "GGL",
+        "jurisdiction": "DE",
+        "licenseNumber": "GGL20280042024",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "DE",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Klarna",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      },
+      {
+        "name": "Apple Pay",
+        "type": "mobile"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": true,
+    "hasMobile": true,
+    "languages": [
+      "de",
+      "en"
+    ],
+    "currencies": [
+      "EUR"
+    ]
+  },
+  {
+    "name": "Betano",
+    "slug": "betano-de",
+    "website": "https://www.betano.de",
+    "tagline": "Kaizen Gaming brand, growing in German market",
+    "founded": 2016,
+    "owner": "Kaizen Gaming",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "GGL",
+        "jurisdiction": "DE",
+        "licenseNumber": "GGL202822401011",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "DE",
+        "status": "available"
+      },
+      {
+        "geo": "BG",
+        "status": "available"
+      },
+      {
+        "geo": "RO",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Klarna",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      },
+      {
+        "name": "Apple Pay",
+        "type": "mobile"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": true,
+    "hasMobile": true,
+    "languages": [
+      "de",
+      "en",
+      "bg"
+    ],
+    "currencies": [
+      "EUR",
+      "BGN"
+    ]
+  },
+  {
+    "name": "Interwetten DE",
+    "slug": "interwetten-de",
+    "website": "https://www.interwetten.com/de",
+    "tagline": "Austrian pioneer now licensed for German market",
+    "founded": 1990,
+    "owner": "Interwetten Gaming Ltd",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "GGL",
+        "jurisdiction": "DE",
+        "licenseNumber": "GGL20280102025",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "DE",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Klarna",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      },
+      {
+        "name": "Apple Pay",
+        "type": "mobile"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": true,
+    "hasMobile": true,
+    "languages": [
+      "de",
+      "en"
+    ],
+    "currencies": [
+      "EUR"
+    ]
+  },
+  {
+    "name": "bwin DE",
+    "slug": "bwin-de",
+    "website": "https://www.bwin.com/de",
+    "tagline": "Major Entain brand for the German market",
+    "founded": 1999,
+    "owner": "Entain plc",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "GGL",
+        "jurisdiction": "DE",
+        "licenseNumber": "GGL20280054025",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "DE",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Klarna",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      },
+      {
+        "name": "Apple Pay",
+        "type": "mobile"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": true,
+    "hasMobile": true,
+    "languages": [
+      "de",
+      "en"
+    ],
+    "currencies": [
+      "EUR"
+    ]
+  },
+  {
+    "name": "Betsafe",
+    "slug": "betsafe",
+    "website": "https://www.betsafe.com",
+    "tagline": "Part of Betsson Group, popular in DACH region",
+    "founded": 2006,
+    "owner": "Betsson AB",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "MGA",
+        "jurisdiction": "MT",
+        "licenseNumber": "MGA/CRP/171/2009",
+        "status": "active"
+      },
+      {
+        "issuer": "UKGC",
+        "jurisdiction": "GB",
+        "licenseNumber": "39346",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "DE",
+        "status": "available"
+      },
+      {
+        "geo": "AT",
+        "status": "available"
+      },
+      {
+        "geo": "CH",
+        "status": "available"
+      },
+      {
+        "geo": "SE",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Klarna",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      },
+      {
+        "name": "Apple Pay",
+        "type": "mobile"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Neteller",
+        "type": "e-wallet"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": true,
+    "hasMobile": true,
+    "languages": [
+      "de",
+      "en",
+      "sv"
+    ],
+    "currencies": [
+      "EUR",
+      "SEK",
+      "CHF"
+    ]
+  },
+  {
+    "name": "Guts Casino",
+    "slug": "guts",
+    "website": "https://www.guts.com",
+    "tagline": "Zecure Gaming brand with solid reputation",
+    "founded": 2013,
+    "owner": "Zecure Gaming Ltd",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "MGA",
+        "jurisdiction": "MT",
+        "licenseNumber": "MGA/CRP/171/2009",
+        "status": "active"
+      },
+      {
+        "issuer": "UKGC",
+        "jurisdiction": "GB",
+        "licenseNumber": "39482",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "DE",
+        "status": "available"
+      },
+      {
+        "geo": "NO",
+        "status": "available"
+      },
+      {
+        "geo": "SE",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Neteller",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      },
+      {
+        "name": "Klarna",
+        "type": "bank-transfer"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": true,
+    "hasMobile": true,
+    "languages": [
+      "de",
+      "en",
+      "no",
+      "sv"
+    ],
+    "currencies": [
+      "EUR",
+      "SEK",
+      "NOK"
+    ]
+  },
+  {
+    "name": "Cashmio",
+    "slug": "cashmio",
+    "website": "https://www.cashmio.com",
+    "tagline": "Fun casino from MT SecureTrade",
+    "founded": 2015,
+    "owner": "MT SecureTrade Ltd",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "MGA",
+        "jurisdiction": "MT",
+        "licenseNumber": "MGA/CRP/171/2009",
+        "status": "active"
+      },
+      {
+        "issuer": "UKGC",
+        "jurisdiction": "GB",
+        "licenseNumber": "39325",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "DE",
+        "status": "available"
+      },
+      {
+        "geo": "SE",
+        "status": "available"
+      },
+      {
+        "geo": "FI",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Neteller",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": false,
+    "hasMobile": true,
+    "languages": [
+      "de",
+      "en",
+      "sv",
+      "fi"
+    ],
+    "currencies": [
+      "EUR",
+      "SEK"
+    ]
+  },
+  {
+    "name": "Frank Casino",
+    "slug": "frank-casino",
+    "website": "https://www.frankcasino.de",
+    "tagline": "Playtech-powered casino with German focus",
+    "founded": 2014,
+    "owner": "Avento MT Ltd",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "MGA",
+        "jurisdiction": "MT",
+        "licenseNumber": "MGA/CRP/171/2009",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "DE",
+        "status": "available"
+      },
+      {
+        "geo": "NO",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Klarna",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      },
+      {
+        "name": "Apple Pay",
+        "type": "mobile"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Neteller",
+        "type": "e-wallet"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": false,
+    "hasMobile": true,
+    "languages": [
+      "de",
+      "en",
+      "no"
+    ],
+    "currencies": [
+      "EUR",
+      "NOK"
+    ]
+  },
+  {
+    "name": "Casino Gods",
+    "slug": "casino-gods",
+    "website": "https://www.casinogods.com",
+    "tagline": "Mythology-themed casino from Genesis Global",
+    "founded": 2019,
+    "owner": "Genesis Global Ltd",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "MGA",
+        "jurisdiction": "MT",
+        "licenseNumber": "MGA/CRP/314/2015",
+        "status": "active"
+      },
+      {
+        "issuer": "UKGC",
+        "jurisdiction": "GB",
+        "licenseNumber": "45235",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "DE",
+        "status": "available"
+      },
+      {
+        "geo": "GB",
+        "status": "available"
+      },
+      {
+        "geo": "SE",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Klarna",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      },
+      {
+        "name": "Apple Pay",
+        "type": "mobile"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Neteller",
+        "type": "e-wallet"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": false,
+    "hasMobile": true,
+    "languages": [
+      "de",
+      "en",
+      "sv"
+    ],
+    "currencies": [
+      "EUR",
+      "GBP",
+      "SEK"
+    ]
+  },
+  {
+    "name": "Wunderino",
+    "slug": "wunderino",
+    "website": "https://www.wunderino.com",
+    "tagline": "German-focused casino with adventure elements",
+    "founded": 2016,
+    "owner": "Sunfox Games Ltd",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "MGA",
+        "jurisdiction": "MT",
+        "licenseNumber": "MGA/CRP/171/2009",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "DE",
+        "status": "available"
+      },
+      {
+        "geo": "FI",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Klarna",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      },
+      {
+        "name": "Apple Pay",
+        "type": "mobile"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": false,
+    "hasMobile": true,
+    "languages": [
+      "de",
+      "en",
+      "fi"
+    ],
+    "currencies": [
+      "EUR"
+    ]
+  },
+  {
+    "name": "DrukteGlück",
+    "slug": "drukteglueck",
+    "website": "https://www.drueckglueck.de",
+    "tagline": "Luck-themed casino for German players",
+    "founded": 2015,
+    "owner": "SkillOnNet Ltd",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "GGL",
+        "jurisdiction": "DE",
+        "licenseNumber": "GGL20280044024",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "DE",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Klarna",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      },
+      {
+        "name": "Apple Pay",
+        "type": "mobile"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": false,
+    "hasMobile": true,
+    "languages": [
+      "de",
+      "en"
+    ],
+    "currencies": [
+      "EUR"
+    ]
+  },
+  {
+    "name": "Luna Casino DE",
+    "slug": "luna-casino-de",
+    "website": "https://www.lunacasino.de",
+    "tagline": "SkillOnNet brand for German market",
+    "founded": 2018,
+    "owner": "SkillOnNet Ltd",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "GGL",
+        "jurisdiction": "DE",
+        "licenseNumber": "GGL20280056024",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "DE",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Klarna",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      },
+      {
+        "name": "Apple Pay",
+        "type": "mobile"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": false,
+    "hasMobile": true,
+    "languages": [
+      "de",
+      "en"
+    ],
+    "currencies": [
+      "EUR"
+    ]
+  },
+  {
+    "name": "PlayJango",
+    "slug": "playjango",
+    "website": "https://www.playjango.de",
+    "tagline": "Casino with gamification for German market",
+    "founded": 2020,
+    "owner": "SkillOnNet Ltd",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "GGL",
+        "jurisdiction": "DE",
+        "licenseNumber": "GGL20280062024",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "DE",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Klarna",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      },
+      {
+        "name": "Apple Pay",
+        "type": "mobile"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": false,
+    "hasMobile": true,
+    "languages": [
+      "de",
+      "en"
+    ],
+    "currencies": [
+      "EUR"
+    ]
+  },
+  {
+    "name": "Miami Jackpots DE",
+    "slug": "miami-jackpots-de",
+    "website": "https://www.miamijackpots.de",
+    "tagline": "Retro-flavored casino for German players",
+    "founded": 2019,
+    "owner": "SkillOnNet Ltd",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "GGL",
+        "jurisdiction": "DE",
+        "licenseNumber": "GGL20280060024",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "DE",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Klarna",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      },
+      {
+        "name": "Apple Pay",
+        "type": "mobile"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": false,
+    "hasMobile": true,
+    "languages": [
+      "de",
+      "en"
+    ],
+    "currencies": [
+      "EUR"
+    ]
+  },
+  {
+    "name": "Ahti Games",
+    "slug": "ahti-games",
+    "website": "https://www.ahtigames.de",
+    "tagline": "Finnish mythology-themed casino",
+    "founded": 2018,
+    "owner": "SkillOnNet Ltd",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "GGL",
+        "jurisdiction": "DE",
+        "licenseNumber": "GGL20280058024",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "DE",
+        "status": "available"
+      },
+      {
+        "geo": "FI",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Klarna",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      },
+      {
+        "name": "Apple Pay",
+        "type": "mobile"
+      },
+      {
+        "name": "Trustly",
+        "type": "bank-transfer"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": false,
+    "hasMobile": true,
+    "languages": [
+      "de",
+      "en",
+      "fi"
+    ],
+    "currencies": [
+      "EUR"
+    ]
+  },
+  {
+    "name": "Lucky Vegas DE",
+    "slug": "lucky-vegas-de",
+    "website": "https://www.luckyvegas.de",
+    "tagline": "Vegas-style casino for German market",
+    "founded": 2019,
+    "owner": "SkillOnNet Ltd",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "GGL",
+        "jurisdiction": "DE",
+        "licenseNumber": "GGL20280064024",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "DE",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Klarna",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      },
+      {
+        "name": "Apple Pay",
+        "type": "mobile"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": false,
+    "hasMobile": true,
+    "languages": [
+      "de",
+      "en"
+    ],
+    "currencies": [
+      "EUR"
+    ]
+  },
+  {
+    "name": "Neon54",
+    "slug": "neon54-de",
+    "website": "https://www.neon54.com",
+    "tagline": "Neon-themed casino with multiple game providers",
+    "founded": 2021,
+    "owner": "Rabidi N.V.",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "MGA",
+        "jurisdiction": "MT",
+        "licenseNumber": "MGA/CRP/171/2009",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "DE",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Klarna",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      },
+      {
+        "name": "Apple Pay",
+        "type": "mobile"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Neteller",
+        "type": "e-wallet"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": true,
+    "hasMobile": true,
+    "languages": [
+      "de",
+      "en"
+    ],
+    "currencies": [
+      "EUR"
+    ]
+  },
+  {
+    "name": "Zet Casino",
+    "slug": "zet-casino",
+    "website": "https://www.zetcasino.com",
+    "tagline": "Modern casino with German market access",
+    "founded": 2018,
+    "owner": "Araxio Development N.V.",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "MGA",
+        "jurisdiction": "MT",
+        "licenseNumber": "MGA/CRP/171/2009",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "DE",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Klarna",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      },
+      {
+        "name": "Apple Pay",
+        "type": "mobile"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Neteller",
+        "type": "e-wallet"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": true,
+    "hasMobile": true,
+    "languages": [
+      "de",
+      "en"
+    ],
+    "currencies": [
+      "EUR"
+    ]
+  },
+  {
+    "name": "Cadabrus",
+    "slug": "cadabrus",
+    "website": "https://www.cadabrus.de",
+    "tagline": "Magic-themed casino for German players",
+    "founded": 2020,
+    "owner": "Maltix Ltd",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "MGA",
+        "jurisdiction": "MT",
+        "licenseNumber": "MGA/CRP/171/2009",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "DE",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Klarna",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      },
+      {
+        "name": "Apple Pay",
+        "type": "mobile"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Neteller",
+        "type": "e-wallet"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": true,
+    "hasMobile": true,
+    "languages": [
+      "de",
+      "en"
+    ],
+    "currencies": [
+      "EUR"
+    ]
+  },
+  {
+    "name": "Caxino",
+    "slug": "caxino",
+    "website": "https://www.caxino.com",
+    "tagline": "Modern, clean casino experience",
+    "founded": 2020,
+    "owner": "Rootz Ltd",
+    "minDeposit": 1,
+    "licenses": [
+      {
+        "issuer": "MGA",
+        "jurisdiction": "MT",
+        "licenseNumber": "MGA/CRP/171/2009",
+        "status": "active"
+      },
+      {
+        "issuer": "UKGC",
+        "jurisdiction": "GB",
+        "licenseNumber": "39335",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "DE",
+        "status": "available"
+      },
+      {
+        "geo": "FI",
+        "status": "available"
+      },
+      {
+        "geo": "NO",
+        "status": "available"
+      },
+      {
+        "geo": "AT",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Klarna",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      },
+      {
+        "name": "Apple Pay",
+        "type": "mobile"
+      },
+      {
+        "name": "Trustly",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": false,
+    "hasMobile": true,
+    "languages": [
+      "de",
+      "en",
+      "fi",
+      "no"
+    ],
+    "currencies": [
+      "EUR"
+    ]
+  },
+  {
+    "name": "Wildz Casino",
+    "slug": "wildz",
+    "website": "https://www.wildz.de",
+    "tagline": "Rootz brand with personalized rewards",
+    "founded": 2019,
+    "owner": "Rootz Ltd",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "MGA",
+        "jurisdiction": "MT",
+        "licenseNumber": "MGA/CRP/171/2009",
+        "status": "active"
+      },
+      {
+        "issuer": "UKGC",
+        "jurisdiction": "GB",
+        "licenseNumber": "39335",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "DE",
+        "status": "available"
+      },
+      {
+        "geo": "FI",
+        "status": "available"
+      },
+      {
+        "geo": "NO",
+        "status": "available"
+      },
+      {
+        "geo": "AT",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Klarna",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      },
+      {
+        "name": "Apple Pay",
+        "type": "mobile"
+      },
+      {
+        "name": "Trustly",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": false,
+    "hasMobile": true,
+    "languages": [
+      "de",
+      "en",
+      "fi",
+      "no"
+    ],
+    "currencies": [
+      "EUR"
+    ]
+  },
+  {
+    "name": "Wheelz Casino",
+    "slug": "wheelz-casino",
+    "website": "https://www.wheelz.de",
+    "tagline": "Celebrity-themed Rootz casino brand",
+    "founded": 2021,
+    "owner": "Rootz Ltd",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "MGA",
+        "jurisdiction": "MT",
+        "licenseNumber": "MGA/CRP/171/2009",
+        "status": "active"
+      },
+      {
+        "issuer": "UKGC",
+        "jurisdiction": "GB",
+        "licenseNumber": "39335",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "DE",
+        "status": "available"
+      },
+      {
+        "geo": "FI",
+        "status": "available"
+      },
+      {
+        "geo": "NO",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Klarna",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      },
+      {
+        "name": "Apple Pay",
+        "type": "mobile"
+      },
+      {
+        "name": "Trustly",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": false,
+    "hasMobile": true,
+    "languages": [
+      "de",
+      "en",
+      "fi",
+      "no"
+    ],
+    "currencies": [
+      "EUR"
+    ]
+  },
+  {
+    "name": "Holland Casino Online",
+    "slug": "holland-casino-online",
+    "website": "https://www.hollandcasino.nl",
+    "tagline": "State-owned casino, online since 2021",
+    "founded": 1975,
+    "owner": "Holland Casino N.V.",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "KSA",
+        "jurisdiction": "NL",
+        "licenseNumber": "10000104",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "NL",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "iDEAL",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Trustly",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Apple Pay",
+        "type": "mobile"
+      },
+      {
+        "name": "Google Pay",
+        "type": "mobile"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": false,
+    "hasMobile": true,
+    "languages": [
+      "nl",
+      "en"
+    ],
+    "currencies": [
+      "EUR"
+    ]
+  },
+  {
+    "name": "BetCity",
+    "slug": "betcity-nl",
+    "website": "https://www.betcity.nl",
+    "tagline": "Dutch-focused sports betting and casino",
+    "founded": 2021,
+    "owner": "Betent N.V.",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "KSA",
+        "jurisdiction": "NL",
+        "licenseNumber": "10000122",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "NL",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "iDEAL",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Trustly",
+        "type": "bank-transfer"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": true,
+    "hasMobile": true,
+    "languages": [
+      "nl",
+      "en"
+    ],
+    "currencies": [
+      "EUR"
+    ]
+  },
+  {
+    "name": "Toto",
+    "slug": "toto-nl",
+    "website": "https://www.toto.nl",
+    "tagline": "De Lotto brand, Dutch state lottery",
+    "founded": 1957,
+    "owner": "Nederlandse Loterij",
+    "minDeposit": 5,
+    "licenses": [
+      {
+        "issuer": "KSA",
+        "jurisdiction": "NL",
+        "licenseNumber": "10000007",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "NL",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "iDEAL",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Trustly",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Apple Pay",
+        "type": "mobile"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": true,
+    "hasMobile": true,
+    "languages": [
+      "nl"
+    ],
+    "currencies": [
+      "EUR"
+    ]
+  },
+  {
+    "name": "Jack's Casino Online",
+    "slug": "jacks-casino-online",
+    "website": "https://www.jackscasino.nl",
+    "tagline": "Popular Dutch land-based chain goes online",
+    "founded": 2021,
+    "owner": "JOI Gaming Ltd",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "KSA",
+        "jurisdiction": "NL",
+        "licenseNumber": "10000124",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "NL",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "iDEAL",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Trustly",
+        "type": "bank-transfer"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": false,
+    "hasMobile": true,
+    "languages": [
+      "nl",
+      "en"
+    ],
+    "currencies": [
+      "EUR"
+    ]
+  },
+  {
+    "name": "Fair Play Casino Online",
+    "slug": "fair-play-casino-online",
+    "website": "https://www.fairplaycasino.nl",
+    "tagline": "Major Dutch land-based chain goes online",
+    "founded": 2021,
+    "owner": "Fair Play Online B.V.",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "KSA",
+        "jurisdiction": "NL",
+        "licenseNumber": "10000140",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "NL",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "iDEAL",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Trustly",
+        "type": "bank-transfer"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": false,
+    "hasMobile": true,
+    "languages": [
+      "nl",
+      "en"
+    ],
+    "currencies": [
+      "EUR"
+    ]
+  },
+  {
+    "name": "Batavia Casino",
+    "slug": "batavia-casino",
+    "website": "https://www.bataviacasino.nl",
+    "tagline": "Play North Ltd brand for the Dutch market",
+    "founded": 2021,
+    "owner": "Play North Ltd",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "KSA",
+        "jurisdiction": "NL",
+        "licenseNumber": "10000123",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "NL",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "iDEAL",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Trustly",
+        "type": "bank-transfer"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": false,
+    "hasMobile": true,
+    "languages": [
+      "nl",
+      "en"
+    ],
+    "currencies": [
+      "EUR"
+    ]
+  },
+  {
+    "name": "OneCasino",
+    "slug": "onecasino-nl",
+    "website": "https://www.onecasino.nl",
+    "tagline": "Dutch-exclusive online casino",
+    "founded": 2017,
+    "owner": "OneCasino Ltd",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "KSA",
+        "jurisdiction": "NL",
+        "licenseNumber": "10000128",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "NL",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "iDEAL",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Trustly",
+        "type": "bank-transfer"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": false,
+    "hasMobile": true,
+    "languages": [
+      "nl",
+      "en"
+    ],
+    "currencies": [
+      "EUR"
+    ]
+  },
+  {
+    "name": "GGPoker NL",
+    "slug": "ggpoker-nl",
+    "website": "https://www.ggpoker.nl",
+    "tagline": "Leading poker site with casino games, Dutch-licensed",
+    "founded": 2014,
+    "owner": "NSUS Ltd",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "KSA",
+        "jurisdiction": "NL",
+        "licenseNumber": "10000153",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "NL",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "iDEAL",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Trustly",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": true,
+    "hasMobile": true,
+    "languages": [
+      "nl",
+      "en"
+    ],
+    "currencies": [
+      "EUR",
+      "USD"
+    ]
+  },
+  {
+    "name": "PokerStars NL",
+    "slug": "pokerstars-nl",
+    "website": "https://www.pokerstars.nl",
+    "tagline": "World's biggest poker site, licensed for Netherlands",
+    "founded": 2001,
+    "owner": "Flutter Entertainment",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "KSA",
+        "jurisdiction": "NL",
+        "licenseNumber": "10000152",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "NL",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "iDEAL",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Trustly",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": true,
+    "hasMobile": true,
+    "languages": [
+      "nl",
+      "en"
+    ],
+    "currencies": [
+      "EUR"
+    ]
+  },
+  {
+    "name": "Unibet NL",
+    "slug": "unibet-nl",
+    "website": "https://www.unibet.nl",
+    "tagline": "Kindred brand with Dutch KSA license",
+    "founded": 1997,
+    "owner": "Kindred Group",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "KSA",
+        "jurisdiction": "NL",
+        "licenseNumber": "10000156",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "NL",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "iDEAL",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Trustly",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": true,
+    "hasMobile": true,
+    "languages": [
+      "nl",
+      "en"
+    ],
+    "currencies": [
+      "EUR"
+    ]
+  },
+  {
+    "name": "Bet365 NL",
+    "slug": "bet365-nl",
+    "website": "https://www.bet365.nl",
+    "tagline": "World's largest bookmaker, Dutch-licensed",
+    "founded": 2000,
+    "owner": "Hillside (Media) Limited",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "KSA",
+        "jurisdiction": "NL",
+        "licenseNumber": "10000145",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "NL",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "iDEAL",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Trustly",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": true,
+    "hasMobile": true,
+    "languages": [
+      "nl",
+      "en"
+    ],
+    "currencies": [
+      "EUR"
+    ]
+  },
+  {
+    "name": "Betway NL",
+    "slug": "betway-nl",
+    "website": "https://www.betway.nl",
+    "tagline": "Global brand with Netherlands license",
+    "founded": 2006,
+    "owner": "Betway Limited",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "KSA",
+        "jurisdiction": "NL",
+        "licenseNumber": "10000150",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "NL",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "iDEAL",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Trustly",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": true,
+    "hasMobile": true,
+    "languages": [
+      "nl",
+      "en"
+    ],
+    "currencies": [
+      "EUR"
+    ]
+  },
+  {
+    "name": "Circus NL",
+    "slug": "circus-nl",
+    "website": "https://www.circus.nl",
+    "tagline": "Circus Entertainment brand for Dutch market",
+    "founded": 2022,
+    "owner": "Circus Entertainment N.V.",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "KSA",
+        "jurisdiction": "NL",
+        "licenseNumber": "10000160",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "NL",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "iDEAL",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Trustly",
+        "type": "bank-transfer"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": true,
+    "hasMobile": true,
+    "languages": [
+      "nl",
+      "en"
+    ],
+    "currencies": [
+      "EUR"
+    ]
+  },
+  {
+    "name": "Kansino",
+    "slug": "kansino",
+    "website": "https://www.kansino.nl",
+    "tagline": "Dutch-only casino brand",
+    "founded": 2021,
+    "owner": "Casino de Spa N.V.",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "KSA",
+        "jurisdiction": "NL",
+        "licenseNumber": "10000126",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "NL",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "iDEAL",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Trustly",
+        "type": "bank-transfer"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": false,
+    "hasMobile": true,
+    "languages": [
+      "nl"
+    ],
+    "currencies": [
+      "EUR"
+    ]
+  },
+  {
+    "name": "777.nl",
+    "slug": "777-nl",
+    "website": "https://www.777.nl",
+    "tagline": "Dutch offshoot of the 777 brand",
+    "founded": 2022,
+    "owner": "777 Casino N.V.",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "KSA",
+        "jurisdiction": "NL",
+        "licenseNumber": "10000162",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "NL",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "iDEAL",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Trustly",
+        "type": "bank-transfer"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": false,
+    "hasMobile": true,
+    "languages": [
+      "nl",
+      "en"
+    ],
+    "currencies": [
+      "EUR"
+    ]
+  },
+  {
+    "name": "TOTO Casino",
+    "slug": "toto-casino",
+    "website": "https://www.toto.nl/casino",
+    "tagline": "Toto expanded into online casino",
+    "founded": 2022,
+    "owner": "Nederlandse Loterij",
+    "minDeposit": 5,
+    "licenses": [
+      {
+        "issuer": "KSA",
+        "jurisdiction": "NL",
+        "licenseNumber": "10000007",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "NL",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "iDEAL",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Trustly",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Apple Pay",
+        "type": "mobile"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": true,
+    "hasMobile": true,
+    "languages": [
+      "nl"
+    ],
+    "currencies": [
+      "EUR"
+    ]
+  },
+  {
+    "name": "BetAmo",
+    "slug": "betamo-nl",
+    "website": "https://www.betamo.nl",
+    "tagline": "Amsterdam-themed casino",
+    "founded": 2022,
+    "owner": "N1 Interactive Ltd",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "KSA",
+        "jurisdiction": "NL",
+        "licenseNumber": "10000170",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "NL",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "iDEAL",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Trustly",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Neteller",
+        "type": "e-wallet"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": false,
+    "hasMobile": true,
+    "languages": [
+      "nl",
+      "en"
+    ],
+    "currencies": [
+      "EUR"
+    ]
+  },
+  {
+    "name": "Betchan NL",
+    "slug": "betchan-nl",
+    "website": "https://www.betchan.nl",
+    "tagline": "N1 Interactive brand for Dutch market",
+    "founded": 2022,
+    "owner": "N1 Interactive Ltd",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "KSA",
+        "jurisdiction": "NL",
+        "licenseNumber": "10000172",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "NL",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "iDEAL",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Trustly",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Neteller",
+        "type": "e-wallet"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": false,
+    "hasMobile": true,
+    "languages": [
+      "nl",
+      "en"
+    ],
+    "currencies": [
+      "EUR"
+    ]
+  },
+  {
+    "name": "Bob Casino NL",
+    "slug": "bob-casino-nl",
+    "website": "https://www.bobcasino.nl",
+    "tagline": "Laid-back casino brand for Netherlands",
+    "founded": 2022,
+    "owner": "N1 Interactive Ltd",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "KSA",
+        "jurisdiction": "NL",
+        "licenseNumber": "10000174",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "NL",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "iDEAL",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Trustly",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Neteller",
+        "type": "e-wallet"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": false,
+    "hasMobile": true,
+    "languages": [
+      "nl",
+      "en"
+    ],
+    "currencies": [
+      "EUR"
+    ]
+  },
+  {
+    "name": "Spinia NL",
+    "slug": "spinia-nl",
+    "website": "https://www.spinia.nl",
+    "tagline": "N1 Interactive casino with Dutch license",
+    "founded": 2022,
+    "owner": "N1 Interactive Ltd",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "KSA",
+        "jurisdiction": "NL",
+        "licenseNumber": "10000176",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "NL",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "iDEAL",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Trustly",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Neteller",
+        "type": "e-wallet"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": false,
+    "hasMobile": true,
+    "languages": [
+      "nl",
+      "en"
+    ],
+    "currencies": [
+      "EUR"
+    ]
+  },
+  {
+    "name": "Playamo NL",
+    "slug": "playamo-nl",
+    "website": "https://www.playamo.nl",
+    "tagline": "N1 Interactive brand for Dutch players",
+    "founded": 2022,
+    "owner": "N1 Interactive Ltd",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "KSA",
+        "jurisdiction": "NL",
+        "licenseNumber": "10000178",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "NL",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "iDEAL",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Trustly",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Neteller",
+        "type": "e-wallet"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": false,
+    "hasMobile": true,
+    "languages": [
+      "nl",
+      "en"
+    ],
+    "currencies": [
+      "EUR"
+    ]
+  },
+  {
+    "name": "Casumo NL",
+    "slug": "casumo-nl",
+    "website": "https://www.casumo.nl",
+    "tagline": "Adventure casino with Dutch license",
+    "founded": 2012,
+    "owner": "Casumo Services Ltd",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "KSA",
+        "jurisdiction": "NL",
+        "licenseNumber": "10000148",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "NL",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "iDEAL",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Trustly",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": false,
+    "hasMobile": true,
+    "languages": [
+      "nl",
+      "en"
+    ],
+    "currencies": [
+      "EUR"
+    ]
+  },
+  {
+    "name": "ComeOn NL",
+    "slug": "comeon-nl",
+    "website": "https://www.comeon.nl",
+    "tagline": "ComeOn Group brand for Netherlands",
+    "founded": 2008,
+    "owner": "ComeOn Group",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "KSA",
+        "jurisdiction": "NL",
+        "licenseNumber": "10000146",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "NL",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "iDEAL",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Trustly",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": true,
+    "hasMobile": true,
+    "languages": [
+      "nl",
+      "en"
+    ],
+    "currencies": [
+      "EUR"
+    ]
+  },
+  {
+    "name": "Bingoal NL",
+    "slug": "bingoal-nl",
+    "website": "https://www.bingoal.nl",
+    "tagline": "Belgian brand with Dutch presence",
+    "founded": 1984,
+    "owner": "Bingoal N.V.",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "KSA",
+        "jurisdiction": "NL",
+        "licenseNumber": "10000166",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "NL",
+        "status": "available"
+      },
+      {
+        "geo": "BE",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "iDEAL",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Trustly",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Bancontact",
+        "type": "bank-transfer"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": true,
+    "hasMobile": true,
+    "languages": [
+      "nl",
+      "en",
+      "fr"
+    ],
+    "currencies": [
+      "EUR"
+    ]
+  },
+  {
+    "name": "Unibet BE",
+    "slug": "unibet-be",
+    "website": "https://www.unibet.be",
+    "tagline": "Leading international brand, licensed for Belgium",
+    "founded": 1997,
+    "owner": "Kindred Group",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "BGC",
+        "jurisdiction": "BE",
+        "licenseNumber": "A+8109",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "BE",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Bancontact",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": true,
+    "hasMobile": true,
+    "languages": [
+      "fr",
+      "nl",
+      "en"
+    ],
+    "currencies": [
+      "EUR"
+    ]
+  },
+  {
+    "name": "Circus BE",
+    "slug": "circus-be",
+    "website": "https://www.circus.be",
+    "tagline": "Popular Belgian casino and sportsbook brand",
+    "founded": 2009,
+    "owner": "Gaming1",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "BGC",
+        "jurisdiction": "BE",
+        "licenseNumber": "A+8112",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "BE",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Bancontact",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": true,
+    "hasMobile": true,
+    "languages": [
+      "fr",
+      "nl",
+      "en"
+    ],
+    "currencies": [
+      "EUR"
+    ]
+  },
+  {
+    "name": "Napoleon Games",
+    "slug": "napoleon-games",
+    "website": "https://www.napoleongames.be",
+    "tagline": "One of Belgium's largest casino operators",
+    "founded": 2013,
+    "owner": "Napoleon Sports & Casino",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "BGC",
+        "jurisdiction": "BE",
+        "licenseNumber": "A+8104",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "BE",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Bancontact",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      },
+      {
+        "name": "Bancontact",
+        "type": "bank-transfer"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": true,
+    "hasMobile": true,
+    "languages": [
+      "nl",
+      "fr",
+      "en"
+    ],
+    "currencies": [
+      "EUR"
+    ]
+  },
+  {
+    "name": "Betway BE",
+    "slug": "betway-be",
+    "website": "https://www.betway.be",
+    "tagline": "Global brand with Belgian BGC license",
+    "founded": 2006,
+    "owner": "Betway Limited",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "BGC",
+        "jurisdiction": "BE",
+        "licenseNumber": "A+8110",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "BE",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Bancontact",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": true,
+    "hasMobile": true,
+    "languages": [
+      "fr",
+      "nl",
+      "en"
+    ],
+    "currencies": [
+      "EUR"
+    ]
+  },
+  {
+    "name": "Bet365 BE",
+    "slug": "bet365-be",
+    "website": "https://www.bet365.be",
+    "tagline": "World's largest online gambling company, licensed in Belgium",
+    "founded": 2000,
+    "owner": "Hillside (Media) Limited",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "BGC",
+        "jurisdiction": "BE",
+        "licenseNumber": "A+8120",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "BE",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Bancontact",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": true,
+    "hasMobile": true,
+    "languages": [
+      "fr",
+      "nl",
+      "en"
+    ],
+    "currencies": [
+      "EUR"
+    ]
+  },
+  {
+    "name": "bwin BE",
+    "slug": "bwin-be",
+    "website": "https://www.bwin.be",
+    "tagline": "Entain brand licensed for Belgian market",
+    "founded": 1999,
+    "owner": "Entain plc",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "BGC",
+        "jurisdiction": "BE",
+        "licenseNumber": "A+8116",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "BE",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Bancontact",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": true,
+    "hasMobile": true,
+    "languages": [
+      "fr",
+      "nl",
+      "en"
+    ],
+    "currencies": [
+      "EUR"
+    ]
+  },
+  {
+    "name": "Betfair BE",
+    "slug": "betfair-be",
+    "website": "https://www.betfair.be",
+    "tagline": "Flutter brand with Belgian license",
+    "founded": 1999,
+    "owner": "Flutter Entertainment",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "BGC",
+        "jurisdiction": "BE",
+        "licenseNumber": "A+8118",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "BE",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Bancontact",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": true,
+    "hasMobile": true,
+    "languages": [
+      "fr",
+      "nl",
+      "en"
+    ],
+    "currencies": [
+      "EUR"
+    ]
+  },
+  {
+    "name": "PokerStars BE",
+    "slug": "pokerstars-be",
+    "website": "https://www.pokerstars.be",
+    "tagline": "World's biggest poker site, Belgian-licensed",
+    "founded": 2001,
+    "owner": "Flutter Entertainment",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "BGC",
+        "jurisdiction": "BE",
+        "licenseNumber": "A+8122",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "BE",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Bancontact",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": true,
+    "hasMobile": true,
+    "languages": [
+      "fr",
+      "nl",
+      "en"
+    ],
+    "currencies": [
+      "EUR"
+    ]
+  },
+  {
+    "name": "Casino de Spa",
+    "slug": "casino-de-spa",
+    "website": "https://www.casinodespa.com",
+    "tagline": "Historic Belgian casino, online since 2011",
+    "owner": "Casino de Spa N.V.",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "BGC",
+        "jurisdiction": "BE",
+        "licenseNumber": "A+8101",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "BE",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Bancontact",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": false,
+    "hasMobile": true,
+    "languages": [
+      "fr",
+      "nl",
+      "en"
+    ],
+    "currencies": [
+      "EUR"
+    ]
+  },
+  {
+    "name": "Golden Palace",
+    "slug": "golden-palace-be",
+    "website": "https://www.goldenpalace.be",
+    "tagline": "Major Belgian land-based chain with online presence",
+    "founded": 1984,
+    "owner": "Golden Palace N.V.",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "BGC",
+        "jurisdiction": "BE",
+        "licenseNumber": "A+8105",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "BE",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Bancontact",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": false,
+    "hasMobile": true,
+    "languages": [
+      "fr",
+      "nl",
+      "en"
+    ],
+    "currencies": [
+      "EUR"
+    ]
+  },
+  {
+    "name": "Bingoal BE",
+    "slug": "bingoal-be",
+    "website": "https://www.bingoal.be",
+    "tagline": "Long-established Belgian sports betting and casino",
+    "founded": 1984,
+    "owner": "Bingoal N.V.",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "BGC",
+        "jurisdiction": "BE",
+        "licenseNumber": "A+8106",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "BE",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Bancontact",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": true,
+    "hasMobile": true,
+    "languages": [
+      "nl",
+      "fr",
+      "en"
+    ],
+    "currencies": [
+      "EUR"
+    ]
+  },
+  {
+    "name": "777 Casino BE",
+    "slug": "777-casino-be",
+    "website": "https://www.777.be",
+    "tagline": "Online casino brand for Belgian players",
+    "founded": 2015,
+    "owner": "777 Casino N.V.",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "BGC",
+        "jurisdiction": "BE",
+        "licenseNumber": "A+8108",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "BE",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Bancontact",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": false,
+    "hasMobile": true,
+    "languages": [
+      "fr",
+      "nl",
+      "en"
+    ],
+    "currencies": [
+      "EUR"
+    ]
+  },
+  {
+    "name": "StarCasino BE",
+    "slug": "starcasino-be",
+    "website": "https://www.starcasino.be",
+    "tagline": "Belgian casino and sportsbook brand",
+    "founded": 2016,
+    "owner": "Belgian Gaming SA",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "BGC",
+        "jurisdiction": "BE",
+        "licenseNumber": "A+8114",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "BE",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Bancontact",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": true,
+    "hasMobile": true,
+    "languages": [
+      "fr",
+      "nl",
+      "en"
+    ],
+    "currencies": [
+      "EUR"
+    ]
+  },
+  {
+    "name": "Supergame",
+    "slug": "supergame-be",
+    "website": "https://www.supergame.be",
+    "tagline": "Belgian online casino platform",
+    "founded": 2017,
+    "owner": "Supergame N.V.",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "BGC",
+        "jurisdiction": "BE",
+        "licenseNumber": "A+8124",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "BE",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Bancontact",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": false,
+    "hasMobile": true,
+    "languages": [
+      "fr",
+      "nl",
+      "en"
+    ],
+    "currencies": [
+      "EUR"
+    ]
+  },
+  {
+    "name": "Fortuneo BE",
+    "slug": "fortuneo-be",
+    "website": "https://www.fortuneo.be",
+    "tagline": "French-origin casino available in Belgium",
+    "founded": 2015,
+    "owner": "Mtred Ltd",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "BGC",
+        "jurisdiction": "BE",
+        "licenseNumber": "A+8126",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "BE",
+        "status": "available"
+      },
+      {
+        "geo": "FR",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Bancontact",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": false,
+    "hasMobile": true,
+    "languages": [
+      "fr",
+      "nl",
+      "en"
+    ],
+    "currencies": [
+      "EUR"
+    ]
+  },
+  {
+    "name": "Crazy Fox BE",
+    "slug": "crazy-fox-be",
+    "website": "https://www.crazyfox.be",
+    "tagline": "N1 Interactive brand available in Belgium",
+    "founded": 2020,
+    "owner": "N1 Interactive Ltd",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "BGC",
+        "jurisdiction": "BE",
+        "licenseNumber": "A+8128",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "BE",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Bancontact",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Neteller",
+        "type": "e-wallet"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": false,
+    "hasMobile": true,
+    "languages": [
+      "fr",
+      "nl",
+      "en"
+    ],
+    "currencies": [
+      "EUR"
+    ]
+  },
+  {
+    "name": "PlayOJO BE",
+    "slug": "playojo-be",
+    "website": "https://www.playojo.be",
+    "tagline": "Fair-play casino with no wagering, available in Belgium",
+    "founded": 2017,
+    "owner": "SkillOnNet Ltd",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "BGC",
+        "jurisdiction": "BE",
+        "licenseNumber": "A+8130",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "BE",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Bancontact",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": false,
+    "hasMobile": true,
+    "languages": [
+      "fr",
+      "nl",
+      "en"
+    ],
+    "currencies": [
+      "EUR"
+    ]
+  },
+  {
+    "name": "Spinia BE",
+    "slug": "spinia-be",
+    "website": "https://www.spinia.be",
+    "tagline": "N1 Interactive brand for Belgian market",
+    "founded": 2022,
+    "owner": "N1 Interactive Ltd",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "BGC",
+        "jurisdiction": "BE",
+        "licenseNumber": "A+8132",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "BE",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Bancontact",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Neteller",
+        "type": "e-wallet"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": false,
+    "hasMobile": true,
+    "languages": [
+      "fr",
+      "nl",
+      "en"
+    ],
+    "currencies": [
+      "EUR"
+    ]
+  },
+  {
+    "name": "Bethard BE",
+    "slug": "bethard-be",
+    "website": "https://www.bethard.be",
+    "tagline": "Bethard brand with Belgian presence",
+    "founded": 2018,
+    "owner": "SBTech Malta Ltd",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "BGC",
+        "jurisdiction": "BE",
+        "licenseNumber": "A+8134",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "BE",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Bancontact",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": true,
+    "hasMobile": true,
+    "languages": [
+      "fr",
+      "nl",
+      "en"
+    ],
+    "currencies": [
+      "EUR"
+    ]
+  },
+  {
+    "name": "Flash Casino NL",
+    "slug": "flash-casino-nl",
+    "website": "https://www.flashcasino.nl",
+    "tagline": "Online version of Flash land-based casinos",
+    "founded": 2022,
+    "owner": "FPO Netherlands B.V.",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "KSA",
+        "jurisdiction": "NL",
+        "licenseNumber": "10000180",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "NL",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "iDEAL",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Trustly",
+        "type": "bank-transfer"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": false,
+    "hasMobile": true,
+    "languages": [
+      "nl",
+      "en"
+    ],
+    "currencies": [
+      "EUR"
+    ]
+  },
+  {
+    "name": "GGD.nl",
+    "slug": "ggd-nl",
+    "website": "https://www.ggd.nl",
+    "tagline": "Dutch online gambling platform",
+    "founded": 2022,
+    "owner": "BetEnt B.V.",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "KSA",
+        "jurisdiction": "NL",
+        "licenseNumber": "10000164",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "NL",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "iDEAL",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Trustly",
+        "type": "bank-transfer"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": false,
+    "hasMobile": true,
+    "languages": [
+      "nl"
+    ],
+    "currencies": [
+      "EUR"
+    ]
+  },
+  {
+    "name": "Beter Bingo",
+    "slug": "beter-bingo",
+    "website": "https://www.beterbingo.nl",
+    "tagline": "Dutch-focused bingo and casino brand",
+    "founded": 2022,
+    "owner": "Beter Bingo B.V.",
+    "minDeposit": 5,
+    "licenses": [
+      {
+        "issuer": "KSA",
+        "jurisdiction": "NL",
+        "licenseNumber": "10000182",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "NL",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "iDEAL",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Trustly",
+        "type": "bank-transfer"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": false,
+    "hasMobile": true,
+    "languages": [
+      "nl"
+    ],
+    "currencies": [
+      "EUR"
+    ]
+  },
+  {
+    "name": "Zodiac Bet",
+    "slug": "zodiac-bet",
+    "website": "https://www.zodiacbet.com",
+    "tagline": "Astrology-themed international casino",
+    "founded": 2020,
+    "owner": "Bellona N.V.",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "MGA",
+        "jurisdiction": "MT",
+        "licenseNumber": "MGA/CRP/171/2009",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "DE",
+        "status": "available"
+      },
+      {
+        "geo": "AT",
+        "status": "available"
+      },
+      {
+        "geo": "CH",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Klarna",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      },
+      {
+        "name": "Apple Pay",
+        "type": "mobile"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Neteller",
+        "type": "e-wallet"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": true,
+    "hasMobile": true,
+    "languages": [
+      "de",
+      "en"
+    ],
+    "currencies": [
+      "EUR",
+      "CHF"
+    ]
+  },
+  {
+    "name": "Nomini",
+    "slug": "nomini",
+    "website": "https://www.nomini.com",
+    "tagline": "Fruit-themed Rabidi casino with multiple avatars",
+    "founded": 2019,
+    "owner": "Rabidi N.V.",
+    "minDeposit": 10,
+    "licenses": [
+      {
+        "issuer": "MGA",
+        "jurisdiction": "MT",
+        "licenseNumber": "MGA/CRP/171/2009",
+        "status": "active"
+      }
+    ],
+    "source": {
+      "sourceType": "trusted_third_party",
+      "name": "CasinoLynora Editorial Research"
+    },
+    "geo": [
+      {
+        "geo": "DE",
+        "status": "available"
+      },
+      {
+        "geo": "AT",
+        "status": "available"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Visa",
+        "type": "card"
+      },
+      {
+        "name": "Mastercard",
+        "type": "card"
+      },
+      {
+        "name": "PayPal",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Klarna",
+        "type": "bank-transfer"
+      },
+      {
+        "name": "Paysafecard",
+        "type": "prepaid"
+      },
+      {
+        "name": "Apple Pay",
+        "type": "mobile"
+      },
+      {
+        "name": "Skrill",
+        "type": "e-wallet"
+      },
+      {
+        "name": "Neteller",
+        "type": "e-wallet"
+      }
+    ],
+    "hasLiveCasino": true,
+    "hasSportsBetting": true,
+    "hasMobile": true,
+    "languages": [
+      "de",
+      "en"
+    ],
+    "currencies": [
+      "EUR"
+    ]
+  }
+]

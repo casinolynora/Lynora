@@ -147,6 +147,92 @@ CREATE INDEX IF NOT EXISTS idx_geo_casino ON geo_availability(casinoId);
 CREATE INDEX IF NOT EXISTS idx_geo_code ON geo_availability(geo);
 CREATE INDEX IF NOT EXISTS idx_cpm_casino ON casino_payment_methods(casinoId);
 CREATE INDEX IF NOT EXISTS idx_cpm_payment ON casino_payment_methods(paymentMethodId);
+
+-- Phase 30A: Import infrastructure tables
+CREATE TABLE IF NOT EXISTS sources (
+  id TEXT PRIMARY KEY,
+  sourceType TEXT NOT NULL,
+  name TEXT NOT NULL,
+  url TEXT,
+  domain TEXT,
+  isActive INTEGER NOT NULL DEFAULT 1,
+  createdAt TEXT NOT NULL,
+  updatedAt TEXT NOT NULL
+);
+CREATE INDEX IF NOT EXISTS idx_sources_type ON sources(sourceType);
+CREATE INDEX IF NOT EXISTS idx_sources_domain ON sources(domain);
+CREATE INDEX IF NOT EXISTS idx_sources_active ON sources(isActive);
+
+CREATE TABLE IF NOT EXISTS fact_provenance (
+  id TEXT PRIMARY KEY,
+  casinoId TEXT NOT NULL REFERENCES casinos(id) ON DELETE CASCADE,
+  fieldName TEXT NOT NULL,
+  sourceId TEXT NOT NULL REFERENCES sources(id) ON DELETE CASCADE,
+  value TEXT,
+  verificationStatus TEXT NOT NULL DEFAULT 'unverified',
+  confidence TEXT NOT NULL DEFAULT 'medium',
+  retrievedAt TEXT,
+  checkedAt TEXT,
+  expiresAt TEXT,
+  reviewerId TEXT,
+  notes TEXT,
+  createdAt TEXT NOT NULL,
+  updatedAt TEXT NOT NULL
+);
+CREATE INDEX IF NOT EXISTS idx_fp_casino ON fact_provenance(casinoId);
+CREATE INDEX IF NOT EXISTS idx_fp_field ON fact_provenance(fieldName);
+CREATE INDEX IF NOT EXISTS idx_fp_source ON fact_provenance(sourceId);
+CREATE INDEX IF NOT EXISTS idx_fp_status ON fact_provenance(verificationStatus);
+CREATE INDEX IF NOT EXISTS idx_fp_casino_field ON fact_provenance(casinoId, fieldName);
+
+CREATE TABLE IF NOT EXISTS import_batches (
+  id TEXT PRIMARY KEY,
+  source TEXT NOT NULL,
+  sourceType TEXT NOT NULL,
+  status TEXT NOT NULL DEFAULT 'pending',
+  isDryRun INTEGER NOT NULL DEFAULT 0,
+  recordsProcessed INTEGER NOT NULL DEFAULT 0,
+  recordsCreated INTEGER NOT NULL DEFAULT 0,
+  recordsUpdated INTEGER NOT NULL DEFAULT 0,
+  recordsUnchanged INTEGER NOT NULL DEFAULT 0,
+  recordsSkipped INTEGER NOT NULL DEFAULT 0,
+  recordsRejected INTEGER NOT NULL DEFAULT 0,
+  conflictsDetected INTEGER NOT NULL DEFAULT 0,
+  validationErrors INTEGER NOT NULL DEFAULT 0,
+  startedAt TEXT,
+  completedAt TEXT,
+  createdAt TEXT NOT NULL,
+  metadata TEXT
+);
+
+CREATE TABLE IF NOT EXISTS import_records (
+  id TEXT PRIMARY KEY,
+  batchId TEXT NOT NULL REFERENCES import_batches(id) ON DELETE CASCADE,
+  sourceIdentifier TEXT,
+  casinoId TEXT REFERENCES casinos(id) ON DELETE SET NULL,
+  casinoSlug TEXT,
+  action TEXT NOT NULL,
+  status TEXT NOT NULL DEFAULT 'success',
+  validationErrors TEXT,
+  warnings TEXT,
+  createdAt TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS conflicts (
+  id TEXT PRIMARY KEY,
+  casinoId TEXT NOT NULL REFERENCES casinos(id) ON DELETE CASCADE,
+  batchId TEXT REFERENCES import_batches(id) ON DELETE SET NULL,
+  fieldName TEXT NOT NULL,
+  existingValue TEXT,
+  existingSourceId TEXT REFERENCES sources(id) ON DELETE SET NULL,
+  incomingValue TEXT,
+  incomingSourceId TEXT REFERENCES sources(id) ON DELETE SET NULL,
+  resolution TEXT NOT NULL DEFAULT 'unresolved',
+  resolvedBy TEXT,
+  resolvedAt TEXT,
+  resolutionNotes TEXT,
+  createdAt TEXT NOT NULL
+);
 `;
 
 // ─── Helpers ──────────────────────────────────────────────────────────────
