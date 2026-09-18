@@ -1,0 +1,238 @@
+{
+  "batch": "verification-02",
+  "version": 1,
+  "verifiedBy": "editorial-research",
+  "verifiedAt": "2026-09-18T00:00:00Z",
+  "casinos": [
+    {
+      "slug": "leovegas",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.leovegas.com", "source": "https://www.leovegas.com", "status": "manually_verified" },
+        "operator": { "value": "LeoVegas AB", "source": "https://www.leovegas.com", "status": "manually_verified" },
+        "license_ukgc": { "value": "active", "source": "https://gamblingcommission.gov.uk/public-register/leovegas", "status": "manually_verified" },
+        "license_mga": { "value": "active", "source": "https://www.mga.org.mt/the-register/", "status": "manually_verified" },
+        "geo_se": { "value": "available", "source": "https://www.leovegas.com", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "unibet",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.unibet.com", "source": "https://www.unibet.com", "status": "manually_verified" },
+        "operator": { "value": "Kindred Group", "source": "https://www.unibet.com", "status": "manually_verified" },
+        "license_ukgc": { "value": "active", "source": "https://gamblingcommission.gov.uk/public-register/kindred-group", "status": "manually_verified" },
+        "license_mga": { "value": "active", "source": "https://www.mga.org.mt/the-register/", "status": "manually_verified" },
+        "geo_se": { "value": "available", "source": "https://www.unibet.com", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "888casino",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.888casino.com", "source": "https://www.888casino.com", "status": "manually_verified" },
+        "operator": { "value": "888 Holdings", "source": "https://www.888casino.com", "status": "manually_verified" },
+        "license_ukgc": { "value": "active", "source": "https://gamblingcommission.gov.uk/public-register/888-holdings", "status": "manually_verified" },
+        "license_mga": { "value": "active", "source": "https://www.mga.org.mt/the-register/", "status": "manually_verified" },
+        "geo_dk": { "value": "available", "source": "https://www.888casino.com", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "pokerstars-casino",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.pokerstarscasino.com", "source": "https://www.pokerstarscasino.com", "status": "manually_verified" },
+        "operator": { "value": "Flutter Entertainment", "source": "https://www.pokerstarscasino.com", "status": "manually_verified" },
+        "license_ukgc": { "value": "active", "source": "https://gamblingcommission.gov.uk/public-register/flutter-entertainment", "status": "manually_verified" },
+        "license_mga": { "value": "active", "source": "https://www.mga.org.mt/the-register/", "status": "manually_verified" },
+        "geo_dk": { "value": "available", "source": "https://www.pokerstarscasino.com", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "bwin-casino",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://casino.bwin.com", "source": "https://casino.bwin.com", "status": "manually_verified" },
+        "operator": { "value": "Entain plc", "source": "https://casino.bwin.com", "status": "manually_verified" },
+        "license_ukgc": { "value": "active", "source": "https://gamblingcommission.gov.uk/public-register/entain-plc", "status": "manually_verified" },
+        "license_mga": { "value": "active", "source": "https://www.mga.org.mt/the-register/", "status": "manually_verified" },
+        "geo_at": { "value": "available", "source": "https://casino.bwin.com", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "interwetten",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.interwetten.com", "source": "https://www.interwetten.com", "status": "manually_verified" },
+        "operator": { "value": "Interwetten Gaming Ltd", "source": "https://www.interwetten.com", "status": "manually_verified" },
+        "license_mga": { "value": "active", "source": "https://www.mga.org.mt/the-register/", "status": "manually_verified" },
+        "geo_at": { "value": "available", "source": "https://www.interwetten.com", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "william-hill-casino",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.williamhill.com/casino", "source": "https://www.williamhill.com/casino", "status": "manually_verified" },
+        "operator": { "value": "William Hill plc", "source": "https://www.williamhill.com/casino", "status": "manually_verified" },
+        "license_ukgc": { "value": "active", "source": "https://gamblingcommission.gov.uk/public-register/william-hill", "status": "manually_verified" },
+        "geo_ie": { "value": "available", "source": "https://www.williamhill.com/casino", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "paddy-power-casino",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.paddypower.com/casino", "source": "https://www.paddypower.com/casino", "status": "manually_verified" },
+        "operator": { "value": "Flutter Entertainment", "source": "https://www.paddypower.com/casino", "status": "manually_verified" },
+        "license_ukgc": { "value": "active", "source": "https://gamblingcommission.gov.uk/public-register/flutter-entertainment", "status": "manually_verified" },
+        "geo_ie": { "value": "available", "source": "https://www.paddypower.com/casino", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "mr-green",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.mrgreen.com", "source": "https://www.mrgreen.com", "status": "manually_verified" },
+        "operator": { "value": "William Hill plc", "source": "https://www.mrgreen.com", "status": "manually_verified" },
+        "license_mga": { "value": "active", "source": "https://www.mga.org.mt/the-register/", "status": "manually_verified" },
+        "license_ukgc": { "value": "active", "source": "https://gamblingcommission.gov.uk/public-register/william-hill", "status": "manually_verified" },
+        "geo_de": { "value": "available", "source": "https://www.mrgreen.com", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "casumo",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.casumo.com", "source": "https://www.casumo.com", "status": "manually_verified" },
+        "operator": { "value": "Casumo Services Ltd", "source": "https://www.casumo.com", "status": "manually_verified" },
+        "license_mga": { "value": "active", "source": "https://www.mga.org.mt/the-register/", "status": "manually_verified" },
+        "license_ukgc": { "value": "active", "source": "https://gamblingcommission.gov.uk/public-register/casumo-services", "status": "manually_verified" },
+        "geo_se": { "value": "available", "source": "https://www.casumo.com", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "betsson",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.betsson.com", "source": "https://www.betsson.com", "status": "manually_verified" },
+        "operator": { "value": "Betsson AB", "source": "https://www.betsson.com", "status": "manually_verified" },
+        "license_mga": { "value": "active", "source": "https://www.mga.org.mt/the-register/", "status": "manually_verified" },
+        "geo_se": { "value": "available", "source": "https://www.betsson.com", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "comeon",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.comeon.com", "source": "https://www.comeon.com", "status": "manually_verified" },
+        "operator": { "value": "ComeOn Group", "source": "https://www.comeon.com", "status": "manually_verified" },
+        "license_mga": { "value": "active", "source": "https://www.mga.org.mt/the-register/", "status": "manually_verified" },
+        "geo_se": { "value": "available", "source": "https://www.comeon.com", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "playojo",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.playojo.com", "source": "https://www.playojo.com", "status": "manually_verified" },
+        "operator": { "value": "SkillOnNet Ltd", "source": "https://www.playojo.com", "status": "manually_verified" },
+        "license_ukgc": { "value": "active", "source": "https://gamblingcommission.gov.uk/public-register/skillonnet", "status": "manually_verified" },
+        "license_mga": { "value": "active", "source": "https://www.mga.org.mt/the-register/", "status": "manually_verified" },
+        "geo_de": { "value": "available", "source": "https://www.playojo.com", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "videoslots",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.videoslots.com", "source": "https://www.videoslots.com", "status": "manually_verified" },
+        "operator": { "value": "Videoslots Ltd", "source": "https://www.videoslots.com", "status": "manually_verified" },
+        "license_mga": { "value": "active", "source": "https://www.mga.org.mt/the-register/", "status": "manually_verified" },
+        "license_ukgc": { "value": "active", "source": "https://gamblingcommission.gov.uk/public-register/videoslots", "status": "manually_verified" },
+        "geo_se": { "value": "available", "source": "https://www.videoslots.com", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "novibet",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.novibet.com", "source": "https://www.novibet.com", "status": "manually_verified" },
+        "operator": { "value": "Novigroup Ltd", "source": "https://www.novibet.com", "status": "manually_verified" },
+        "license_ukgc": { "value": "active", "source": "https://gamblingcommission.gov.uk/public-register/novigroup", "status": "manually_verified" },
+        "geo_gr": { "value": "available", "source": "https://www.novibet.com", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "coral-casino",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.coral.co.uk/casino", "source": "https://www.coral.co.uk/casino", "status": "manually_verified" },
+        "operator": { "value": "Entain plc", "source": "https://www.coral.co.uk/casino", "status": "manually_verified" },
+        "license_ukgc": { "value": "active", "source": "https://gamblingcommission.gov.uk/public-register/entain-plc", "status": "manually_verified" },
+        "geo_gb": { "value": "available", "source": "https://www.coral.co.uk/casino", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "sky-bet",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.skybet.com", "source": "https://www.skybet.com", "status": "manually_verified" },
+        "operator": { "value": "Flutter Entertainment", "source": "https://www.skybet.com", "status": "manually_verified" },
+        "license_ukgc": { "value": "active", "source": "https://gamblingcommission.gov.uk/public-register/flutter-entertainment", "status": "manually_verified" },
+        "geo_ie": { "value": "available", "source": "https://www.skybet.com", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "partycasino",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.partycasino.com", "source": "https://www.partycasino.com", "status": "manually_verified" },
+        "operator": { "value": "Entain plc", "source": "https://www.partycasino.com", "status": "manually_verified" },
+        "license_ukgc": { "value": "active", "source": "https://gamblingcommission.gov.uk/public-register/entain-plc", "status": "manually_verified" },
+        "license_mga": { "value": "active", "source": "https://www.mga.org.mt/the-register/", "status": "manually_verified" },
+        "geo_de": { "value": "available", "source": "https://www.partycasino.com", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "playfrank",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.playfrank.com", "source": "https://www.playfrank.com", "status": "manually_verified" },
+        "operator": { "value": "Aspire Global Ltd", "source": "https://www.playfrank.com", "status": "manually_verified" },
+        "license_mga": { "value": "active", "source": "https://www.mga.org.mt/the-register/", "status": "manually_verified" },
+        "license_ukgc": { "value": "active", "source": "https://gamblingcommission.gov.uk/public-register/aspire-global", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "genesis-casino",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.genesiscasino.com", "source": "https://www.genesiscasino.com", "status": "manually_verified" },
+        "operator": { "value": "Genesis Global Ltd", "source": "https://www.genesiscasino.com", "status": "manually_verified" },
+        "license_mga": { "value": "active", "source": "https://www.mga.org.mt/the-register/", "status": "manually_verified" },
+        "license_ukgc": { "value": "active", "source": "https://gamblingcommission.gov.uk/public-register/genesis-global", "status": "manually_verified" }
+      }
+    }
+  ]
+}

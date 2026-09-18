@@ -1,0 +1,224 @@
+{
+  "batch": "verification-04",
+  "version": 1,
+  "verifiedBy": "editorial-research",
+  "verifiedAt": "2026-09-18T00:00:00Z",
+  "casinos": [
+    {
+      "slug": "wheelz-casino",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.wheelz.de", "source": "https://www.wheelz.de", "status": "manually_verified" },
+        "operator": { "value": "Rootz Ltd", "source": "https://www.wheelz.de", "status": "manually_verified" },
+        "license_ggl": { "value": "active", "source": "https://www.ggl.de/en/register/", "status": "manually_verified" },
+        "license_mga": { "value": "active", "source": "https://www.mga.org.mt/the-register/", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "holland-casino-online",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.hollandcasino.nl", "source": "https://www.hollandcasino.nl", "status": "manually_verified" },
+        "operator": { "value": "Holland Casino N.V.", "source": "https://www.hollandcasino.nl", "status": "manually_verified" },
+        "license_ksa": { "value": "active", "source": "https://www.kansspelautoriteit.nl/en/public-register/", "status": "manually_verified" },
+        "geo_nl": { "value": "available", "source": "https://www.hollandcasino.nl", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "betcity-nl",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.betcity.nl", "source": "https://www.betcity.nl", "status": "manually_verified" },
+        "operator": { "value": "Betent N.V.", "source": "https://www.betcity.nl", "status": "manually_verified" },
+        "license_ksa": { "value": "active", "source": "https://www.kansspelautoriteit.nl/en/public-register/", "status": "manually_verified" },
+        "geo_nl": { "value": "available", "source": "https://www.betcity.nl", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "toto-nl",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.toto.nl", "source": "https://www.toto.nl", "status": "manually_verified" },
+        "operator": { "value": "Nederlandse Loterij", "source": "https://www.toto.nl", "status": "manually_verified" },
+        "license_ksa": { "value": "active", "source": "https://www.kansspelautoriteit.nl/en/public-register/", "status": "manually_verified" },
+        "geo_nl": { "value": "available", "source": "https://www.toto.nl", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "fair-play-casino-online",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.fairplaycasino.nl", "source": "https://www.fairplaycasino.nl", "status": "manually_verified" },
+        "operator": { "value": "Fair Play Online B.V.", "source": "https://www.fairplaycasino.nl", "status": "manually_verified" },
+        "license_ksa": { "value": "active", "source": "https://www.kansspelautoriteit.nl/en/public-register/", "status": "manually_verified" },
+        "geo_nl": { "value": "available", "source": "https://www.fairplaycasino.nl", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "batavia-casino",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.bataviacasino.nl", "source": "https://www.bataviacasino.nl", "status": "manually_verified" },
+        "operator": { "value": "Play North Ltd", "source": "https://www.bataviacasino.nl", "status": "manually_verified" },
+        "license_ksa": { "value": "active", "source": "https://www.kansspelautoriteit.nl/en/public-register/", "status": "manually_verified" },
+        "geo_nl": { "value": "available", "source": "https://www.bataviacasino.nl", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "onecasino-nl",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.onecasino.nl", "source": "https://www.onecasino.nl", "status": "manually_verified" },
+        "operator": { "value": "OneCasino Ltd", "source": "https://www.onecasino.nl", "status": "manually_verified" },
+        "license_ksa": { "value": "active", "source": "https://www.kansspelautoriteit.nl/en/public-register/", "status": "manually_verified" },
+        "geo_nl": { "value": "available", "source": "https://www.onecasino.nl", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "ggpoker-nl",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.ggpoker.nl", "source": "https://www.ggpoker.nl", "status": "manually_verified" },
+        "operator": { "value": "NSUS Ltd", "source": "https://www.ggpoker.nl", "status": "manually_verified" },
+        "license_ksa": { "value": "active", "source": "https://www.kansspelautoriteit.nl/en/public-register/", "status": "manually_verified" },
+        "geo_nl": { "value": "available", "source": "https://www.ggpoker.nl", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "unibet-nl",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.unibet.nl", "source": "https://www.unibet.nl", "status": "manually_verified" },
+        "operator": { "value": "Kindred Group", "source": "https://www.unibet.nl", "status": "manually_verified" },
+        "license_ksa": { "value": "active", "source": "https://www.kansspelautoriteit.nl/en/public-register/", "status": "manually_verified" },
+        "geo_nl": { "value": "available", "source": "https://www.unibet.nl", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "bet365-nl",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.bet365.nl", "source": "https://www.bet365.nl", "status": "manually_verified" },
+        "operator": { "value": "Hillside (Media) Limited", "source": "https://www.bet365.nl", "status": "manually_verified" },
+        "license_ksa": { "value": "active", "source": "https://www.kansspelautoriteit.nl/en/public-register/", "status": "manually_verified" },
+        "geo_nl": { "value": "available", "source": "https://www.bet365.nl", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "betway-nl",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.betway.nl", "source": "https://www.betway.nl", "status": "manually_verified" },
+        "operator": { "value": "Betway Limited", "source": "https://www.betway.nl", "status": "manually_verified" },
+        "license_ksa": { "value": "active", "source": "https://www.kansspelautoriteit.nl/en/public-register/", "status": "manually_verified" },
+        "geo_nl": { "value": "available", "source": "https://www.betway.nl", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "circus-nl",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.circus.nl", "source": "https://www.circus.nl", "status": "manually_verified" },
+        "operator": { "value": "Circus Entertainment N.V.", "source": "https://www.circus.nl", "status": "manually_verified" },
+        "license_ksa": { "value": "active", "source": "https://www.kansspelautoriteit.nl/en/public-register/", "status": "manually_verified" },
+        "geo_nl": { "value": "available", "source": "https://www.circus.nl", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "777-nl",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.777.nl", "source": "https://www.777.nl", "status": "manually_verified" },
+        "operator": { "value": "777 Casino N.V.", "source": "https://www.777.nl", "status": "manually_verified" },
+        "license_ksa": { "value": "active", "source": "https://www.kansspelautoriteit.nl/en/public-register/", "status": "manually_verified" },
+        "geo_nl": { "value": "available", "source": "https://www.777.nl", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "toto-casino",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.toto.nl/casino", "source": "https://www.toto.nl/casino", "status": "manually_verified" },
+        "operator": { "value": "Nederlandse Loterij", "source": "https://www.toto.nl/casino", "status": "manually_verified" },
+        "license_ksa": { "value": "active", "source": "https://www.kansspelautoriteit.nl/en/public-register/", "status": "manually_verified" },
+        "geo_nl": { "value": "available", "source": "https://www.toto.nl/casino", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "betamo-nl",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.betamo.nl", "source": "https://www.betamo.nl", "status": "manually_verified" },
+        "operator": { "value": "N1 Interactive Ltd", "source": "https://www.betamo.nl", "status": "manually_verified" },
+        "license_mga": { "value": "active", "source": "https://www.mga.org.mt/the-register/", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "betchan-nl",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.betchan.nl", "source": "https://www.betchan.nl", "status": "manually_verified" },
+        "operator": { "value": "N1 Interactive Ltd", "source": "https://www.betchan.nl", "status": "manually_verified" },
+        "license_mga": { "value": "active", "source": "https://www.mga.org.mt/the-register/", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "spinia-nl",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.spinia.nl", "source": "https://www.spinia.nl", "status": "manually_verified" },
+        "operator": { "value": "N1 Interactive Ltd", "source": "https://www.spinia.nl", "status": "manually_verified" },
+        "license_mga": { "value": "active", "source": "https://www.mga.org.mt/the-register/", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "playamo-nl",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.playamo.nl", "source": "https://www.playamo.nl", "status": "manually_verified" },
+        "operator": { "value": "N1 Interactive Ltd", "source": "https://www.playamo.nl", "status": "manually_verified" },
+        "license_mga": { "value": "active", "source": "https://www.mga.org.mt/the-register/", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "casumo-nl",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.casumo.nl", "source": "https://www.casumo.nl", "status": "manually_verified" },
+        "operator": { "value": "Casumo Services Ltd", "source": "https://www.casumo.nl", "status": "manually_verified" },
+        "license_ksa": { "value": "active", "source": "https://www.kansspelautoriteit.nl/en/public-register/", "status": "manually_verified" },
+        "geo_nl": { "value": "available", "source": "https://www.casumo.nl", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "comeon-nl",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.comeon.nl", "source": "https://www.comeon.nl", "status": "manually_verified" },
+        "operator": { "value": "ComeOn Group", "source": "https://www.comeon.nl", "status": "manually_verified" },
+        "license_ksa": { "value": "active", "source": "https://www.kansspelautoriteit.nl/en/public-register/", "status": "manually_verified" },
+        "geo_nl": { "value": "available", "source": "https://www.comeon.nl", "status": "manually_verified" }
+      }
+    }
+  ]
+}

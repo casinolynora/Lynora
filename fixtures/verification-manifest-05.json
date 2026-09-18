@@ -1,0 +1,28 @@
+{
+  "batch": "verification-05",
+  "version": 1,
+  "description": "Batch 05 — final 20 unverified casinos from the 100-casino dataset (indices 60-79 of remaining)",
+  "selectionMethod": "sequential-remaining-60-79",
+  "casinos": [
+    { "slug": "unibet-be" },
+    { "slug": "circus-be" },
+    { "slug": "napoleon-games" },
+    { "slug": "betway-be" },
+    { "slug": "bwin-be" },
+    { "slug": "betfair-be" },
+    { "slug": "pokerstars-be" },
+    { "slug": "casino-de-spa" },
+    { "slug": "bingoal-be" },
+    { "slug": "777-casino-be" },
+    { "slug": "starcasino-be" },
+    { "slug": "supergame-be" },
+    { "slug": "crazy-fox-be" },
+    { "slug": "playojo-be" },
+    { "slug": "spinia-be" },
+    { "slug": "bethard-be" },
+    { "slug": "ggd-nl" },
+    { "slug": "beter-bingo" },
+    { "slug": "zodiac-bet" },
+    { "slug": "nomini" }
+  ]
+}

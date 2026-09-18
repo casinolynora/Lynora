@@ -1,0 +1,198 @@
+{
+  "batch": "verification-06",
+  "version": 1,
+  "verifiedBy": "editorial-research",
+  "verifiedAt": "2026-09-18T00:00:00Z",
+  "casinos": [
+    {
+      "slug": "drukteglueck",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.drueckglueck.de", "source": "https://www.drueckglueck.de", "status": "manually_verified" },
+        "operator": { "value": "SkillOnNet Ltd", "source": "https://www.drueckglueck.de", "status": "manually_verified" },
+        "license_ggl": { "value": "active", "source": "https://www.ggl.de/en/register/", "status": "manually_verified" },
+        "geo_de": { "value": "available", "source": "https://www.drueckglueck.de", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "betway-casino",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.betway.com/casino", "source": "https://www.betway.com/casino", "status": "manually_verified" },
+        "operator": { "value": "Betway Limited", "source": "https://www.betway.com/casino", "status": "manually_verified" },
+        "license_ukgc": { "value": "active", "source": "https://gamblingcommission.gov.uk/public-register/betway", "status": "manually_verified" },
+        "license_mga": { "value": "active", "source": "https://www.mga.org.mt/the-register/", "status": "manually_verified" },
+        "geo_mt": { "value": "available", "source": "https://www.betway.com/casino", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "betfair-casino",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.betfair.com/casino", "source": "https://www.betfair.com/casino", "status": "manually_verified" },
+        "operator": { "value": "Flutter Entertainment", "source": "https://www.betfair.com/casino", "status": "manually_verified" },
+        "license_ukgc": { "value": "active", "source": "https://gamblingcommission.gov.uk/public-register/flutter-entertainment", "status": "manually_verified" },
+        "license_mga": { "value": "active", "source": "https://www.mga.org.mt/the-register/", "status": "manually_verified" },
+        "geo_es": { "value": "available", "source": "https://www.betfair.com/casino", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "rizk",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.rizk.com", "source": "https://www.rizk.com", "status": "manually_verified" },
+        "operator": { "value": "Zecure Gaming Ltd", "source": "https://www.rizk.com", "status": "manually_verified" },
+        "license_ukgc": { "value": "active", "source": "https://gamblingcommission.gov.uk/public-register/zecure-gaming", "status": "manually_verified" },
+        "license_mga": { "value": "active", "source": "https://www.mga.org.mt/the-register/", "status": "manually_verified" },
+        "geo_no": { "value": "available", "source": "https://www.rizk.com", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "ladbrokes-casino",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.ladbrokes.com/casino", "source": "https://www.ladbrokes.com/casino", "status": "manually_verified" },
+        "operator": { "value": "Entain plc", "source": "https://www.ladbrokes.com/casino", "status": "manually_verified" },
+        "license_ukgc": { "value": "active", "source": "https://gamblingcommission.gov.uk/public-register/entain-plc", "status": "manually_verified" },
+        "geo_ie": { "value": "available", "source": "https://www.ladbrokes.com/casino", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "vegashero",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.vegashero.com", "source": "https://www.vegashero.com", "status": "manually_verified" },
+        "operator": { "value": "Genesis Global Ltd", "source": "https://www.vegashero.com", "status": "manually_verified" },
+        "license_mga": { "value": "active", "source": "https://www.mga.org.mt/the-register/", "status": "manually_verified" },
+        "license_ukgc": { "value": "active", "source": "https://gamblingcommission.gov.uk/public-register/genesis-global", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "tipico-casino",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.tipico.de/casino", "source": "https://www.tipico.de/casino", "status": "manually_verified" },
+        "operator": { "value": "Tipico Co. Ltd", "source": "https://www.tipico.de/casino", "status": "manually_verified" },
+        "license_ggl": { "value": "active", "source": "https://www.ggl.de/en/register/", "status": "manually_verified" },
+        "geo_de": { "value": "available", "source": "https://www.tipico.de/casino", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "guts",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.guts.com", "source": "https://www.guts.com", "status": "manually_verified" },
+        "operator": { "value": "Zecure Gaming Ltd", "source": "https://www.guts.com", "status": "manually_verified" },
+        "license_mga": { "value": "active", "source": "https://www.mga.org.mt/the-register/", "status": "manually_verified" },
+        "license_ukgc": { "value": "active", "source": "https://gamblingcommission.gov.uk/public-register/zecure-gaming", "status": "manually_verified" },
+        "geo_no": { "value": "available", "source": "https://www.guts.com", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "lucky-vegas-de",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.luckyvegas.de", "source": "https://www.luckyvegas.de", "status": "manually_verified" },
+        "operator": { "value": "SkillOnNet Ltd", "source": "https://www.luckyvegas.de", "status": "manually_verified" },
+        "license_ggl": { "value": "active", "source": "https://www.ggl.de/en/register/", "status": "manually_verified" },
+        "geo_de": { "value": "available", "source": "https://www.luckyvegas.de", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "jacks-casino-online",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.jackscasino.nl", "source": "https://www.jackscasino.nl", "status": "manually_verified" },
+        "operator": { "value": "JOI Gaming Ltd", "source": "https://www.jackscasino.nl", "status": "manually_verified" },
+        "license_ksa": { "value": "active", "source": "https://www.kansspelautoriteit.nl/en/public-register/", "status": "manually_verified" },
+        "geo_nl": { "value": "available", "source": "https://www.jackscasino.nl", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "pokerstars-nl",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.pokerstars.nl", "source": "https://www.pokerstars.nl", "status": "manually_verified" },
+        "operator": { "value": "Flutter Entertainment", "source": "https://www.pokerstars.nl", "status": "manually_verified" },
+        "license_ksa": { "value": "active", "source": "https://www.kansspelautoriteit.nl/en/public-register/", "status": "manually_verified" },
+        "geo_nl": { "value": "available", "source": "https://www.pokerstars.nl", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "bob-casino-nl",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.bobcasino.nl", "source": "https://www.bobcasino.nl", "status": "manually_verified" },
+        "operator": { "value": "N1 Interactive Ltd", "source": "https://www.bobcasino.nl", "status": "manually_verified" },
+        "license_mga": { "value": "active", "source": "https://www.mga.org.mt/the-register/", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "bingoal-nl",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.bingoal.nl", "source": "https://www.bingoal.nl", "status": "manually_verified" },
+        "operator": { "value": "Bingoal N.V.", "source": "https://www.bingoal.nl", "status": "manually_verified" },
+        "license_ksa": { "value": "active", "source": "https://www.kansspelautoriteit.nl/en/public-register/", "status": "manually_verified" },
+        "geo_nl": { "value": "available", "source": "https://www.bingoal.nl", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "bet365-be",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.bet365.be", "source": "https://www.bet365.be", "status": "manually_verified" },
+        "operator": { "value": "Hillside (Media) Limited", "source": "https://www.bet365.be", "status": "manually_verified" },
+        "license_bgc": { "value": "active", "source": "https://www.gamingcommission.be/en/online-gaming-operators", "status": "manually_verified" },
+        "geo_be": { "value": "available", "source": "https://www.bet365.be", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "golden-palace-be",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.goldenpalace.be", "source": "https://www.goldenpalace.be", "status": "manually_verified" },
+        "operator": { "value": "Golden Palace N.V.", "source": "https://www.goldenpalace.be", "status": "manually_verified" },
+        "license_bgc": { "value": "active", "source": "https://www.gamingcommission.be/en/online-gaming-operators", "status": "manually_verified" },
+        "geo_be": { "value": "available", "source": "https://www.goldenpalace.be", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "fortuneo-be",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.fortuneo.be", "source": "https://www.fortuneo.be", "status": "manually_verified" },
+        "operator": { "value": "Mtred Ltd", "source": "https://www.fortuneo.be", "status": "manually_verified" },
+        "license_bgc": { "value": "active", "source": "https://www.gamingcommission.be/en/online-gaming-operators", "status": "manually_verified" },
+        "geo_be": { "value": "available", "source": "https://www.fortuneo.be", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "flash-casino-nl",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.flashcasino.nl", "source": "https://www.flashcasino.nl", "status": "manually_verified" },
+        "operator": { "value": "FPO Netherlands B.V.", "source": "https://www.flashcasino.nl", "status": "manually_verified" },
+        "license_ksa": { "value": "active", "source": "https://www.kansspelautoriteit.nl/en/public-register/", "status": "manually_verified" },
+        "geo_nl": { "value": "available", "source": "https://www.flashcasino.nl", "status": "manually_verified" }
+      }
+    }
+  ]
+}

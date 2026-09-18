@@ -1,0 +1,224 @@
+{
+  "batch": "verification-03",
+  "version": 1,
+  "verifiedBy": "editorial-research",
+  "verifiedAt": "2026-09-18T00:00:00Z",
+  "casinos": [
+    {
+      "slug": "spinit",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.spinit.com", "source": "https://www.spinit.com", "status": "manually_verified" },
+        "operator": { "value": "Genesis Global Ltd", "source": "https://www.spinit.com", "status": "manually_verified" },
+        "license_mga": { "value": "active", "source": "https://www.mga.org.mt/the-register/", "status": "manually_verified" },
+        "license_ukgc": { "value": "active", "source": "https://gamblingcommission.gov.uk/public-register/genesis-global", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "sloty",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.slotycasino.com", "source": "https://www.slotycasino.com", "status": "manually_verified" },
+        "operator": { "value": "Genesis Global Ltd", "source": "https://www.slotycasino.com", "status": "manually_verified" },
+        "license_mga": { "value": "active", "source": "https://www.mga.org.mt/the-register/", "status": "manually_verified" },
+        "license_ukgc": { "value": "active", "source": "https://gamblingcommission.gov.uk/public-register/genesis-global", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "pelaa",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.pelaa.com", "source": "https://www.pelaa.com", "status": "manually_verified" },
+        "operator": { "value": "Genesis Global Ltd", "source": "https://www.pelaa.com", "status": "manually_verified" },
+        "license_mga": { "value": "active", "source": "https://www.mga.org.mt/the-register/", "status": "manually_verified" },
+        "license_ukgc": { "value": "active", "source": "https://gamblingcommission.gov.uk/public-register/genesis-global", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "kassu",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.kassu.com", "source": "https://www.kassu.com", "status": "manually_verified" },
+        "operator": { "value": "Genesis Global Ltd", "source": "https://www.kassu.com", "status": "manually_verified" },
+        "license_mga": { "value": "active", "source": "https://www.mga.org.mt/the-register/", "status": "manually_verified" },
+        "license_ukgc": { "value": "active", "source": "https://gamblingcommission.gov.uk/public-register/genesis-global", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "betano-de",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.betano.de", "source": "https://www.betano.de", "status": "manually_verified" },
+        "operator": { "value": "Kaizen Gaming", "source": "https://www.betano.de", "status": "manually_verified" },
+        "license_ggl": { "value": "active", "source": "https://www.ggl.de/en/register/", "status": "manually_verified" },
+        "geo_de": { "value": "available", "source": "https://www.betano.de", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "interwetten-de",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.interwetten.com/de", "source": "https://www.interwetten.com/de", "status": "manually_verified" },
+        "operator": { "value": "Interwetten Gaming Ltd", "source": "https://www.interwetten.com/de", "status": "manually_verified" },
+        "license_ggl": { "value": "active", "source": "https://www.ggl.de/en/register/", "status": "manually_verified" },
+        "geo_de": { "value": "available", "source": "https://www.interwetten.com/de", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "bwin-de",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.bwin.com/de", "source": "https://www.bwin.com/de", "status": "manually_verified" },
+        "operator": { "value": "Entain plc", "source": "https://www.bwin.com/de", "status": "manually_verified" },
+        "license_ggl": { "value": "active", "source": "https://www.ggl.de/en/register/", "status": "manually_verified" },
+        "geo_de": { "value": "available", "source": "https://www.bwin.com/de", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "betsafe",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.betsafe.com", "source": "https://www.betsafe.com", "status": "manually_verified" },
+        "operator": { "value": "Betsson AB", "source": "https://www.betsafe.com", "status": "manually_verified" },
+        "license_ggl": { "value": "active", "source": "https://www.ggl.de/en/register/", "status": "manually_verified" },
+        "license_mga": { "value": "active", "source": "https://www.mga.org.mt/the-register/", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "cashmio",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.cashmio.com", "source": "https://www.cashmio.com", "status": "manually_verified" },
+        "operator": { "value": "MT SecureTrade Ltd", "source": "https://www.cashmio.com", "status": "manually_verified" },
+        "license_mga": { "value": "active", "source": "https://www.mga.org.mt/the-register/", "status": "manually_verified" },
+        "geo_de": { "value": "available", "source": "https://www.cashmio.com", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "frank-casino",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.frankcasino.de", "source": "https://www.frankcasino.de", "status": "manually_verified" },
+        "operator": { "value": "Avento MT Ltd", "source": "https://www.frankcasino.de", "status": "manually_verified" },
+        "license_mga": { "value": "active", "source": "https://www.mga.org.mt/the-register/", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "casino-gods",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.casinogods.com", "source": "https://www.casinogods.com", "status": "manually_verified" },
+        "operator": { "value": "Genesis Global Ltd", "source": "https://www.casinogods.com", "status": "manually_verified" },
+        "license_mga": { "value": "active", "source": "https://www.mga.org.mt/the-register/", "status": "manually_verified" },
+        "license_ukgc": { "value": "active", "source": "https://gamblingcommission.gov.uk/public-register/genesis-global", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "wunderino",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.wunderino.com", "source": "https://www.wunderino.com", "status": "manually_verified" },
+        "operator": { "value": "Sunfox Games Ltd", "source": "https://www.wunderino.com", "status": "manually_verified" },
+        "license_mga": { "value": "active", "source": "https://www.mga.org.mt/the-register/", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "luna-casino-de",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.lunacasino.de", "source": "https://www.lunacasino.de", "status": "manually_verified" },
+        "operator": { "value": "SkillOnNet Ltd", "source": "https://www.lunacasino.de", "status": "manually_verified" },
+        "license_ggl": { "value": "active", "source": "https://www.ggl.de/en/register/", "status": "manually_verified" },
+        "geo_de": { "value": "available", "source": "https://www.lunacasino.de", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "playjango",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.playjango.de", "source": "https://www.playjango.de", "status": "manually_verified" },
+        "operator": { "value": "SkillOnNet Ltd", "source": "https://www.playjango.de", "status": "manually_verified" },
+        "license_ggl": { "value": "active", "source": "https://www.ggl.de/en/register/", "status": "manually_verified" },
+        "geo_de": { "value": "available", "source": "https://www.playjango.de", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "miami-jackpots-de",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.miamijackpots.de", "source": "https://www.miamijackpots.de", "status": "manually_verified" },
+        "operator": { "value": "SkillOnNet Ltd", "source": "https://www.miamijackpots.de", "status": "manually_verified" },
+        "license_ggl": { "value": "active", "source": "https://www.ggl.de/en/register/", "status": "manually_verified" },
+        "geo_de": { "value": "available", "source": "https://www.miamijackpots.de", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "ahti-games",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.ahtigames.de", "source": "https://www.ahtigames.de", "status": "manually_verified" },
+        "operator": { "value": "SkillOnNet Ltd", "source": "https://www.ahtigames.de", "status": "manually_verified" },
+        "license_ggl": { "value": "active", "source": "https://www.ggl.de/en/register/", "status": "manually_verified" },
+        "geo_de": { "value": "available", "source": "https://www.ahtigames.de", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "neon54-de",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.neon54.com", "source": "https://www.neon54.com", "status": "manually_verified" },
+        "operator": { "value": "Rabidi N.V.", "source": "https://www.neon54.com", "status": "manually_verified" },
+        "license_mga": { "value": "active", "source": "https://www.mga.org.mt/the-register/", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "zet-casino",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.zetcasino.com", "source": "https://www.zetcasino.com", "status": "manually_verified" },
+        "operator": { "value": "Araxio Development N.V.", "source": "https://www.zetcasino.com", "status": "manually_verified" },
+        "license_mga": { "value": "active", "source": "https://www.mga.org.mt/the-register/", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "cadabrus",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.cadabrus.de", "source": "https://www.cadabrus.de", "status": "manually_verified" },
+        "operator": { "value": "Maltix Ltd", "source": "https://www.cadabrus.de", "status": "manually_verified" },
+        "license_ggl": { "value": "active", "source": "https://www.ggl.de/en/register/", "status": "manually_verified" },
+        "geo_de": { "value": "available", "source": "https://www.cadabrus.de", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "caxino",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.caxino.com", "source": "https://www.caxino.com", "status": "manually_verified" },
+        "operator": { "value": "Rootz Ltd", "source": "https://www.caxino.com", "status": "manually_verified" },
+        "license_mga": { "value": "active", "source": "https://www.mga.org.mt/the-register/", "status": "manually_verified" },
+        "license_ggl": { "value": "active", "source": "https://www.ggl.de/en/register/", "status": "manually_verified" }
+      }
+    }
+  ]
+}

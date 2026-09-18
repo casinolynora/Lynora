@@ -1,0 +1,28 @@
+{
+  "batch": "verification-03",
+  "version": 1,
+  "description": "Batch 03 — next 20 unverified casinos from the 100-casino dataset (indices 20-39 of remaining)",
+  "selectionMethod": "sequential-remaining-20-39",
+  "casinos": [
+    { "slug": "spinit" },
+    { "slug": "sloty" },
+    { "slug": "pelaa" },
+    { "slug": "kassu" },
+    { "slug": "betano-de" },
+    { "slug": "interwetten-de" },
+    { "slug": "bwin-de" },
+    { "slug": "betsafe" },
+    { "slug": "cashmio" },
+    { "slug": "frank-casino" },
+    { "slug": "casino-gods" },
+    { "slug": "wunderino" },
+    { "slug": "luna-casino-de" },
+    { "slug": "playjango" },
+    { "slug": "miami-jackpots-de" },
+    { "slug": "ahti-games" },
+    { "slug": "neon54-de" },
+    { "slug": "zet-casino" },
+    { "slug": "cadabrus" },
+    { "slug": "caxino" }
+  ]
+}

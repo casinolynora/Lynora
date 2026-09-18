@@ -1,0 +1,25 @@
+{
+  "batch": "verification-06",
+  "version": 1,
+  "description": "Batch 06 — final 17 unverified casinos from the 100-casino dataset (missed by earlier batch manifests)",
+  "selectionMethod": "remaining-draft-17",
+  "casinos": [
+    { "slug": "drukteglueck" },
+    { "slug": "betway-casino" },
+    { "slug": "betfair-casino" },
+    { "slug": "rizk" },
+    { "slug": "ladbrokes-casino" },
+    { "slug": "vegashero" },
+    { "slug": "tipico-casino" },
+    { "slug": "guts" },
+    { "slug": "lucky-vegas-de" },
+    { "slug": "jacks-casino-online" },
+    { "slug": "pokerstars-nl" },
+    { "slug": "bob-casino-nl" },
+    { "slug": "bingoal-nl" },
+    { "slug": "bet365-be" },
+    { "slug": "golden-palace-be" },
+    { "slug": "fortuneo-be" },
+    { "slug": "flash-casino-nl" }
+  ]
+}

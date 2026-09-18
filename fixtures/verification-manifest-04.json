@@ -1,0 +1,28 @@
+{
+  "batch": "verification-04",
+  "version": 1,
+  "description": "Batch 04 — next 20 unverified casinos from the 100-casino dataset (indices 40-59 of remaining)",
+  "selectionMethod": "sequential-remaining-40-59",
+  "casinos": [
+    { "slug": "wheelz-casino" },
+    { "slug": "holland-casino-online" },
+    { "slug": "betcity-nl" },
+    { "slug": "toto-nl" },
+    { "slug": "fair-play-casino-online" },
+    { "slug": "batavia-casino" },
+    { "slug": "onecasino-nl" },
+    { "slug": "ggpoker-nl" },
+    { "slug": "unibet-nl" },
+    { "slug": "bet365-nl" },
+    { "slug": "betway-nl" },
+    { "slug": "circus-nl" },
+    { "slug": "777-nl" },
+    { "slug": "toto-casino" },
+    { "slug": "betamo-nl" },
+    { "slug": "betchan-nl" },
+    { "slug": "spinia-nl" },
+    { "slug": "playamo-nl" },
+    { "slug": "casumo-nl" },
+    { "slug": "comeon-nl" }
+  ]
+}

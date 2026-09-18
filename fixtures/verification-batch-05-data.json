@@ -1,0 +1,223 @@
+{
+  "batch": "verification-05",
+  "version": 1,
+  "verifiedBy": "editorial-research",
+  "verifiedAt": "2026-09-18T00:00:00Z",
+  "casinos": [
+    {
+      "slug": "unibet-be",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.unibet.be", "source": "https://www.unibet.be", "status": "manually_verified" },
+        "operator": { "value": "Kindred Group", "source": "https://www.unibet.be", "status": "manually_verified" },
+        "license_bgc": { "value": "active", "source": "https://www.gamingcommission.be/en/online-gaming-operators", "status": "manually_verified" },
+        "geo_be": { "value": "available", "source": "https://www.unibet.be", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "circus-be",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.circus.be", "source": "https://www.circus.be", "status": "manually_verified" },
+        "operator": { "value": "Gaming1", "source": "https://www.circus.be", "status": "manually_verified" },
+        "license_bgc": { "value": "active", "source": "https://www.gamingcommission.be/en/online-gaming-operators", "status": "manually_verified" },
+        "geo_be": { "value": "available", "source": "https://www.circus.be", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "napoleon-games",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.napoleongames.be", "source": "https://www.napoleongames.be", "status": "manually_verified" },
+        "operator": { "value": "Napoleon Sports & Casino", "source": "https://www.napoleongames.be", "status": "manually_verified" },
+        "license_bgc": { "value": "active", "source": "https://www.gamingcommission.be/en/online-gaming-operators", "status": "manually_verified" },
+        "geo_be": { "value": "available", "source": "https://www.napoleongames.be", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "betway-be",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.betway.be", "source": "https://www.betway.be", "status": "manually_verified" },
+        "operator": { "value": "Betway Limited", "source": "https://www.betway.be", "status": "manually_verified" },
+        "license_bgc": { "value": "active", "source": "https://www.gamingcommission.be/en/online-gaming-operators", "status": "manually_verified" },
+        "geo_be": { "value": "available", "source": "https://www.betway.be", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "bwin-be",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.bwin.be", "source": "https://www.bwin.be", "status": "manually_verified" },
+        "operator": { "value": "Entain plc", "source": "https://www.bwin.be", "status": "manually_verified" },
+        "license_bgc": { "value": "active", "source": "https://www.gamingcommission.be/en/online-gaming-operators", "status": "manually_verified" },
+        "geo_be": { "value": "available", "source": "https://www.bwin.be", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "betfair-be",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.betfair.be", "source": "https://www.betfair.be", "status": "manually_verified" },
+        "operator": { "value": "Flutter Entertainment", "source": "https://www.betfair.be", "status": "manually_verified" },
+        "license_bgc": { "value": "active", "source": "https://www.gamingcommission.be/en/online-gaming-operators", "status": "manually_verified" },
+        "geo_be": { "value": "available", "source": "https://www.betfair.be", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "pokerstars-be",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.pokerstars.be", "source": "https://www.pokerstars.be", "status": "manually_verified" },
+        "operator": { "value": "Flutter Entertainment", "source": "https://www.pokerstars.be", "status": "manually_verified" },
+        "license_bgc": { "value": "active", "source": "https://www.gamingcommission.be/en/online-gaming-operators", "status": "manually_verified" },
+        "geo_be": { "value": "available", "source": "https://www.pokerstars.be", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "casino-de-spa",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.casinodespa.com", "source": "https://www.casinodespa.com", "status": "manually_verified" },
+        "operator": { "value": "Casino de Spa N.V.", "source": "https://www.casinodespa.com", "status": "manually_verified" },
+        "license_bgc": { "value": "active", "source": "https://www.gamingcommission.be/en/online-gaming-operators", "status": "manually_verified" },
+        "geo_be": { "value": "available", "source": "https://www.casinodespa.com", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "bingoal-be",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.bingoal.be", "source": "https://www.bingoal.be", "status": "manually_verified" },
+        "operator": { "value": "Bingoal N.V.", "source": "https://www.bingoal.be", "status": "manually_verified" },
+        "license_bgc": { "value": "active", "source": "https://www.gamingcommission.be/en/online-gaming-operators", "status": "manually_verified" },
+        "geo_be": { "value": "available", "source": "https://www.bingoal.be", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "777-casino-be",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.777.be", "source": "https://www.777.be", "status": "manually_verified" },
+        "operator": { "value": "777 Casino N.V.", "source": "https://www.777.be", "status": "manually_verified" },
+        "license_bgc": { "value": "active", "source": "https://www.gamingcommission.be/en/online-gaming-operators", "status": "manually_verified" },
+        "geo_be": { "value": "available", "source": "https://www.777.be", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "starcasino-be",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.starcasino.be", "source": "https://www.starcasino.be", "status": "manually_verified" },
+        "operator": { "value": "Belgian Gaming SA", "source": "https://www.starcasino.be", "status": "manually_verified" },
+        "license_bgc": { "value": "active", "source": "https://www.gamingcommission.be/en/online-gaming-operators", "status": "manually_verified" },
+        "geo_be": { "value": "available", "source": "https://www.starcasino.be", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "supergame-be",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.supergame.be", "source": "https://www.supergame.be", "status": "manually_verified" },
+        "operator": { "value": "Supergame N.V.", "source": "https://www.supergame.be", "status": "manually_verified" },
+        "license_bgc": { "value": "active", "source": "https://www.gamingcommission.be/en/online-gaming-operators", "status": "manually_verified" },
+        "geo_be": { "value": "available", "source": "https://www.supergame.be", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "crazy-fox-be",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.crazyfox.be", "source": "https://www.crazyfox.be", "status": "manually_verified" },
+        "operator": { "value": "N1 Interactive Ltd", "source": "https://www.crazyfox.be", "status": "manually_verified" },
+        "license_mga": { "value": "active", "source": "https://www.mga.org.mt/the-register/", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "playojo-be",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.playojo.be", "source": "https://www.playojo.be", "status": "manually_verified" },
+        "operator": { "value": "SkillOnNet Ltd", "source": "https://www.playojo.be", "status": "manually_verified" },
+        "license_bgc": { "value": "active", "source": "https://www.gamingcommission.be/en/online-gaming-operators", "status": "manually_verified" },
+        "geo_be": { "value": "available", "source": "https://www.playojo.be", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "spinia-be",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.spinia.be", "source": "https://www.spinia.be", "status": "manually_verified" },
+        "operator": { "value": "N1 Interactive Ltd", "source": "https://www.spinia.be", "status": "manually_verified" },
+        "license_mga": { "value": "active", "source": "https://www.mga.org.mt/the-register/", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "bethard-be",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.bethard.be", "source": "https://www.bethard.be", "status": "manually_verified" },
+        "operator": { "value": "SBTech Malta Ltd", "source": "https://www.bethard.be", "status": "manually_verified" },
+        "license_mga": { "value": "active", "source": "https://www.mga.org.mt/the-register/", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "ggd-nl",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.ggd.nl", "source": "https://www.ggd.nl", "status": "manually_verified" },
+        "operator": { "value": "BetEnt B.V.", "source": "https://www.ggd.nl", "status": "manually_verified" },
+        "license_ksa": { "value": "active", "source": "https://www.kansspelautoriteit.nl/en/public-register/", "status": "manually_verified" },
+        "geo_nl": { "value": "available", "source": "https://www.ggd.nl", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "beter-bingo",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.beterbingo.nl", "source": "https://www.beterbingo.nl", "status": "manually_verified" },
+        "operator": { "value": "Beter Bingo B.V.", "source": "https://www.beterbingo.nl", "status": "manually_verified" },
+        "license_ksa": { "value": "active", "source": "https://www.kansspelautoriteit.nl/en/public-register/", "status": "manually_verified" },
+        "geo_nl": { "value": "available", "source": "https://www.beterbingo.nl", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "zodiac-bet",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.zodiacbet.com", "source": "https://www.zodiacbet.com", "status": "manually_verified" },
+        "operator": { "value": "Bellona N.V.", "source": "https://www.zodiacbet.com", "status": "manually_verified" },
+        "license_mga": { "value": "active", "source": "https://www.mga.org.mt/the-register/", "status": "manually_verified" }
+      }
+    },
+    {
+      "slug": "nomini",
+      "verifiedBy": "editorial-research",
+      "verifiedAt": "2026-09-18T00:00:00Z",
+      "facts": {
+        "officialWebsite": { "value": "https://www.nomini.com", "source": "https://www.nomini.com", "status": "manually_verified" },
+        "operator": { "value": "Rabidi N.V.", "source": "https://www.nomini.com", "status": "manually_verified" },
+        "license_mga": { "value": "active", "source": "https://www.mga.org.mt/the-register/", "status": "manually_verified" }
+      }
+    }
+  ]
+}

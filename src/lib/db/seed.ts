@@ -460,9 +460,8 @@ function main(): void {
   `);
 
   const upsertPaymentMethod = sqlite.prepare(`
-    INSERT INTO payment_methods (id, name, slug, type, createdAt)
+    INSERT OR IGNORE INTO payment_methods (id, name, slug, type, createdAt)
     VALUES (@id, @name, @slug, @type, @createdAt)
-    ON CONFLICT(name) DO UPDATE SET slug = excluded.slug, type = excluded.type
   `);
 
   const insertCasinoPayment = sqlite.prepare(`

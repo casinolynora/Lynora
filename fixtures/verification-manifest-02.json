@@ -1,0 +1,28 @@
+{
+  "batch": "verification-02",
+  "version": 1,
+  "description": "Batch 02 — next 20 unverified casinos from the 100-casino dataset (indices 0-19 of remaining)",
+  "selectionMethod": "sequential-remaining-0-19",
+  "casinos": [
+    { "slug": "leovegas" },
+    { "slug": "unibet" },
+    { "slug": "888casino" },
+    { "slug": "pokerstars-casino" },
+    { "slug": "bwin-casino" },
+    { "slug": "interwetten" },
+    { "slug": "william-hill-casino" },
+    { "slug": "paddy-power-casino" },
+    { "slug": "mr-green" },
+    { "slug": "casumo" },
+    { "slug": "betsson" },
+    { "slug": "comeon" },
+    { "slug": "playojo" },
+    { "slug": "videoslots" },
+    { "slug": "novibet" },
+    { "slug": "coral-casino" },
+    { "slug": "sky-bet" },
+    { "slug": "partycasino" },
+    { "slug": "playfrank" },
+    { "slug": "genesis-casino" }
+  ]
+}
