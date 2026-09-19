@@ -1,4 +1,4 @@
-import { getAllGuides, type Guide } from "@/lib/data/guides";
+import { getAllGuides } from "@/lib/data/guides";
 
 /**
  * Determine which guides are relevant to a casino based on its attributes.
@@ -54,4 +54,94 @@ export function getRelevantGuides(casino: {
     .sort((a, b) => b.priority - a.priority || a.slug.localeCompare(b.slug))
     .slice(0, 2)
     .map(({ title, slug, description }) => ({ title, slug, description }));
+}
+
+export type CasinoForGuide = {
+  slug: string;
+  name: string;
+  tagline?: string;
+  rating?: number | null;
+};
+
+type CasinoInput = {
+  slug: string;
+  name: string;
+  tagline?: string;
+  rating?: number | null;
+  paymentMethods: Array<{ name: string }>;
+  bonuses: Array<{ type: string }>;
+  licenses: Array<{ issuer: string }>;
+  trustScore?: number | null;
+};
+
+/**
+ * Get relevant casinos to show on a guide page.
+ *
+ * Rules:
+ * - "online-casino-basics": top 3 by rating (general onboarding)
+ * - "payment-methods-guide": top 3 by payment method count
+ * - "casino-bonuses-explained": top 3 by bonus count
+ * - "casino-licensing-guide": top 3 by license count
+ * - "responsible-gambling-tips": top 3 by responsible gambling features
+ * - "understanding-wagering-requirements": top 3 with bonuses (wagering context)
+ *
+ * Returns max 3 casinos to avoid link spam.
+ */
+export function getCasinosForGuide(
+  guideSlug: string,
+  casinos: CasinoInput[]
+): CasinoForGuide[] {
+  if (casinos.length === 0) return [];
+
+  const pick = (c: CasinoInput): CasinoForGuide => ({
+    slug: c.slug,
+    name: c.name,
+    tagline: c.tagline,
+    rating: c.rating,
+  });
+
+  switch (guideSlug) {
+    case "online-casino-basics":
+      return [...casinos]
+        .sort((a, b) => (b.rating ?? 0) - (a.rating ?? 0))
+        .slice(0, 3)
+        .map(pick);
+
+    case "payment-methods-guide":
+      return [...casinos]
+        .sort((a, b) => b.paymentMethods.length - a.paymentMethods.length)
+        .slice(0, 3)
+        .map(pick);
+
+    case "casino-bonuses-explained":
+      return [...casinos]
+        .sort((a, b) => b.bonuses.length - a.bonuses.length)
+        .slice(0, 3)
+        .map(pick);
+
+    case "casino-licensing-guide":
+      return [...casinos]
+        .sort((a, b) => b.licenses.length - a.licenses.length)
+        .slice(0, 3)
+        .map(pick);
+
+    case "responsible-gambling-tips":
+      return [...casinos]
+        .sort((a, b) => (b.trustScore ?? 0) - (a.trustScore ?? 0))
+        .slice(0, 3)
+        .map(pick);
+
+    case "understanding-wagering-requirements":
+      return [...casinos]
+        .filter((c) => c.bonuses.length > 0)
+        .sort((a, b) => b.bonuses.length - a.bonuses.length)
+        .slice(0, 3)
+        .map(pick);
+
+    default:
+      return [...casinos]
+        .sort((a, b) => (b.rating ?? 0) - (a.rating ?? 0))
+        .slice(0, 3)
+        .map(pick);
+  }
 }

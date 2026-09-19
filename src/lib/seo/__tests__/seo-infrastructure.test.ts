@@ -162,3 +162,40 @@ describe("sitemap", () => {
     expect(new Set(urls).size).toBe(urls.length);
   });
 });
+
+describe("GEO Page — Enhanced Structure", () => {
+  const SUPPORTED_GEOS = ["de", "fr", "nl", "be", "at", "it", "ch", "ie"] as const;
+
+  it("all GEO pages have required metadata fields", async () => {
+    for (const geo of SUPPORTED_GEOS) {
+      const page = await import(`@/app/[geo]/page`);
+      const metadata = await page.generateMetadata({
+        params: Promise.resolve({ geo }),
+      });
+      expect(metadata.title, `${geo} missing title`).toBeTruthy();
+      expect(metadata.description, `${geo} missing description`).toBeTruthy();
+      expect(metadata.openGraph?.title, `${geo} missing OG title`).toBeTruthy();
+      expect(metadata.twitter?.title, `${geo} missing twitter title`).toBeTruthy();
+    }
+  });
+
+  it("all GEO pages have correct canonical URLs", async () => {
+    for (const geo of SUPPORTED_GEOS) {
+      const page = await import(`@/app/[geo]/page`);
+      const metadata = await page.generateMetadata({
+        params: Promise.resolve({ geo }),
+      });
+      expect(metadata.alternates?.canonical, `${geo} missing canonical`).toBe(`/${geo}`);
+    }
+  });
+
+  it("all GEO pages generate static params", async () => {
+    const page = await import(`@/app/[geo]/page`);
+    const params = page.generateStaticParams();
+    expect(params.length).toBe(SUPPORTED_GEOS.length);
+    const geoCodes = params.map(p => p.geo);
+    for (const geo of SUPPORTED_GEOS) {
+      expect(geoCodes).toContain(geo);
+    }
+  });
+});

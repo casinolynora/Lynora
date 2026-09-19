@@ -5,6 +5,8 @@ import { Container } from "@/components/ui/Container";
 import { Badge } from "@/components/ui/Badge";
 import { FAQSection } from "@/components/casino/FAQSection";
 import { getGuideBySlug, getAllGuides } from "@/lib/data/guides";
+import { casinoDb } from "@/lib/data/accessor";
+import { getCasinosForGuide } from "@/lib/seo/guide-relevance";
 import { SITE_URL } from "@/lib/config/site";
 
 type Props = {
@@ -145,6 +147,37 @@ export default async function GuidePage({ params }: Props) {
                 ))}
             </div>
           </div>
+
+          {/* Relevant Casinos */}
+          {(() => {
+            const allCasinos = casinoDb.getAllCasinos().map(casinoDb.selectCasinoListItem);
+            const relevantCasinos = getCasinosForGuide(slug, allCasinos);
+            if (relevantCasinos.length === 0) return null;
+            return (
+              <div className="mt-12">
+                <h2 className="text-xl font-bold mb-4">Top Casinos for This Guide</h2>
+                <div className="space-y-3">
+                  {relevantCasinos.map((casino) => (
+                    <Link
+                      key={casino.slug}
+                      href={`/casino-reviews/${casino.slug}`}
+                      className="block bg-surface-elevated rounded-xl border border-border p-5 hover:border-primary/30 hover:shadow-md transition-all"
+                    >
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <h3 className="font-semibold text-foreground">{casino.name}</h3>
+                          <p className="text-sm text-muted mt-0.5">{casino.tagline}</p>
+                        </div>
+                        {casino.rating !== null && (
+                          <span className="text-sm font-semibold text-primary">{casino.rating}/10</span>
+                        )}
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            );
+          })()}
         </div>
       </Container>
     </main>
