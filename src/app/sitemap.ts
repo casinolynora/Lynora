@@ -13,7 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = [
     { url: SITE_URL, lastModified: buildDate, changeFrequency: "weekly" as const, priority: 1.0 },
     { url: `${SITE_URL}/casinos`, lastModified: buildDate, changeFrequency: "weekly" as const, priority: 0.9 },
-    { url: `${SITE_URL}/ai-casino-match`, lastModified: buildDate, changeFrequency: "monthly" as const, priority: 0.7 },
+    // /ai-casino-match excluded — always noindex (client-rendered tool)
     { url: `${SITE_URL}/compare`, lastModified: buildDate, changeFrequency: "monthly" as const, priority: 0.8 },
     { url: `${SITE_URL}/about`, lastModified: buildDate, changeFrequency: "monthly" as const, priority: 0.5 },
     { url: `${SITE_URL}/methodology`, lastModified: buildDate, changeFrequency: "monthly" as const, priority: 0.5 },

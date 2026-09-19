@@ -54,11 +54,10 @@ export function resolvePaymentAlias(name: string): string {
 
 // ─── Build Entity Map ─────────────────────────────────────────────────────
 
-export function buildPaymentEntityMap(casinos?: Casino[]): Map<string, PaymentEntity> {
-  const casinoList = casinos ?? casinoDb.getAllCasinos();
+export function buildPaymentEntityMap(casinos: Casino[]): Map<string, PaymentEntity> {
   const entityMap = new Map<string, PaymentEntity>();
 
-  for (const casino of casinoList) {
+  for (const casino of casinos) {
     for (const pm of casino.paymentMethods) {
       const resolved = resolvePaymentAlias(pm.name);
       const existing = entityMap.get(resolved);
@@ -97,7 +96,7 @@ export function buildPaymentEntityMap(casinos?: Casino[]): Map<string, PaymentEn
   // Recount casino counts properly
   for (const [, entity] of entityMap) {
     const casinoSlugs = new Set<string>();
-    for (const casino of casinoList) {
+    for (const casino of casinos) {
       const hasMethod = casino.paymentMethods.some(
         (pm) => resolvePaymentAlias(pm.name) === entity.canonicalName
       );
@@ -106,7 +105,7 @@ export function buildPaymentEntityMap(casinos?: Casino[]): Map<string, PaymentEn
     entity.casinoCount = casinoSlugs.size;
 
     const geoSet = new Set<string>();
-    for (const casino of casinoList) {
+    for (const casino of casinos) {
       const hasMethod = casino.paymentMethods.some(
         (pm) => resolvePaymentAlias(pm.name) === entity.canonicalName
       );
@@ -134,12 +133,11 @@ export type PaymentToCasinoEntry = {
 export function getPaymentToCasinos(
   entityMap: Map<string, PaymentEntity>,
   canonicalName: string,
-  casinos?: Casino[]
+  casinos: Casino[]
 ): PaymentToCasinoEntry[] {
-  const casinoList = casinos ?? casinoDb.getAllCasinos();
   const result: PaymentToCasinoEntry[] = [];
 
-  for (const casino of casinoList) {
+  for (const casino of casinos) {
     const hasMethod = casino.paymentMethods.some(
       (pm) => resolvePaymentAlias(pm.name) === canonicalName
     );
@@ -203,13 +201,12 @@ export type GeoToPaymentsEntry = {
 export function getGeoToPayments(
   entityMap: Map<string, PaymentEntity>,
   geoCode: string,
-  casinos?: Casino[]
+  casinos: Casino[]
 ): GeoToPaymentsEntry[] {
   const geoUpper = geoCode.toUpperCase();
-  const casinoList = casinos ?? casinoDb.getAllCasinos();
   const methodCasinos = new Map<string, Set<string>>();
 
-  for (const casino of casinoList) {
+  for (const casino of casinos) {
     if (!casino.countries.includes(geoUpper)) continue;
     for (const pm of casino.paymentMethods) {
       const resolved = resolvePaymentAlias(pm.name);

@@ -92,9 +92,9 @@ describe("sitemap", () => {
     expect(casinos).toBeDefined();
   });
 
-  it("includes AI matchmaker", () => {
+  it("excludes AI matchmaker from sitemap (noindex page)", () => {
     const match = sitemapEntries.find((e) => e.url === `${SITE_URL}/ai-casino-match`);
-    expect(match).toBeDefined();
+    expect(match).toBeUndefined();
   });
 
   it("includes GEO hub pages", () => {
@@ -152,9 +152,9 @@ describe("sitemap", () => {
     expect(home?.priority).toBe(1.0);
   });
 
-  it("ai-casino-match is in sitemap (crawlable but noindex)", () => {
+  it("ai-casino-match is excluded from sitemap (noindex page should not be in sitemap)", () => {
     const match = sitemapEntries.find((e) => e.url === `${SITE_URL}/ai-casino-match`);
-    expect(match).toBeDefined();
+    expect(match).toBeUndefined();
   });
 
   it("sitemap has no duplicate URLs", () => {

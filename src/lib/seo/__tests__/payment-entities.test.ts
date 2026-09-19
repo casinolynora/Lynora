@@ -1,4 +1,5 @@
 import { describe, it, expect, beforeAll } from "vitest";
+import { casinoDb } from "@/lib/data/accessor";
 import {
   paymentSlug,
   resolvePaymentAlias,
@@ -10,10 +11,12 @@ import {
   getPaymentToGuides,
   classifyAllEntities,
   getPaymentEntityStats,
-  assessEligibility,
+  assessPageEligibility,
   type PaymentEntity,
   type PaymentEntityType,
 } from "@/lib/seo/payment-entities";
+
+const testCasinos = casinoDb.getAllCasinos();
 
 describe("Payment Entity — Slug Generation", () => {
   it("generates valid slug from simple name", () => {
@@ -59,7 +62,7 @@ describe("Payment Entity — Entity Map", () => {
   let entityMap: Map<string, PaymentEntity>;
 
   beforeAll(() => {
-    entityMap = buildPaymentEntityMap();
+    entityMap = buildPaymentEntityMap(testCasinos);
   });
 
   it("builds entity map from verified casinos", () => {
@@ -116,30 +119,30 @@ describe("Payment Entity — Payment → Casino Graph", () => {
   let entityMap: Map<string, PaymentEntity>;
 
   beforeAll(() => {
-    entityMap = buildPaymentEntityMap();
+    entityMap = buildPaymentEntityMap(testCasinos);
   });
 
   it("returns casinos for Visa", () => {
-    const casinos = getPaymentToCasinos(entityMap, "Visa");
+    const casinos = getPaymentToCasinos(entityMap, "Visa", testCasinos);
     expect(casinos.length).toBeGreaterThan(0);
     expect(casinos.every((c) => c.slug && c.name)).toBe(true);
   });
 
   it("returns casinos sorted by rating", () => {
-    const casinos = getPaymentToCasinos(entityMap, "Visa");
+    const casinos = getPaymentToCasinos(entityMap, "Visa", testCasinos);
     for (let i = 1; i < casinos.length; i++) {
       expect((casinos[i - 1].rating ?? 0)).toBeGreaterThanOrEqual(casinos[i].rating ?? 0);
     }
   });
 
   it("returns empty for non-existent method", () => {
-    const casinos = getPaymentToCasinos(entityMap, "NonExistent");
+    const casinos = getPaymentToCasinos(entityMap, "NonExistent", testCasinos);
     expect(casinos).toEqual([]);
   });
 
   it("returns correct count matching entity casinoCount", () => {
     for (const [name, entity] of entityMap) {
-      const casinos = getPaymentToCasinos(entityMap, name);
+      const casinos = getPaymentToCasinos(entityMap, name, testCasinos);
       expect(casinos.length).toBe(entity.casinoCount);
     }
   });
@@ -149,7 +152,7 @@ describe("Payment Entity — Casino → Payment Graph", () => {
   let entityMap: Map<string, PaymentEntity>;
 
   beforeAll(() => {
-    entityMap = buildPaymentEntityMap();
+    entityMap = buildPaymentEntityMap(testCasinos);
   });
 
   it("returns payments for a known casino", () => {
@@ -175,32 +178,32 @@ describe("Payment Entity — GEO → Payment Graph", () => {
   let entityMap: Map<string, PaymentEntity>;
 
   beforeAll(() => {
-    entityMap = buildPaymentEntityMap();
+    entityMap = buildPaymentEntityMap(testCasinos);
   });
 
   it("returns payments for Germany", () => {
-    const payments = getGeoToPayments(entityMap, "DE");
+    const payments = getGeoToPayments(entityMap, "DE", testCasinos);
     expect(payments.length).toBeGreaterThan(0);
     expect(payments.every((p) => p.canonicalName && p.casinoCount > 0)).toBe(true);
   });
 
   it("returns payments for Netherlands", () => {
-    const payments = getGeoToPayments(entityMap, "NL");
+    const payments = getGeoToPayments(entityMap, "NL", testCasinos);
     expect(payments.length).toBeGreaterThan(0);
   });
 
   it("returns payments for Belgium", () => {
-    const payments = getGeoToPayments(entityMap, "BE");
+    const payments = getGeoToPayments(entityMap, "BE", testCasinos);
     expect(payments.length).toBeGreaterThan(0);
   });
 
   it("returns empty for unsupported GEO", () => {
-    const payments = getGeoToPayments(entityMap, "US");
+    const payments = getGeoToPayments(entityMap, "US", testCasinos);
     expect(payments).toEqual([]);
   });
 
   it("sorts by casino count descending", () => {
-    const payments = getGeoToPayments(entityMap, "DE");
+    const payments = getGeoToPayments(entityMap, "DE", testCasinos);
     for (let i = 1; i < payments.length; i++) {
       expect(payments[i - 1].casinoCount).toBeGreaterThanOrEqual(payments[i].casinoCount);
     }
@@ -211,7 +214,7 @@ describe("Payment Entity — Guide → Payment Graph", () => {
   let entityMap: Map<string, PaymentEntity>;
 
   beforeAll(() => {
-    entityMap = buildPaymentEntityMap();
+    entityMap = buildPaymentEntityMap(testCasinos);
   });
 
   it("returns all methods for payment-methods-guide", () => {
@@ -259,7 +262,7 @@ describe("Payment Entity — Eligibility & Tiers", () => {
   let entityMap: Map<string, PaymentEntity>;
 
   beforeAll(() => {
-    entityMap = buildPaymentEntityMap();
+    entityMap = buildPaymentEntityMap(testCasinos);
   });
 
   it("assigns tiers to all entities", () => {
@@ -277,22 +280,24 @@ describe("Payment Entity — Eligibility & Tiers", () => {
   it("Visa is Tier A", () => {
     const visa = entityMap.get("Visa");
     expect(visa).toBeDefined();
-    const eligibility = assessEligibility(visa!);
-    expect(eligibility.tier).toBe("A");
+    const tiers = classifyAllEntities(entityMap);
+    const tierA = tiers.find((t) => t.tier === "A");
+    expect(tierA?.entities.some((e) => e.entity.canonicalName === "Visa")).toBe(true);
   });
 
   it("PayPal is Tier A", () => {
     const paypal = entityMap.get("PayPal");
     expect(paypal).toBeDefined();
-    const eligibility = assessEligibility(paypal!);
-    expect(eligibility.tier).toBe("A");
+    const tiers = classifyAllEntities(entityMap);
+    const tierA = tiers.find((t) => t.tier === "A");
+    expect(tierA?.entities.some((e) => e.entity.canonicalName === "PayPal")).toBe(true);
   });
 
   it("low-coverage methods are Tier B or C", () => {
     const brite = entityMap.get("Brite");
     if (brite) {
-      const eligibility = assessEligibility(brite);
-      expect(["B", "C"]).toContain(eligibility.tier);
+      const result = assessPageEligibility(brite);
+      expect(result.eligible).toBe(false);
     }
   });
 
@@ -300,7 +305,6 @@ describe("Payment Entity — Eligibility & Tiers", () => {
     const tiers = classifyAllEntities(entityMap);
     for (const tier of tiers) {
       for (const e of tier.entities) {
-        // Eligibility should not contain any search volume, CPC, or KD references
         const reasonsStr = e.reasons.join(" ").toLowerCase();
         expect(reasonsStr).not.toContain("search volume");
         expect(reasonsStr).not.toContain("cpc");
@@ -324,7 +328,7 @@ describe("Payment Entity — Stats", () => {
   let entityMap: Map<string, PaymentEntity>;
 
   beforeAll(() => {
-    entityMap = buildPaymentEntityMap();
+    entityMap = buildPaymentEntityMap(testCasinos);
   });
 
   it("reports correct unique entity count", () => {
@@ -347,14 +351,14 @@ describe("Payment Entity — Stats", () => {
 
 describe("Payment Entity — SEO Safety", () => {
   it("no crypto payment methods in current dataset", () => {
-    const entityMap = buildPaymentEntityMap();
+    const entityMap = buildPaymentEntityMap(testCasinos);
     const cryptoEntries = [...entityMap.values()].filter((e) => e.type === "crypto");
     // May be empty — that's fine, just documenting
     expect(cryptoEntries.length).toBeGreaterThanOrEqual(0);
   });
 
   it("all slugs are URL-safe", () => {
-    const entityMap = buildPaymentEntityMap();
+    const entityMap = buildPaymentEntityMap(testCasinos);
     for (const [, entity] of entityMap) {
       expect(entity.slug).toMatch(/^[a-z0-9-]+$/);
       expect(entity.slug).not.toContain(" ");
@@ -363,7 +367,7 @@ describe("Payment Entity — SEO Safety", () => {
   });
 
   it("no entity has commercial ranking influence", () => {
-    const entityMap = buildPaymentEntityMap();
+    const entityMap = buildPaymentEntityMap(testCasinos);
     const tiers = classifyAllEntities(entityMap);
     // Tier assignment should be based on coverage, not affiliate data
     for (const tier of tiers) {

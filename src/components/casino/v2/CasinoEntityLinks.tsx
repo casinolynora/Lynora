@@ -73,21 +73,25 @@ export function CasinoEntityLinks({
           </div>
         )}
 
-        {/* Payment method summary */}
+        {/* Payment method links */}
         {paymentMethodNames.length > 0 && (
           <div>
             <h3 className="text-sm font-bold text-foreground uppercase tracking-wider mb-2">
               Payment Methods
             </h3>
             <div className="flex flex-wrap gap-1.5">
-              {paymentMethodNames.map((name) => (
-                <span
-                  key={name}
-                  className="inline-flex items-center px-2.5 py-1 text-xs font-medium rounded-full bg-surface border border-border-subtle text-muted"
-                >
-                  {name}
-                </span>
-              ))}
+              {paymentMethodNames.map((name) => {
+                const slug = name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+                return (
+                  <Link
+                    key={name}
+                    href={`/payments/${slug}`}
+                    className="inline-flex items-center px-2.5 py-1 text-xs font-medium rounded-full bg-surface border border-border-subtle text-muted hover:border-brand-300 hover:bg-surface-elevated transition-colors"
+                  >
+                    {name}
+                  </Link>
+                );
+              })}
             </div>
           </div>
         )}

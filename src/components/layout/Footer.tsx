@@ -18,6 +18,7 @@ const footerSections = [
       { href: "/ai-casino-match", label: "AI Matchmaker" },
       { href: "/compare", label: "Compare Casinos" },
       { href: "/guides", label: "Guides" },
+      { href: "/payments", label: "Payment Methods" },
     ],
   },
   {
