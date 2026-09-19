@@ -1,5 +1,6 @@
 import { casinoDb } from "@/lib/data/accessor";
 import { getAllGuides } from "@/lib/data/guides";
+import type { Casino } from "@/lib/types";
 
 // ─── Canonical Payment Entity Model ────────────────────────────────────────
 
@@ -23,6 +24,7 @@ export type PaymentTier = "A" | "B" | "C" | "D";
 export type PaymentEligibility = {
   entity: PaymentEntity;
   tier: PaymentTier;
+  eligible: boolean;
   reasons: string[];
   casinoCoverage: number;
   geoCoverage: number;
@@ -30,24 +32,10 @@ export type PaymentEligibility = {
 };
 
 // ─── Alias / Normalization Rules ───────────────────────────────────────────
-// Only aliases where identity equivalence is supported by project data.
 
 const PAYMENT_ALIASES: Record<string, string> = {
-  // Case inconsistency in verified data
   "Aircash": "AirCash",
-  // Dutch-language name for card payments
-  "Creditcard": "Creditcard", // Keep as separate entity — distinct from Visa/Mastercard in NL market
 };
-
-// Names that should NOT be merged even if similar
-const EXPLICITLY_DISTINCT: Set<string> = new Set([
-  "Sofort",   // Klarna subsidiary, but used as distinct brand in DE
-  "Klarna",   // Parent brand, distinct from Sofort
-  "Giropay",  // German bank transfer, distinct from general bank transfer
-  "Brite",    // Nordic instant banking
-  "Tink",     // Baltic/Finnish open banking
-  "Wero",     // European payment initiative
-]);
 
 // ─── Slug Generation ──────────────────────────────────────────────────────
 
@@ -66,22 +54,18 @@ export function resolvePaymentAlias(name: string): string {
 
 // ─── Build Entity Map ─────────────────────────────────────────────────────
 
-export function buildPaymentEntityMap(): Map<string, PaymentEntity> {
-  const casinos = casinoDb.getAllCasinos();
+export function buildPaymentEntityMap(casinos?: Casino[]): Map<string, PaymentEntity> {
+  const casinoList = casinos ?? casinoDb.getAllCasinos();
   const entityMap = new Map<string, PaymentEntity>();
 
-  for (const casino of casinos) {
+  for (const casino of casinoList) {
     for (const pm of casino.paymentMethods) {
       const resolved = resolvePaymentAlias(pm.name);
       const existing = entityMap.get(resolved);
 
       if (existing) {
-        existing.casinoCount = new Set([
-          ...Array.from({ length: existing.casinoCount }, (_, i) => `casino-${i}`),
-          casino.slug,
-        ]).size;
         existing.totalRecords++;
-        if (casino.countries.length > 0) {
+        if (!existing.geos.some((g) => casino.countries.includes(g))) {
           for (const g of casino.countries) {
             if (!existing.geos.includes(g)) existing.geos.push(g);
           }
@@ -99,7 +83,7 @@ export function buildPaymentEntityMap(): Map<string, PaymentEntity> {
           slug: paymentSlug(resolved),
           type: pm.type as PaymentEntityType,
           aliases: resolved !== pm.name ? [pm.name] : [],
-          casinoCount: 1,
+          casinoCount: 0,
           geoCount: casino.countries.length,
           geos: [...casino.countries],
           totalRecords: 1,
@@ -110,10 +94,10 @@ export function buildPaymentEntityMap(): Map<string, PaymentEntity> {
     }
   }
 
-  // Recount casino counts properly using slug sets
+  // Recount casino counts properly
   for (const [, entity] of entityMap) {
     const casinoSlugs = new Set<string>();
-    for (const casino of casinos) {
+    for (const casino of casinoList) {
       const hasMethod = casino.paymentMethods.some(
         (pm) => resolvePaymentAlias(pm.name) === entity.canonicalName
       );
@@ -121,9 +105,8 @@ export function buildPaymentEntityMap(): Map<string, PaymentEntity> {
     }
     entity.casinoCount = casinoSlugs.size;
 
-    // Recount GEOs
     const geoSet = new Set<string>();
-    for (const casino of casinos) {
+    for (const casino of casinoList) {
       const hasMethod = casino.paymentMethods.some(
         (pm) => resolvePaymentAlias(pm.name) === entity.canonicalName
       );
@@ -145,16 +128,18 @@ export type PaymentToCasinoEntry = {
   name: string;
   tagline: string | undefined;
   rating: number | null;
+  countries: string[];
 };
 
 export function getPaymentToCasinos(
   entityMap: Map<string, PaymentEntity>,
-  canonicalName: string
+  canonicalName: string,
+  casinos?: Casino[]
 ): PaymentToCasinoEntry[] {
-  const casinos = casinoDb.getAllCasinos();
+  const casinoList = casinos ?? casinoDb.getAllCasinos();
   const result: PaymentToCasinoEntry[] = [];
 
-  for (const casino of casinos) {
+  for (const casino of casinoList) {
     const hasMethod = casino.paymentMethods.some(
       (pm) => resolvePaymentAlias(pm.name) === canonicalName
     );
@@ -164,6 +149,7 @@ export function getPaymentToCasinos(
         name: casino.name,
         tagline: casino.tagline,
         rating: casino.rating,
+        countries: casino.countries,
       });
     }
   }
@@ -216,13 +202,14 @@ export type GeoToPaymentsEntry = {
 
 export function getGeoToPayments(
   entityMap: Map<string, PaymentEntity>,
-  geoCode: string
+  geoCode: string,
+  casinos?: Casino[]
 ): GeoToPaymentsEntry[] {
   const geoUpper = geoCode.toUpperCase();
-  const casinos = casinoDb.getAllCasinos();
+  const casinoList = casinos ?? casinoDb.getAllCasinos();
   const methodCasinos = new Map<string, Set<string>>();
 
-  for (const casino of casinos) {
+  for (const casino of casinoList) {
     if (!casino.countries.includes(geoUpper)) continue;
     for (const pm of casino.paymentMethods) {
       const resolved = resolvePaymentAlias(pm.name);
@@ -246,16 +233,6 @@ export function getGeoToPayments(
 }
 
 // ─── Guide → Payment Graph ────────────────────────────────────────────────
-// Determines which payment methods are relevant to each guide.
-
-const GUIDE_PAYMENT_RELEVANCE: Record<string, string[]> = {
-  "payment-methods-guide": [], // All payment methods are relevant
-  "online-casino-basics": [], // General — top methods only
-  "casino-bonuses-explained": [], // Top e-wallets and cards (common bonus exclusion methods)
-  "responsible-gambling-tips": [], // Deposit-related methods
-  "understanding-wagering-requirements": [], // Top methods
-  "casino-licensing-guide": [], // All methods (license affects payment availability)
-};
 
 export type GuideToPaymentsEntry = {
   canonicalName: string;
@@ -268,12 +245,8 @@ export function getGuideToPayments(
   guideSlug: string
 ): GuideToPaymentsEntry[] {
   const entries = [...entityMap.values()];
-
-  // Sort by casino coverage (most covered first) — deterministic
   entries.sort((a, b) => b.casinoCount - a.casinoCount || a.canonicalName.localeCompare(b.canonicalName));
 
-  // For payment-methods-guide: all entities
-  // For others: top 5 most covered methods
   const limit = guideSlug === "payment-methods-guide" ? entries.length : 5;
 
   return entries.slice(0, limit).map((e) => ({
@@ -300,15 +273,13 @@ const PAYMENT_GUIDE_RELEVANCE: Record<string, string[]> = {
   "mobile": ["payment-methods-guide"],
 };
 
-export function getPaymentToGuides(
-  entityType: PaymentEntityType
-): PaymentToGuideEntry[] {
+export function getPaymentToGuides(entityType: PaymentEntityType): PaymentToGuideEntry[] {
   const allGuides = getAllGuides();
   const relevantSlugs = PAYMENT_GUIDE_RELEVANCE[entityType] ?? ["payment-methods-guide"];
 
   return allGuides
-    .filter((g: { slug: string }) => relevantSlugs.includes(g.slug))
-    .map((g: { slug: string; title: string; description: string }) => ({
+    .filter((g) => relevantSlugs.includes(g.slug))
+    .map((g) => ({
       slug: g.slug,
       title: g.title,
       description: g.description,
@@ -318,66 +289,35 @@ export function getPaymentToGuides(
 // ─── Eligibility System ───────────────────────────────────────────────────
 
 const ELIGIBILITY_THRESHOLDS = {
-  MIN_CASINOS_FOR_TIER_A: 10,
-  MIN_GEOS_FOR_TIER_A: 2,
-  MIN_CASINOS_FOR_TIER_B: 5,
-  MIN_GEOS_FOR_TIER_B: 1,
-  MIN_CASINOS_FOR_TIER_C: 2,
+  MIN_CASINOS: 10,
+  MIN_GEOS: 2,
 };
 
-export function assessEligibility(entity: PaymentEntity): PaymentEligibility {
+export type EligibilityResult = {
+  eligible: boolean;
+  reasons: string[];
+};
+
+export function assessPageEligibility(entity: PaymentEntity): EligibilityResult {
   const reasons: string[] = [];
-  let tier: PaymentTier;
 
-  // Data completeness score (0-1)
-  let completeness = 0;
-  if (entity.hasDeposits) completeness += 0.5;
-  if (entity.hasWithdrawals) completeness += 0.5;
-
-  // Tier D: aliases/duplicates (should resolve to canonical)
+  if (entity.casinoCount < ELIGIBILITY_THRESHOLDS.MIN_CASINOS) {
+    reasons.push(`Insufficient casino coverage: ${entity.casinoCount} (need ${ELIGIBILITY_THRESHOLDS.MIN_CASINOS}+)`);
+  }
+  if (entity.geoCount < ELIGIBILITY_THRESHOLDS.MIN_GEOS) {
+    reasons.push(`Insufficient GEO coverage: ${entity.geoCount} (need ${ELIGIBILITY_THRESHOLDS.MIN_GEOS}+)`);
+  }
   if (entity.aliases.length > 0 && entity.casinoCount <= 1) {
-    tier = "D";
-    reasons.push("Entity is an alias with limited独立 coverage");
-    return { entity, tier, reasons, casinoCoverage: entity.casinoCount, geoCoverage: entity.geoCount, dataCompleteness: completeness };
+    reasons.push("Entity is an alias with insufficient independent coverage");
   }
 
-  // Tier A: strong coverage (casino count + GEO coverage are primary signals)
-  if (
-    entity.casinoCount >= ELIGIBILITY_THRESHOLDS.MIN_CASINOS_FOR_TIER_A &&
-    entity.geoCount >= ELIGIBILITY_THRESHOLDS.MIN_GEOS_FOR_TIER_A
-  ) {
-    tier = "A";
-    reasons.push(`${entity.casinoCount} verified casinos (>= ${ELIGIBILITY_THRESHOLDS.MIN_CASINOS_FOR_TIER_A})`);
-    reasons.push(`${entity.geoCount} GEOs (>= ${ELIGIBILITY_THRESHOLDS.MIN_GEOS_FOR_TIER_A})`);
-    if (completeness > 0) reasons.push(`Data completeness: ${(completeness * 100).toFixed(0)}%`);
-    return { entity, tier, reasons, casinoCoverage: entity.casinoCount, geoCoverage: entity.geoCount, dataCompleteness: completeness };
-  }
-
-  // Tier B: moderate coverage
-  if (
-    entity.casinoCount >= ELIGIBILITY_THRESHOLDS.MIN_CASINOS_FOR_TIER_B &&
-    entity.geoCount >= ELIGIBILITY_THRESHOLDS.MIN_GEOS_FOR_TIER_B
-  ) {
-    tier = "B";
-    reasons.push(`${entity.casinoCount} verified casinos (>= ${ELIGIBILITY_THRESHOLDS.MIN_CASINOS_FOR_TIER_B})`);
-    reasons.push(`${entity.geoCount} GEO(s) (>= ${ELIGIBILITY_THRESHOLDS.MIN_GEOS_FOR_TIER_B})`);
-    reasons.push("Not enough coverage for independent SEO page yet");
-    return { entity, tier, reasons, casinoCoverage: entity.casinoCount, geoCoverage: entity.geoCount, dataCompleteness: completeness };
-  }
-
-  // Tier C: low coverage or needs review
-  if (entity.casinoCount >= ELIGIBILITY_THRESHOLDS.MIN_CASINOS_FOR_TIER_C) {
-    tier = "C";
-    reasons.push(`${entity.casinoCount} verified casinos — needs more coverage for SEO page`);
-  } else {
-    tier = "C";
-    reasons.push(`${entity.casinoCount} verified casinos — insufficient data for independent assessment`);
-  }
-
-  return { entity, tier, reasons, casinoCoverage: entity.casinoCount, geoCoverage: entity.geoCount, dataCompleteness: completeness };
+  return {
+    eligible: reasons.length === 0,
+    reasons,
+  };
 }
 
-// ─── Tier Classification ──────────────────────────────────────────────────
+// ─── Tier Classification (retained for backward compat) ───────────────────
 
 export type TierClassification = {
   tier: PaymentTier;
@@ -385,7 +325,31 @@ export type TierClassification = {
 };
 
 export function classifyAllEntities(entityMap: Map<string, PaymentEntity>): TierClassification[] {
-  const eligibility = [...entityMap.values()].map(assessEligibility);
+  const eligibility = [...entityMap.values()].map((entity): PaymentEligibility => {
+    const reasons: string[] = [];
+    let tier: PaymentTier;
+    let completeness = 0;
+    if (entity.hasDeposits) completeness += 0.5;
+    if (entity.hasWithdrawals) completeness += 0.5;
+
+    if (entity.aliases.length > 0 && entity.casinoCount <= 1) {
+      tier = "D";
+      reasons.push("Alias with limited coverage");
+    } else if (entity.casinoCount >= ELIGIBILITY_THRESHOLDS.MIN_CASINOS && entity.geoCount >= ELIGIBILITY_THRESHOLDS.MIN_GEOS) {
+      tier = "A";
+      reasons.push(`${entity.casinoCount} casinos, ${entity.geoCount} GEOs`);
+    } else if (entity.casinoCount >= 5 && entity.geoCount >= 1) {
+      tier = "B";
+      reasons.push(`${entity.casinoCount} casinos, ${entity.geoCount} GEO(s)`);
+    } else {
+      tier = "C";
+      reasons.push(`${entity.casinoCount} casinos — insufficient coverage`);
+    }
+
+    const eligible = tier === "A";
+
+    return { entity, tier, eligible, reasons, casinoCoverage: entity.casinoCount, geoCoverage: entity.geoCount, dataCompleteness: completeness };
+  });
 
   const tiers: TierClassification[] = [
     { tier: "A", entities: [] },
@@ -399,7 +363,6 @@ export function classifyAllEntities(entityMap: Map<string, PaymentEntity>): Tier
     bucket?.entities.push(e);
   }
 
-  // Sort within each tier by casino coverage (desc), then name (asc)
   for (const tier of tiers) {
     tier.entities.sort((a, b) => b.casinoCoverage - a.casinoCoverage || a.entity.canonicalName.localeCompare(b.entity.canonicalName));
   }
@@ -417,7 +380,7 @@ export type PaymentEntityStats = {
   tiers: Record<PaymentTier, number>;
 };
 
-export function getPaymentEntityStats(entityMap: Map<string, PaymentEntity>): PaymentEntityStats {
+export function getPaymentEntityStats(entityMap: Map<string, PaymentEntity>, casinos?: Casino[]): PaymentEntityStats {
   const tiers = classifyAllEntities(entityMap);
   const aliasesFound: string[] = [];
   const caseInconsistencies: string[] = [];
@@ -428,10 +391,9 @@ export function getPaymentEntityStats(entityMap: Map<string, PaymentEntity>): Pa
     }
   }
 
-  // Detect case inconsistencies from raw data
-  const casinos = casinoDb.getAllCasinos();
+  const casinoList = casinos ?? casinoDb.getAllCasinos();
   const rawNames = new Set<string>();
-  for (const c of casinos) {
+  for (const c of casinoList) {
     for (const pm of c.paymentMethods) rawNames.add(pm.name);
   }
   const lowerMap = new Map<string, string[]>();
@@ -458,4 +420,17 @@ export function getPaymentEntityStats(entityMap: Map<string, PaymentEntity>): Pa
       D: tiers.find((t) => t.tier === "D")?.entities.length ?? 0,
     },
   };
+}
+
+// ─── Get Eligible Payment Pages ───────────────────────────────────────────
+
+export function getEligiblePaymentSlugs(entityMap: Map<string, PaymentEntity>): string[] {
+  const eligible: string[] = [];
+  for (const [, entity] of entityMap) {
+    const result = assessPageEligibility(entity);
+    if (result.eligible) {
+      eligible.push(entity.slug);
+    }
+  }
+  return eligible.sort();
 }

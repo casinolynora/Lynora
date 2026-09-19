@@ -178,6 +178,23 @@ export default async function GuidePage({ params }: Props) {
               </div>
             );
           })()}
+
+          {/* Payment Methods Link */}
+          {slug === "payment-methods-guide" && (
+            <div className="mt-12">
+              <h2 className="text-xl font-bold mb-4">Payment Method Pages</h2>
+              <p className="text-muted text-sm mb-4">
+                Browse detailed pages for individual payment methods, including verified casino availability and GEO coverage.
+              </p>
+              <Link
+                href="/payments"
+                className="inline-block bg-surface-elevated rounded-xl border border-border p-4 hover:border-primary/30 hover:shadow-md transition-all"
+              >
+                <h3 className="font-semibold text-foreground">All Payment Methods</h3>
+                <p className="text-sm text-muted mt-1">Compare deposits, withdrawals, and casino availability.</p>
+              </Link>
+            </div>
+          )}
         </div>
       </Container>
     </main>

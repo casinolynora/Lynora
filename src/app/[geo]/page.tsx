@@ -497,7 +497,7 @@ export default async function GeoPage({ params }: Props) {
               <p className="text-muted leading-relaxed mb-4">
                 {config.paymentLandscape}
               </p>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 mb-4">
                 {config.popularPayments.map((pm) => (
                   <span
                     key={pm}
@@ -507,6 +507,9 @@ export default async function GeoPage({ params }: Props) {
                   </span>
                 ))}
               </div>
+              <Link href="/payments" className="text-sm text-primary hover:underline">
+                View all payment methods &rarr;
+              </Link>
             </section>
 
             {/* How We Match */}

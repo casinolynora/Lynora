@@ -2,6 +2,8 @@ import { MetadataRoute } from "next";
 import { casinoDb } from "@/lib/data/accessor";
 import { getAllGuides } from "@/lib/data/guides";
 import { SITE_URL } from "@/lib/config/site";
+import { getFullDatasetCasinos } from "@/lib/seo/payment-data";
+import { buildPaymentEntityMap, assessPageEligibility } from "@/lib/seo/payment-entities";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const casinos = casinoDb.getAllCasinos();
@@ -18,6 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/responsible-gambling`, lastModified: buildDate, changeFrequency: "monthly" as const, priority: 0.5 },
     { url: `${SITE_URL}/contact`, lastModified: buildDate, changeFrequency: "monthly" as const, priority: 0.3 },
     { url: `${SITE_URL}/guides`, lastModified: buildDate, changeFrequency: "monthly" as const, priority: 0.7 },
+    { url: `${SITE_URL}/payments`, lastModified: buildDate, changeFrequency: "monthly" as const, priority: 0.8 },
     { url: `${SITE_URL}/privacy-policy`, lastModified: buildDate, changeFrequency: "monthly" as const, priority: 0.3 },
     { url: `${SITE_URL}/terms`, lastModified: buildDate, changeFrequency: "monthly" as const, priority: 0.3 },
     { url: `${SITE_URL}/affiliate-disclosure`, lastModified: buildDate, changeFrequency: "monthly" as const, priority: 0.3 },
@@ -72,5 +75,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticPages, ...casinoPages, ...guidePages, ...deCasinoPages, ...deGuidePages];
+  // Payment method pages (from full dataset)
+  const paymentPages: MetadataRoute.Sitemap = [];
+  try {
+    const paymentCasinos = getFullDatasetCasinos();
+    const entityMap = buildPaymentEntityMap(paymentCasinos);
+    for (const [, entity] of entityMap) {
+      const result = assessPageEligibility(entity);
+      if (result.eligible) {
+        paymentPages.push({
+          url: `${SITE_URL}/payments/${entity.slug}`,
+          lastModified: buildDate,
+          changeFrequency: "weekly" as const,
+          priority: 0.8,
+        });
+      }
+    }
+  } catch {
+    // SQLite not available — skip payment pages in sitemap
+  }
+
+  return [...staticPages, ...casinoPages, ...guidePages, ...deCasinoPages, ...deGuidePages, ...paymentPages];
 }
