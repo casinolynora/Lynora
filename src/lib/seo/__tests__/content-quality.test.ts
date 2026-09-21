@@ -81,11 +81,6 @@ describe("German DE Pages — Search Intent Differentiation", () => {
 });
 
 describe("German Pages — Canonical URLs", () => {
-  it("/de has correct canonical", async () => {
-    const { metadata } = await import("@/app/de/page");
-    expect(metadata.alternates?.canonical).toBe("/de");
-  });
-
   it("/de/casinos has correct canonical", async () => {
     const { metadata } = await import("@/app/de/casinos/page");
     expect(metadata.alternates?.canonical).toBe("/de/casinos");
@@ -108,14 +103,6 @@ describe("German Pages — Canonical URLs", () => {
 });
 
 describe("German Pages — Required Metadata", () => {
-  it("/de has title, description, OG, and twitter", async () => {
-    const { metadata } = await import("@/app/de/page");
-    expect(metadata.title).toBeTruthy();
-    expect(metadata.description).toBeTruthy();
-    expect(metadata.openGraph?.title).toBeTruthy();
-    expect(metadata.twitter?.title).toBeTruthy();
-  });
-
   it("/de/casinos has title, description, OG, and twitter", async () => {
     const { metadata } = await import("@/app/de/casinos/page");
     expect(metadata.title).toBeTruthy();

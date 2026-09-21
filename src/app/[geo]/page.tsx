@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
+import { CasinoGrid } from "@/components/casino/CasinoGrid";
 import { casinoDb } from "@/lib/data/accessor";
 import { SITE_URL } from "@/lib/config/site";
 import { getFullDatasetCasinos } from "@/lib/seo/payment-data";
@@ -432,9 +433,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const config = geoConfig[geo as Geo];
   if (!config) return {};
 
+  const isGerman = geo === "de";
+
+  const title = isGerman
+    ? `Online-Casinos in Deutschland \u2014 BeInCasinos`
+    : `Best Online Casinos in ${config.name} \u2014 BeInCasinos`;
+  const description = isGerman
+    ? `GGL-lizenzierte Online-Casinos f\u00FCr deutsche Spieler. Verifizierte Daten zu Lizenzen, Zahlungsmethoden und verantwortungsbewusstem Spielen.`
+    : `Find the best online casinos in ${config.name} with BeInCasinos' independent reviews and comparisons. Personalized recommendations for ${config.name} players.`;
+
   return {
-    title: `Best Online Casinos in ${config.name} \u2014 BeInCasinos`,
-    description: `Find the best online casinos in ${config.name} with BeInCasinos' independent reviews and comparisons. Personalized recommendations for ${config.name} players.`,
+    title,
+    description,
     alternates: {
       canonical: `/${geo}`,
       languages: {
@@ -442,13 +452,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       },
     },
     openGraph: {
-      title: `Best Online Casinos in ${config.name} \u2014 BeInCasinos`,
-      description: `Independent casino reviews for ${config.name} players.`,
+      title,
+      description: isGerman
+        ? `GGL-lizenzierte Online-Casinos mit verifizierten Daten f\u00FCr deutsche Spieler.`
+        : `Independent casino reviews for ${config.name} players.`,
     },
     twitter: {
       card: "summary",
-      title: `Best Online Casinos in ${config.name} \u2014 BeInCasinos`,
-      description: `Independent casino reviews for ${config.name} players.`,
+      title,
+      description: isGerman
+        ? `GGL-lizenzierte Online-Casinos mit verifizierten Daten f\u00FCr deutsche Spieler.`
+        : `Independent casino reviews for ${config.name} players.`,
     },
   };
 }
@@ -554,53 +568,7 @@ export default async function GeoPage({ params }: Props) {
               <h2 className="text-xl font-bold mb-4">
                 Licensed Casinos in {config.name} ({casinos.length})
               </h2>
-              <div className="space-y-3">
-                {casinos.map((casino) => (
-                  <Link
-                    key={casino.id}
-                    href={`/casino-reviews/${casino.slug}`}
-                    className="block bg-surface-elevated rounded-xl border border-border p-5 hover:border-primary/30 hover:shadow-md transition-all"
-                  >
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <h3 className="font-semibold text-foreground">{casino.name}</h3>
-                        <p className="text-sm text-muted mt-0.5">{casino.tagline}</p>
-                        <div className="flex items-center gap-2 mt-2">
-                          {casino.licenses.map((license, i) => (
-                            <span
-                              key={i}
-                              className="inline-flex items-center gap-1 text-xs bg-green-50 dark:bg-green-950/30 text-green-700 dark:text-green-300 px-2 py-0.5 rounded-full"
-                            >
-                              <span className="w-1.5 h-1.5 bg-green-500 rounded-full" />
-                              {license.issuer} Licensed
-                            </span>
-                          ))}
-                          {casino.hasLiveCasino && (
-                            <span className="text-xs bg-surface-hover text-muted px-2 py-0.5 rounded-full">
-                              Live Casino
-                            </span>
-                          )}
-                          {casino.hasSportsBetting && (
-                            <span className="text-xs bg-surface-hover text-muted px-2 py-0.5 rounded-full">
-                              Sports
-                            </span>
-                          )}
-                        </div>
-                      </div>
-                      <div className="text-right">
-                        {casino.minDeposit !== null && (
-                          <p className="text-sm text-muted">
-                            Min: <span className="font-semibold text-foreground">\u20AC{casino.minDeposit}</span>
-                          </p>
-                        )}
-                        <p className="text-xs text-muted mt-1">
-                          {casino.paymentMethods.slice(0, 3).map(pm => pm.name).join(", ")}
-                        </p>
-                      </div>
-                    </div>
-                  </Link>
-                ))}
-              </div>
+              <CasinoGrid casinos={casinos} baseUrl={`/${geo}`} />
             </div>
           )}
 
