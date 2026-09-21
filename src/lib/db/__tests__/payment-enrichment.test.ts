@@ -56,15 +56,30 @@ describe("Payment Enrichment — Entity Mapping", () => {
 // ─── Target Casino State ────────────────────────────────────────────────
 
 describe("Payment Enrichment — Target Casino State", () => {
-  it("returns 5 target casinos from database", () => {
+  const ENRICHED_IDS = [
+    "germany-bet365",
+    "germany-leovegas",
+    "germany-wildz",
+    "germany-bet-at-home",
+    "germany-daznbet",
+    "germany-vbet",
+    "germany-tiptorro",
+    "germany-interwetten",
+    "germany-loewen-play",
+    "germany-jokerstar",
+  ];
+
+  it("returns 15 target casinos from database", () => {
     const targets = getTargetCasinoState();
-    expect(targets.length).toBe(5);
+    expect(targets.length).toBe(15);
   });
 
-  it("all targets have 0 payment methods", () => {
+  it("enriched targets have payment methods after enrichment", () => {
     const targets = getTargetCasinoState();
-    for (const t of targets) {
-      expect(t!.paymentCount).toBe(0);
+    const enriched = targets.filter((t) => ENRICHED_IDS.includes(t!.id));
+    expect(enriched.length).toBe(10);
+    for (const t of enriched) {
+      expect(t!.paymentCount).toBeGreaterThan(0);
     }
   });
 
@@ -134,16 +149,25 @@ describe("Payment Enrichment — Data Integrity", () => {
     expect(casinos.length).toBe(138);
   });
 
-  it("766 payment records remain intact", () => {
+  it("payment records count is at least 766 (pre-enrichment baseline)", () => {
     const casinos = getFullDatasetCasinos();
-    const totalPayments = casinos.reduce((sum: number, c: any) => sum + c.paymentMethods.length, 0);
+    const totalPayments = casinos.reduce((sum: number, c) => sum + c.paymentMethods.length, 0);
     expect(totalPayments).toBeGreaterThanOrEqual(766);
   });
 
-  it("no casino was modified by enrichment tooling", () => {
+  it("enrichment only added payment methods, no other fields modified", () => {
+    const ENRICHED_IDS = [
+      "germany-bet365", "germany-leovegas", "germany-wildz",
+      "germany-bet-at-home", "germany-daznbet", "germany-vbet",
+      "germany-tiptorro", "germany-interwetten", "germany-loewen-play",
+      "germany-jokerstar",
+    ];
     const targets = getTargetCasinoState();
-    for (const t of targets) {
-      expect(t!.paymentCount).toBe(0);
+    const enriched = targets.filter((t) => ENRICHED_IDS.includes(t!.id));
+    for (const t of enriched) {
+      expect(t!.paymentCount).toBeGreaterThan(0);
+      expect(t!.GEOs).toBe("DE");
+      expect(t!.licenses).toBe("GGL");
     }
   });
 });

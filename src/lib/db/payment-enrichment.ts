@@ -38,7 +38,7 @@ export type PaymentEnrichmentEntry = {
   casinoSlug: string;
   paymentMethodName: string;
   sourceUrl: string;
-  sourceType: "official_operator_website" | "official_payment_page" | "official_terms" | "manual_verified";
+  sourceType: "official_operator_website" | "official_payment_page" | "official_terms" | "official_help_page" | "official_homepage" | "manual_verified";
   sourceName: string;
   verificationDate: string;
   notes?: string;
@@ -169,7 +169,7 @@ function insertRelationship(
   db: ReturnType<typeof getDb>,
   entry: PaymentEnrichmentEntry,
   sourceId: string,
-  batchId: string,
+  _batchId: string,
 ): { action: "created" | "skipped" | "conflict" | "error"; reason?: string } {
   const now = new Date().toISOString();
 
@@ -223,15 +223,16 @@ function insertRelationship(
 export function runEnrichment(
   entries: PaymentEnrichmentEntry[],
   mode: EnrichmentMode = "dry-run",
+  batchId?: string,
 ): EnrichmentResult {
   const db = getDb();
   const now = new Date().toISOString();
 
   // Create import batch
-  const batchId = `30C-G-DE-PAYMENTS-01`;
+  const effectiveBatchId = batchId || `30C-G-DE-PAYMENTS-01`;
   db.insert(importBatches).values({
-    id: batchId,
-    source: "30C-G-DE-PAYMENTS-01",
+    id: effectiveBatchId,
+    source: effectiveBatchId,
     sourceType: "official_operator_website",
     status: mode === "dry-run" ? "pending" : "running",
     isDryRun: mode === "dry-run",
@@ -251,7 +252,7 @@ export function runEnrichment(
   }).run();
 
   const result: EnrichmentResult = {
-    batchId,
+    batchId: effectiveBatchId,
     mode,
     processed: 0,
     created: 0,
@@ -316,7 +317,7 @@ export function runEnrichment(
       }
     } else {
       // Live: actually insert
-      const insertResult = insertRelationship(db, entry, sourceId, batchId);
+      const insertResult = insertRelationship(db, entry, sourceId, effectiveBatchId);
       if (insertResult.action === "created") result.created++;
       else if (insertResult.action === "skipped") result.skipped++;
       else if (insertResult.action === "conflict") result.conflicts++;
@@ -343,7 +344,7 @@ export function runEnrichment(
       conflictsDetected: result.conflicts,
       completedAt: new Date().toISOString(),
     })
-    .where(eq(importBatches.id, batchId))
+    .where(eq(importBatches.id, effectiveBatchId))
     .run();
 
   return result;
@@ -357,9 +358,19 @@ export function getTargetCasinoState() {
   const targets = [
     "germany-bet365",
     "germany-leovegas",
+    "germany-wildz",
+    "germany-bet-at-home",
+    "germany-daznbet",
+    "germany-vbet",
+    "germany-tiptorro",
+    "germany-interwetten",
     "germany-pokerstars",
     "germany-ladbrokes",
-    "germany-interwetten",
+    "germany-loewen-play",
+    "germany-jokerstar",
+    "germany-admiralbet",
+    "germany-sportingbet",
+    "germany-tipwin",
   ];
 
   return targets.map((id) => {
