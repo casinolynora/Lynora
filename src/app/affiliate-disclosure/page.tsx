@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { CONTACT_EMAILS } from "@/lib/config/site";
 
@@ -31,7 +32,7 @@ export default function AffiliateDisclosurePage() {
             </section>
             <section>
               <h2 className="text-xl font-bold mb-3 text-foreground">How This Affects You</h2>
-              <p>Affiliate relationships do not affect our data, scoring, or matching algorithm. Our recommendations are based entirely on structured, verified casino data.</p>
+              <p>Affiliate relationships do not affect our data, scoring, or matching algorithm. Our recommendations are based entirely on structured, verified casino data. Learn more about how we work on our <Link href="/about" className="text-brand-700 font-medium hover:underline">about page</Link>.</p>
             </section>
             <section>
               <h2 className="text-xl font-bold mb-3 text-foreground">Current Status</h2>
@@ -39,7 +40,7 @@ export default function AffiliateDisclosurePage() {
             </section>
             <section>
               <h2 className="text-xl font-bold mb-3 text-foreground">Matching Methodology</h2>
-              <p>Our scoring algorithm uses weighted data points (country availability, payment methods, games, deposit limits, etc.) — never affiliate commission rates.</p>
+              <p>Our scoring algorithm uses weighted data points (country availability, payment methods, games, deposit limits, etc.) — never affiliate commission rates. See our full <Link href="/methodology" className="text-brand-700 font-medium hover:underline">methodology</Link> for details.</p>
             </section>
             <section>
               <h2 className="text-xl font-bold mb-3 text-foreground">Contact</h2>

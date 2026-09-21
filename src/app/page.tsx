@@ -278,6 +278,9 @@ export default function HomePage() {
             <Link href="/compare" className="text-sm font-semibold text-brand-700 hover:text-brand-600 transition-colors">
               Compare casinos →
             </Link>
+            <Link href="/payments" className="text-sm font-semibold text-brand-700 hover:text-brand-600 transition-colors">
+              Payment methods →
+            </Link>
             <Link href="/methodology" className="text-sm font-semibold text-brand-700 hover:text-brand-600 transition-colors">
               How we review →
             </Link>

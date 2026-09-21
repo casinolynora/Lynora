@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { CONTACT_EMAILS } from "@/lib/config/site";
 
@@ -112,12 +113,12 @@ export default function ContactPage() {
 
             <p className="text-sm text-muted">
               If you or someone you know is struggling with gambling, visit our{" "}
-              <a
+              <Link
                 href="/responsible-gambling"
                 className="text-brand-700 font-medium hover:underline"
               >
                 responsible gambling page
-              </a>{" "}
+              </Link>{" "}
               for support resources and self-exclusion options.
             </p>
           </div>

@@ -101,12 +101,12 @@ export default function AboutPage() {
                     Our matching engine uses configurable weights and a
                     transparent scoring formula. The full methodology is
                     published on our{" "}
-                    <a
+                    <Link
                       href="/methodology"
                       className="text-brand-700 font-medium hover:underline"
                     >
                       methodology page
-                    </a>
+                    </Link>
                     .
                   </span>
                 </li>
@@ -154,12 +154,12 @@ export default function AboutPage() {
                 rank higher because it pays a commission. Our scoring is based
                 entirely on structured casino data and your stated
                 preferences. Full details are available on our{" "}
-                <a
+                <Link
                   href="/affiliate-disclosure"
                   className="text-brand-700 font-medium hover:underline"
                 >
                   affiliate disclosure page
-                </a>
+                </Link>
                 .
               </p>
             </section>
@@ -212,26 +212,26 @@ export default function AboutPage() {
                   {CONTACT_EMAILS.general}
                 </a>
                 . You can also read more about our{" "}
-                <a
+                <Link
                   href="/methodology"
                   className="text-brand-700 font-medium hover:underline"
                 >
                   methodology
-                </a>
+                </Link>
                 ,{" "}
-                <a
+                <Link
                   href="/responsible-gambling"
                   className="text-brand-700 font-medium hover:underline"
                 >
                   responsible gambling resources
-                </a>
+                </Link>
                 , and{" "}
-                <a
+                <Link
                   href="/affiliate-disclosure"
                   className="text-brand-700 font-medium hover:underline"
                 >
                   affiliate disclosure
-                </a>
+                </Link>
                 .
               </p>
             </section>

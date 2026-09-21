@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { SITE_NAME } from "@/lib/config/site";
 
@@ -168,6 +169,16 @@ export default function ResponsibleGamblingPage() {
             goal is to help you make informed decisions and enjoy gambling as a safe form of
             entertainment. The information on this page is not a substitute for professional advice.
           </p>
+
+          <div className="card-static p-5 mb-10">
+            <h2 className="font-bold text-sm mb-2">Looking for practical tips?</h2>
+            <p className="text-sm text-muted mb-3">
+              We have a dedicated guide with actionable advice for staying in control while playing.
+            </p>
+            <Link href="/guides/responsible-gambling-tips" className="text-sm font-semibold text-brand-700 hover:text-brand-600 transition-colors">
+              Read our Responsible Gambling Tips guide →
+            </Link>
+          </div>
 
           <div className="space-y-12">
             {/* Key Principles */}

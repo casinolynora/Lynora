@@ -61,6 +61,17 @@ export default function MethodologyPage() {
                 Our matching engine uses a weighted scoring algorithm that considers multiple
                 factors to determine how well a casino fits your preferences.
               </p>
+              <p className="text-muted leading-relaxed mb-4">
+                You can see the algorithm in action by using our{" "}
+                <Link href="/ai-casino-match" className="text-brand-700 font-medium hover:underline">
+                  AI Matchmaker
+                </Link>
+                , or compare casinos side-by-side with our{" "}
+                <Link href="/compare" className="text-brand-700 font-medium hover:underline">
+                  comparison tool
+                </Link>
+                .
+              </p>
               <div className="card-static p-6">
                 <div className="space-y-3">
                   {[
@@ -88,7 +99,15 @@ export default function MethodologyPage() {
               <p className="text-muted leading-relaxed">
                 Every data point in our system includes provenance information: the source,
                 verification date, and method. We verify against official license registries,
-                casino websites, and regulatory bodies.
+                casino websites, and regulatory bodies. Learn more about how licensing works in our{" "}
+                <Link href="/guides/casino-licensing-guide" className="text-brand-700 font-medium hover:underline">
+                  casino licensing guide
+                </Link>
+                , or browse all verified casinos on our{" "}
+                <Link href="/casinos" className="text-brand-700 font-medium hover:underline">
+                  casinos page
+                </Link>
+                .
               </p>
             </section>
 
