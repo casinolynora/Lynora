@@ -1,7 +1,7 @@
 /**
  * Server-only payment entity data access.
  *
- * Uses the SQLite database provider for full production dataset (138 casinos, 766 payment records).
+ * Uses the SQLite database provider for full production dataset (138 casinos, 829+ payment records).
  * Must NEVER be imported by client components.
  */
 import path from "path";
