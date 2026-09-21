@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/Button";
 import { casinoDb } from "@/lib/data/accessor";
 import { SITE_URL } from "@/lib/config/site";
 import { getFullDatasetCasinos } from "@/lib/seo/payment-data";
+import { buildPaymentEntityMap, getGeoToPayments } from "@/lib/seo/payment-entities";
+import { selectCasinosForGeoComparison, buildComparisonUrl } from "@/lib/compare";
 
 const SUPPORTED_GEOS = ["de", "fr", "nl", "be", "at", "it", "ch", "ie", "gb", "se", "fi", "no"] as const;
 type Geo = typeof SUPPORTED_GEOS[number];
@@ -646,14 +648,31 @@ export default async function GeoPage({ params }: Props) {
                 {config.paymentLandscape}
               </p>
               <div className="flex flex-wrap gap-2 mb-4">
-                {config.popularPayments.map((pm) => (
-                  <span
-                    key={pm}
-                    className="text-xs bg-surface-elevated text-muted px-3 py-1 rounded-full border border-border"
-                  >
-                    {pm}
-                  </span>
-                ))}
+                {(() => {
+                  const allCasinos = getFullDatasetCasinos();
+                  const entityMap = buildPaymentEntityMap(allCasinos);
+                  const geoPayments = getGeoToPayments(entityMap, geoUpper, allCasinos);
+                  const topPayments = geoPayments.slice(0, 6);
+                  if (topPayments.length === 0) {
+                    return config.popularPayments.map((pm) => (
+                      <span
+                        key={pm}
+                        className="text-xs bg-surface-elevated text-muted px-3 py-1 rounded-full border border-border"
+                      >
+                        {pm}
+                      </span>
+                    ));
+                  }
+                  return topPayments.map((pm) => (
+                    <Link
+                      key={pm.slug}
+                      href={`/payments/${pm.slug}`}
+                      className="text-xs bg-surface-elevated text-muted px-3 py-1 rounded-full border border-border hover:border-primary/30 transition-colors"
+                    >
+                      {pm.canonicalName}
+                    </Link>
+                  ));
+                })()}
               </div>
               <Link href="/payments" className="text-sm text-primary hover:underline">
                 View all payment methods &rarr;
@@ -694,18 +713,29 @@ export default async function GeoPage({ params }: Props) {
             </section>
 
             {/* Compare CTA */}
-            <section>
-              <div className="bg-surface-elevated rounded-2xl border border-border p-8 text-center">
-                <h2 className="text-2xl font-bold mb-3">Compare Casinos in {config.name}</h2>
-                <p className="text-muted leading-relaxed mb-6">
-                  Use our comparison tool to find the best {config.name}-licensed casinos side by side.
-                  Compare bonuses, payment methods, game selections, and more.
-                </p>
-                <Button href="/compare" variant="primary">
-                  Compare Casinos
-                </Button>
-              </div>
-            </section>
+            {(() => {
+              const allCasinos = getFullDatasetCasinos();
+              const selectedSlugs = selectCasinosForGeoComparison(geoUpper, allCasinos);
+              const compareUrl = selectedSlugs.length >= 2
+                ? buildComparisonUrl(selectedSlugs)
+                : "/compare";
+              return (
+                <section>
+                  <div className="bg-surface-elevated rounded-2xl border border-border p-8 text-center">
+                    <h2 className="text-2xl font-bold mb-3">Compare Casinos in {config.name}</h2>
+                    <p className="text-muted leading-relaxed mb-6">
+                      {selectedSlugs.length >= 2
+                        ? `Compare ${selectedSlugs.length} verified ${config.name} casinos side by side.`
+                        : `Use our comparison tool to find the best ${config.name}-licensed casinos side by side.`}
+                      {" "}Compare bonuses, payment methods, game selections, and more.
+                    </p>
+                    <Button href={compareUrl} variant="primary">
+                      {selectedSlugs.length >= 2 ? "Compare Selected Casinos" : "Compare Casinos"}
+                    </Button>
+                  </div>
+                </section>
+              );
+            })()}
 
             {/* Methodology Link */}
             <section>

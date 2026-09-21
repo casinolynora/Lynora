@@ -644,3 +644,57 @@ export function buildComparisonUrl(slugs: string[]): string {
   const sorted = [...slugs].sort();
   return `/compare?casinos=${sorted.join(",")}`;
 }
+
+// ─── GEO Pre-Selection ──────────────────────────────────────────────────
+
+/**
+ * Select casinos for GEO comparison pre-selection.
+ *
+ * Algorithm:
+ * 1. Filter to verified/active casinos available in the given GEO
+ * 2. Sort by minDeposit ASC (lower deposit = more accessible for users)
+ * 3. Tie-break by slug ASC (stable, deterministic alphabetical order)
+ * 4. Deduplicate by slug (same casino should not appear twice)
+ * 5. Return top MAX_COMPARECasinos (5) or fewer
+ *
+ * Selection is purely data-driven. No affiliate payout, no B2B tier,
+ * no commercial placement, no paid placement, no editorial manipulation.
+ */
+export function selectCasinosForGeoComparison(
+  geoCode: string,
+  allCasinos: Casino[]
+): string[] {
+  const geoUpper = geoCode.toUpperCase();
+
+  const eligible = allCasinos.filter(
+    (c) =>
+      c.status === "active" &&
+      c.verificationStatus === "verified" &&
+      c.countries.includes(geoUpper)
+  );
+
+  if (eligible.length === 0) return [];
+
+  const sorted = eligible.sort((a, b) => {
+    // Primary: minDeposit ASC (lower is better for users)
+    const depositA = a.minDeposit ?? Infinity;
+    const depositB = b.minDeposit ?? Infinity;
+    if (depositA !== depositB) return depositA - depositB;
+
+    // Tie-breaker: slug ASC (stable, deterministic)
+    return a.slug.localeCompare(b.slug);
+  });
+
+  // Deduplicate by slug (same casino should not appear twice)
+  const seen = new Set<string>();
+  const unique: string[] = [];
+  for (const c of sorted) {
+    if (!seen.has(c.slug)) {
+      seen.add(c.slug);
+      unique.push(c.slug);
+    }
+    if (unique.length >= MAX_COMPARECasinos) break;
+  }
+
+  return unique;
+}

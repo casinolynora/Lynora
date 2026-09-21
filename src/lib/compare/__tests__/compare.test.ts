@@ -13,6 +13,7 @@ import {
   calculatePaymentOverlap,
   validateComparisonSlugs,
   buildComparisonUrl,
+  selectCasinosForGeoComparison,
   COMPARISON_CATEGORIES,
   MAX_COMPARECasinos,
 } from "../index";
@@ -591,7 +592,7 @@ describe("Comparison Engine Integration", () => {
     expect(diffs.length).toBeGreaterThan(0);
 
     // Calculate payment overlap
-    const overlap = calculatePaymentOverlap(sorted);
+     const overlap = calculatePaymentOverlap(sorted);
     expect(overlap.common.length).toBeGreaterThan(0);
 
     // Validate all categories produce formatted output
@@ -607,5 +608,120 @@ describe("Comparison Engine Integration", () => {
         }
       }
     }
+  });
+});
+
+// ─── selectCasinosForGeoComparison ──────────────────────────────────────
+
+describe("selectCasinosForGeoComparison", () => {
+  const makeGeoCasino = (overrides: Partial<Casino> & { slug: string; name: string }): Casino =>
+    makeCasino({
+      countries: ["DE"],
+      ...overrides,
+    });
+
+  const deCasinos: Casino[] = [
+    makeGeoCasino({ id: "de-1", slug: "casino-alpha", name: "Casino Alpha", minDeposit: 20 }),
+    makeGeoCasino({ id: "de-2", slug: "casino-beta", name: "Casino Beta", minDeposit: 10 }),
+    makeGeoCasino({ id: "de-3", slug: "casino-gamma", name: "Casino Gamma", minDeposit: 10 }),
+    makeGeoCasino({ id: "de-4", slug: "casino-delta", name: "Casino Delta", minDeposit: 5 }),
+    makeGeoCasino({ id: "de-5", slug: "casino-epsilon", name: "Casino Epsilon", minDeposit: 50 }),
+    makeGeoCasino({ id: "de-6", slug: "casino-zeta", name: "Casino Zeta", minDeposit: 15 }),
+  ];
+
+  it("selects exactly 5 casinos when GEO has 5+ suitable casinos", () => {
+    const result = selectCasinosForGeoComparison("DE", deCasinos);
+    expect(result).toHaveLength(5);
+  });
+
+  it("selects all valid casinos when GEO has fewer than 5", () => {
+    const smallGeo = deCasinos.slice(0, 3);
+    const result = selectCasinosForGeoComparison("DE", smallGeo);
+    expect(result).toHaveLength(3);
+  });
+
+  it("returns empty array when GEO has 0 casinos", () => {
+    const result = selectCasinosForGeoComparison("XX", deCasinos);
+    expect(result).toEqual([]);
+  });
+
+  it("only includes active/verified casinos", () => {
+    const mixedCasinos: Casino[] = [
+      makeGeoCasino({ id: "active-1", slug: "active-casino", name: "Active Casino", status: "active", verificationStatus: "verified" }),
+      makeGeoCasino({ id: "inactive-1", slug: "inactive-casino", name: "Inactive Casino", status: "inactive", verificationStatus: "verified" }),
+      makeGeoCasino({ id: "draft-1", slug: "draft-casino", name: "Draft Casino", status: "active", verificationStatus: "draft" }),
+    ];
+    const result = selectCasinosForGeoComparison("DE", mixedCasinos);
+    expect(result).toEqual(["active-casino"]);
+  });
+
+  it("selection is deterministic (same input = same output)", () => {
+    const result1 = selectCasinosForGeoComparison("DE", deCasinos);
+    const result2 = selectCasinosForGeoComparison("DE", deCasinos);
+    expect(result1).toEqual(result2);
+  });
+
+  it("removes duplicate slugs", () => {
+    const dupeCasinos: Casino[] = [
+      makeGeoCasino({ id: "d1", slug: "same-slug", name: "Same Slug 1", minDeposit: 10 }),
+      makeGeoCasino({ id: "d2", slug: "same-slug", name: "Same Slug 2", minDeposit: 20 }),
+      makeGeoCasino({ id: "d3", slug: "different-slug", name: "Different Slug", minDeposit: 15 }),
+    ];
+    const result = selectCasinosForGeoComparison("DE", dupeCasinos);
+    // The function uses slug as final output, so duplicates produce same slug
+    const unique = [...new Set(result)];
+    expect(result).toEqual(unique);
+    expect(unique.length).toBeLessThanOrEqual(result.length);
+  });
+
+  it("sorts by minDeposit ascending, then by slug alphabetically", () => {
+    const result = selectCasinosForGeoComparison("DE", deCasinos);
+    // Expected order: delta(5), beta(10, beta < gamma), gamma(10), zeta(15), alpha(20)
+    expect(result).toEqual([
+      "casino-delta",
+      "casino-beta",
+      "casino-gamma",
+      "casino-zeta",
+      "casino-alpha",
+    ]);
+  });
+
+  it("generates valid comparison URL format", () => {
+    const result = selectCasinosForGeoComparison("DE", deCasinos);
+    const url = buildComparisonUrl(result);
+    expect(url).toMatch(/^\/compare\?casinos=.+$/);
+    expect(url).not.toContain(" ");
+  });
+
+  it("does not select casinos from other GEOs", () => {
+    const nlCasinos: Casino[] = [
+      makeGeoCasino({ id: "nl-1", slug: "nl-casino", name: "NL Casino", countries: ["NL"], minDeposit: 10 }),
+    ];
+    const result = selectCasinosForGeoComparison("DE", nlCasinos);
+    expect(result).toEqual([]);
+  });
+
+  it("handles IT with no verified casino dataset", () => {
+    const itResult = selectCasinosForGeoComparison("IT", deCasinos);
+    expect(itResult).toEqual([]);
+  });
+
+  it("commercial/B2B placement does not influence selection", () => {
+    const commercialCasinos: Casino[] = [
+      makeGeoCasino({ id: "paid-1", slug: "paid-casino", name: "Paid Casino", minDeposit: 100 }),
+      makeGeoCasino({ id: "org-1", slug: "organic-casino", name: "Organic Casino", minDeposit: 10 }),
+    ];
+    const result = selectCasinosForGeoComparison("DE", commercialCasinos);
+    // Organic casino (lower deposit) should be selected first
+    expect(result[0]).toBe("organic-casino");
+  });
+
+  it("treats null minDeposit as Infinity (sorts last)", () => {
+    const nullDepositCasinos: Casino[] = [
+      makeGeoCasino({ id: "null-1", slug: "null-deposit", name: "Null Deposit", minDeposit: null as unknown as number }),
+      makeGeoCasino({ id: "valid-1", slug: "valid-deposit", name: "Valid Deposit", minDeposit: 20 }),
+    ];
+    const result = selectCasinosForGeoComparison("DE", nullDepositCasinos);
+    expect(result[0]).toBe("valid-deposit");
   });
 });
