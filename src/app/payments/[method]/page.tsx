@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Container } from "@/components/ui/Container";
+import { Button } from "@/components/ui/Button";
 import { SITE_URL } from "@/lib/config/site";
 import { getFullDatasetCasinos } from "@/lib/seo/payment-data";
 import {
@@ -11,6 +12,7 @@ import {
   assessPageEligibility,
   type PaymentEntity,
 } from "@/lib/seo/payment-entities";
+import { selectCasinosForPaymentComparison, buildComparisonUrl } from "@/lib/compare";
 
 type Props = {
   params: Promise<{ method: string }>;
@@ -222,6 +224,27 @@ export default async function PaymentDetailPage({ params }: Props) {
               )}
             </section>
           )}
+
+          {/* Compare CTA */}
+          {(() => {
+            const allCasinos = getFullDatasetCasinos();
+            const selectedSlugs = selectCasinosForPaymentComparison(entity.canonicalName, allCasinos);
+            if (selectedSlugs.length < 2) return null;
+            const compareUrl = buildComparisonUrl(selectedSlugs);
+            return (
+              <section className="mb-10">
+                <div className="bg-surface-elevated rounded-2xl border border-border p-8 text-center">
+                  <h2 className="text-2xl font-bold mb-3">Compare Casinos Using {entity.canonicalName}</h2>
+                  <p className="text-muted leading-relaxed mb-6">
+                    Compare {selectedSlugs.length} verified casinos that support {entity.canonicalName} deposits and withdrawals.
+                  </p>
+                  <Button href={compareUrl} variant="primary">
+                    Compare Selected Casinos
+                  </Button>
+                </div>
+              </section>
+            );
+          })()}
 
           {/* How It Works */}
           <section className="mb-10">

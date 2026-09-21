@@ -14,6 +14,7 @@ import {
   validateComparisonSlugs,
   buildComparisonUrl,
   selectCasinosForGeoComparison,
+  selectCasinosForPaymentComparison,
   COMPARISON_CATEGORIES,
   MAX_COMPARECasinos,
 } from "../index";
@@ -723,5 +724,125 @@ describe("selectCasinosForGeoComparison", () => {
     ];
     const result = selectCasinosForGeoComparison("DE", nullDepositCasinos);
     expect(result[0]).toBe("valid-deposit");
+  });
+});
+
+// ─── selectCasinosForPaymentComparison ──────────────────────────────────
+
+describe("selectCasinosForPaymentComparison", () => {
+  const makePaymentCasino = (overrides: Partial<Casino> & { slug: string; name: string }): Casino =>
+    makeCasino({
+      paymentMethods: [{ name: "Visa", type: "card" }],
+      ...overrides,
+    });
+
+  const visaCasinos: Casino[] = [
+    makePaymentCasino({ id: "p-1", slug: "casino-alpha", name: "Casino Alpha", minDeposit: 20 }),
+    makePaymentCasino({ id: "p-2", slug: "casino-beta", name: "Casino Beta", minDeposit: 10 }),
+    makePaymentCasino({ id: "p-3", slug: "casino-gamma", name: "Casino Gamma", minDeposit: 10 }),
+    makePaymentCasino({ id: "p-4", slug: "casino-delta", name: "Casino Delta", minDeposit: 5 }),
+    makePaymentCasino({ id: "p-5", slug: "casino-epsilon", name: "Casino Epsilon", minDeposit: 50 }),
+    makePaymentCasino({ id: "p-6", slug: "casino-zeta", name: "Casino Zeta", minDeposit: 15 }),
+  ];
+
+  it("selects exactly 5 casinos when payment has 5+ eligible casinos", () => {
+    const result = selectCasinosForPaymentComparison("Visa", visaCasinos);
+    expect(result).toHaveLength(5);
+  });
+
+  it("selects all eligible casinos when payment has fewer than 5", () => {
+    const smallPayment = visaCasinos.slice(0, 3);
+    const result = selectCasinosForPaymentComparison("Visa", smallPayment);
+    expect(result).toHaveLength(3);
+  });
+
+  it("returns empty array when payment has 0 eligible casinos", () => {
+    const result = selectCasinosForPaymentComparison("NonExistent", visaCasinos);
+    expect(result).toEqual([]);
+  });
+
+  it("only includes active/verified casinos", () => {
+    const mixedCasinos: Casino[] = [
+      makePaymentCasino({ id: "active-1", slug: "active-casino", name: "Active Casino", status: "active", verificationStatus: "verified" }),
+      makePaymentCasino({ id: "inactive-1", slug: "inactive-casino", name: "Inactive Casino", status: "inactive", verificationStatus: "verified" }),
+      makePaymentCasino({ id: "draft-1", slug: "draft-casino", name: "Draft Casino", status: "active", verificationStatus: "draft" }),
+    ];
+    const result = selectCasinosForPaymentComparison("Visa", mixedCasinos);
+    expect(result).toEqual(["active-casino"]);
+  });
+
+  it("only includes casinos that support the payment method", () => {
+    const mixedPayment: Casino[] = [
+      makePaymentCasino({ id: "v-1", slug: "visa-casino", name: "Visa Casino", paymentMethods: [{ name: "Visa", type: "card" }] }),
+      makePaymentCasino({ id: "m-1", slug: "mastercard-casino", name: "MC Casino", paymentMethods: [{ name: "Mastercard", type: "card" }] }),
+    ];
+    const result = selectCasinosForPaymentComparison("Visa", mixedPayment);
+    expect(result).toEqual(["visa-casino"]);
+  });
+
+  it("selection is deterministic (same input = same output)", () => {
+    const result1 = selectCasinosForPaymentComparison("Visa", visaCasinos);
+    const result2 = selectCasinosForPaymentComparison("Visa", visaCasinos);
+    expect(result1).toEqual(result2);
+  });
+
+  it("removes duplicate slugs", () => {
+    const dupeCasinos: Casino[] = [
+      makePaymentCasino({ id: "d1", slug: "same-slug", name: "Same Slug 1", minDeposit: 10 }),
+      makePaymentCasino({ id: "d2", slug: "same-slug", name: "Same Slug 2", minDeposit: 20 }),
+      makePaymentCasino({ id: "d3", slug: "different-slug", name: "Different Slug", minDeposit: 15 }),
+    ];
+    const result = selectCasinosForPaymentComparison("Visa", dupeCasinos);
+    const unique = [...new Set(result)];
+    expect(result).toEqual(unique);
+  });
+
+  it("sorts by minDeposit ascending, then by slug alphabetically", () => {
+    const result = selectCasinosForPaymentComparison("Visa", visaCasinos);
+    expect(result).toEqual([
+      "casino-delta",
+      "casino-beta",
+      "casino-gamma",
+      "casino-zeta",
+      "casino-alpha",
+    ]);
+  });
+
+  it("generates valid comparison URL format", () => {
+    const result = selectCasinosForPaymentComparison("Visa", visaCasinos);
+    const url = buildComparisonUrl(result);
+    expect(url).toMatch(/^\/compare\?casinos=.+$/);
+    expect(url).not.toContain(" ");
+  });
+
+  it("handles IT with no verified casino dataset", () => {
+    const itResult = selectCasinosForPaymentComparison("PostePay", visaCasinos);
+    expect(itResult).toEqual([]);
+  });
+
+  it("commercial/B2B placement does not influence selection", () => {
+    const commercialCasinos: Casino[] = [
+      makePaymentCasino({ id: "paid-1", slug: "paid-casino", name: "Paid Casino", minDeposit: 100 }),
+      makePaymentCasino({ id: "org-1", slug: "organic-casino", name: "Organic Casino", minDeposit: 10 }),
+    ];
+    const result = selectCasinosForPaymentComparison("Visa", commercialCasinos);
+    expect(result[0]).toBe("organic-casino");
+  });
+
+  it("treats null minDeposit as Infinity (sorts last)", () => {
+    const nullDepositCasinos: Casino[] = [
+      makePaymentCasino({ id: "null-1", slug: "null-deposit", name: "Null Deposit", minDeposit: null as unknown as number }),
+      makePaymentCasino({ id: "valid-1", slug: "valid-deposit", name: "Valid Deposit", minDeposit: 20 }),
+    ];
+    const result = selectCasinosForPaymentComparison("Visa", nullDepositCasinos);
+    expect(result[0]).toBe("valid-deposit");
+  });
+
+  it("does not conflict with GEO pre-selection", () => {
+    const geoResult = selectCasinosForGeoComparison("DE", visaCasinos);
+    const paymentResult = selectCasinosForPaymentComparison("Visa", visaCasinos);
+    // Both should work independently
+    expect(geoResult.length).toBeGreaterThan(0);
+    expect(paymentResult.length).toBeGreaterThan(0);
   });
 });
