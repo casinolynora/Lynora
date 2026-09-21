@@ -8,6 +8,8 @@ import { getGuideBySlug, getAllGuides } from "@/lib/data/guides";
 import { casinoDb } from "@/lib/data/accessor";
 import { getCasinosForGuide } from "@/lib/seo/guide-relevance";
 import { SITE_URL } from "@/lib/config/site";
+import { buildPaymentEntityMap, getGuideToPayments } from "@/lib/seo/payment-entities";
+import { getFullDatasetCasinos } from "@/lib/seo/payment-data";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -179,22 +181,36 @@ export default async function GuidePage({ params }: Props) {
             );
           })()}
 
-          {/* Payment Methods Link */}
-          {slug === "payment-methods-guide" && (
-            <div className="mt-12">
-              <h2 className="text-xl font-bold mb-4">Payment Method Pages</h2>
-              <p className="text-muted text-sm mb-4">
-                Browse detailed pages for individual payment methods, including verified casino availability and GEO coverage.
-              </p>
-              <Link
-                href="/payments"
-                className="inline-block bg-surface-elevated rounded-xl border border-border p-4 hover:border-primary/30 hover:shadow-md transition-all"
-              >
-                <h3 className="font-semibold text-foreground">All Payment Methods</h3>
-                <p className="text-sm text-muted mt-1">Compare deposits, withdrawals, and casino availability.</p>
-              </Link>
-            </div>
-          )}
+          {/* Payment Method Pages */}
+          {(() => {
+            const allCasinos = getFullDatasetCasinos();
+            const entityMap = buildPaymentEntityMap(allCasinos);
+            const guidePayments = getGuideToPayments(entityMap, slug);
+            if (guidePayments.length === 0) return null;
+            return (
+              <div className="mt-12">
+                <h2 className="text-xl font-bold mb-4">Related Payment Methods</h2>
+                <p className="text-muted text-sm mb-4">
+                  Browse detailed pages for individual payment methods, including verified casino availability and GEO coverage.
+                </p>
+                <div className="grid gap-3 sm:grid-cols-2">
+                  {guidePayments.slice(0, 4).map((pm) => (
+                    <Link
+                      key={pm.slug}
+                      href={`/payments/${pm.slug}`}
+                      className="block bg-surface-elevated rounded-xl border border-border p-4 hover:border-primary/30 hover:shadow-md transition-all"
+                    >
+                      <h3 className="font-semibold text-foreground text-sm">{pm.canonicalName}</h3>
+                      <p className="text-xs text-muted mt-1">Deposits, withdrawals &amp; casino availability.</p>
+                    </Link>
+                  ))}
+                </div>
+                <Link href="/payments" className="text-sm text-primary hover:underline mt-4 inline-block">
+                  View all payment methods &rarr;
+                </Link>
+              </div>
+            );
+          })()}
         </div>
       </Container>
     </main>
