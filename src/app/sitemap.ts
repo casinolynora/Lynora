@@ -38,6 +38,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/it`, lastModified: buildDate, changeFrequency: "monthly" as const, priority: 0.5 },
     { url: `${SITE_URL}/ch`, lastModified: buildDate, changeFrequency: "monthly" as const, priority: 0.5 },
     { url: `${SITE_URL}/ie`, lastModified: buildDate, changeFrequency: "weekly" as const, priority: 0.9 },
+    { url: `${SITE_URL}/gb`, lastModified: buildDate, changeFrequency: "weekly" as const, priority: 0.9 },
+    { url: `${SITE_URL}/se`, lastModified: buildDate, changeFrequency: "weekly" as const, priority: 0.9 },
+    { url: `${SITE_URL}/fi`, lastModified: buildDate, changeFrequency: "weekly" as const, priority: 0.9 },
+    { url: `${SITE_URL}/no`, lastModified: buildDate, changeFrequency: "weekly" as const, priority: 0.9 },
     // Germany sub-pages
     { url: `${SITE_URL}/de/casinos`, lastModified: buildDate, changeFrequency: "weekly" as const, priority: 0.8 },
     { url: `${SITE_URL}/de/best-casinos`, lastModified: buildDate, changeFrequency: "weekly" as const, priority: 0.8 },

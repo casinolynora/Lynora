@@ -5,8 +5,9 @@ import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { casinoDb } from "@/lib/data/accessor";
 import { SITE_URL } from "@/lib/config/site";
+import { getFullDatasetCasinos } from "@/lib/seo/payment-data";
 
-const SUPPORTED_GEOS = ["de", "fr", "nl", "be", "at", "it", "ch", "ie"] as const;
+const SUPPORTED_GEOS = ["de", "fr", "nl", "be", "at", "it", "ch", "ie", "gb", "se", "fi", "no"] as const;
 type Geo = typeof SUPPORTED_GEOS[number];
 
 const geoConfig: Record<Geo, {
@@ -282,6 +283,138 @@ const geoConfig: Record<Geo, {
       },
     ],
   },
+  gb: {
+    name: "Great Britain",
+    flag: "\u{1F1EC}\u{1F1E7}",
+    language: "en",
+    hasCasinoData: true,
+    regulator: "UKGC",
+    regulatorFull: "United Kingdom Gambling Commission",
+    regulatoryOverview:
+      "Great Britain regulates online gambling through the Gambling Act 2005, enforced by the United Kingdom Gambling Commission (UKGC). Operators must hold a UKGC licence to offer casino games, slots, poker, or sports betting to British players. The framework requires responsible gambling tools, advertising standards, and player protection measures including self-exclusion via GamStop.",
+    paymentLandscape:
+      "British players use a wide range of payment methods. Visa and Mastercard are widely accepted. PayPal, Skrill, Neteller, and Paysafecard are popular e-wallet options. Apple Pay is growing in popularity. Bank transfers and Klarna are also available at many operators.",
+    popularPayments: ["Visa", "Mastercard", "PayPal", "Skrill", "Paysafecard"],
+    currency: "GBP",
+    relevantGuides: [
+      { slug: "payment-methods-guide", label: "Payment Methods Guide" },
+      { slug: "casino-licensing-guide", label: "Licensing Guide" },
+      { slug: "responsible-gambling-tips", label: "Responsible Gambling" },
+    ],
+    faqItems: [
+      {
+        question: "Is online gambling legal in Great Britain?",
+        answer: "Yes. Online casino games, slots, poker, and sports betting are legal in Great Britain for operators holding a UKGC licence. Players must be at least 18 years old.",
+      },
+      {
+        question: "What is the UKGC?",
+        answer: "The United Kingdom Gambling Commission (UKGC) is the regulatory body that oversees all gambling activities in Great Britain, including online casinos. It issues licences and enforces player protection standards.",
+      },
+      {
+        question: "What is GamStop?",
+        answer: "GamStop is a free self-exclusion scheme for British players. Once registered, you are blocked from all UKGC-licensed online gambling operators for a period of your choice.",
+      },
+    ],
+  },
+  se: {
+    name: "Sweden",
+    flag: "\u{1F1F8}\u{1F1EA}",
+    language: "sv",
+    hasCasinoData: true,
+    regulator: "Spelinspektionen",
+    regulatorFull: "Swedish Gambling Authority (Spelinspektionen)",
+    regulatoryOverview:
+      "Sweden regulates online gambling through the Gambling Act (Spellagen), enforced by the Swedish Gambling Authority (Spelinspektionen). Operators must hold a Swedish licence to offer casino games, slots, or sports betting to Swedish players. The framework includes deposit limits, bonus restrictions (one welcome bonus per licence holder), and mandatory self-exclusion via Spelpaus.",
+    paymentLandscape:
+      "Swedish players commonly use Trustly for instant bank transfers, which is widely integrated at licensed operators. Visa, Mastercard, and e-wallets like Skrill and PayPal are also available. Klarna is popular for larger transactions. Paysafecard and Apple Pay are used by some players.",
+    popularPayments: ["Trustly", "Visa", "Mastercard", "Skrill", "PayPal"],
+    currency: "SEK",
+    relevantGuides: [
+      { slug: "payment-methods-guide", label: "Payment Methods Guide" },
+      { slug: "casino-licensing-guide", label: "Licensing Guide" },
+      { slug: "responsible-gambling-tips", label: "Responsible Gambling" },
+    ],
+    faqItems: [
+      {
+        question: "Is online gambling legal in Sweden?",
+        answer: "Yes. Online gambling has been regulated in Sweden since January 2019 under the Gambling Act. Operators must hold a Swedish licence from Spelinspektionen to offer casino games to Swedish players.",
+      },
+      {
+        question: "What is Spelpaus?",
+        answer: "Spelpaus is the Swedish national self-exclusion register. Players who register are blocked from all licensed gambling operators in Sweden for a period of 1,  3, or 6 months, or permanently.",
+      },
+      {
+        question: "Are there bonus restrictions in Sweden?",
+        answer: "Yes. Swedish gambling regulations limit operators to offering only one bonus per licence holder — typically a welcome bonus. Reload bonuses and free spins offers are restricted under current rules.",
+      },
+    ],
+  },
+  fi: {
+    name: "Finland",
+    flag: "\u{1F1EB}\u{1F1EE}",
+    language: "fi",
+    hasCasinoData: true,
+    regulator: "POLIISI",
+    regulatorFull: "National Police Board (Poliisi)",
+    regulatoryOverview:
+      "Finland operates a monopoly system for gambling through Veikkaus, the state-owned operator. The National Police Board (Poliisi) oversees enforcement. While the monopoly model is in place, many Finnish players access international licensed operators. The Finnish government has been reviewing its gambling framework for potential reforms.",
+    paymentLandscape:
+      "Finnish players use a mix of international and local payment methods. Trustly bank transfers are popular. Visa, Mastercard, and e-wallets like Skrill, Neteller, and PayPal are widely available. Paysafecard and Klarna are also commonly used. Apple Pay adoption is growing.",
+    popularPayments: ["Trustly", "Visa", "Mastercard", "Skrill", "PayPal"],
+    currency: "EUR",
+    relevantGuides: [
+      { slug: "payment-methods-guide", label: "Payment Methods Guide" },
+      { slug: "casino-licensing-guide", label: "Licensing Guide" },
+      { slug: "responsible-gambling-tips", label: "Responsible Gambling" },
+    ],
+    faqItems: [
+      {
+        question: "Is online gambling legal in Finland?",
+        answer: "Finland operates a state monopoly on gambling through Veikkaus. While many Finnish players access international operators, the legal framework is based on the monopoly model. Reforms are being considered.",
+      },
+      {
+        question: "What is Veikkaus?",
+        answer: "Veikkaus is the state-owned gambling operator in Finland. It holds the exclusive right to offer casino games, lottery, and sports betting within Finland.",
+      },
+      {
+        question: "Can Finnish players use international online casinos?",
+        answer: "Finnish players can access international licensed operators, though the Finnish monopoly framework means these operators are not licensed within Finland. Players should ensure any operator they use holds a valid international licence.",
+      },
+    ],
+  },
+  no: {
+    name: "Norway",
+    flag: "\u{1F1F3}\u{1F1F4}",
+    language: "no",
+    hasCasinoData: true,
+    regulator: "Lotteritilsynet",
+    regulatorFull: "Norwegian Lottery Authority (Lotteritilsynet)",
+    regulatoryOverview:
+      "Norway operates a strict monopoly system for gambling through Norsk Tipping and Norsk Rikstoto. The Norwegian Lottery Authority (Lotteritilsynet) enforces the Gambling Act. Unlicensed foreign operators are blocked by payment service providers under the Payment Blocking Regulation. Norwegian players accessing unlicensed sites face potential payment restrictions.",
+    paymentLandscape:
+      "Norwegian players primarily use Visa and Mastercard, though some banks restrict gambling transactions. Trustly is available at some operators. E-wallets like Skrill, Neteller, and PayPal are commonly used. Paysafecard and Klarna provide additional options. Apple Pay is growing in popularity.",
+    popularPayments: ["Visa", "Mastercard", "Skrill", "PayPal", "Paysafecard"],
+    currency: "NOK",
+    relevantGuides: [
+      { slug: "payment-methods-guide", label: "Payment Methods Guide" },
+      { slug: "casino-licensing-guide", label: "Licensing Guide" },
+      { slug: "responsible-gambling-tips", label: "Responsible Gambling" },
+    ],
+    faqItems: [
+      {
+        question: "Is online gambling legal in Norway?",
+        answer: "Norway operates a state monopoly on gambling through Norsk Tipping and Norsk Rikstoto. Online casino games from unlicensed foreign operators are restricted under Norwegian law.",
+      },
+      {
+        question: "What is Norsk Tipping?",
+        answer: "Norsk Tipping is the state-owned gambling company in Norway, offering lottery, sports betting, and casino games. It is the only legal operator for most forms of gambling in Norway.",
+      },
+      {
+        question: "Can Norwegian players use international online casinos?",
+        answer: "Norwegian players can technically access international operators, but payment blocking regulations mean many banks and payment providers are required to block transactions to unlicensed gambling sites.",
+      },
+    ],
+  },
 };
 
 type Props = {
@@ -324,9 +457,24 @@ export default async function GeoPage({ params }: Props) {
 
   if (!config) notFound();
 
-  const casinos = config.hasCasinoData
-    ? casinoDb.getCasinosByGeo(geo.toUpperCase())
-    : [];
+  const geoUpper = geo.toUpperCase();
+
+  // Use composite provider for GEOs with in-memory data (DE, NL, BE),
+  // fall back to full SQLite dataset for other GEOs
+  let casinos = config.hasCasinoData ? casinoDb.getCasinosByGeo(geoUpper) : [];
+  if (config.hasCasinoData && casinos.length === 0) {
+    try {
+      const allCasinos = getFullDatasetCasinos();
+      casinos = allCasinos.filter(
+        (c) =>
+          c.status === "active" &&
+          c.verificationStatus === "verified" &&
+          c.countries.includes(geoUpper)
+      );
+    } catch {
+      // SQLite not available — show empty state
+    }
+  }
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",

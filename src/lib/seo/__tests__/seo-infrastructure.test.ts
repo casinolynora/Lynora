@@ -164,7 +164,7 @@ describe("sitemap", () => {
 });
 
 describe("GEO Page — Enhanced Structure", () => {
-  const SUPPORTED_GEOS = ["de", "fr", "nl", "be", "at", "it", "ch", "ie"] as const;
+  const SUPPORTED_GEOS = ["de", "fr", "nl", "be", "at", "it", "ch", "ie", "gb", "se", "fi", "no"] as const;
 
   it("all GEO pages have required metadata fields", async () => {
     for (const geo of SUPPORTED_GEOS) {
