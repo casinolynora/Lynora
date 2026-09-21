@@ -7,12 +7,16 @@ import { getAllGuides } from "@/lib/data/guides";
  * - "online-casino-basics": always relevant (general onboarding guide)
  * - "payment-methods-guide": relevant if casino has payment methods
  * - "casino-bonuses-explained": relevant if casino has bonuses
+ * - "casino-licensing-guide": relevant if casino has licenses
+ * - "responsible-gambling-tips": always relevant (responsible gambling)
+ * - "understanding-wagering-requirements": relevant if casino has bonuses
  *
- * Returns max 2 most relevant guides to avoid link spam.
+ * Returns max 3 most relevant guides to avoid link spam.
  */
 export function getRelevantGuides(casino: {
   paymentMethods: Array<{ name: string }>;
   bonuses: Array<{ type: string }>;
+  licenses: Array<{ issuer: string }>;
 }): Array<{ title: string; slug: string; description: string }> {
   const allGuides = getAllGuides();
   const relevant: Array<{ title: string; slug: string; description: string; priority: number }> = [];
@@ -37,6 +41,22 @@ export function getRelevantGuides(casino: {
           priority = 2;
         }
         break;
+      case "casino-licensing-guide":
+        // Relevant if casino has licenses
+        if (casino.licenses.length > 0) {
+          priority = 2;
+        }
+        break;
+      case "responsible-gambling-tips":
+        // Always relevant — responsible gambling is universally important
+        priority = 1;
+        break;
+      case "understanding-wagering-requirements":
+        // Relevant if casino has bonuses (wagering context)
+        if (casino.bonuses.length > 0) {
+          priority = 1;
+        }
+        break;
     }
 
     if (priority > 0) {
@@ -52,7 +72,7 @@ export function getRelevantGuides(casino: {
   // Sort by priority (higher = more relevant), then by slug for determinism
   return relevant
     .sort((a, b) => b.priority - a.priority || a.slug.localeCompare(b.slug))
-    .slice(0, 2)
+    .slice(0, 3)
     .map(({ title, slug, description }) => ({ title, slug, description }));
 }
 

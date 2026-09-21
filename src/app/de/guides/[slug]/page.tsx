@@ -5,6 +5,8 @@ import { Container } from "@/components/ui/Container";
 import { Badge } from "@/components/ui/Badge";
 import { FAQSection } from "@/components/casino/FAQSection";
 import { getGuideBySlug, getAllGuides, getGermanGuideBySlug } from "@/lib/data/guides";
+import { casinoDb } from "@/lib/data/accessor";
+import { getCasinosForGuide } from "@/lib/seo/guide-relevance";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -98,6 +100,56 @@ export default async function GermanyGuidePage({ params }: Props) {
               </div>
             )}
 
+            {/* Relevant Casinos */}
+            {(() => {
+              const allCasinos = casinoDb.getAllCasinos().map(casinoDb.selectCasinoListItem);
+              const relevantCasinos = getCasinosForGuide(slug, allCasinos);
+              if (relevantCasinos.length === 0) return null;
+              return (
+                <div className="mt-12">
+                  <h2 className="text-xl font-bold mb-4">Top-Casinos für diesen Guide</h2>
+                  <div className="space-y-3">
+                    {relevantCasinos.map((casino) => (
+                      <Link
+                        key={casino.slug}
+                        href={`/de/casino-reviews/${casino.slug}`}
+                        className="block bg-surface-elevated rounded-xl border border-border p-5 hover:border-primary/30 hover:shadow-md transition-all"
+                      >
+                        <div className="flex items-center justify-between">
+                          <div>
+                            <h3 className="font-semibold text-foreground">{casino.name}</h3>
+                            {casino.tagline && (
+                              <p className="text-sm text-muted mt-0.5">{casino.tagline}</p>
+                            )}
+                          </div>
+                          {casino.rating !== null && (
+                            <span className="text-sm font-semibold text-primary">{casino.rating}/10</span>
+                          )}
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              );
+            })()}
+
+            {/* Payment Methods Link */}
+            {slug === "payment-methods-guide" && (
+              <div className="mt-12">
+                <h2 className="text-xl font-bold mb-4">Zahlungsmethoden-Seiten</h2>
+                <p className="text-muted text-sm mb-4">
+                  Durchstetailedte Seiten zu einzelnen Zahlungsmethoden mit verifizierter Casino-Verfügbarkeit und GEO-Abdeckung.
+                </p>
+                <Link
+                  href="/payments"
+                  className="inline-block bg-surface-elevated rounded-xl border border-border p-4 hover:border-primary/30 hover:shadow-md transition-all"
+                >
+                  <h3 className="font-semibold text-foreground">Alle Zahlungsmethoden</h3>
+                  <p className="text-sm text-muted mt-1">Einzahlungen, Auszahlungen und Casino-Verfügbarkeit vergleichen.</p>
+                </Link>
+              </div>
+            )}
+
             {/* Internal links */}
             <div className="mt-12 space-y-4">
               <h3 className="text-lg font-bold">Weiterführende Informationen</h3>
@@ -165,6 +217,56 @@ export default async function GermanyGuidePage({ params }: Props) {
           {guide.faq && guide.faq.length > 0 && (
             <div className="mt-12">
               <FAQSection faqs={guide.faq} />
+            </div>
+          )}
+
+          {/* Relevant Casinos */}
+          {(() => {
+            const allCasinos = casinoDb.getAllCasinos().map(casinoDb.selectCasinoListItem);
+            const relevantCasinos = getCasinosForGuide(slug, allCasinos);
+            if (relevantCasinos.length === 0) return null;
+            return (
+              <div className="mt-12">
+                <h2 className="text-xl font-bold mb-4">Top-Casinos für diesen Guide</h2>
+                <div className="space-y-3">
+                  {relevantCasinos.map((casino) => (
+                    <Link
+                      key={casino.slug}
+                      href={`/de/casino-reviews/${casino.slug}`}
+                      className="block bg-surface-elevated rounded-xl border border-border p-5 hover:border-primary/30 hover:shadow-md transition-all"
+                    >
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <h3 className="font-semibold text-foreground">{casino.name}</h3>
+                          {casino.tagline && (
+                            <p className="text-sm text-muted mt-0.5">{casino.tagline}</p>
+                          )}
+                        </div>
+                        {casino.rating !== null && (
+                          <span className="text-sm font-semibold text-primary">{casino.rating}/10</span>
+                        )}
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            );
+          })()}
+
+          {/* Payment Methods Link */}
+          {slug === "payment-methods-guide" && (
+            <div className="mt-12">
+              <h2 className="text-xl font-bold mb-4">Zahlungsmethoden-Seiten</h2>
+              <p className="text-muted text-sm mb-4">
+                Durchstetailedte Seiten zu einzelnen Zahlungsmethoden mit verifizierter Casino-Verfügbarkeit und GEO-Abdeckung.
+              </p>
+              <Link
+                href="/payments"
+                className="inline-block bg-surface-elevated rounded-xl border border-border p-4 hover:border-primary/30 hover:shadow-md transition-all"
+              >
+                <h3 className="font-semibold text-foreground">Alle Zahlungsmethoden</h3>
+                <p className="text-sm text-muted mt-1">Einzahlungen, Auszahlungen und Casino-Verfügbarkeit vergleichen.</p>
+              </Link>
             </div>
           )}
 

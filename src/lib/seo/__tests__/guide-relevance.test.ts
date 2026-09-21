@@ -10,15 +10,18 @@ describe("Guide Relevance", () => {
     bonuses: [
       { type: "welcome" as const, title: "Welcome Bonus", description: "100% up to €100" },
     ],
+    licenses: [
+      { issuer: "MGA", jurisdiction: "Malta" },
+    ],
   };
 
   it("returns relevant guides for a casino with payments and bonuses", () => {
     const guides = getRelevantGuides(baseCasino);
     expect(guides.length).toBeGreaterThan(0);
-    expect(guides.length).toBeLessThanOrEqual(2);
+    expect(guides.length).toBeLessThanOrEqual(3);
 
     const slugs = guides.map(g => g.slug);
-    // Should include payment guide (has payments) and bonus guide (has bonuses)
+    // Should include payment guide (has payments), bonus guide (has bonuses), and licensing guide (has licenses)
     expect(slugs).toContain("payment-methods-guide");
     expect(slugs).toContain("casino-bonuses-explained");
   });
@@ -39,6 +42,7 @@ describe("Guide Relevance", () => {
     const guides = getRelevantGuides({
       paymentMethods: [],
       bonuses: baseCasino.bonuses,
+      licenses: baseCasino.licenses,
     });
     const slugs = guides.map(g => g.slug);
     expect(slugs).not.toContain("payment-methods-guide");
@@ -48,14 +52,15 @@ describe("Guide Relevance", () => {
     const guides = getRelevantGuides({
       paymentMethods: baseCasino.paymentMethods,
       bonuses: [],
+      licenses: baseCasino.licenses,
     });
     const slugs = guides.map(g => g.slug);
     expect(slugs).not.toContain("casino-bonuses-explained");
   });
 
-  it("returns at most 2 guides", () => {
+  it("returns at most 3 guides", () => {
     const guides = getRelevantGuides(baseCasino);
-    expect(guides.length).toBeLessThanOrEqual(2);
+    expect(guides.length).toBeLessThanOrEqual(3);
   });
 
   it("returns guides with required fields", () => {
