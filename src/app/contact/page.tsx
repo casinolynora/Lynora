@@ -38,12 +38,52 @@ const breadcrumbSchema = {
   ],
 };
 
+const contactSchema = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  mainEntity: {
+    "@type": "Organization",
+    name: "BeInCasinos",
+    url: SITE_URL,
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        email: CONTACT_EMAILS.general,
+        contactType: "customer service",
+        description: "General inquiries, feedback, and questions.",
+      },
+      {
+        "@type": "ContactPoint",
+        email: CONTACT_EMAILS.affiliates,
+        contactType: "sales",
+        description: "Partnership proposals and commercial inquiries.",
+      },
+      {
+        "@type": "ContactPoint",
+        email: CONTACT_EMAILS.data,
+        contactType: "technical support",
+        description: "Report incorrect or outdated casino data.",
+      },
+      {
+        "@type": "ContactPoint",
+        email: CONTACT_EMAILS.support,
+        contactType: "customer service",
+        description: "Gambling-related support and responsible gambling resources.",
+      },
+    ],
+  },
+};
+
 export default function ContactPage() {
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }}
       />
       <main id="main-content">
         <Container className="py-12 lg:py-20">

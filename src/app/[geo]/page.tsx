@@ -16,6 +16,7 @@ const geoConfig: Record<Geo, {
   name: string;
   flag: string;
   language: string;
+  isoCode: string;
   hasCasinoData: boolean;
   legalNote?: string;
   regulator: string;
@@ -31,6 +32,7 @@ const geoConfig: Record<Geo, {
     name: "Germany",
     flag: "\u{1F1E9}\u{1F1EA}",
     language: "de",
+    isoCode: "DE",
     hasCasinoData: true,
     regulator: "GGL",
     regulatorFull: "Gemeinsame Gl\u00FCcksspielbeh\u00F6rde der L\u00E4nder",
@@ -63,6 +65,7 @@ const geoConfig: Record<Geo, {
     name: "France",
     flag: "\u{1F1EB}\u{1F1F7}",
     language: "fr",
+    isoCode: "FR",
     hasCasinoData: false,
     legalNote:
       "Online casino games (slots, roulette, blackjack) are not permitted in France under ANJ regulations. Only sports betting, horse racing, and poker are licensed.",
@@ -97,6 +100,7 @@ const geoConfig: Record<Geo, {
     name: "Netherlands",
     flag: "\u{1F1F3}\u{1F1F1}",
     language: "nl",
+    isoCode: "NL",
     hasCasinoData: true,
     regulator: "KSA",
     regulatorFull: "Kansspelautoriteit",
@@ -129,6 +133,7 @@ const geoConfig: Record<Geo, {
     name: "Belgium",
     flag: "\u{1F1E7}\u{1F1EA}",
     language: "nl",
+    isoCode: "BE",
     hasCasinoData: true,
     regulator: "BGC",
     regulatorFull: "Belgian Gaming Commission (Belgische Kansspelcommissie)",
@@ -161,6 +166,7 @@ const geoConfig: Record<Geo, {
     name: "Austria",
     flag: "\u{1F1E6}\u{1F1F9}",
     language: "de",
+    isoCode: "AT",
     hasCasinoData: false,
     regulator: "Ministry of Finance",
     regulatorFull: "Austrian Ministry of Finance (Finanzministerium)",
@@ -193,6 +199,7 @@ const geoConfig: Record<Geo, {
     name: "Italy",
     flag: "\u{1F1EE}\u{1F1F9}",
     language: "it",
+    isoCode: "IT",
     hasCasinoData: false,
     regulator: "ADM",
     regulatorFull: "Agenzia delle Dogane e dei Monopoli",
@@ -225,6 +232,7 @@ const geoConfig: Record<Geo, {
     name: "Switzerland",
     flag: "\u{1F1E8}\u{1F1ED}",
     language: "de",
+    isoCode: "CH",
     hasCasinoData: false,
     regulator: "EJBK/GCF",
     regulatorFull: "Intercantonal Gaming Board (EJBK) / Swiss Gambling Commission (GCF)",
@@ -257,6 +265,7 @@ const geoConfig: Record<Geo, {
     name: "Ireland",
     flag: "\u{1F1EE}\u{1F1EA}",
     language: "en",
+    isoCode: "IE",
     hasCasinoData: false,
     regulator: "GGL (Regulated)",
     regulatorFull: "Gambling Regulatory Authority of Ireland (GRAI)",
@@ -289,6 +298,7 @@ const geoConfig: Record<Geo, {
     name: "Great Britain",
     flag: "\u{1F1EC}\u{1F1E7}",
     language: "en",
+    isoCode: "GB",
     hasCasinoData: true,
     regulator: "UKGC",
     regulatorFull: "United Kingdom Gambling Commission",
@@ -322,6 +332,7 @@ const geoConfig: Record<Geo, {
     name: "Sweden",
     flag: "\u{1F1F8}\u{1F1EA}",
     language: "sv",
+    isoCode: "SE",
     hasCasinoData: true,
     regulator: "Spelinspektionen",
     regulatorFull: "Swedish Gambling Authority (Spelinspektionen)",
@@ -355,6 +366,7 @@ const geoConfig: Record<Geo, {
     name: "Finland",
     flag: "\u{1F1EB}\u{1F1EE}",
     language: "fi",
+    isoCode: "FI",
     hasCasinoData: true,
     regulator: "POLIISI",
     regulatorFull: "National Police Board (Poliisi)",
@@ -388,6 +400,7 @@ const geoConfig: Record<Geo, {
     name: "Norway",
     flag: "\u{1F1F3}\u{1F1F4}",
     language: "no",
+    isoCode: "NO",
     hasCasinoData: true,
     regulator: "Lotteritilsynet",
     regulatorFull: "Norwegian Lottery Authority (Lotteritilsynet)",
@@ -517,6 +530,13 @@ export default async function GeoPage({ params }: Props) {
     })),
   };
 
+  const countrySchema = {
+    "@context": "https://schema.org",
+    "@type": "Country",
+    name: config.name,
+    iso31661Alpha2: config.isoCode,
+  };
+
   return (
     <>
       <script
@@ -526,6 +546,10 @@ export default async function GeoPage({ params }: Props) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(countrySchema) }}
       />
       <Container className="py-12 lg:py-20">
         <div className="max-w-3xl mx-auto">

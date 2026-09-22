@@ -31,6 +31,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: `${guide.title} — BeInCasinos`,
       description: guide.description,
+      type: "article",
+      ...(guide.lastUpdated ? { modifiedTime: guide.lastUpdated } : {}),
     },
     twitter: {
       card: "summary",
@@ -87,7 +89,9 @@ export default async function GuidePage({ params }: Props) {
       "@type": "WebPage",
       "@id": `${SITE_URL}/guides/${slug}`,
     },
-    ...(guide.lastUpdated ? { dateModified: guide.lastUpdated } : {}),
+    ...(guide.lastUpdated
+      ? { datePublished: guide.lastUpdated, dateModified: guide.lastUpdated }
+      : {}),
   };
 
   return (

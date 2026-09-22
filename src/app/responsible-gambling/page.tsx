@@ -148,12 +148,55 @@ const breadcrumbSchema = {
   ],
 };
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What are the key principles for safe online gambling?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Only gamble with money you can afford to lose, set strict time and money limits before playing, never chase losses, treat gambling as entertainment rather than income, and take regular breaks during sessions.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What are the warning signs of problem gambling?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Spending more than intended, borrowing money to gamble, lying about gambling habits, neglecting work or family responsibilities, and experiencing mood swings tied to gambling outcomes are all warning signs.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How can I stay in control while gambling online?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Set deposit limits at licensed casinos, use self-exclusion tools like GAMSTOP if needed, avoid gambling when emotional or under the influence, keep gambling as one of many entertainment options, and track all deposits and withdrawals.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Where can I get help for problem gambling?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Free, confidential support is available from BeGambleAware, GamCare, Gamblers Anonymous, and Gambling Therapy. These organisations offer helplines, live chat, counselling, and support groups worldwide.",
+      },
+    },
+  ],
+};
+
 export default function ResponsibleGamblingPage() {
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <main id="main-content">
         <Container className="py-12 lg:py-20">
