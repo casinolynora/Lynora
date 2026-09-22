@@ -39,37 +39,11 @@ export default function AboutPage() {
     ],
   };
 
-  const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "BeInCasinos",
-    url: SITE_URL,
-    description: "Independent casino reviews and comparisons for European players. Structured, verified data for transparent decision-making.",
-    logo: `${SITE_URL}/favicon.svg`,
-    foundingDate: "2025",
-    contactPoint: [
-      {
-        "@type": "ContactPoint",
-        email: CONTACT_EMAILS.general,
-        contactType: "customer service",
-      },
-      {
-        "@type": "ContactPoint",
-        email: CONTACT_EMAILS.data,
-        contactType: "technical support",
-      },
-    ],
-  };
-
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
       />
       <main id="main-content">
         <Container className="py-12 lg:py-20">

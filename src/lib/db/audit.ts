@@ -137,7 +137,7 @@ function audit(): AuditIssue[] {
 }
 
 function main() {
-  console.log("CasinoLynora Data Quality Audit");
+  console.log("BeInCasinos Data Quality Audit");
   console.log("=".repeat(50));
 
   const allCasinos = [

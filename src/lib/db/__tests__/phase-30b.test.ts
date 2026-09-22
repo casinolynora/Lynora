@@ -360,7 +360,7 @@ describe("Phase 30B — Import Engine", () => {
     const result = await runImport(realDataset, {
       db: db as never,
       dryRun: true,
-      source: "CasinoLynora Editorial Research",
+      source: "BeInCasinos Editorial Research",
       sourceType: "trusted_third_party",
     });
 
@@ -373,7 +373,7 @@ describe("Phase 30B — Import Engine", () => {
     const result = await runImport(realDataset, {
       db: db as never,
       dryRun: false,
-      source: "CasinoLynora Editorial Research",
+      source: "BeInCasinos Editorial Research",
       sourceType: "trusted_third_party",
     });
 
@@ -392,7 +392,7 @@ describe("Phase 30B — Import Engine", () => {
     await runImport(realDataset, {
       db: db as never,
       dryRun: false,
-      source: "CasinoLynora Editorial Research",
+      source: "BeInCasinos Editorial Research",
       sourceType: "trusted_third_party",
     });
 
@@ -400,7 +400,7 @@ describe("Phase 30B — Import Engine", () => {
     const result2 = await runImport(realDataset, {
       db: db as never,
       dryRun: false,
-      source: "CasinoLynora Editorial Research",
+      source: "BeInCasinos Editorial Research",
       sourceType: "trusted_third_party",
     });
 

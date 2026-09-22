@@ -81,7 +81,7 @@ async function seedRealCasinos(db: ReturnType<typeof createTestDb>) {
   await runImport(REAL_DATASET, {
     db: db as never,
     dryRun: false,
-    source: "CasinoLynora Editorial Research",
+    source: "BeInCasinos Editorial Research",
     sourceType: "trusted_third_party",
   });
 }

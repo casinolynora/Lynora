@@ -5,6 +5,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { CookieConsent } from "@/components/layout/CookieConsent";
 import { AnalyticsInit } from "@/components/analytics/AnalyticsInit";
+import { LanguageSync } from "@/components/layout/LanguageSync";
 import { SITE_URL, SITE_NAME } from "@/lib/config/site";
 import { initializeServerDataProvider } from "@/lib/db/server-init";
 
@@ -33,13 +34,13 @@ export const metadata: Metadata = {
     siteName: "BeInCasinos",
     title: "BeInCasinos — Independent Casino Reviews & Comparisons",
     description: "Independent casino reviews and comparisons for European players.",
-    images: ["/og-image.svg"],
+    images: ["/og-image.png"],
   },
   twitter: {
     card: "summary",
     title: "BeInCasinos — Independent Casino Reviews & Comparisons",
     description: "Independent casino reviews and comparisons for European players.",
-    images: ["/og-image.svg"],
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,
@@ -72,13 +73,21 @@ export default async function RootLayout({
               "@type": "Organization",
               name: SITE_NAME,
               url: SITE_URL,
-              description: "Independent casino reviews and comparisons for European players.",
+              description: "Independent casino reviews and comparisons for European players. Structured, verified data for transparent decision-making.",
               logo: `${SITE_URL}/favicon.svg`,
-              contactPoint: {
-                "@type": "ContactPoint",
-                email: "hello@beincasinos.com",
-                contactType: "customer service",
-              },
+              foundingDate: "2025",
+              contactPoint: [
+                {
+                  "@type": "ContactPoint",
+                  email: "hello@beincasinos.com",
+                  contactType: "customer service",
+                },
+                {
+                  "@type": "ContactPoint",
+                  email: "data@beincasinos.com",
+                  contactType: "technical support",
+                },
+              ],
             }),
           }}
         />
@@ -100,6 +109,7 @@ export default async function RootLayout({
         <Footer />
         <CookieConsent />
         <AnalyticsInit />
+        <LanguageSync />
       </body>
     </html>
   );

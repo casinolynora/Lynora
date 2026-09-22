@@ -34,16 +34,16 @@
 | Framework | Next.js 16 (App Router, React 19) |
 | Language | TypeScript (strict mode) |
 | Styling | Tailwind CSS v4 |
-| Tests | 576/576 passing |
+| Tests | 824/824 passing |
 | Build | Clean production build |
 | Site URL | https://beincasinos.com |
 | Brand | BeInCasinos (rebranded from CasinoLynora) |
 | SEO audit score | 82/100 |
-| Schema present | Organization, WebSite (layout); Review, FAQPage (casino-reviews) |
-| Schema missing | BreadcrumbList, Article, CountryPage, ContactPage, FAQPage (responsible-gambling) |
-| OpenGraph coverage | 6/23 static routes |
-| Twitter Card coverage | 5/23 static routes |
-| Existing GEOs | DE, NL, BE, FR, IE (+ placeholder AT, IT, CH) |
+| Schema present | Organization, WebSite (layout); Review, FAQPage (casino-reviews); BreadcrumbList (all interior pages); Article (guides); CountryPage (GEO pages); ContactPage (contact); FAQPage (responsible-gambling); WebApplication (ai-casino-match) |
+| Schema missing | (none — Phase A schema complete) |
+| OpenGraph coverage | Standardized across all routes with og:image.png |
+| Twitter Card coverage | Standardized across all routes |
+| Existing GEOs | DE, FR, NL, BE, AT, IT, CH, IE, GB, SE, FI, NO (12 active) |
 | Existing guides | 5 (basics, payments, bonuses, wagering, licensing) |
 | German translations | Partial (guides + casino profiles) |
 
@@ -58,14 +58,9 @@
 
 ### What Needs Work
 
-- Most interior pages lack BreadcrumbList, Article, and other schema types
-- OpenGraph and Twitter Card metadata are inconsistent across routes
 - No hreflang tags (DE pages exist but no language linking)
-- No dedicated payment method or country-specific internal pages
 - Guide content is limited to 5 articles
-- No internal linking between related casino profiles
-- No structured data for GEO/country pages
-- Sitemap does not include NL, BE, FR casino pages (only DE)
+- No dedicated payment method or country-specific internal pages beyond existing GEO hubs
 
 ---
 

@@ -75,7 +75,7 @@ const SELF_ASSESSMENT_QUESTIONS = [
   "Have you needed to borrow money or sell possessions to keep gambling?",
   "Have you felt guilty or ashamed about the amount of money or time you spend gambling?",
   "Have you tried to cut back or stop gambling, only to find you could not?",
-  "Have you隐瞒 (concealed) the extent of your gambling from people close to you?",
+  "Have you concealed the extent of your gambling from people close to you?",
   "Has gambling caused arguments, stress, or problems in your relationships?",
 ];
 

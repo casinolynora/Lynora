@@ -296,7 +296,7 @@ export const playerReviews = sqliteTable("player_reviews", {
   }).notNull().default("pending"),
 
   // ─── Verification ──────────────────────────────────────────────────────────
-  // "verified" means CasinoLynora completed a defined verification process.
+  // "verified" means BeInCasinos completed a defined verification process.
   // It does NOT mean "this review is guaranteed true."
   verificationStatus: text("verificationStatus", {
     enum: ["unverified", "verified"],

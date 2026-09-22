@@ -322,7 +322,7 @@ function printReport(report: ImportReport): void {
 // ─── Main Import ──────────────────────────────────────────────────────────
 
 function main(): void {
-  console.log("CasinoLynora Database Import (v2 — idempotent)");
+  console.log("BeInCasinos Database Import (v2 — idempotent)");
   console.log("=".repeat(50));
   console.log(`Database path: ${DB_PATH}`);
   console.log("");
