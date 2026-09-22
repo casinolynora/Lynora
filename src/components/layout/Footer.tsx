@@ -25,13 +25,17 @@ const footerSections = [
     title: "Casinos by Country",
     links: [
       { href: "/de", label: "Germany" },
-      { href: "/ie", label: "Ireland" },
+      { href: "/gb", label: "Great Britain" },
       { href: "/nl", label: "Netherlands" },
       { href: "/be", label: "Belgium" },
       { href: "/fr", label: "France" },
       { href: "/at", label: "Austria" },
       { href: "/it", label: "Italy" },
       { href: "/ch", label: "Switzerland" },
+      { href: "/ie", label: "Ireland" },
+      { href: "/se", label: "Sweden" },
+      { href: "/fi", label: "Finland" },
+      { href: "/no", label: "Norway" },
     ],
   },
   {

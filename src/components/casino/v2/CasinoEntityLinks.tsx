@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils/format";
 
 const GEO_MAP: Record<string, { name: string; flag: string; slug: string }> = {
   DE: { name: "Germany", flag: "🇩🇪", slug: "de" },
+  GB: { name: "Great Britain", flag: "🇬🇧", slug: "gb" },
   NL: { name: "Netherlands", flag: "🇳🇱", slug: "nl" },
   BE: { name: "Belgium", flag: "🇧🇪", slug: "be" },
   FR: { name: "France", flag: "🇫🇷", slug: "fr" },
@@ -10,6 +11,9 @@ const GEO_MAP: Record<string, { name: string; flag: string; slug: string }> = {
   IT: { name: "Italy", flag: "🇮🇹", slug: "it" },
   CH: { name: "Switzerland", flag: "🇨🇭", slug: "ch" },
   IE: { name: "Ireland", flag: "🇮🇪", slug: "ie" },
+  SE: { name: "Sweden", flag: "🇸🇪", slug: "se" },
+  FI: { name: "Finland", flag: "🇫🇮", slug: "fi" },
+  NO: { name: "Norway", flag: "🇳🇴", slug: "no" },
 };
 
 type CasinoEntityLinksProps = {

@@ -45,6 +45,11 @@ export default function PaymentsIndexPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <Container className="py-12 lg:py-20">
         <div className="max-w-3xl mx-auto">
+          <nav className="flex items-center gap-2 text-sm text-muted mb-6" aria-label="Breadcrumb">
+            <Link href="/" className="hover:text-primary transition-colors">Home</Link>
+            <span aria-hidden="true">/</span>
+            <span className="text-foreground font-medium">Payment Methods</span>
+          </nav>
           <h1 className="text-3xl sm:text-4xl font-bold mb-4">
             Casino Payment Methods
           </h1>

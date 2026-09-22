@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { CasinoListSearch } from "./CasinoListSearch";
 import { casinoDb } from "@/lib/data/accessor";
@@ -25,6 +26,11 @@ export default function CasinosPage() {
   return (
     <main id="main-content">
       <Container className="py-12 lg:py-20">
+        <nav className="flex items-center gap-2 text-sm text-muted mb-6" aria-label="Breadcrumb">
+          <Link href="/" className="hover:text-primary transition-colors">Home</Link>
+          <span aria-hidden="true">/</span>
+          <span className="text-foreground font-medium">Casinos</span>
+        </nav>
         <div className="max-w-3xl mb-10">
           <h1 className="text-3xl sm:text-4xl font-bold mb-4">All Casinos</h1>
           <p className="text-lg text-muted">

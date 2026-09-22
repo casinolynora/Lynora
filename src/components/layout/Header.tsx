@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/Button";
 
 const navLinks = [
   { href: "/casinos", label: "Casinos" },
+  { href: "/payments", label: "Payments" },
   { href: "/ai-casino-match", label: "AI Matchmaker", highlight: true },
   { href: "/compare", label: "Compare" },
   { href: "/guides", label: "Guides" },

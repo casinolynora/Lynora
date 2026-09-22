@@ -253,13 +253,17 @@ export default function HomePage() {
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
             {[
               { href: "/de", flag: "🇩🇪", name: "Germany" },
-              { href: "/ie", flag: "🇮🇪", name: "Ireland" },
+              { href: "/gb", flag: "🇬🇧", name: "Great Britain" },
               { href: "/nl", flag: "🇳🇱", name: "Netherlands" },
               { href: "/be", flag: "🇧🇪", name: "Belgium" },
               { href: "/fr", flag: "🇫🇷", name: "France" },
               { href: "/at", flag: "🇦🇹", name: "Austria" },
               { href: "/it", flag: "🇮🇹", name: "Italy" },
               { href: "/ch", flag: "🇨🇭", name: "Switzerland" },
+              { href: "/ie", flag: "🇮🇪", name: "Ireland" },
+              { href: "/se", flag: "🇸🇪", name: "Sweden" },
+              { href: "/fi", flag: "🇫🇮", name: "Finland" },
+              { href: "/no", flag: "🇳🇴", name: "Norway" },
             ].map((geo) => (
               <Link
                 key={geo.href}
