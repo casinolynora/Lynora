@@ -6,6 +6,7 @@ import { Footer } from "@/components/layout/Footer";
 import { CookieConsent } from "@/components/layout/CookieConsent";
 import { AnalyticsInit } from "@/components/analytics/AnalyticsInit";
 import { SITE_URL, SITE_NAME } from "@/lib/config/site";
+import { initializeServerDataProvider } from "@/lib/db/server-init";
 
 const geist = Geist({
   subsets: ["latin"],
@@ -51,11 +52,13 @@ export const viewport: Viewport = {
   themeColor: "#131d35",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  await initializeServerDataProvider();
+
   return (
     <html lang="en" className={`${geist.variable} ${geistMono.variable}`}>
       <head>
