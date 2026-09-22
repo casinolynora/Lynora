@@ -2,7 +2,7 @@ import { cn, formatDate } from "@/lib/utils/format";
 import type { Casino } from "@/lib/types";
 
 type TrustSectionProps = {
-  casino: Pick<Casino, "licenses" | "owner" | "lastVerifiedAt" | "verificationStatus" | "dataSources">;
+  casino: Pick<Casino, "licenses" | "owner" | "lastVerifiedAt" | "verificationStatus" | "dataSources" | "minAge" | "kycRequired">;
   className?: string;
 };
 
@@ -93,6 +93,23 @@ export function TrustSection({ casino, className }: TrustSectionProps) {
             <p className="text-sm text-muted">{casino.owner}</p>
           </div>
         )}
+
+        {/* Player Requirements */}
+        <div className="mb-4">
+          <h3 className="text-sm font-bold text-foreground uppercase tracking-wider mb-2">
+            Player Requirements
+          </h3>
+          <div className="flex flex-wrap gap-4 text-sm text-muted">
+            <span>
+              <span className="font-medium text-foreground">Minimum Age:</span>{" "}
+              {casino.minAge}+
+            </span>
+            <span>
+              <span className="font-medium text-foreground">KYC Required:</span>{" "}
+              {casino.kycRequired ? "Yes" : "No"}
+            </span>
+          </div>
+        </div>
 
         {/* Verification Status */}
         <div className="flex items-center gap-4 text-sm text-muted">

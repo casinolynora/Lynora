@@ -37,7 +37,7 @@ export function EditorialReview({ casino, className }: EditorialReviewProps) {
       </div>
 
       {/* Score Breakdown */}
-      {review.scoreBreakdown && (
+      {review.scoreBreakdown && Object.keys(review.scoreBreakdown).length > 0 && (
         <div className="card-static p-6 mb-6">
           <h3 className="font-bold mb-4">Score Breakdown</h3>
           <div className="grid grid-cols-2 gap-3">

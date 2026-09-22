@@ -7,6 +7,7 @@ import { AffiliateCTA } from "@/components/casino/AffiliateCTA";
 import { casinoDb } from "@/lib/data/accessor";
 import { SITE_URL } from "@/lib/config/site";
 import { getRelevantGuides } from "@/lib/seo/guide-relevance";
+import { generateCasinoFAQs } from "@/lib/seo/casino-faq";
 import {
   CasinoHero,
   CasinoQuickFacts,
@@ -67,7 +68,7 @@ export default async function CasinoProfileV2({ params }: Props) {
   const paymentMethodNames = casino.paymentMethods.map((pm) => pm.name);
 
   // Schema.org structured data
-  const reviewSchema = {
+  const reviewSchema = casino.rating !== null ? {
     "@context": "https://schema.org",
     "@type": "Review",
     itemReviewed: {
@@ -76,32 +77,30 @@ export default async function CasinoProfileV2({ params }: Props) {
       description: casino.review.overview,
       brand: { "@type": "Organization", name: casino.owner || casino.name },
     },
-    ...(casino.rating !== null && {
-      reviewRating: {
-        "@type": "Rating",
-        ratingValue: casino.rating,
-        bestRating: 100,
-      },
-    }),
+    reviewRating: {
+      "@type": "Rating",
+      ratingValue: casino.rating,
+      bestRating: 100,
+    },
     author: { "@type": "Organization", name: "BeInCasinos" },
     datePublished: casino.lastVerifiedAt,
-  };
+  } : null;
 
-  const faqSchema =
-    casino.review.faq && casino.review.faq.length > 0
-      ? {
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          mainEntity: casino.review.faq.map((item) => ({
-            "@type": "Question",
-            name: item.question,
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: item.answer,
-            },
-          })),
-        }
-      : null;
+  const generatedFAQs = generateCasinoFAQs(casino);
+  const faqSchema = generatedFAQs.length > 0
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: generatedFAQs.map((item) => ({
+          "@type": "Question",
+          name: item.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: item.answer,
+          },
+        })),
+      }
+    : null;
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -131,10 +130,12 @@ export default async function CasinoProfileV2({ params }: Props) {
   return (
     <>
       {/* Structured Data */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
-      />
+      {reviewSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
+        />
+      )}
       {faqSchema && (
         <script
           type="application/ld+json"
