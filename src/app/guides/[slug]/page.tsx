@@ -70,11 +70,35 @@ export default async function GuidePage({ params }: Props) {
     ],
   };
 
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: guide.title,
+    description: guide.description,
+    author: {
+      "@type": "Organization",
+      name: "BeInCasinos",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "BeInCasinos",
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${SITE_URL}/guides/${slug}`,
+    },
+    ...(guide.lastUpdated ? { dateModified: guide.lastUpdated } : {}),
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
       <main id="main-content">
         <Container className="py-12 lg:py-16">

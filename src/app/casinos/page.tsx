@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { CasinoListSearch } from "./CasinoListSearch";
 import { casinoDb } from "@/lib/data/accessor";
+import { SITE_URL } from "@/lib/config/site";
 
 export const metadata: Metadata = {
   title: "Online Casino Reviews & Comparisons | BeInCasinos",
@@ -19,18 +20,42 @@ export const metadata: Metadata = {
   },
 };
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: SITE_URL,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Casinos",
+      item: `${SITE_URL}/casinos`,
+    },
+  ],
+};
+
 export default function CasinosPage() {
   const casinos = casinoDb.getAllCasinos();
   const items = casinos.map((c) => casinoDb.selectCasinoListItem(c));
 
   return (
-    <main id="main-content">
-      <Container className="py-12 lg:py-20">
-        <nav className="flex items-center gap-2 text-sm text-muted mb-6" aria-label="Breadcrumb">
-          <Link href="/" className="hover:text-primary transition-colors">Home</Link>
-          <span aria-hidden="true">/</span>
-          <span className="text-foreground font-medium">Casinos</span>
-        </nav>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <main id="main-content">
+        <Container className="py-12 lg:py-20">
+          <nav className="flex items-center gap-2 text-sm text-muted mb-6" aria-label="Breadcrumb">
+            <Link href="/" className="hover:text-primary transition-colors">Home</Link>
+            <span aria-hidden="true">/</span>
+            <span className="text-foreground font-medium">Casinos</span>
+          </nav>
         <div className="max-w-3xl mb-10">
           <h1 className="text-3xl sm:text-4xl font-bold mb-4">All Casinos</h1>
           <p className="text-lg text-muted">
@@ -43,5 +68,6 @@ export default function CasinosPage() {
         </div>
       </Container>
     </main>
+    </>
   );
 }

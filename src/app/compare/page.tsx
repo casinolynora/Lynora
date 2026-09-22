@@ -42,6 +42,11 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
       title: "Compare Casinos — BeInCasinos",
       description: "Compare online casinos side-by-side.",
     },
+    twitter: {
+      card: "summary",
+      title: "Compare Casinos — BeInCasinos",
+      description: "Compare online casinos side-by-side.",
+    },
   };
 }
 

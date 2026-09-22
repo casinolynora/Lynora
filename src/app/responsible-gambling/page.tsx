@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
-import { SITE_NAME } from "@/lib/config/site";
+import { SITE_NAME, SITE_URL } from "@/lib/config/site";
 
 export const metadata: Metadata = {
   title: "Responsible Gambling — BeInCasinos",
@@ -129,11 +129,35 @@ const EXTERNAL_RESOURCES = [
   },
 ];
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: SITE_URL,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Responsible Gambling",
+      item: `${SITE_URL}/responsible-gambling`,
+    },
+  ],
+};
+
 export default function ResponsibleGamblingPage() {
   return (
-    <main id="main-content">
-      <Container className="py-12 lg:py-20">
-        <div className="max-w-3xl mx-auto">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <main id="main-content">
+        <Container className="py-12 lg:py-20">
+          <div className="max-w-3xl mx-auto">
           {/* Warning Banner */}
           <div className="card-static p-6 border-l-4 border-l-amber-500 bg-amber-50 mb-10">
             <div className="flex items-start gap-3">
@@ -330,5 +354,6 @@ export default function ResponsibleGamblingPage() {
         </div>
       </Container>
     </main>
+    </>
   );
 }

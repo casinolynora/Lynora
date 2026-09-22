@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
-import { CONTACT_EMAILS } from "@/lib/config/site";
+import { CONTACT_EMAILS, SITE_URL } from "@/lib/config/site";
 
 export const metadata: Metadata = {
   title: "Contact — BeInCasinos",
@@ -19,11 +19,35 @@ export const metadata: Metadata = {
   },
 };
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: SITE_URL,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Contact",
+      item: `${SITE_URL}/contact`,
+    },
+  ],
+};
+
 export default function ContactPage() {
   return (
-    <main id="main-content">
-      <Container className="py-12 lg:py-20">
-        <div className="max-w-2xl mx-auto">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <main id="main-content">
+        <Container className="py-12 lg:py-20">
+          <div className="max-w-2xl mx-auto">
           <h1 className="text-3xl sm:text-4xl font-bold mb-4">Contact</h1>
           <p className="text-lg text-muted mb-4">
             We welcome inquiries about our data, methodology, and partnership
@@ -125,5 +149,6 @@ export default function ContactPage() {
         </div>
       </Container>
     </main>
+    </>
   );
 }

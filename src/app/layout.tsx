@@ -27,17 +27,19 @@ export const metadata: Metadata = {
   },
   description: "Independent casino reviews and comparisons for European players. Structured, verified data for transparent decision-making.",
   metadataBase: new URL(SITE_URL),
-  openGraph: {
+    openGraph: {
     type: "website",
     locale: "en_GB",
     siteName: "BeInCasinos",
     title: "BeInCasinos — Independent Casino Reviews & Comparisons",
     description: "Independent casino reviews and comparisons for European players.",
+    images: ["/og-image.svg"],
   },
   twitter: {
     card: "summary",
     title: "BeInCasinos — Independent Casino Reviews & Comparisons",
     description: "Independent casino reviews and comparisons for European players.",
+    images: ["/og-image.svg"],
   },
   robots: {
     index: true,
