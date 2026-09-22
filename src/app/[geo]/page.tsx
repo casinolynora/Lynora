@@ -4,7 +4,6 @@ import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { CasinoGrid } from "@/components/casino/CasinoGrid";
-import { casinoDb } from "@/lib/data/accessor";
 import { SITE_URL } from "@/lib/config/site";
 import { getFullDatasetCasinos } from "@/lib/seo/payment-data";
 import { buildPaymentEntityMap, getGeoToPayments } from "@/lib/seo/payment-entities";
@@ -475,22 +474,16 @@ export default async function GeoPage({ params }: Props) {
 
   const geoUpper = geo.toUpperCase();
 
-  // Use composite provider for GEOs with in-memory data (DE, NL, BE),
-  // fall back to full SQLite dataset for other GEOs
-  let casinos = config.hasCasinoData ? casinoDb.getCasinosByGeo(geoUpper) : [];
-  if (config.hasCasinoData && casinos.length === 0) {
-    try {
-      const allCasinos = getFullDatasetCasinos();
-      casinos = allCasinos.filter(
+  // Single provider call for all casino data on this GEO page
+  const allCasinos = getFullDatasetCasinos();
+  const casinos = config.hasCasinoData
+    ? allCasinos.filter(
         (c) =>
           c.status === "active" &&
           c.verificationStatus === "verified" &&
           c.countries.includes(geoUpper)
-      );
-    } catch {
-      // SQLite not available — show empty state
-    }
-  }
+      )
+    : [];
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -617,7 +610,6 @@ export default async function GeoPage({ params }: Props) {
               </p>
               <div className="flex flex-wrap gap-2 mb-4">
                 {(() => {
-                  const allCasinos = getFullDatasetCasinos();
                   const entityMap = buildPaymentEntityMap(allCasinos);
                   const geoPayments = getGeoToPayments(entityMap, geoUpper, allCasinos);
                   const topPayments = geoPayments.slice(0, 6);
@@ -682,7 +674,6 @@ export default async function GeoPage({ params }: Props) {
 
             {/* Compare CTA */}
             {(() => {
-              const allCasinos = getFullDatasetCasinos();
               const selectedSlugs = selectCasinosForGeoComparison(geoUpper, allCasinos);
               const compareUrl = selectedSlugs.length >= 2
                 ? buildComparisonUrl(selectedSlugs)

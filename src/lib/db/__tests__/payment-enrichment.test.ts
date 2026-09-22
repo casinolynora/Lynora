@@ -1,4 +1,5 @@
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, beforeAll } from "vitest";
+import { initializeServerDataProvider } from "@/lib/db/server-init";
 import {
   getTargetCasinoState,
   type PaymentEnrichmentEntry,
@@ -144,6 +145,10 @@ describe("Payment Enrichment — Dry-Run Mode", () => {
 // ─── Data Integrity ─────────────────────────────────────────────────────
 
 describe("Payment Enrichment — Data Integrity", () => {
+  beforeAll(async () => {
+    await initializeServerDataProvider();
+  });
+
   it("138 casinos remain intact", () => {
     const casinos = getFullDatasetCasinos();
     expect(casinos.length).toBe(138);

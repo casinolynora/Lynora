@@ -5,7 +5,7 @@ import { Container } from "@/components/ui/Container";
 import { Badge } from "@/components/ui/Badge";
 import { FAQSection } from "@/components/casino/FAQSection";
 import { getGuideBySlug, getAllGuides, getGermanGuideBySlug } from "@/lib/data/guides";
-import { casinoDb } from "@/lib/data/accessor";
+import { getFullDatasetCasinos } from "@/lib/seo/payment-data";
 import { getCasinosForGuide } from "@/lib/seo/guide-relevance";
 
 type Props = {
@@ -102,7 +102,7 @@ export default async function GermanyGuidePage({ params }: Props) {
 
             {/* Relevant Casinos */}
             {(() => {
-              const allCasinos = casinoDb.getAllCasinos().map(casinoDb.selectCasinoListItem);
+              const allCasinos = getFullDatasetCasinos();
               const relevantCasinos = getCasinosForGuide(slug, allCasinos);
               if (relevantCasinos.length === 0) return null;
               return (
@@ -222,7 +222,7 @@ export default async function GermanyGuidePage({ params }: Props) {
 
           {/* Relevant Casinos */}
           {(() => {
-            const allCasinos = casinoDb.getAllCasinos().map(casinoDb.selectCasinoListItem);
+            const allCasinos = getFullDatasetCasinos();
             const relevantCasinos = getCasinosForGuide(slug, allCasinos);
             if (relevantCasinos.length === 0) return null;
             return (

@@ -31,25 +31,26 @@ export function generateStaticParams() {
   return params;
 }
 
-function getEntity(method: string): PaymentEntity | null {
+function getEntityAndMap(method: string) {
   const casinos = getFullDatasetCasinos();
   const entityMap = buildPaymentEntityMap(casinos);
   // Try exact slug match first, then try by canonical name
   for (const [, entity] of entityMap) {
-    if (entity.slug === method) return entity;
+    if (entity.slug === method) return { entity, entityMap, casinos };
   }
   // Try case-insensitive
   const lower = method.toLowerCase();
   for (const [, entity] of entityMap) {
-    if (entity.slug.toLowerCase() === lower) return entity;
+    if (entity.slug.toLowerCase() === lower) return { entity, entityMap, casinos };
   }
   return null;
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { method } = await params;
-  const entity = getEntity(method);
-  if (!entity) return { title: "Payment Method Not Found" };
+  const result = getEntityAndMap(method);
+  if (!result) return { title: "Payment Method Not Found" };
+  const { entity } = result;
 
   const title = `${entity.canonicalName} Casinos: Deposits, Withdrawals & Supported Casinos | BeInCasinos`;
   const description = `Find verified online casinos that accept ${entity.canonicalName}. Compare ${entity.casinoCount}+ casinos with ${entity.canonicalName} deposits and withdrawals across ${entity.geoCount} European markets.`;
@@ -65,11 +66,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function PaymentDetailPage({ params }: Props) {
   const { method } = await params;
-  const entity = getEntity(method);
-  if (!entity) notFound();
+  const result = getEntityAndMap(method);
+  if (!result) notFound();
+  const { entity, entityMap, casinos } = result;
 
-  const casinos = getFullDatasetCasinos();
-  const entityMap = buildPaymentEntityMap(casinos);
   const supportingCasinos = getPaymentToCasinos(entityMap, entity.canonicalName, casinos);
   const relatedGuides = getPaymentToGuides(entity.type);
 
@@ -227,8 +227,7 @@ export default async function PaymentDetailPage({ params }: Props) {
 
           {/* Compare CTA */}
           {(() => {
-            const allCasinos = getFullDatasetCasinos();
-            const selectedSlugs = selectCasinosForPaymentComparison(entity.canonicalName, allCasinos);
+            const selectedSlugs = selectCasinosForPaymentComparison(entity.canonicalName, casinos);
             if (selectedSlugs.length < 2) return null;
             const compareUrl = buildComparisonUrl(selectedSlugs);
             return (

@@ -2,7 +2,6 @@ import { MetadataRoute } from "next";
 import { casinoDb } from "@/lib/data/accessor";
 import { getAllGuides } from "@/lib/data/guides";
 import { SITE_URL } from "@/lib/config/site";
-import { getFullDatasetCasinos } from "@/lib/seo/payment-data";
 import { buildPaymentEntityMap, assessPageEligibility } from "@/lib/seo/payment-entities";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -79,11 +78,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  // Payment method pages (from full dataset)
+  // Payment method pages (from same provider dataset)
   const paymentPages: MetadataRoute.Sitemap = [];
   try {
-    const paymentCasinos = getFullDatasetCasinos();
-    const entityMap = buildPaymentEntityMap(paymentCasinos);
+    const entityMap = buildPaymentEntityMap(casinos);
     for (const [, entity] of entityMap) {
       const result = assessPageEligibility(entity);
       if (result.eligible) {
@@ -96,7 +94,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       }
     }
   } catch {
-    // SQLite not available — skip payment pages in sitemap
+    // Payment entity mapping failed — skip payment pages in sitemap
   }
 
   return [...staticPages, ...casinoPages, ...guidePages, ...deCasinoPages, ...deGuidePages, ...paymentPages];

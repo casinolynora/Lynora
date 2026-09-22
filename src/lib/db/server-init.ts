@@ -17,7 +17,7 @@ import { setCasinoDataProvider } from "@/lib/data/accessor";
 import { createCompositeProvider } from "@/lib/data/composite-provider";
 
 export async function initializeServerDataProvider(): Promise<void> {
-  const providerType = process.env.DATABASE_PROVIDER ?? "memory";
+  const providerType = process.env.DATABASE_PROVIDER ?? "sqlite";
 
   if (providerType === "sqlite") {
     try {

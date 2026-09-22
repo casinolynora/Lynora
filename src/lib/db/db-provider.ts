@@ -1,134 +1,45 @@
-import { eq } from "drizzle-orm";
+import { eq, inArray } from "drizzle-orm";
 import { casinos, casinoLicenses, geoAvailability, casinoPaymentMethods, paymentMethods } from "./schema";
-import type { Casino, CasinoListItem, License, PaymentMethod, VerificationStatus } from "@/lib/types";
+import type { Casino, CasinoListItem } from "@/lib/types";
 import type { CasinoDataProvider } from "@/lib/data/provider";
 import { resolveOffer } from "@/lib/ai/affiliate-utils";
 import Database from "better-sqlite3";
 import { drizzle } from "drizzle-orm/better-sqlite3";
 import path from "path";
+import { rowToCasino, isProductionVisible } from "./row-to-casino";
 
-// ─── Row-to-Object Conversion ─────────────────────────────────────────────
-
-/**
- * Reconstruct a full Casino object from a main row + normalized related data.
- */
-function rowToCasino(
-  row: typeof casinos.$inferSelect,
-  licenses: Array<typeof casinoLicenses.$inferSelect>,
-  geo: Array<typeof geoAvailability.$inferSelect>,
-  paymentLinks: Array<typeof casinoPaymentMethods.$inferSelect & { pmName: string; pmType: string }>,
-): Casino {
-  // Reconstruct GEO arrays from normalized data
-  const countries = geo
-    .filter((g) => g.status === "available")
-    .map((g) => g.geo);
-  const restrictedCountries = geo
-    .filter((g) => g.status === "restricted")
-    .map((g) => g.geo);
-
-  // Reconstruct payment methods from junction table
-  const paymentMethodObjs: PaymentMethod[] = paymentLinks.map((pl) => ({
-    name: pl.pmName,
-    type: pl.pmType as PaymentMethod["type"],
-    minDeposit: pl.minDeposit ?? undefined,
-    maxDeposit: pl.maxDeposit ?? undefined,
-    minWithdrawal: pl.minWithdrawal ?? undefined,
-    maxWithdrawal: pl.maxWithdrawal ?? undefined,
-    withdrawalTime: pl.withdrawalTime ?? undefined,
-    fees: pl.fees ?? undefined,
-  }));
-
-  // Reconstruct licenses
-  const licenseObjs: License[] = licenses.map((l) => ({
-    issuer: l.issuer,
-    jurisdiction: l.jurisdiction,
-    licenseNumber: l.licenseNumber ?? undefined,
-    url: l.url ?? undefined,
-    status: (l.status as License["status"]) ?? undefined,
-    verifiedAt: l.verifiedAt ?? undefined,
-  }));
-
-  return {
-    id: row.id,
-    slug: row.slug,
-    name: row.name,
-    tagline: row.tagline ?? undefined,
-    logo: row.logo ?? null,
-    description: row.description ?? undefined,
-    website: row.website,
-    founded: row.founded ?? null,
-    owner: row.owner ?? undefined,
-    status: row.status as Casino["status"],
-    verificationStatus: row.verificationStatus as VerificationStatus,
-    lastVerifiedAt: row.lastVerifiedAt,
-    dataSources: (row.dataSources ?? []) as Casino["dataSources"],
-    rating: row.rating ?? null,
-    trustScore: row.trustScore ?? null,
-    licenses: licenseObjs,
-    countries,
-    restrictedCountries,
-    languages: (row.languages ?? []) as string[],
-    currencies: (row.currencies ?? []) as string[],
-    minDeposit: row.minDeposit,
-    maxDeposit: row.maxDeposit ?? null,
-    minWithdrawal: row.minWithdrawal ?? null,
-    paymentMethods: paymentMethodObjs,
-    withdrawalMethods: (row.withdrawalMethods ?? []) as string[],
-    withdrawalProcessingTime: row.withdrawalProcessingTime ?? null,
-    bonuses: (row.bonuses ?? []) as Casino["bonuses"],
-    games: (row.games ?? []) as Casino["games"],
-    hasLiveCasino: row.hasLiveCasino,
-    hasSportsBetting: row.hasSportsBetting,
-    hasCrypto: row.hasCrypto,
-    hasMobile: row.hasMobile,
-    kycRequired: row.kycRequired,
-    kycDocuments: (row.kycDocuments ?? undefined) as Casino["kycDocuments"],
-    kycProcessingTime: row.kycProcessingTime ?? null,
-    minAge: row.minAge,
-    responsibleGambling: (row.responsibleGambling ?? {
-      selfExclusion: false,
-      depositLimits: false,
-      sessionLimits: false,
-      realityCheck: false,
-      coolingOffPeriod: false,
-    }) as Casino["responsibleGambling"],
-    affiliateOffers: (row.affiliateOffers ?? []) as Casino["affiliateOffers"],
-    review: (row.review ?? {
-      overview: "",
-      pros: [],
-      cons: [],
-      verdict: "",
-      score: null,
-      scoreBreakdown: null,
-    }) as Casino["review"],
-    createdAt: row.createdAt,
-    updatedAt: row.updatedAt,
-    features: (row.features ?? []) as string[],
-    tags: (row.tags ?? []) as string[],
-    verificationCadence: (row.verificationCadence ?? {}) as Casino["verificationCadence"],
-  };
-}
+// ─── Batch Loading ────────────────────────────────────────────────────────
 
 /**
- * Helper: load full casino with all related data.
+ * Load all related data for a set of casino IDs in 3 batch queries
+ * instead of N*3 individual queries.
  */
-function loadFullCasino(
+function loadRelatedData(
   db: ReturnType<typeof drizzle>,
-  casinoRow: typeof casinos.$inferSelect,
-): Casino {
-  const licenses = db
+  casinoIds: string[],
+): {
+  licensesMap: Map<string, Array<typeof casinoLicenses.$inferSelect>>;
+  geoMap: Map<string, Array<typeof geoAvailability.$inferSelect>>;
+  paymentsMap: Map<string, Array<typeof casinoPaymentMethods.$inferSelect & { pmName: string; pmType: string }>>;
+} {
+  if (casinoIds.length === 0) {
+    return { licensesMap: new Map(), geoMap: new Map(), paymentsMap: new Map() };
+  }
+
+  // 3 batch queries instead of N*3
+  const allLicenses = db
     .select()
     .from(casinoLicenses)
-    .where(eq(casinoLicenses.casinoId, casinoRow.id))
+    .where(inArray(casinoLicenses.casinoId, casinoIds))
     .all();
 
-  const geo = db
+  const allGeo = db
     .select()
     .from(geoAvailability)
-    .where(eq(geoAvailability.casinoId, casinoRow.id))
+    .where(inArray(geoAvailability.casinoId, casinoIds))
     .all();
 
-  const paymentLinks = db
+  const allPayments = db
     .select({
       id: casinoPaymentMethods.id,
       casinoId: casinoPaymentMethods.casinoId,
@@ -145,10 +56,51 @@ function loadFullCasino(
     })
     .from(casinoPaymentMethods)
     .innerJoin(paymentMethods, eq(casinoPaymentMethods.paymentMethodId, paymentMethods.id))
-    .where(eq(casinoPaymentMethods.casinoId, casinoRow.id))
+    .where(inArray(casinoPaymentMethods.casinoId, casinoIds))
     .all();
 
-  return rowToCasino(casinoRow, licenses, geo, paymentLinks);
+  // Group by casinoId
+  const licensesMap = new Map<string, Array<typeof casinoLicenses.$inferSelect>>();
+  const geoMap = new Map<string, Array<typeof geoAvailability.$inferSelect>>();
+  const paymentsMap = new Map<string, Array<typeof casinoPaymentMethods.$inferSelect & { pmName: string; pmType: string }>>();
+
+  for (const l of allLicenses) {
+    const arr = licensesMap.get(l.casinoId) ?? [];
+    arr.push(l);
+    licensesMap.set(l.casinoId, arr);
+  }
+  for (const g of allGeo) {
+    const arr = geoMap.get(g.casinoId) ?? [];
+    arr.push(g);
+    geoMap.set(g.casinoId, arr);
+  }
+  for (const p of allPayments) {
+    const arr = paymentsMap.get(p.casinoId) ?? [];
+    arr.push(p);
+    paymentsMap.set(p.casinoId, arr);
+  }
+
+  return { licensesMap, geoMap, paymentsMap };
+}
+
+/**
+ * Convert a batch of casino rows to full Casino objects using pre-loaded related data.
+ */
+function rowsToCasinos(
+  db: ReturnType<typeof drizzle>,
+  rows: Array<typeof casinos.$inferSelect>,
+): Casino[] {
+  const casinoIds = rows.map((r) => r.id);
+  const { licensesMap, geoMap, paymentsMap } = loadRelatedData(db, casinoIds);
+
+  return rows.map((row) =>
+    rowToCasino(
+      row,
+      licensesMap.get(row.id) ?? [],
+      geoMap.get(row.id) ?? [],
+      paymentsMap.get(row.id) ?? [],
+    )
+  );
 }
 
 // ─── Provider Factory ─────────────────────────────────────────────────────
@@ -159,9 +111,6 @@ export function createDbProvider(dbPath?: string): CasinoDataProvider {
   sqlite.pragma("journal_mode = WAL");
   sqlite.pragma("foreign_keys = ON");
   const db = drizzle(sqlite, { schema: { casinos, casinoLicenses, geoAvailability, casinoPaymentMethods, paymentMethods } });
-
-  const isProductionVisible = (row: typeof casinos.$inferSelect) =>
-    row.status === "active" && row.verificationStatus === "verified";
 
   const selectCasinoListItem = (casino: Casino): CasinoListItem => ({
     id: casino.id,
@@ -189,87 +138,100 @@ export function createDbProvider(dbPath?: string): CasinoDataProvider {
   return {
     getAllCasinos: () => {
       const rows = db.select().from(casinos).all().filter(isProductionVisible);
-      return rows.map((row) => loadFullCasino(db, row));
+      return rowsToCasinos(db, rows);
     },
 
     getCasinoBySlug: (slug) => {
       const row = db.select().from(casinos).where(eq(casinos.slug, slug)).get();
       if (!row || !isProductionVisible(row)) return undefined;
-      return loadFullCasino(db, row);
+      return rowsToCasinos(db, [row])[0];
     },
 
     getCasinoById: (id) => {
       const row = db.select().from(casinos).where(eq(casinos.id, id)).get();
       if (!row || !isProductionVisible(row)) return undefined;
-      return loadFullCasino(db, row);
+      return rowsToCasinos(db, [row])[0];
     },
 
     getCasinosByCountry: (countryCode) => {
-      // Use GEO availability table for proper filtering
+      // Get casino IDs available in this country via GEO table
       const geoRows = db
-        .select()
+        .select({ casinoId: geoAvailability.casinoId })
         .from(geoAvailability)
+        .where(eq(geoAvailability.geo, countryCode))
         .all()
-        .filter(
-          (g) => g.geo === countryCode && g.status === "available"
-        );
-      const casinoIds = new Set(geoRows.map((g) => g.casinoId));
+        .filter((g) => g.casinoId); // status "available" filtered below
 
-      return db
+      const casinoIds = [...new Set(geoRows.map((g) => g.casinoId))];
+      if (casinoIds.length === 0) return [];
+
+      // Load matching casinos in one query
+      const rows = db
         .select()
         .from(casinos)
+        .where(inArray(casinos.id, casinoIds))
         .all()
-        .filter((row) => isProductionVisible(row) && casinoIds.has(row.id))
-        .map((row) => loadFullCasino(db, row));
+        .filter(isProductionVisible);
+
+      // Batch-load related data for all matching casinos
+      const allCasinos = rowsToCasinos(db, rows);
+
+      // Filter to those actually available (not restricted) in this country
+      return allCasinos.filter(
+        (c) => c.countries.includes(countryCode) && !c.restrictedCountries.includes(countryCode)
+      );
     },
 
     getCasinosByGeo: (geo, requiredStatus = "verified") => {
       const geoRows = db
-        .select()
+        .select({ casinoId: geoAvailability.casinoId })
         .from(geoAvailability)
-        .all()
-        .filter(
-          (g) => g.geo === geo && g.status === "available"
-        );
-      const casinoIds = new Set(geoRows.map((g) => g.casinoId));
+        .where(eq(geoAvailability.geo, geo))
+        .all();
 
-      return db
+      const casinoIds = [...new Set(geoRows.map((g) => g.casinoId))];
+      if (casinoIds.length === 0) return [];
+
+      const rows = db
         .select()
         .from(casinos)
+        .where(inArray(casinos.id, casinoIds))
         .all()
         .filter(
           (row) =>
             row.status === "active" &&
-            row.verificationStatus === requiredStatus &&
-            casinoIds.has(row.id)
-        )
-        .map((row) => loadFullCasino(db, row));
+            row.verificationStatus === requiredStatus
+        );
+
+      return rowsToCasinos(db, rows);
     },
 
     getCasinosByStatus: (status) => {
-      return db
+      const rows = db
         .select()
         .from(casinos)
         .all()
         .filter(
           (row) => row.status === "active" && row.verificationStatus === status
-        )
-        .map((row) => loadFullCasino(db, row));
+        );
+
+      return rowsToCasinos(db, rows);
     },
 
     getFeaturedCasinos: () => {
-      return db
+      const rows = db
         .select()
         .from(casinos)
         .all()
         .filter(isProductionVisible)
         .sort((a, b) => (b.rating ?? 0) - (a.rating ?? 0))
-        .slice(0, 6)
-        .map((row) => selectCasinoListItem(loadFullCasino(db, row)));
+        .slice(0, 6);
+
+      return rowsToCasinos(db, rows).map(selectCasinoListItem);
     },
 
     getLatestCasinos: () => {
-      return db
+      const rows = db
         .select()
         .from(casinos)
         .all()
@@ -279,13 +241,14 @@ export function createDbProvider(dbPath?: string): CasinoDataProvider {
             new Date(b.lastVerifiedAt).getTime() -
             new Date(a.lastVerifiedAt).getTime()
         )
-        .slice(0, 6)
-        .map((row) => selectCasinoListItem(loadFullCasino(db, row)));
+        .slice(0, 6);
+
+      return rowsToCasinos(db, rows).map(selectCasinoListItem);
     },
 
     searchCasinos: (query) => {
       const lower = query.toLowerCase();
-      return db
+      const rows = db
         .select()
         .from(casinos)
         .all()
@@ -294,8 +257,9 @@ export function createDbProvider(dbPath?: string): CasinoDataProvider {
             isProductionVisible(row) &&
             (row.name.toLowerCase().includes(lower) ||
               (row.tags as string[]).some((t) => t.toLowerCase().includes(lower)))
-        )
-        .map((row) => loadFullCasino(db, row));
+        );
+
+      return rowsToCasinos(db, rows);
     },
 
     getRelatedCasinos: (casinoId, limit = 4) => {
@@ -306,35 +270,41 @@ export function createDbProvider(dbPath?: string): CasinoDataProvider {
         .get();
 
       if (!casinoRow || !isProductionVisible(casinoRow)) {
-        return db
+        // Fallback: top rated
+        const rows = db
           .select()
           .from(casinos)
           .all()
           .filter(isProductionVisible)
           .sort((a, b) => (b.rating ?? 0) - (a.rating ?? 0))
-          .slice(0, limit)
-          .map((row) => selectCasinoListItem(loadFullCasino(db, row)));
+          .slice(0, limit);
+
+        return rowsToCasinos(db, rows).map(selectCasinoListItem);
       }
 
-      const casino = loadFullCasino(db, casinoRow);
+      // Load the target casino
+      const [targetCasino] = rowsToCasinos(db, [casinoRow]);
 
-      return db
+      // Load ALL other casinos in batch
+      const allRows = db
         .select()
         .from(casinos)
         .all()
-        .filter((row) => row.id !== casinoId && isProductionVisible(row))
-        .map((row) => {
-          const c = loadFullCasino(db, row);
-          return {
-            similarity:
-              c.countries.filter((co) => casino.countries.includes(co)).length +
-              (c.hasLiveCasino === casino.hasLiveCasino ? 1 : 0) +
-              c.games.filter((g) =>
-                casino.games.some((cg) => cg.slug === g.slug)
-              ).length,
-            casino: c,
-          };
-        })
+        .filter((row) => row.id !== casinoId && isProductionVisible(row));
+
+      const allCasinos = rowsToCasinos(db, allRows);
+
+      // Score and sort by similarity
+      return allCasinos
+        .map((c) => ({
+          similarity:
+            c.countries.filter((co) => targetCasino.countries.includes(co)).length +
+            (c.hasLiveCasino === targetCasino.hasLiveCasino ? 1 : 0) +
+            c.games.filter((g) =>
+              targetCasino.games.some((cg) => cg.slug === g.slug)
+            ).length,
+          casino: c,
+        }))
         .sort((a, b) => b.similarity - a.similarity)
         .slice(0, limit)
         .map((item) => selectCasinoListItem(item.casino));
@@ -359,7 +329,7 @@ export function createDbProvider(dbPath?: string): CasinoDataProvider {
         .where(eq(casinos.id, casinoId))
         .get();
       if (!row || !isProductionVisible(row)) return null;
-      const casino = loadFullCasino(db, row);
+      const [casino] = rowsToCasinos(db, [row]);
       return resolveOffer(casino.affiliateOffers, geo);
     },
   };

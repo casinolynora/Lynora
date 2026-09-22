@@ -5,7 +5,6 @@ import { Container } from "@/components/ui/Container";
 import { Badge } from "@/components/ui/Badge";
 import { FAQSection } from "@/components/casino/FAQSection";
 import { getGuideBySlug, getAllGuides } from "@/lib/data/guides";
-import { casinoDb } from "@/lib/data/accessor";
 import { getCasinosForGuide } from "@/lib/seo/guide-relevance";
 import { SITE_URL } from "@/lib/config/site";
 import { buildPaymentEntityMap, getGuideToPayments } from "@/lib/seo/payment-entities";
@@ -152,7 +151,7 @@ export default async function GuidePage({ params }: Props) {
 
           {/* Relevant Casinos */}
           {(() => {
-            const allCasinos = casinoDb.getAllCasinos().map(casinoDb.selectCasinoListItem);
+            const allCasinos = getFullDatasetCasinos();
             const relevantCasinos = getCasinosForGuide(slug, allCasinos);
             if (relevantCasinos.length === 0) return null;
             return (

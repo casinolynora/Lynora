@@ -4,8 +4,8 @@ import { createCompositeProvider } from "./composite-provider";
 // ─── Provider Selection (Feature Flag) ────────────────────────────────────
 //
 // DATABASE_PROVIDER env var controls which provider is used:
-//   - "memory" (default): In-memory TypeScript data (for dev/test)
-//   - "sqlite": SQLite database (requires running seed.ts first)
+//   - "sqlite" (default): SQLite database (138+ casinos, production dataset)
+//   - "memory": In-memory TypeScript data (49 casinos, for dev/test only)
 //
 // IMPORTANT: The SQLite provider is loaded ONLY on the server via a
 // separate server-only module. This file never imports better-sqlite3

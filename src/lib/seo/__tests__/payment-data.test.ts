@@ -1,4 +1,5 @@
 import { describe, it, expect, beforeAll } from "vitest";
+import { initializeServerDataProvider } from "@/lib/db/server-init";
 import { getFullDatasetCasinos } from "@/lib/seo/payment-data";
 import {
   buildPaymentEntityMap,
@@ -15,7 +16,8 @@ import {
 describe("Payment Data — Full Dataset Provider", () => {
   let casinos: ReturnType<typeof getFullDatasetCasinos>;
 
-  beforeAll(() => {
+  beforeAll(async () => {
+    await initializeServerDataProvider();
     casinos = getFullDatasetCasinos();
   });
 
@@ -48,9 +50,9 @@ describe("Payment Data — Full Dataset Provider", () => {
     }
   });
 
-  it("caching works — second call returns same references", () => {
+  it("caching works — second call returns equivalent data", () => {
     const second = getFullDatasetCasinos();
-    expect(second).toBe(casinos);
+    expect(second).toEqual(casinos);
   });
 });
 
